@@ -71,12 +71,14 @@ keybase-public:
 	$(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) /keybase/public/randymcmillan
 	@echo
 	@echo "Build finished. The HTML page is in /keybase/public/randymcmillan"
+	bash -c "keybase sign -i /keybase/public/randymcmillan/index.html -o /keybase/public/randymcmillan/index.sig"
 
 .PHONY: keybase-private
 keybase-public:
 	$(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) /keybase/private/randymcmillan
 	@echo
 	@echo "Build finished. The HTML page is in /keybase/private/randymcmillan"
+	bash -c "keybase sign -i /keybase/public/randymcmillan/index.html -o /keybase/public/randymcmillan/index.sig"
 
 .PHONY: pickle
 pickle:
