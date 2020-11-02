@@ -2,6 +2,16 @@
 Blockstream Docs
 ################
 
+################
+PGP Public Key
+################
+
+.. toctree::
+   :maxdepth: 2
+   :caption: PGP Public Key
+
+   PGP Public Key <./randymcmillan-asc.md>
+
 .. toctree::
    :maxdepth: 2
    :caption: Blockstream Green
@@ -39,3 +49,14 @@ Blockstream Docs
    :caption: Developer Documentation
 
    All Repositories <./developer-documentation>
+
+################
+PGP Public Key
+################
+
+.. toctree::
+   :maxdepth: 1
+   :caption: PGP Public Key
+
+   PGP Public Key <./randymcmillan-asc.md>
+
