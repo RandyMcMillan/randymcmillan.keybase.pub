@@ -66,6 +66,18 @@ singlehtml:
 	@echo
 	@echo "Build finished. The HTML page is in $(BUILDDIR)/singlehtml."
 
+.PHONY: keybase-public
+keybase-public:
+	$(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) /keybase/public/randymcmillan
+	@echo
+	@echo "Build finished. The HTML page is in /keybase/public/randymcmillan"
+
+.PHONY: keybase-private
+keybase-public:
+	$(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) /keybase/private/randymcmillan
+	@echo
+	@echo "Build finished. The HTML page is in /keybase/private/randymcmillan"
+
 .PHONY: pickle
 pickle:
 	$(SPHINXBUILD) -b pickle $(ALLSPHINXOPTS) $(BUILDDIR)/pickle
