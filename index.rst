@@ -48,6 +48,6 @@ RandyMcMillan
 
 .. toctree::
    :maxdepth: 1
-   :caption: README.md
+   :caption: README
 
-   README.md <./README.md>
+   README <./README.md>
