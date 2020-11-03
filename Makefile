@@ -87,7 +87,7 @@ keybase-public:
 	$(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) /keybase/public/$(KB_USER)
 	@echo
 	@echo "Build finished. The HTML page is in /keybase/public/$(KB_USER)"
-	bash -c "keybase sign -i /keybase/public/randymcmillan/index.html -o /keybase/public/$(KB_USER)/index.sig"
+	bash -c "keybase sign -i /keybase/public/$(KB_USER)/index.html -o /keybase/public/$(KB_USER)/index.sig"
 
 #.PHONY: html keybase-private
 #keybase-private:
