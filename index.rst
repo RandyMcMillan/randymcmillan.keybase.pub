@@ -1,5 +1,5 @@
 ################
-Blockstream Docs
+RandyMcMillan
 ################
 
 .. toctree::
