@@ -51,8 +51,8 @@ master_doc = 'index'
 
 # General information about the project.
 project = u''
-copyright = u'2019, Blockstream'
-author = u'Blockstream'
+copyright = u'2020, Randy McMillan'
+author = u'@RandyMcMillan'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -82,7 +82,7 @@ language = None
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This patterns also effect to html_static_path and html_extra_path
-exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store', 'issued_assets.rst', 'atomic_swaps.rst', 'venv', 'green/getting-started/setup.rst', 'liquid/developer-guide/confidential-transactions.rst']
+exclude_patterns = ['README.md', 'README', '_build', 'Thumbs.db', '.DS_Store', 'issued_assets.rst', 'atomic_swaps.rst', 'venv', 'green/getting-started/setup.rst', 'liquid/developer-guide/confidential-transactions.rst']
 
 # The reST default role (used for this markup: `text`) to use for all
 # documents.
@@ -206,7 +206,7 @@ html_show_sphinx = False
 
 # If true, "(C) Copyright ..." is shown in the HTML footer. Default is True.
 #
-html_show_copyright = False
+html_show_copyright = True
 
 # If true, an OpenSearch description file will be output, and all pages will
 # contain a <link> tag referring to it.  The value of this option must be the
