@@ -89,12 +89,12 @@ keybase-public:
 	@echo "Build finished. The HTML page is in /keybase/public/$(KB_USER)"
 	bash -c "keybase sign -i ./keybase/public/randymcmillan/index.html -o /keybase/public/$(KB_USER)/index.sig"
 
-.PHONY: keybase-private
-keybase-private:
-	$(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) /keybase/private/$(KB_USER)
-	@echo
-	@echo "Build finished. The HTML page is in /keybase/private/$(KB_USER)"
-	bash -c "keybase sign -i /keybase/private/randymcmillan/index.html -o /keybase/private/$(KB_USER)/index.sig"
+#.PHONY: keybase-private
+#keybase-private:
+#	$(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) /keybase/private/$(KB_USER)
+#	@echo
+#	@echo "Build finished. The HTML page is in /keybase/private/$(KB_USER)"
+#	bash -c "keybase sign -i /keybase/private/randymcmillan/index.html -o /keybase/private/$(KB_USER)/index.sig"
 
 .PHONY: gh-pages
 gh-pages:
