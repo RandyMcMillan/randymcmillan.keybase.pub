@@ -1,0 +1,423 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Proof of Issuance - Blockstream’s Liquid Asset Registry &mdash; R A N D Y M c M I L L A N</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> 
+          
+
+          
+            
+            <img src="../../_static/blks_logo_transparent.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Blockstream Green</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../green/getting-started/getting-started-index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../green/liquid/liquid-index.html">Liquid Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../green/hww.html">Hardware Wallets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../green/troubleshooting-advanced/troubleshooting-advanced-index.html">Troubleshooting and Advanced Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../green/support.html">Support</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Liquid Network</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../technical_overview.html">Technical Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Liquid Node Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../node_setup.html">Liquid Node Setup (Advanced)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developer-guide-index.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../app-examples/app-examples-index.html">App Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general-developer-info/general-developer-info-index.html">General Developer Info</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acquire_lbtc.html">How To Acquire L-BTC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../swap_tool.html">Liquid Swap Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../additional_resources.html">Additional Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">FAQ</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contribute</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/contributing.html">Contributing to Blockstream Docs</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../developer-documentation.html">c-lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer-documentation.html#esplora">Esplora</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer-documentation.html#libwally">Libwally</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer-documentation.html#gdk">GDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer-documentation.html#elements">Elements</a></li>
+</ul>
+<p class="caption"><span class="caption-text">PGP</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../randymcmillan-asc.html">randymcmillan.asc</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html"></a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Proof of Issuance - Blockstream’s Liquid Asset Registry</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="proof-of-issuance-blockstream-s-liquid-asset-registry">
+<h1>Proof of Issuance - Blockstream’s Liquid Asset Registry<a class="headerlink" href="#proof-of-issuance-blockstream-s-liquid-asset-registry" title="Permalink to this headline">¶</a></h1>
+<p>This example shows how to use Blockstream’s <a class="reference external" href="https://assets.blockstream.info">Liquid Asset Registry</a>. The asset registry allows you to register an asset and prove ownership against a domain name.</p>
+<p>The code below creates an asset, an associated token, and outputs two files:</p>
+<ul class="simple">
+<li><p>A ‘liquid-asset-proof-‘ file that must be placed on the server of the registered domain over the entire lifecycle of the asset.</p></li>
+<li><p>A ‘register_asset.sh’ file that, when run, will post the asset registration data to Blockstream’s Liquid Asset Registry.</p></li>
+</ul>
+<p>The use of the output files will be explained later.</p>
+<p>There are six fields that need setting within the script:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">NAME</span></code> The name of the asset as it will apear in the registry and applications that use asset registry data, such as the <a class="reference external" href="https://blockstream.info/liquid/">Blockstream Explorer</a>. Length must be 5 to 255 ascii characters.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TICKER</span></code> The ticker you would like to assign to the asset. Length must be 3 to 5 characters (valid characters are a-z and A-Z).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DOMAIN</span></code> The domain that will be used to verify the asset. Must be a valid domain name format, for example: example.com or sub.example.com. Do not include the http/s or www prefixes.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ASSET_AMOUNT</span></code> The amount to be issued. It is preferable to consider one satoshi unit as representing one asset. So to issue an amount of 100 of an asset, a value of 0.00000100 should be used. Please note that how this value is displayed within applications that use asset registry data is affected by the <code class="docutils literal notranslate"><span class="pre">PRECISION</span></code> field.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TOKEN_AMOUNT</span></code> The amount of reissuance tokens to be created. It is preferable to consider one satoshi unit as representing one reissuance token, so a value of 0.00000001 will create 0.00000001 reissuance tokens and when viewed from Liquid Core it will also show as 0.00000001. When viewed from an app that uses satoshi sized units, such as the <a class="reference external" href="https://blockstream.info/liquid/">Blockstream Explorer</a> it will show as 1. This field is not affected by the <code class="docutils literal notranslate"><span class="pre">PRECISION</span></code> field.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PRECISION</span></code> The precision used to display the asset amount within applications that use <a class="reference external" href="https://assets.blockstream.info">Liquid Asset Registry</a> data, such as the <a class="reference external" href="https://blockstream.info/liquid/">Blockstream Explorer</a>. Examples: a <code class="docutils literal notranslate"><span class="pre">PRECISION</span></code> value of 0 for an <code class="docutils literal notranslate"><span class="pre">ASSET_AMOUNT</span></code> of 0.00000100 will create a value of 0.00000100 when viewed from Liquid Core and 100 when viewed in an app that uses the asset registry data. A <code class="docutils literal notranslate"><span class="pre">PRECISION</span></code> value of 2 for an <code class="docutils literal notranslate"><span class="pre">ASSET_AMOUNT</span></code> of 0.00000100 will create a value of 0.00000100 when viewed from Liquid Core and 1.00 when viewed in the same app. The default is 0 and the maximum value is 8.</p></li>
+</ul>
+<p>The code below uses Liquid in live mode. The code can easily be adapted for test use.</p>
+<p>Save the code below in a file named issue_and_prepare_register.sh</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="nb">set</span> -x
+<span class="nb">shopt</span> -s expand_aliases
+
+<span class="c1"># ASSUMES elementsd IS ALREADY RUNNING</span>
+
+<span class="c1">######################################################</span>
+<span class="c1">#                                                    #</span>
+<span class="c1">#    SCRIPT CONFIG - PLEASE REVIEW BEFORE RUNNING    #</span>
+<span class="c1">#                                                    #</span>
+<span class="c1">######################################################</span>
+
+<span class="c1"># Amend the following:</span>
+<span class="nv">NAME</span><span class="o">=</span><span class="s2">&quot;Wintercoin&quot;</span>
+<span class="nv">TICKER</span><span class="o">=</span><span class="s2">&quot;WTX&quot;</span>
+<span class="c1"># Do not use a domain prefix in the following:</span>
+<span class="nv">DOMAIN</span><span class="o">=</span><span class="s2">&quot;wintercooled.github.io&quot;</span>
+<span class="c1"># Issue 100 assets using the satoshi unit, dependant on PRECISION when viewed from</span>
+<span class="c1"># applications using Asset Registry data.</span>
+<span class="nv">ASSET_AMOUNT</span><span class="o">=</span><span class="m">0</span>.00000100
+<span class="c1"># Issue 1 reissuance token using the satoshi unit, unaffected by PRECISION.</span>
+<span class="nv">TOKEN_AMOUNT</span><span class="o">=</span><span class="m">0</span>.00000001
+
+<span class="c1"># Amend the following if needed:</span>
+<span class="nv">PRECISION</span><span class="o">=</span><span class="m">0</span>
+
+<span class="c1"># Don&#39;t change the following:</span>
+<span class="nv">VERSION</span><span class="o">=</span><span class="m">0</span>
+
+<span class="c1"># If your Liquid node has not seen enough transactions to calculate</span>
+<span class="c1"># its own feerate you will need to specify one to prevent a &#39;feeRate&#39;</span>
+<span class="c1"># error. We&#39;ll assume this is the case:</span>
+<span class="nv">FEERATE</span><span class="o">=</span><span class="m">0</span>.00003000
+
+<span class="c1"># Change the following to point to your elements-cli binary and liquid data directory.</span>
+<span class="nb">alias</span> e1-cli<span class="o">=</span><span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/elements-0.17.0.1/bin/elements-cli -datadir=</span><span class="nv">$HOME</span><span class="s2">/.elements&quot;</span>
+
+<span class="c1">##############################</span>
+<span class="c1">#                            #</span>
+<span class="c1">#    END OF SCRIPT CONFIG    #</span>
+<span class="c1">#                            #</span>
+<span class="c1">##############################</span>
+
+<span class="c1"># Exit on error</span>
+<span class="nb">set</span> -o errexit
+
+<span class="c1"># We need to get a &#39;legacy&#39; type (prefix &#39;CTE&#39;) address for this:</span>
+<span class="nv">NEWADDR</span><span class="o">=</span><span class="k">$(</span>e1-cli getnewaddress <span class="s2">&quot;&quot;</span> legacy<span class="k">)</span>
+
+<span class="nv">VALIDATEADDR</span><span class="o">=</span><span class="k">$(</span>e1-cli getaddressinfo <span class="nv">$NEWADDR</span><span class="k">)</span>
+
+<span class="nv">PUBKEY</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> <span class="nv">$VALIDATEADDR</span> <span class="p">|</span> jq <span class="s1">&#39;.pubkey&#39;</span> <span class="p">|</span> tr -d <span class="s1">&#39;&quot;&#39;</span><span class="k">)</span>
+
+<span class="nv">ASSET_ADDR</span><span class="o">=</span><span class="nv">$NEWADDR</span>
+
+<span class="nv">NEWADDR</span><span class="o">=</span><span class="k">$(</span>e1-cli getnewaddress <span class="s2">&quot;&quot;</span> legacy<span class="k">)</span>
+
+<span class="nv">TOKEN_ADDR</span><span class="o">=</span><span class="nv">$NEWADDR</span>
+
+<span class="c1"># Create the contract and calculate the contract hash.</span>
+<span class="c1"># The contract is formatted for use in the Blockstream Asset Registry</span>
+<span class="c1"># Do not amend the following!</span>
+
+<span class="nv">CONTRACT</span><span class="o">=</span><span class="s1">&#39;{&quot;entity&quot;:{&quot;domain&quot;:&quot;&#39;</span><span class="nv">$DOMAIN</span><span class="s1">&#39;&quot;},&quot;issuer_pubkey&quot;:&quot;&#39;</span><span class="nv">$PUBKEY</span><span class="s1">&#39;&quot;,&quot;name&quot;:&quot;&#39;</span><span class="nv">$NAME</span><span class="s1">&#39;&quot;,&quot;precision&quot;:&#39;</span><span class="nv">$PRECISION</span><span class="s1">&#39;,&quot;ticker&quot;:&quot;&#39;</span><span class="nv">$TICKER</span><span class="s1">&#39;&quot;,&quot;version&quot;:&#39;</span><span class="nv">$VERSION</span><span class="s1">&#39;}&#39;</span>
+
+<span class="c1"># We will hash using openssl, other options are available</span>
+<span class="nv">CONTRACT_HASH</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> -n <span class="nv">$CONTRACT</span> <span class="p">|</span> openssl dgst -sha256<span class="k">)</span>
+<span class="nv">CONTRACT_HASH</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> <span class="si">${</span><span class="nv">CONTRACT_HASH</span><span class="p">#</span><span class="s2">&quot;(stdin)= &quot;</span><span class="si">}</span><span class="k">)</span>
+
+<span class="c1"># Reverse the hash. This will be calculated from the contract by the asset registry service to</span>
+<span class="c1"># check validity of the issuance against the registry entry.</span>
+<span class="nv">TEMP</span><span class="o">=</span><span class="nv">$CONTRACT_HASH</span>
+
+<span class="nv">LEN</span><span class="o">=</span><span class="si">${#</span><span class="nv">TEMP</span><span class="si">}</span>
+
+<span class="k">until</span> <span class="o">[</span> <span class="nv">$LEN</span> -eq <span class="s2">&quot;0&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">do</span>
+    <span class="nv">END</span><span class="o">=</span><span class="si">${</span><span class="nv">TEMP</span><span class="p">:(-2)</span><span class="si">}</span>
+    <span class="nv">CONTRACT_HASH_REV</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$CONTRACT_HASH_REV$END</span><span class="s2">&quot;</span>
+    <span class="nv">TEMP</span><span class="o">=</span><span class="si">${</span><span class="nv">TEMP</span><span class="p">:</span><span class="k">:-</span><span class="nv">2</span><span class="si">}</span>
+    <span class="nv">LEN</span><span class="o">=</span><span class="k">$((</span>LEN-2<span class="k">))</span>
+<span class="k">done</span>
+
+<span class="nv">RAWTX</span><span class="o">=</span><span class="k">$(</span>e1-cli createrawtransaction <span class="s1">&#39;&#39;&#39;[]&#39;&#39;&#39;</span> <span class="s1">&#39;&#39;&#39;{&quot;&#39;&#39;data&#39;&#39;&quot;:&quot;&#39;&#39;00&#39;&#39;&quot;}&#39;&#39;&#39;</span><span class="k">)</span>
+
+<span class="c1"># If your Liquid node has seen enough transactions to calculate its</span>
+<span class="c1"># own feeRate then you can switch the two lines below. We&#39;ll default</span>
+<span class="c1"># to specifying a fee rate:</span>
+<span class="c1">#FRT=$(e1-cli fundrawtransaction $RAWTX)</span>
+<span class="nv">FRT</span><span class="o">=</span><span class="k">$(</span>e1-cli fundrawtransaction <span class="nv">$RAWTX</span> <span class="s1">&#39;&#39;&#39;{&quot;&#39;&#39;feeRate&#39;&#39;&quot;:&#39;</span><span class="nv">$FEERATE</span><span class="s1">&#39;}&#39;&#39;&#39;</span><span class="k">)</span>
+
+<span class="nv">HEXFRT</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> <span class="nv">$FRT</span> <span class="p">|</span> jq <span class="s1">&#39;.hex&#39;</span> <span class="p">|</span> tr -d <span class="s1">&#39;&quot;&#39;</span><span class="k">)</span>
+
+<span class="nv">RIA</span><span class="o">=</span><span class="k">$(</span>e1-cli rawissueasset <span class="nv">$HEXFRT</span> <span class="s1">&#39;&#39;&#39;[{&quot;&#39;&#39;asset_amount&#39;&#39;&quot;:&#39;</span><span class="nv">$ASSET_AMOUNT</span><span class="s1">&#39;, &quot;&#39;&#39;asset_address&#39;&#39;&quot;:&quot;&#39;&#39;&#39;</span><span class="nv">$ASSET_ADDR</span><span class="s1">&#39;&#39;&#39;&quot;, &quot;&#39;&#39;token_amount&#39;&#39;&quot;:&#39;</span><span class="nv">$TOKEN_AMOUNT</span><span class="s1">&#39;, &quot;&#39;&#39;token_address&#39;&#39;&quot;:&quot;&#39;&#39;&#39;</span><span class="nv">$TOKEN_ADDR</span><span class="s1">&#39;&#39;&#39;&quot;, &quot;&#39;&#39;blind&#39;&#39;&quot;:false, &quot;&#39;&#39;contract_hash&#39;&#39;&quot;:&quot;&#39;&#39;&#39;</span><span class="nv">$CONTRACT_HASH_REV</span><span class="s1">&#39;&#39;&#39;&quot;}]&#39;&#39;&#39;</span><span class="k">)</span>
+
+<span class="c1"># Details of the issuance...</span>
+<span class="nv">HEXRIA</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> <span class="nv">$RIA</span> <span class="p">|</span> jq <span class="s1">&#39;.[0].hex&#39;</span> <span class="p">|</span> tr -d <span class="s1">&#39;&quot;&#39;</span><span class="k">)</span>
+<span class="nv">ASSET</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> <span class="nv">$RIA</span> <span class="p">|</span> jq <span class="s1">&#39;.[0].asset&#39;</span> <span class="p">|</span> tr -d <span class="s1">&#39;&quot;&#39;</span><span class="k">)</span>
+<span class="nv">ENTROPY</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> <span class="nv">$RIA</span> <span class="p">|</span> jq <span class="s1">&#39;.[0].entropy&#39;</span> <span class="p">|</span> tr -d <span class="s1">&#39;&quot;&#39;</span><span class="k">)</span>
+<span class="nv">TOKEN</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> <span class="nv">$RIA</span> <span class="p">|</span> jq <span class="s1">&#39;.[0].token&#39;</span> <span class="p">|</span> tr -d <span class="s1">&#39;&quot;&#39;</span><span class="k">)</span>
+
+<span class="c1"># Blind, sign and send the issuance transaction...</span>
+<span class="nv">BRT</span><span class="o">=</span><span class="k">$(</span>e1-cli blindrawtransaction <span class="nv">$HEXRIA</span> <span class="nb">true</span> <span class="s1">&#39;&#39;&#39;[]&#39;&#39;&#39;</span> <span class="nb">false</span><span class="k">)</span>
+
+<span class="nv">SRT</span><span class="o">=</span><span class="k">$(</span>e1-cli signrawtransactionwithwallet <span class="nv">$BRT</span><span class="k">)</span>
+
+<span class="nv">HEXSRT</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> <span class="nv">$SRT</span> <span class="p">|</span> jq <span class="s1">&#39;.hex&#39;</span> <span class="p">|</span> tr -d <span class="s1">&#39;&quot;&#39;</span><span class="k">)</span>
+
+<span class="c1"># Test the transaction&#39;s acceptance into the mempool</span>
+<span class="nv">TEST</span><span class="o">=</span><span class="k">$(</span>e1-cli testmempoolaccept <span class="s1">&#39;&#39;&#39;[&quot;&#39;</span><span class="nv">$HEXSRT</span><span class="s1">&#39;&quot;]&#39;&#39;&#39;</span><span class="k">)</span>
+<span class="nv">ALLOWED</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> <span class="nv">$TEST</span> <span class="p">|</span> jq <span class="s1">&#39;.[0].allowed&#39;</span> <span class="p">|</span> tr -d <span class="s1">&#39;&quot;&#39;</span><span class="k">)</span>
+
+<span class="c1"># If the transaction is valid</span>
+<span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;true&quot;</span> <span class="o">=</span> <span class="nv">$ALLOWED</span> <span class="o">]</span> <span class="p">;</span> <span class="k">then</span>
+    <span class="c1"># Broadcast the transaction</span>
+    <span class="nv">ISSUETX</span><span class="o">=</span><span class="k">$(</span>e1-cli sendrawtransaction <span class="nv">$HEXSRT</span><span class="k">)</span>
+<span class="k">else</span>
+    <span class="nb">echo</span> <span class="s2">&quot;ERROR SENDING TRANSACTION!&quot;</span>
+<span class="k">fi</span>
+
+<span class="c1">#####################################</span>
+<span class="c1">#                                   #</span>
+<span class="c1">#    ASSET REGISTRY FILE OUTPUTS    #</span>
+<span class="c1">#                                   #</span>
+<span class="c1">#####################################</span>
+
+<span class="c1"># Blockstream&#39;s Liquid Asset Registry (https://assets.blockstream.info/) can be used to register an asset to an issuer.</span>
+<span class="c1"># We already have the required data and have formatted the contract plain text into a format that we can use for this.</span>
+
+<span class="c1"># Write the domain and asset ownership proof to a file. The file should then be placed over the entire lifecycle of</span>
+<span class="c1"># the asset in a directory within the root of your domain named &quot;.well-known&quot;</span>
+<span class="c1"># The file should have no extension and just copied as it is created.</span>
+
+<span class="nb">echo</span> <span class="s2">&quot;Authorize linking the domain name </span><span class="nv">$DOMAIN</span><span class="s2"> to the Liquid asset </span><span class="nv">$ASSET</span><span class="s2">&quot;</span> &gt; liquid-asset-proof-<span class="nv">$ASSET</span>
+
+<span class="c1"># After you have placed the above file without your domain you can run the register_asset.sh script created below to post the asset data to the registry.</span>
+
+<span class="nb">echo</span> <span class="s2">&quot;curl https://assets.blockstream.info/ --data-raw &#39;{\&quot;asset_id\&quot;:\&quot;</span><span class="nv">$ASSET</span><span class="s2">\&quot;,\&quot;contract\&quot;:</span><span class="nv">$CONTRACT</span><span class="s2">}&#39;&quot;</span> &gt; register_asset.sh
+
+<span class="c1"># For reference, write some asset details. These are not needed by the asset registry.</span>
+
+<span class="nb">echo</span> <span class="s2">&quot;ISSUETX:</span><span class="nv">$ISSUETX</span><span class="s2"> ASSET:</span><span class="nv">$ASSET</span><span class="s2"> ENTROPY:</span><span class="nv">$ENTROPY</span><span class="s2"> TOKEN:</span><span class="nv">$TOKEN</span><span class="s2"> ASSET_AMOUNT:</span><span class="nv">$ASSET_AMOUNT</span><span class="s2"> TOKEN_AMOUNT:</span><span class="nv">$TOKEN_AMOUNT</span><span class="s2"> ASSET_ADDR:</span><span class="nv">$ASSET_ADDR</span><span class="s2"> TOKEN_ADDR:</span><span class="nv">$TOKEN_ADDR</span><span class="s2"> CONTRACT_HASH_REV:</span><span class="nv">$CONTRACT_HASH_REV</span><span class="s2">&quot;</span> &gt; liquid-asset-ref-<span class="nv">$ASSET</span>
+
+<span class="c1">##################################################################</span>
+
+<span class="nb">echo</span> <span class="s2">&quot;Completed without error&quot;</span>
+</pre></div>
+</div>
+<p>When you have saved the above to the file, edit the variables at the top and of the file and start elements-qt or elementsd using an argument of <code class="docutils literal notranslate"><span class="pre">-server=1</span></code> to allow the Liquid client to communicate with it. Execute the script from the directory you created it in by opening a Terminal session and running:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bash issue_and_prepare_register.sh
+</pre></div>
+</div>
+<p>In order to register the asset just created:</p>
+<ul class="simple">
+<li><p>Wait a couple of minutes for the issuance transaction to confirm.</p></li>
+<li><p>Place the ‘liquid-asset-proof-‘ file in a folder named ‘.well-known’ in the root of your domain. <strong>This proof should be stored there over the entire lifecycle of the asset.</strong></p></li>
+<li><p>Run the ‘register_asset.sh’ script.</p></li>
+</ul>
+<p>For example, if your domain was www.your-example-domain-here.com and the asset id generated was 123abc (it will of course be much longer) then the file generated would be named:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>liquid-asset-proof-123abc
+</pre></div>
+</div>
+<p>The domain variable in the code above would be set to:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>your-example-domain-here.com
+</pre></div>
+</div>
+<p>So the path used to check asset to domain registry would end up being:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>www.your-example-domain-here.com/.well-known/liquid-asset-proof-123abc
+</pre></div>
+</div>
+<p>Once that file is accessible you can then run the ‘register_asset.sh’ script and, when the required checks against the domain and issuance transaction have been made, the registration will be found on Blockstream’s <a class="reference external" href="https://assets.blockstream.info">Liquid Asset Registry</a>.</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Randy McMillan
+      <span class="lastupdated">
+        Last updated on Nov 02, 2020.
+      </span>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

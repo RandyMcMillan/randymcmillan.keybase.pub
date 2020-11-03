@@ -1,0 +1,419 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Bitcoin v Liquid Transaction Format &mdash; R A N D Y M c M I L L A N</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> 
+          
+
+          
+            
+            <img src="../../_static/blks_logo_transparent.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Blockstream Green</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../green/getting-started/getting-started-index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../green/liquid/liquid-index.html">Liquid Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../green/hww.html">Hardware Wallets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../green/troubleshooting-advanced/troubleshooting-advanced-index.html">Troubleshooting and Advanced Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../green/support.html">Support</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Liquid Network</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../technical_overview.html">Technical Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Liquid Node Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../node_setup.html">Liquid Node Setup (Advanced)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer-guide/developer-guide-index.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../app-examples/app-examples-index.html">App Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="general-developer-info-index.html">General Developer Info</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acquire_lbtc.html">How To Acquire L-BTC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../swap_tool.html">Liquid Swap Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../additional_resources.html">Additional Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">FAQ</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contribute</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/contributing.html">Contributing to Blockstream Docs</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../developer-documentation.html">c-lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer-documentation.html#esplora">Esplora</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer-documentation.html#libwally">Libwally</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer-documentation.html#gdk">GDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer-documentation.html#elements">Elements</a></li>
+</ul>
+<p class="caption"><span class="caption-text">PGP</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../randymcmillan-asc.html">randymcmillan.asc</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html"></a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Bitcoin v Liquid Transaction Format</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="bitcoin-v-liquid-transaction-format">
+<h1>Bitcoin v Liquid Transaction Format<a class="headerlink" href="#bitcoin-v-liquid-transaction-format" title="Permalink to this headline">¶</a></h1>
+<p>As Liquid is built on top of the Bitcoin codebase, the format of the transaction is similiar in many ways, but it does contain some extra sections and slight differences in the way some data is returned.</p>
+<p>The examples below show a transaction within the calling node’s wallet (using gettransaction) and a transaction that is not in the node’s wallet (using decoderawtransaction). Peg-out transaction properties are show later for reference.</p>
+<div class="section" id="returned-data-from-gettransaction">
+<h2>Returned data from gettransaction<a class="headerlink" href="#returned-data-from-gettransaction" title="Permalink to this headline">¶</a></h2>
+<p>The results of calling gettransaction returns something similar to that below. Differences between a Liquid and Bitcoin call to gettransaction have been highlighted and explained.</p>
+<p>The amount is a data object in Liquid which shows the amount of each asset held. In Bitcoin this is just a simple property and value pair:</p>
+<p>Liquid</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">{</span>
+  <span class="s2">&quot;amount&quot;</span>: <span class="o">{</span>
+    <span class="s2">&quot;bitcoin&quot;</span>: <span class="m">0</span>.00000000
+  <span class="o">}</span>,
+</pre></div>
+</div>
+<p>Bitcoin</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">{</span>
+  <span class="s2">&quot;amount&quot;</span>: <span class="m">0</span>.00000000,
+</pre></div>
+</div>
+<p>The fee amount is a data object in Liquid which shows the amount of the asset used to pay fees. In Bitcoin this is just a simple property and value pair:</p>
+<p>Liquid</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;fee&quot;</span>: <span class="o">{</span>
+  <span class="s2">&quot;bitcoin&quot;</span>: -0.00043100
+<span class="o">}</span>,
+</pre></div>
+</div>
+<p>Bitcoin</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;fee&quot;</span>: -0.00003740,
+</pre></div>
+</div>
+<p>Bitcoin &amp; Liquid</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;confirmations&quot;</span>: <span class="m">101</span>,
+<span class="s2">&quot;blockhash&quot;</span>: <span class="s2">&quot;7ebd6c337a0f414f22d0246aa7ec7feb3742030b2ab9fdb660120b717dedaf94&quot;</span>,
+<span class="s2">&quot;blockindex&quot;</span>: <span class="m">1</span>,
+<span class="s2">&quot;blocktime&quot;</span>: <span class="m">1554811774</span>,
+<span class="s2">&quot;txid&quot;</span>: <span class="s2">&quot;5fa4ef7898eb704dbaea16634ab68302826c42198c9a5f9ff3e60622f83aac90&quot;</span>,
+<span class="s2">&quot;walletconflicts&quot;</span>: <span class="o">[]</span>,
+<span class="s2">&quot;time&quot;</span>: <span class="m">1554811735</span>,
+<span class="s2">&quot;timereceived&quot;</span>: <span class="m">1554811735</span>,
+<span class="s2">&quot;bip125-replaceable&quot;</span>: <span class="s2">&quot;no&quot;</span>,
+<span class="s2">&quot;details&quot;</span>: <span class="o">[</span>
+  <span class="o">{</span>
+    <span class="s2">&quot;address&quot;</span>: <span class="s2">&quot;2NGSJetH6NMAMimt3MBUWe4Eb9zetevw2Tt&quot;</span>,
+    <span class="s2">&quot;category&quot;</span>: <span class="s2">&quot;send&quot;</span>,
+    <span class="s2">&quot;amount&quot;</span>: -1.00000000,
+</pre></div>
+</div>
+<p>There are fields in Liquid showing the asset being transacted along with the amount and asset blinders (when applicable):</p>
+<p>Liquid</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;amountblinder&quot;</span>: <span class="s2">&quot;07284ca3100c24a2e3bc0483ade3a462468074b7b207375ccfb0f27846c99ea2&quot;</span>,
+<span class="s2">&quot;asset&quot;</span>: <span class="s2">&quot;b2e15d0d7a0c94e4e2ce0fe6e8691b9e451377f6e46e8045a86f7c4b5d4f0f23&quot;</span>,
+<span class="s2">&quot;assetblinder&quot;</span>: <span class="s2">&quot;846663fc5318aa9ea602449c8d598c9cd43459c0056971eff44fba464d89b328&quot;</span>,
+</pre></div>
+</div>
+<p>Bitcoin &amp; Liquid</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>  <span class="s2">&quot;label&quot;</span>: <span class="s2">&quot;&quot;</span>,
+  <span class="s2">&quot;vout&quot;</span>: <span class="m">0</span>,
+  <span class="s2">&quot;fee&quot;</span>: <span class="m">0</span>.00043100,
+  <span class="s2">&quot;abandoned&quot;</span>: <span class="nb">false</span>
+<span class="o">}</span>,
+<span class="o">{</span>
+  <span class="s2">&quot;address&quot;</span>: <span class="s2">&quot;2NGSJetH6NMAMimt3MBUWe4Eb9zetevw2Tt&quot;</span>,
+  <span class="s2">&quot;category&quot;</span>: <span class="s2">&quot;receive&quot;</span>,
+  <span class="s2">&quot;amount&quot;</span>: <span class="m">1</span>.00000000,
+</pre></div>
+</div>
+<p>Liquid shows the asset being transacted along with the amount and asset blinders (when applicable):</p>
+<p>Liquid</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;amountblinder&quot;</span>: <span class="s2">&quot;07284ca3100c24a2e3bc0483ade3a462468074b7b207375ccfb0f27846c99ea2&quot;</span>,
+<span class="s2">&quot;asset&quot;</span>: <span class="s2">&quot;b2e15d0d7a0c94e4e2ce0fe6e8691b9e451377f6e46e8045a86f7c4b5d4f0f23&quot;</span>,
+<span class="s2">&quot;assetblinder&quot;</span>: <span class="s2">&quot;846663fc5318aa9ea602449c8d598c9cd43459c0056971eff44fba464d89b328&quot;</span>,
+</pre></div>
+</div>
+<p>Bitcoin &amp; Liquid</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>    <span class="s2">&quot;label&quot;</span>: <span class="s2">&quot;&quot;</span>,
+    <span class="s2">&quot;vout&quot;</span>: <span class="m">0</span>
+  <span class="o">}</span>
+<span class="o">]</span>,
+<span class="s2">&quot;hex&quot;</span>: <span class="s2">&quot;0200000001…</span>
+<span class="s2">&lt;continues&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="returned-data-from-decoderawtransaction">
+<h2>Returned data from decoderawtransaction<a class="headerlink" href="#returned-data-from-decoderawtransaction" title="Permalink to this headline">¶</a></h2>
+<p>The results of calling decoderawtransaction returns something similar to that below. Differences between a Liquid and Bitcoin call to gettransaction have been highlighted and explained.</p>
+<p>Bitcoin &amp; Liquid</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">{</span>
+  <span class="s2">&quot;txid&quot;</span>: <span class="s2">&quot;5fa4ef7898eb704dbaea16634ab68302826c42198c9a5f9ff3e60622f83aac90&quot;</span>,
+  <span class="s2">&quot;hash&quot;</span>: <span class="s2">&quot;6d5f1b8965db82ef37a6ec7381de4a09f0369a3ec3ac236d17384738974232b2&quot;</span>,
+  <span class="s2">&quot;wtxid&quot;</span>: <span class="s2">&quot;6d5f1b8965db82ef37a6ec7381de4a09f0369a3ec3ac236d17384738974232b2&quot;</span>,
+  <span class="s2">&quot;withash&quot;</span>: <span class="s2">&quot;95151cf350baf2c99c0ff36e1f4110989b1f33e0d32d8c302c95ad5ecd79e8a2&quot;</span>,
+  <span class="s2">&quot;version&quot;</span>: <span class="m">2</span>,
+  <span class="s2">&quot;size&quot;</span>: <span class="m">7525</span>,
+  <span class="s2">&quot;vsize&quot;</span>: <span class="m">2155</span>,
+  <span class="s2">&quot;weight&quot;</span>: <span class="m">8620</span>,
+  <span class="s2">&quot;locktime&quot;</span>: <span class="m">303</span>,
+  <span class="s2">&quot;vin&quot;</span>: <span class="o">[</span>
+    <span class="o">{</span>
+      <span class="s2">&quot;txid&quot;</span>: <span class="s2">&quot;956e34fb9ace5709183e8bed4555c5d701781735633cfa17e9c1c68fb2462ee1&quot;</span>,
+      <span class="s2">&quot;vout&quot;</span>: <span class="m">0</span>,
+      <span class="s2">&quot;scriptSig&quot;</span>: <span class="o">{</span>
+      <span class="s2">&quot;asm&quot;</span>: <span class="s2">&quot;00144e4f612e206ec2a27cd0818630bb3304526cc56a&quot;</span>,
+      <span class="s2">&quot;hex&quot;</span>: <span class="s2">&quot;1600144e4f612e206ec2a27cd0818630bb3304526cc56a&quot;</span>
+    <span class="o">}</span>,
+</pre></div>
+</div>
+<p>The ‘is_pegin’ field in Liquid denotes if the transaction was a peg-in transaction:</p>
+<p>Liquid</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;is_pegin&quot;</span>: false,
+</pre></div>
+</div>
+<p>Bitcoin &amp; Liquid</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>  <span class="s2">&quot;sequence&quot;</span>: <span class="m">4294967293</span>,
+  <span class="s2">&quot;txinwitness&quot;</span>: <span class="o">[</span>
+    <span class="s2">&quot;304402201da54cfd...&lt;continues&gt;&quot;</span>,
+    <span class="s2">&quot;039c1a8daee141ef32399e3dab9e04bd9c4239342577e94e9e58b644c8dc58ba98&quot;</span><span class="o">]</span>
+  <span class="o">}]</span>,
+<span class="s2">&quot;vout&quot;</span>: <span class="o">[</span>
+  <span class="o">{</span>
+</pre></div>
+</div>
+<p>Some additional fields in Liquid are linked to the use of Confidential Transactions. For each vout:</p>
+<p>Liquid</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;value-minimum&quot;</span>: <span class="m">0</span>.00000001,
+<span class="s2">&quot;value-maximum&quot;</span>: <span class="m">687</span>.19476736,
+<span class="s2">&quot;ct-exponent&quot;</span>: <span class="m">0</span>,
+<span class="s2">&quot;ct-bits&quot;</span>: <span class="m">36</span>,
+<span class="s2">&quot;valuecommitment&quot;</span>: <span class="s2">&quot;0844778d24db8b3454924e3b77d2aa00b4bd57bc20cb852a65238a336b93db7ac6&quot;</span>,
+<span class="s2">&quot;assetcommitment&quot;</span>: <span class="s2">&quot;0b96a62e05fcf65a50ad58643a603f21bb033172336c653840accbae54e9fe7dd7&quot;</span>,
+<span class="s2">&quot;commitmentnonce&quot;</span>: <span class="s2">&quot;02acc6606bdd8c65bdaeadf1eefec726d0d3b777586922b6255c557bb8e43ac946&quot;</span>,
+<span class="s2">&quot;commitmentnonce_fully_valid&quot;</span>: true,
+</pre></div>
+</div>
+<p>Whereas Bitcoin uses the ‘value’ field:</p>
+<p>Bitcoin</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;value&quot;</span>: <span class="m">48</span>.99996260,
+</pre></div>
+</div>
+<p>Bitcoin &amp; Liquid</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>  <span class="s2">&quot;n&quot;</span>: <span class="m">0</span>,
+  <span class="s2">&quot;scriptPubKey&quot;</span>: <span class="o">{</span>
+  <span class="s2">&quot;asm&quot;</span>: <span class="s2">&quot;OP_HASH160 fe635cfa8bb86040c3871d7e973e7e155583f7f9 OP_EQUAL&quot;</span>,
+  <span class="s2">&quot;hex&quot;</span>: <span class="s2">&quot;a914fe635cfa8bb86040c3871d7e973e7e155583f7f987&quot;</span>,
+  <span class="s2">&quot;reqSigs&quot;</span>: <span class="m">1</span>,
+  <span class="s2">&quot;type&quot;</span>: <span class="s2">&quot;scripthash&quot;</span>,
+  <span class="s2">&quot;addresses&quot;</span>: <span class="o">[</span>
+    <span class="s2">&quot;2NGSJetH6NMAMimt3MBUWe4Eb9zetevw2Tt&quot;</span>
+  <span class="o">]</span>
+  <span class="o">}</span>
+<span class="o">}</span>,
+</pre></div>
+</div>
+<p>The fee in Liquid is explicitly stated as a vout and is not derived from deducting the vout total from the vin total as in Bitcoin:</p>
+<p>Liquid</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">{</span>
+  <span class="s2">&quot;value&quot;</span>: <span class="m">0</span>.00043100,
+  <span class="s2">&quot;asset&quot;</span>: <span class="s2">&quot;b2e15d0d7a0c94e4e2ce0fe6e8691b9e451377f6e46e8045a86f7c4b5d4f0f23&quot;</span>,
+  <span class="s2">&quot;commitmentnonce&quot;</span>: <span class="s2">&quot;&quot;</span>,
+  <span class="s2">&quot;commitmentnonce_fully_valid&quot;</span>: false,
+  <span class="s2">&quot;n&quot;</span>: <span class="m">2</span>,
+  <span class="s2">&quot;scriptPubKey&quot;</span>: <span class="o">{</span>
+  <span class="s2">&quot;asm&quot;</span>: <span class="s2">&quot;&quot;</span>,
+  <span class="s2">&quot;hex&quot;</span>: <span class="s2">&quot;&quot;</span>,
+  <span class="s2">&quot;type&quot;</span>: <span class="s2">&quot;fee&quot;</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="peg-out-data">
+<h2>Peg-out data<a class="headerlink" href="#peg-out-data" title="Permalink to this headline">¶</a></h2>
+<p>In a Peg-out transaction, an addition set of fields will be included in the vout section:</p>
+<p>Liquid</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;pegout_chain&quot;</span>: <span class="s2">&quot;000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f&quot;</span>,
+<span class="s2">&quot;pegout_asm&quot;</span>: <span class="s2">&quot;OP_DUP OP_HASH160 bd3432857da35ae7c93a05c911208aad0d6fa695 OP_EQUALVERIFY OP_CHECKSIG&quot;</span>,
+<span class="s2">&quot;pegout_hex&quot;</span>: <span class="s2">&quot;76a914bd3432857da35ae7c93a05c911208aad0d6fa69588ac&quot;</span>,
+<span class="s2">&quot;pegout_reqSigs&quot;</span>: <span class="m">1</span>,
+<span class="s2">&quot;pegout_type&quot;</span>: <span class="s2">&quot;pubkeyhash&quot;</span>,
+<span class="s2">&quot;pegout_addresses&quot;</span>: <span class="o">[</span>
+  <span class="s2">&quot;1JFREzVxcivkeRQpngZ9ERYaoFuSP9o3vG&quot;</span>
+<span class="o">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Randy McMillan
+      <span class="lastupdated">
+        Last updated on Nov 02, 2020.
+      </span>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

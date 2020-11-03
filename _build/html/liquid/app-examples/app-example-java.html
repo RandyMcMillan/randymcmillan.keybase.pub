@@ -1,0 +1,298 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Java &mdash; R A N D Y M c M I L L A N</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> 
+          
+
+          
+            
+            <img src="../../_static/blks_logo_transparent.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Blockstream Green</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../green/getting-started/getting-started-index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../green/liquid/liquid-index.html">Liquid Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../green/hww.html">Hardware Wallets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../green/troubleshooting-advanced/troubleshooting-advanced-index.html">Troubleshooting and Advanced Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../green/support.html">Support</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Liquid Network</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../technical_overview.html">Technical Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Liquid Node Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../node_setup.html">Liquid Node Setup (Advanced)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer-guide/developer-guide-index.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="app-examples-index.html">App Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general-developer-info/general-developer-info-index.html">General Developer Info</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acquire_lbtc.html">How To Acquire L-BTC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../swap_tool.html">Liquid Swap Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../additional_resources.html">Additional Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">FAQ</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contribute</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/contributing.html">Contributing to Blockstream Docs</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../developer-documentation.html">c-lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer-documentation.html#esplora">Esplora</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer-documentation.html#libwally">Libwally</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer-documentation.html#gdk">GDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer-documentation.html#elements">Elements</a></li>
+</ul>
+<p class="caption"><span class="caption-text">PGP</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../randymcmillan-asc.html">randymcmillan.asc</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html"></a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Java</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="java">
+<h1>Java<a class="headerlink" href="#java" title="Permalink to this headline">¶</a></h1>
+<p>In this example we will be using Java to make a Remote Procedure Call (RPC) to the Liquid daemon, which you will need to start using the config file settings <a class="reference internal" href="app-examples-index.html#config"><span class="std std-ref">outlined above</span></a>.</p>
+<p>Our aim is simply to make a call to Liquid using RPC by executing some basic Java code.</p>
+<p>The example code doesn’t require any external dependencies, but you do need the Java compiler (javac) as well as the Java runtime environment itself. These can be installed on Ubuntu using the command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt install default-jdk
+</pre></div>
+</div>
+<p>Create a new file named “liquidrpcjava.java” and paste the code below into it:</p>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">java.io.BufferedReader</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.io.InputStreamReader</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.io.OutputStream</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.net.HttpURLConnection</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.net.URL</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.net.Authenticator</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.net.PasswordAuthentication</span><span class="p">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">liquidrpcjava</span> <span class="p">{</span>
+
+        <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span> <span class="p">(</span><span class="n">String</span> <span class="o">[]</span><span class="n">args</span><span class="p">)</span> <span class="kd">throws</span> <span class="n">IOException</span><span class="p">{</span>
+                <span class="n">URL</span> <span class="n">url</span> <span class="o">=</span> <span class="k">new</span> <span class="n">URL</span> <span class="p">(</span><span class="s">&quot;http://127.0.0.1:18884&quot;</span><span class="p">);</span>
+                <span class="n">String</span> <span class="n">rpcuser</span> <span class="o">=</span><span class="s">&quot;user1&quot;</span><span class="p">;</span>
+                <span class="n">String</span> <span class="n">rpcpassword</span> <span class="o">=</span><span class="s">&quot;password1&quot;</span><span class="p">;</span>
+
+                <span class="n">Authenticator</span><span class="p">.</span><span class="na">setDefault</span><span class="p">(</span><span class="k">new</span> <span class="n">Authenticator</span><span class="p">()</span> <span class="p">{</span>
+            <span class="kd">protected</span> <span class="n">PasswordAuthentication</span> <span class="nf">getPasswordAuthentication</span><span class="p">()</span> <span class="p">{</span>
+                <span class="k">return</span> <span class="k">new</span> <span class="n">PasswordAuthentication</span> <span class="p">(</span><span class="n">rpcuser</span><span class="p">,</span> <span class="n">rpcpassword</span><span class="p">.</span><span class="na">toCharArray</span><span class="p">());</span>
+            <span class="p">}</span>
+        <span class="p">});</span>
+
+                <span class="n">HttpURLConnection</span> <span class="n">conn</span> <span class="o">=</span> <span class="p">(</span><span class="n">HttpURLConnection</span><span class="p">)</span><span class="n">url</span><span class="p">.</span><span class="na">openConnection</span><span class="p">();</span>
+                <span class="n">conn</span><span class="p">.</span><span class="na">setRequestMethod</span><span class="p">(</span><span class="s">&quot;POST&quot;</span><span class="p">);</span>
+                <span class="n">conn</span><span class="p">.</span><span class="na">setRequestProperty</span><span class="p">(</span><span class="s">&quot;Content-Type&quot;</span><span class="p">,</span> <span class="s">&quot;application/json; utf-8&quot;</span><span class="p">);</span>
+                <span class="n">conn</span><span class="p">.</span><span class="na">setRequestProperty</span><span class="p">(</span><span class="s">&quot;Accept&quot;</span><span class="p">,</span> <span class="s">&quot;application/json&quot;</span><span class="p">);</span>
+                <span class="n">conn</span><span class="p">.</span><span class="na">setDoOutput</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+
+                <span class="n">String</span> <span class="n">json</span> <span class="o">=</span> <span class="s">&quot;{\&quot;method\&quot;: \&quot;getwalletinfo\&quot;, \&quot;jsonrpc\&quot;: \&quot;2.0\&quot;}&quot;</span><span class="p">;</span>
+
+                <span class="k">try</span><span class="p">(</span><span class="n">OutputStream</span> <span class="n">os</span> <span class="o">=</span> <span class="n">conn</span><span class="p">.</span><span class="na">getOutputStream</span><span class="p">()){</span>
+                        <span class="kt">byte</span><span class="o">[]</span> <span class="n">input</span> <span class="o">=</span> <span class="n">json</span><span class="p">.</span><span class="na">getBytes</span><span class="p">(</span><span class="s">&quot;utf-8&quot;</span><span class="p">);</span>
+                        <span class="n">os</span><span class="p">.</span><span class="na">write</span><span class="p">(</span><span class="n">input</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">input</span><span class="p">.</span><span class="na">length</span><span class="p">);</span>
+                <span class="p">}</span>
+
+                <span class="k">try</span><span class="p">(</span><span class="n">BufferedReader</span> <span class="n">br</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BufferedReader</span><span class="p">(</span><span class="k">new</span> <span class="n">InputStreamReader</span><span class="p">(</span><span class="n">conn</span><span class="p">.</span><span class="na">getInputStream</span><span class="p">(),</span> <span class="s">&quot;utf-8&quot;</span><span class="p">))){</span>
+                        <span class="n">StringBuilder</span> <span class="n">sb</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringBuilder</span><span class="p">();</span>
+                        <span class="n">String</span> <span class="n">line</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+
+                        <span class="k">while</span> <span class="p">((</span><span class="n">line</span> <span class="o">=</span> <span class="n">br</span><span class="p">.</span><span class="na">readLine</span><span class="p">())</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+                                <span class="n">sb</span><span class="p">.</span><span class="na">append</span><span class="p">(</span><span class="n">line</span><span class="p">.</span><span class="na">trim</span><span class="p">());</span>
+                        <span class="p">}</span>
+
+                        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">sb</span><span class="p">.</span><span class="na">toString</span><span class="p">());</span>
+                <span class="p">}</span>
+        <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Compile and run the code from the command line:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>javac liquidrpcjava.java
+java liquidrpcjava
+</pre></div>
+</div>
+<p>The output will show wallet information.</p>
+<p>You now have a functioning setup which you can use as a building block for further development.</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Randy McMillan
+      <span class="lastupdated">
+        Last updated on Nov 02, 2020.
+      </span>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

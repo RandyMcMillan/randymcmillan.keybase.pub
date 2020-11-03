@@ -1,0 +1,280 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Ruby &mdash; R A N D Y M c M I L L A N</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> 
+          
+
+          
+            
+            <img src="../../_static/blks_logo_transparent.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Blockstream Green</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../green/getting-started/getting-started-index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../green/liquid/liquid-index.html">Liquid Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../green/hww.html">Hardware Wallets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../green/troubleshooting-advanced/troubleshooting-advanced-index.html">Troubleshooting and Advanced Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../green/support.html">Support</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Liquid Network</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../technical_overview.html">Technical Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Liquid Node Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../node_setup.html">Liquid Node Setup (Advanced)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer-guide/developer-guide-index.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="app-examples-index.html">App Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general-developer-info/general-developer-info-index.html">General Developer Info</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acquire_lbtc.html">How To Acquire L-BTC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../swap_tool.html">Liquid Swap Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../additional_resources.html">Additional Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">FAQ</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contribute</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/contributing.html">Contributing to Blockstream Docs</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../developer-documentation.html">c-lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer-documentation.html#esplora">Esplora</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer-documentation.html#libwally">Libwally</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer-documentation.html#gdk">GDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer-documentation.html#elements">Elements</a></li>
+</ul>
+<p class="caption"><span class="caption-text">PGP</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../randymcmillan-asc.html">randymcmillan.asc</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html"></a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Ruby</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="ruby">
+<h1>Ruby<a class="headerlink" href="#ruby" title="Permalink to this headline">¶</a></h1>
+<p>In this example we will be using Ruby to make a Remote Procedure Call (RPC) to the Liquid daemon, which you will need to start using the config file settings <a class="reference internal" href="app-examples-index.html#config"><span class="std std-ref">outlined above</span></a>.</p>
+<p>Our aim is simply to make a call to Liquid using RPC by executing some basic Ruby code.</p>
+<p>You can check if Ruby is installed on your operating system, and install it if not, by following the steps on the <a class="reference external" href="https://www.ruby-lang.org/en/documentation/installation/">Ruby language website</a>.</p>
+<p>Create a new file named “liquidrpcruby.rb” and paste the code below into it:</p>
+<div class="highlight-Ruby notranslate"><div class="highlight"><pre><span></span><span class="nb">require</span> <span class="s1">&#39;net/http&#39;</span>
+<span class="nb">require</span> <span class="s1">&#39;uri&#39;</span>
+<span class="nb">require</span> <span class="s1">&#39;json&#39;</span>
+
+<span class="k">class</span> <span class="nc">LiquidRPC</span>
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">service_url</span><span class="p">)</span>
+    <span class="vi">@uri</span> <span class="o">=</span> <span class="no">URI</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">service_url</span><span class="p">)</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">method_missing</span><span class="p">(</span><span class="nb">name</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">)</span>
+    <span class="n">post_body</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">&#39;method&#39;</span> <span class="o">=&gt;</span> <span class="nb">name</span><span class="p">,</span> <span class="s1">&#39;params&#39;</span> <span class="o">=&gt;</span> <span class="n">args</span><span class="p">,</span> <span class="s1">&#39;id&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;jsonrpc&#39;</span> <span class="p">}</span><span class="o">.</span><span class="n">to_json</span>
+    <span class="n">resp</span> <span class="o">=</span> <span class="no">JSON</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span> <span class="n">http_post_request</span><span class="p">(</span><span class="n">post_body</span><span class="p">)</span> <span class="p">)</span>
+    <span class="k">raise</span> <span class="no">JSONRPCError</span><span class="p">,</span> <span class="n">resp</span><span class="o">[</span><span class="s1">&#39;error&#39;</span><span class="o">]</span> <span class="k">if</span> <span class="n">resp</span><span class="o">[</span><span class="s1">&#39;error&#39;</span><span class="o">]</span>
+    <span class="n">resp</span><span class="o">[</span><span class="s1">&#39;result&#39;</span><span class="o">]</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">http_post_request</span><span class="p">(</span><span class="n">post_body</span><span class="p">)</span>
+    <span class="n">http</span>    <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="vi">@uri</span><span class="o">.</span><span class="n">host</span><span class="p">,</span> <span class="vi">@uri</span><span class="o">.</span><span class="n">port</span><span class="p">)</span>
+    <span class="n">request</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Post</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="vi">@uri</span><span class="o">.</span><span class="n">request_uri</span><span class="p">)</span>
+    <span class="n">request</span><span class="o">.</span><span class="n">basic_auth</span> <span class="vi">@uri</span><span class="o">.</span><span class="n">user</span><span class="p">,</span> <span class="vi">@uri</span><span class="o">.</span><span class="n">password</span>
+    <span class="n">request</span><span class="o">.</span><span class="n">content_type</span> <span class="o">=</span> <span class="s1">&#39;application/json&#39;</span>
+    <span class="n">request</span><span class="o">.</span><span class="n">body</span> <span class="o">=</span> <span class="n">post_body</span>
+    <span class="n">http</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span><span class="o">.</span><span class="n">body</span>
+  <span class="k">end</span>
+
+  <span class="k">class</span> <span class="nc">JSONRPCError</span> <span class="o">&lt;</span> <span class="no">RuntimeError</span><span class="p">;</span> <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">if</span> <span class="vg">$0</span> <span class="o">==</span> <span class="bp">__FILE__</span>
+  <span class="n">liquid</span> <span class="o">=</span> <span class="no">LiquidRPC</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s1">&#39;http://user1:password1@127.0.0.1:18884&#39;</span><span class="p">)</span>
+
+  <span class="nb">p</span> <span class="n">liquid</span><span class="o">.</span><span class="n">getblockcount</span>
+<span class="k">end</span>
+</pre></div>
+</div>
+<p>Execute the code from the command line:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ruby liquidrpcruby.rb
+</pre></div>
+</div>
+<p>The output will show the current block count.</p>
+<p>You now have a functioning setup which you can use as a building block for further development.</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Randy McMillan
+      <span class="lastupdated">
+        Last updated on Nov 02, 2020.
+      </span>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

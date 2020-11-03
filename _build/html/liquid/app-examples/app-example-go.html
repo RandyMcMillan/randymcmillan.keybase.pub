@@ -1,0 +1,291 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Go &mdash; R A N D Y M c M I L L A N</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> 
+          
+
+          
+            
+            <img src="../../_static/blks_logo_transparent.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Blockstream Green</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../green/getting-started/getting-started-index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../green/liquid/liquid-index.html">Liquid Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../green/hww.html">Hardware Wallets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../green/troubleshooting-advanced/troubleshooting-advanced-index.html">Troubleshooting and Advanced Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../green/support.html">Support</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Liquid Network</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../technical_overview.html">Technical Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Liquid Node Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../node_setup.html">Liquid Node Setup (Advanced)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer-guide/developer-guide-index.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="app-examples-index.html">App Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general-developer-info/general-developer-info-index.html">General Developer Info</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acquire_lbtc.html">How To Acquire L-BTC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../swap_tool.html">Liquid Swap Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../additional_resources.html">Additional Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">FAQ</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contribute</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/contributing.html">Contributing to Blockstream Docs</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../developer-documentation.html">c-lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer-documentation.html#esplora">Esplora</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer-documentation.html#libwally">Libwally</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer-documentation.html#gdk">GDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer-documentation.html#elements">Elements</a></li>
+</ul>
+<p class="caption"><span class="caption-text">PGP</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../randymcmillan-asc.html">randymcmillan.asc</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html"></a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Go</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="go">
+<h1>Go<a class="headerlink" href="#go" title="Permalink to this headline">¶</a></h1>
+<p>In this example we will be using Go to make a Remote Procedure Call (RPC) to the Liquid daemon, which you will need to start using the config file settings <a class="reference internal" href="app-examples-index.html#config"><span class="std std-ref">outlined above</span></a>.</p>
+<p>Our aim is simply to make a call to Liquid using RPC by executing some basic Go code.</p>
+<p>To install Go: <a class="reference external" href="https://golang.org">https://golang.org</a>. Note the importance of setting the PATH environment variable.</p>
+<p>Create a directory src/liquid inside your Go workspace directory (probably %HOME/go) so that the full path is: $HOME/go/src/liquid</p>
+<p>With that directory create a file named “liquidrpcgo.go” and past the following into it:</p>
+<div class="highlight-Go notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nx">main</span>
+
+<span class="kn">import</span> <span class="p">(</span>
+    <span class="s">&quot;log&quot;</span>
+    <span class="s">&quot;bytes&quot;</span>
+    <span class="s">&quot;net/http&quot;</span>
+    <span class="s">&quot;io/ioutil&quot;</span>
+    <span class="s">&quot;encoding/json&quot;</span>
+<span class="p">)</span>
+
+<span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">url</span> <span class="o">:=</span> <span class="s">&quot;http://user1:password1@localhost:18884&quot;</span>
+
+    <span class="kd">var</span> <span class="nx">jsonStr</span> <span class="p">=</span> <span class="p">[]</span><span class="nb">byte</span><span class="p">(</span><span class="s">`{&quot;jsonrpc&quot;:&quot;1.0&quot;,&quot;method&quot;:&quot;getblockcount&quot;,&quot;params&quot;:[]}`</span><span class="p">)</span>
+
+    <span class="nx">request</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">http</span><span class="p">.</span><span class="nx">NewRequest</span><span class="p">(</span><span class="s">&quot;POST&quot;</span><span class="p">,</span> <span class="nx">url</span><span class="p">,</span> <span class="nx">bytes</span><span class="p">.</span><span class="nx">NewBuffer</span><span class="p">(</span><span class="nx">jsonStr</span><span class="p">))</span>
+
+    <span class="nx">request</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nx">Set</span><span class="p">(</span><span class="s">&quot;Content-Type&quot;</span><span class="p">,</span> <span class="s">&quot;application/json&quot;</span><span class="p">)</span>
+
+    <span class="nx">client</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="nx">http</span><span class="p">.</span><span class="nx">Client</span><span class="p">{}</span>
+
+    <span class="nx">response</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">client</span><span class="p">.</span><span class="nx">Do</span><span class="p">(</span><span class="nx">request</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+        <span class="nb">panic</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="k">defer</span> <span class="nx">response</span><span class="p">.</span><span class="nx">Body</span><span class="p">.</span><span class="nx">Close</span><span class="p">()</span>
+
+    <span class="nx">body</span><span class="p">,</span> <span class="nx">_</span> <span class="o">:=</span> <span class="nx">ioutil</span><span class="p">.</span><span class="nx">ReadAll</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">Body</span><span class="p">)</span>
+
+    <span class="nx">log</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nb">string</span><span class="p">(</span><span class="nx">body</span><span class="p">))</span>
+
+    <span class="c1">//Use as JSON...</span>
+    <span class="kd">var</span> <span class="nx">dat</span> <span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kd">interface</span><span class="p">{}</span>
+
+    <span class="k">if</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">json</span><span class="p">.</span><span class="nx">Unmarshal</span><span class="p">(</span><span class="nx">body</span><span class="p">,</span> <span class="o">&amp;</span><span class="nx">dat</span><span class="p">);</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+        <span class="nb">panic</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="nx">blocks</span> <span class="o">:=</span> <span class="nx">dat</span><span class="p">[</span><span class="s">&quot;result&quot;</span><span class="p">].(</span><span class="kt">float64</span><span class="p">)</span>
+    <span class="nx">log</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">blocks</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Compile and run the code:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>go build
+./liquid
+</pre></div>
+</div>
+<p>The code prints out the current block count.</p>
+<p>You now have a functioning setup which you can use as a building block for further development.</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Randy McMillan
+      <span class="lastupdated">
+        Last updated on Nov 02, 2020.
+      </span>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

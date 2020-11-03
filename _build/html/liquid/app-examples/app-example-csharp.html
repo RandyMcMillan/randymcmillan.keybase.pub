@@ -1,0 +1,310 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>C# .NET Core &mdash; R A N D Y M c M I L L A N</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> 
+          
+
+          
+            
+            <img src="../../_static/blks_logo_transparent.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Blockstream Green</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../green/getting-started/getting-started-index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../green/liquid/liquid-index.html">Liquid Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../green/hww.html">Hardware Wallets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../green/troubleshooting-advanced/troubleshooting-advanced-index.html">Troubleshooting and Advanced Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../green/support.html">Support</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Liquid Network</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../technical_overview.html">Technical Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Liquid Node Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../node_setup.html">Liquid Node Setup (Advanced)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer-guide/developer-guide-index.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="app-examples-index.html">App Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general-developer-info/general-developer-info-index.html">General Developer Info</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acquire_lbtc.html">How To Acquire L-BTC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../swap_tool.html">Liquid Swap Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../additional_resources.html">Additional Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">FAQ</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contribute</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/contributing.html">Contributing to Blockstream Docs</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../developer-documentation.html">c-lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer-documentation.html#esplora">Esplora</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer-documentation.html#libwally">Libwally</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer-documentation.html#gdk">GDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer-documentation.html#elements">Elements</a></li>
+</ul>
+<p class="caption"><span class="caption-text">PGP</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../randymcmillan-asc.html">randymcmillan.asc</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html"></a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>C# .NET Core</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="c-net-core">
+<h1>C# .NET Core<a class="headerlink" href="#c-net-core" title="Permalink to this headline">¶</a></h1>
+<p>The .NET Core framework runs on Linux, Windows and Mac OS. We will use C#, the most popular .NET language, to make a Remote Procedure Call (RPC) to the Liquid daemon, which you will need to start using the config file settings <a class="reference internal" href="app-examples-index.html#config"><span class="std std-ref">outlined above</span></a>.</p>
+<p>Our aim is simply to make a call to Liquid using RPC by executing some basic C# code.</p>
+<p id="csharp-reqs"><strong>Installing the .NET Core SDK</strong></p>
+<p>You can skip this step if you already have the .NET Core SDK installed. The installation instructions are based upon Linux and will vary depending on which OS you are using.</p>
+<p>Before installing the .NET Core SDK, you’ll need to register the Microsoft key used to validate the required repository, register the product repository itself, and then install the required dependencies.</p>
+<p>Open a command prompt and run the following two commands.</p>
+<p>Note that the command you run after “wget” is dependant on the which distribution of Linux you are running. Please check the .NET SDK <a class="reference external" href="https://dotnet.microsoft.com/download/linux-package-manager/rhel/sdk-current">download page</a> to get the right one. There are only two lines below so note the text wrap. The first starts with “wget”, the second with “sudo”.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget -q packages-microsoft-prod.deb https://packages.microsoft.com/config/ubuntu/16.04/packages-microsoft-prod.deb
+sudo dpkg -i packages-microsoft-prod.deb
+</pre></div>
+</div>
+<p>Now we can install the .NET Core SDK:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt-get install apt-transport-https
+sudo apt-get update
+sudo apt-get install dotnet-sdk-2.1.4
+</pre></div>
+</div>
+<p><strong>Creating the application</strong></p>
+<p>Create a simple template console app:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dotnet new console -o liquiddotnet
+<span class="nb">cd</span> liquiddotnet
+dotnet run
+</pre></div>
+</div>
+<p>That will create a file in $HOME/liquiddotnet called Program.cs, execute the code within and output the following:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Hello World!
+</pre></div>
+</div>
+<p>Edit the Program.cs file in $HOME/liquiddotnet using a text editor, change the contents to the following and then save the file: (note that some of the lines below wrap when viewed in a browser)</p>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Net.Http</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Threading.Tasks</span><span class="p">;</span>
+
+<span class="k">namespace</span> <span class="nn">liquiddotnet</span>
+<span class="p">{</span>
+    <span class="k">class</span> <span class="nc">Program</span>
+    <span class="p">{</span>
+        <span class="k">private</span> <span class="k">static</span> <span class="n">HttpClient</span> <span class="n">client</span> <span class="p">=</span> <span class="k">new</span> <span class="n">HttpClient</span><span class="p">();</span>
+
+        <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">MainAsync</span><span class="p">().</span><span class="n">GetAwaiter</span><span class="p">().</span><span class="n">GetResult</span><span class="p">();</span>
+        <span class="p">}</span>
+
+        <span class="k">private</span> <span class="k">static</span> <span class="k">async</span> <span class="n">Task</span> <span class="nf">MainAsync</span><span class="p">()</span>
+        <span class="p">{</span>
+            <span class="kt">string</span> <span class="n">url</span> <span class="p">=</span> <span class="s">&quot;http://user1:password1@localhost:18884&quot;</span><span class="p">;</span>
+
+            <span class="kt">var</span> <span class="n">contentData</span> <span class="p">=</span> <span class="k">new</span> <span class="n">StringContent</span><span class="p">(</span><span class="s">@&quot;{&quot;&quot;method&quot;&quot;: &quot;&quot;getwalletinfo&quot;&quot;, &quot;&quot;jsonrpc&quot;&quot;: &quot;&quot;2.0&quot;&quot;}&quot;</span><span class="p">,</span> <span class="n">System</span><span class="p">.</span><span class="n">Text</span><span class="p">.</span><span class="n">Encoding</span><span class="p">.</span><span class="n">UTF8</span><span class="p">,</span> <span class="s">&quot;application/json&quot;</span><span class="p">);</span>
+            <span class="k">using</span> <span class="p">(</span><span class="n">HttpResponseMessage</span> <span class="n">response</span> <span class="p">=</span> <span class="k">await</span> <span class="n">client</span><span class="p">.</span><span class="n">PostAsync</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">contentData</span><span class="p">))</span>
+            <span class="k">using</span> <span class="p">(</span><span class="n">HttpContent</span> <span class="n">content</span> <span class="p">=</span> <span class="n">response</span><span class="p">.</span><span class="n">Content</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="kt">string</span> <span class="n">data</span> <span class="p">=</span> <span class="k">await</span> <span class="n">content</span><span class="p">.</span><span class="n">ReadAsStringAsync</span><span class="p">();</span>
+
+                <span class="k">if</span> <span class="p">(</span><span class="k">null</span> <span class="p">!=</span> <span class="n">data</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Running the application</strong></p>
+<p>Before you try running any code, make sure the required daemon is running.</p>
+<p>Move to the the directory with the file in, compile and run the application:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span>
+<span class="nb">cd</span> liquiddotnet
+dotnet run
+</pre></div>
+</div>
+<p>Which outputs the results of the getwalletinfo command.</p>
+<p>As an application would be making multiple calls to the Liquid daemon via RPC you will probably want to move the code that actually does the request and response work into its own function. An example of how to do this is the <a class="reference external" href="https://github.com/wintercooled/dotnetcoreDynamicJSON-RPC">dynamic JSON RPC class</a>, a C# wrapper class intended to enable simple dynamic JSON RPC calls to Bitcoin, Liquid, Elements and other RPC enabled daemons.</p>
+<p>The code above is a starting point to get you up and running and you now have a functioning setup which you can use as a building block for further Liquid development.</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Randy McMillan
+      <span class="lastupdated">
+        Last updated on Nov 02, 2020.
+      </span>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

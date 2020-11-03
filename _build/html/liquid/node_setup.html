@@ -1,0 +1,553 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Liquid Node Setup (Advanced) &mdash; R A N D Y M c M I L L A N</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Developer Guide" href="developer-guide/developer-guide-index.html" />
+    <link rel="prev" title="Liquid Node Quickstart" href="quickstart.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> 
+          
+
+          
+            
+            <img src="../_static/blks_logo_transparent.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Blockstream Green</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../green/getting-started/getting-started-index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../green/liquid/liquid-index.html">Liquid Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../green/hww.html">Hardware Wallets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../green/troubleshooting-advanced/troubleshooting-advanced-index.html">Troubleshooting and Advanced Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../green/support.html">Support</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Liquid Network</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="technical_overview.html">Technical Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Liquid Node Quickstart</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Liquid Node Setup (Advanced)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configuration">Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#bitcoin-conf">bitcoin.conf</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#elements-conf">elements.conf</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#running-your-liquid-node">Running your Liquid Node</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#what-next">What next?</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#enabling-peg-in-validation">Enabling Peg-in Validation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#changes-to-bitcoin-conf">Changes to bitcoin.conf</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#changes-to-elements-conf">Changes to elements.conf</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="developer-guide/developer-guide-index.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="app-examples/app-examples-index.html">App Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="general-developer-info/general-developer-info-index.html">General Developer Info</a></li>
+<li class="toctree-l1"><a class="reference internal" href="acquire_lbtc.html">How To Acquire L-BTC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swap_tool.html">Liquid Swap Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="additional_resources.html">Additional Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="support.html">Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contribute</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../contributing/contributing.html">Contributing to Blockstream Docs</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../developer-documentation.html">c-lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer-documentation.html#esplora">Esplora</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer-documentation.html#libwally">Libwally</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer-documentation.html#gdk">GDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer-documentation.html#elements">Elements</a></li>
+</ul>
+<p class="caption"><span class="caption-text">PGP</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../randymcmillan-asc.html">randymcmillan.asc</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html"></a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Liquid Node Setup (Advanced)</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="liquid-node-setup-advanced">
+<span id="node-setup"></span><h1>Liquid Node Setup (Advanced)<a class="headerlink" href="#liquid-node-setup-advanced" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>Liquid is built using open-source <a class="reference external" href="https://github.com/ElementsProject/elements">Elements</a>
+code. This is why we’ll download the application from the Elements repository, execute
+commands against elementsd (daemon) and elements-cli (client), and edit things like the
+elements.conf config file.</p>
+<p>As the Elements code defaults to using the live Liquid network, we’ll be referring to
+installing and running Liquid, and not Elements, within this guide and throughout the
+<a class="reference external" href="https://docs.blockstream.com">docs.blockstream.com</a> site.</p>
+<p>In this section we will look at how to install and run a full Liquid client node and use
+the configuration file to switch the node between:</p>
+<ul class="simple">
+<li><p>Connecting to the live Liquid network.</p></li>
+<li><p>Running in a local test/development mode (similar to Bitcoin’s “regtest”).</p></li>
+</ul>
+<p>When run against the live Liquid network, our node will be able to connect to other Liquid
+network peers, allowing it to receive, validate and relay transactions and blocks.</p>
+<p>In local test/development mode, our node will start its own copy of a new Liquid
+blockchain. The live and test chains will be stored in different folders on your machine,
+so they will never conflict with each other and the wallets will remain separate. This
+allows us to perform actions like sending funds, issuing assets, and generating blocks
+without fear of losing real funds.</p>
+<p>When connected to the live network, our node will act as a “client” node. Other nodes on
+the network, called <a class="reference internal" href="technical_overview.html#to-functionary"><span class="std std-ref">Functionary</span></a> nodes, are responsible for
+securing the transfer of Bitcoin in to and out of the Liquid network and also for the
+creation of blocks through the block signing process. The blocks these Functionary nodes
+create are then relayed to other network participants. When our node runs in local test
+mode, we will be able to generate blocks ourselves, making the development and testing
+process a lot simpler. You can read more about the different types of Liquid nodes and
+the roles they play on the network in the <a class="reference internal" href="technical_overview.html#technical-overview"><span class="std std-ref">Technical Overview</span></a>.</p>
+<p>To set a Liquid node up we need to:</p>
+<ul class="simple">
+<li><p>Download/install the Liquid binaries.</p></li>
+<li><p>Configure our node using a configuration file.</p></li>
+</ul>
+<p>Before we begin, it is worth giving a brief overview of the applications we will be
+downloading and using.</p>
+<p><strong>Liquid Daemon (elementsd)</strong></p>
+<p>A Liquid node that runs as a background service. It can also processes requests made from
+other applications using Remote Procedure Call (RPC). It cannot be run at the same time as
+elements-qt if they share the same data directory, which they will by default.</p>
+<p><strong>Liquid Core/QT (elements-qt)</strong></p>
+<p>A desktop application (GUI/front-end) that serves as a Liquid node. It can also process
+requests using Remote Procedure Call (RPC). It cannot be run at the same time as elements
+if they share the same data directory, which they will by default.</p>
+<p><strong>Liquid Client (elements-cli)</strong></p>
+<p>A client application that allows you to make calls to elementsd or elements-qt by issuing
+RPC commands. Use of elements-cli is detailed in the <a class="reference internal" href="developer-guide/developer-guide-index.html#developer-guide"><span class="std std-ref">Developer Guide</span></a>
+section.</p>
+<p>Liquid will, by default, try and connect to a local Bitcoin node in order to validate
+transactions where bitcoin are moved into the Liquid network (called a peg-in). We will
+assume that you have already installed and set up a Bitcoin node before moving on with
+installing Liquid. This requirement can be switched off by setting <code class="docutils literal notranslate"><span class="pre">validatepegin=0</span></code>
+within the <a class="reference internal" href="#node-configuration"><span class="std std-ref">Liquid configuration</span></a> (elements.conf) file, but we
+advise against disabling peg-in validation unless you are aware of the implications,
+running in a testing environment, or are not dealing with large amounts of funds.</p>
+</div>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<p>The applications listed above can be downloaded from the <a class="reference external" href="https://github.com/ElementsProject/elements/releases">Elements Github repository</a> as either an installation/setup
+package or as the contents of a compressed file.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>After you have followed the install instructions below (you will find variants
+for Linux, Windows, and MacOS) do not run the software until you have followed the
+instructions in the Configuration section.</p>
+</div>
+<p>Some releases are ‘code only’ releases. If you only want to use the binaries, select the
+most recent release that has associated binary installation files. Using the 0.17 release
+(the latest at time of writing) as an example:</p>
+<p><strong>Linux</strong></p>
+<p>There are a number of Linux distrutions supported. For example; Ubuntu users can choose
+the <code class="docutils literal notranslate"><span class="pre">elements-&lt;version&gt;-x86_64-linux-gnu.tar.gz</span></code> file, whereas Raspberry Pi users should
+choose the <code class="docutils literal notranslate"><span class="pre">elements-&lt;version&gt;-arm-linux-gnueabihf.tar.gz</span></code> file.</p>
+<p><strong>Windows</strong></p>
+<p>You can choose the <code class="docutils literal notranslate"><span class="pre">elements-&lt;version&gt;-win64-setup-unsigned.exe</span></code> file if you are happy to
+run an unsigned setup on your Windows x64 machine. If you need a 32bit variant or a
+version without an installer, you should chose the appropriate file from the list.</p>
+<p><strong>MacOS Installation</strong></p>
+<p>You can choose the <code class="docutils literal notranslate"><span class="pre">elements-&lt;version&gt;-osx-unsigned.dmg</span></code> dmg image file, or download the
+binaries themselves.</p>
+<p>After installation, you are now ready to move on to configuring your node.</p>
+</div>
+<div class="section" id="configuration">
+<span id="node-configuration"></span><h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
+<p>This guide assumes you are already running a Bitcoin full node. To allow Liquid Core to
+communicate with your Bitcoin node, certain parameters must be set in your Bitcoin
+configuration file, and then possibly included in the Liquid configuration file.</p>
+<div class="section" id="bitcoin-conf">
+<h3>bitcoin.conf<a class="headerlink" href="#bitcoin-conf" title="Permalink to this headline">¶</a></h3>
+<p>We will first make sure that our Bitcoin node is set up to allow our Liquid node to
+communicate with it.</p>
+<p>Include the following in your <code class="docutils literal notranslate"><span class="pre">bitcoin.conf</span></code> file if it is not already present:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>server=1
+</pre></div>
+</div>
+<p>This will ensure that your Bitcoin node creates a ‘cookie’ file within the data directory
+it is using on start up. The cookie file allows other applications to locally authenticate
+against your Bitcoin node, as long as they know where it is located. Using a cookie file
+is the prefered way of authenticating against a Bitcoin node. We will later tell our
+Liquid node the location of this file so that it can authenticate against the Bitcoin node.</p>
+<p>Alternatively, you can also use RPC parameters (<code class="docutils literal notranslate"><span class="pre">rpcuser</span></code>, <code class="docutils literal notranslate"><span class="pre">rpcport</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">rpcpassword</span></code>) specified in the bitcoin.conf file as the authentication method. If you
+want to use the RPC parameter method of allowing access, then also set the following
+within bitcoin.conf.</p>
+<p><em>Note that the first value will start your Bitcoin node in “regtest” mode so that you can
+develop against it - you can omit it if you want to start the node on the live Bitcoin
+network</em>:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>regtest=1
+regtest.rpcport=18888
+regtest.port=18889
+rpcuser=&lt;your user&gt;
+rpcpassword=&lt;your password&gt;
+</pre></div>
+</div>
+<p>You may also want to include the <code class="docutils literal notranslate"><span class="pre">prune</span></code> parameter in your Bitcoin node settings. Pruned
+mode reduces disk space requirements but will will not change the initial amount of time
+required for download and validation of the chain.</p>
+</div>
+<div class="section" id="elements-conf">
+<h3>elements.conf<a class="headerlink" href="#elements-conf" title="Permalink to this headline">¶</a></h3>
+<p>The elementsd, elements-qt and elements-cli applications will all use a configuration file
+named elements.conf. The elements.conf file tells elementsd and elements-qt which network
+to connect to and can set a number of different behaviours within the applications. It
+also tells them what credentials must be provided in order to accept an RPC request. The
+elements-cli application uses the configuration file to obtain the correct credentials in
+order to communicate with elementsd or elements-qt using RPC.</p>
+<p>When you later start either of the three applications you can provide a <code class="docutils literal notranslate"><span class="pre">datadir</span></code> path.
+The path you provide tells the applications which directory to use to:</p>
+<ul class="simple">
+<li><p>Obtain RPC authentication data (user, password, port).</p></li>
+<li><p>Store blockchain and wallet data.</p></li>
+<li><p>Store log files etc.</p></li>
+</ul>
+<p>If you want to use a different data directory that the defaults referenced below, for
+example an external hard drive, you can follow <a class="reference external" href="https://bitzuma.com/posts/moving-the-bitcoin-core-data-directory/">this guide</a>.</p>
+<p>The elements.conf configuration file is located in the following places by default. If you
+do not see the Liquid directory and the elements.config file you should create them now.
+Otherwise, open the elements.conf file for editing.</p>
+<p><strong>Linux</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">~/.elements/</span></code></p>
+<p><strong>Windows</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">%homepath%\AppData\Roaming\Elements</span></code></p>
+<p><strong>MacOS</strong></p>
+<p>As the Library file is hidden, you can access it by opening Finder, selecting ‘Go’ then
+‘Go to Folder’ from the menu and then entering the path as <code class="docutils literal notranslate"><span class="pre">~/Library</span></code>. From there you
+can go into the <code class="docutils literal notranslate"><span class="pre">Application</span> <span class="pre">Support</span></code> folder and create the <code class="docutils literal notranslate"><span class="pre">Elements</span></code> folder. Once
+you have created the Elements folder, you can run the following from the Terminal app to
+create the Liquid config file:</p>
+<p><code class="docutils literal notranslate"><span class="pre">touch</span> <span class="pre">&quot;Library/Application</span> <span class="pre">Support/Elements/elements.conf&quot;</span></code></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>After making any changes to elements.conf in the future, you will need to restart your
+Liquid node so that they take effect.</p>
+</div>
+<p>If your Bitcoin node is installed in the default location, Liquid should automatically
+find it when you later start it. If you use a non-default location for your Bitcoin node,
+you will also have to add the following parameter to your elements.conf file, pointing to
+the cookie file created by your Bitcoin node:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>mainchainrpccookiefile=&lt;location_of_your_bitcoin_cookie_file&gt;
+</pre></div>
+</div>
+<p>If you want to use the RPC parameter method of allowing access to your Bitcoin node then
+also set the following within elements.conf, using the same user, password, and port that
+you set in bitcoin.conf:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>mainchainrpcport=&lt;18888_for_example&gt;
+mainchainrpcuser=&lt;your_bitcoin_rpc_user_here&gt;
+mainchainrpcpassword=&lt;your_bitcoin_rpc_password_here&gt;
+</pre></div>
+</div>
+<p>If you want to allow your Liquid node to accept RPC requests (such as those used in the
+<a class="reference internal" href="developer-guide/developer-guide-index.html#developer-guide"><span class="std std-ref">Developer Guide</span></a>) then also set the following.</p>
+<p><em>Note that these values will start your Liquid node in test/development mode. To start in
+live Liquid network mode, set the chain value to liquidv1</em>:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>chain=elementsregtest
+rpcuser=&lt;your_liquid_rpc_user_here&gt;
+rpcpassword=&lt;your_liquid_rpc_password_here&gt;
+elementsregtest.rpcport=&lt;18884_for_example&gt;
+elementsregtest.port=&lt;18886_for_example&gt;
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>To switch between live and test/development modes you will need to change the <code class="docutils literal notranslate"><span class="pre">chain</span></code>
+value between <code class="docutils literal notranslate"><span class="pre">liquidv1</span></code> (live) and <code class="docutils literal notranslate"><span class="pre">elementsregtest</span></code> (test/development). You must
+restart your node for these to take effect if you change them in the future. Be sure
+to also change the mode your Bitcoin node runs in if you do this.</p>
+</div>
+<p>If you do not wish to validate peg-ins against your Bitcoin node, you can set the
+<code class="docutils literal notranslate"><span class="pre">validatepegin</span></code> parameter to a value of <code class="docutils literal notranslate"><span class="pre">0</span></code>. This can be done either in the
+elements.conf file, or passed in as a command line parameter.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>validatepegin=0
+</pre></div>
+</div>
+<p>With this setting, you do not need to run a Bitcoin node as Liquid will not attempt to
+connect to one on startup.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>We advise against disabling peg-in validation unless you are aware of the implications
+, running in a testing environment, or are not dealing with large amounts of funds.</p>
+</div>
+<p>A complete <a class="reference external" href="https://github.com/ElementsProject/elements/blob/master/share/examples/liquid.conf">Liquid configuration file template</a> can
+be found here.</p>
+</div>
+</div>
+<div class="section" id="running-your-liquid-node">
+<h2>Running your Liquid Node<a class="headerlink" href="#running-your-liquid-node" title="Permalink to this headline">¶</a></h2>
+<p>Once you have completed the steps in the Configuration section you will be able to start
+Liquid GUI or Liquid Daemon.</p>
+<p><strong>Linux</strong></p>
+<p>You will be able to run each of the applications from the command line within the folder
+you extracted them to. For example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./elementsd
+</pre></div>
+</div>
+<p>or</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./elements-qt
+</pre></div>
+</div>
+<p>and</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./elements-cli
+</pre></div>
+</div>
+<p>Depending on your system set up, you may have to change the permissions on the files</p>
+<p>before they will run.</p>
+<p><strong>Windows</strong></p>
+<p>You can run Liquid as a normal desktop application. It is worth noting that the actual
+application will appear in your installed apps list as ‘Elements Core’.</p>
+<p><strong>MacOS</strong></p>
+<p>If you installed Liquid from the dmg image, you can run it as a normal desktop application.
+It is worth noting that the actual application will appear in your installed apps list as
+‘Elements Core’.</p>
+<div class="section" id="what-next">
+<h3>What next?<a class="headerlink" href="#what-next" title="Permalink to this headline">¶</a></h3>
+<p>You should now be set up to start using your node.</p>
+<p>You can connect it to the live Liquid network by setting <code class="docutils literal notranslate"><span class="pre">chain=liquidv1</span></code> and letting it
+sync its local copy of the Liquid blockchain.</p>
+<p>You might also want to switch your Liquid node to test/development mode using
+<code class="docutils literal notranslate"><span class="pre">chain=elementsregtest</span></code> and start the <a class="reference internal" href="developer-guide/developer-guide-index.html#developer-guide"><span class="std std-ref">Developer Guide</span></a> and
+<a class="reference internal" href="app-examples/app-examples-index.html#liquid-app-examples"><span class="std std-ref">App Examples</span></a> sections if you want to.</p>
+</div>
+</div>
+<div class="section" id="enabling-peg-in-validation">
+<span id="quickstart-pegin"></span><h2>Enabling Peg-in Validation<a class="headerlink" href="#enabling-peg-in-validation" title="Permalink to this headline">¶</a></h2>
+<p>This section will show you how to enable your Liquid node to validate peg-ins against a
+Bitcoin node. This is not mandatory, but it an important part of Liquid network security.</p>
+<p>If you have not already installed and synced a Bitcoin node on your machine, you should
+follow the instructions on <a class="reference external" href="https://bitcoincore.org/en/download/">https://bitcoincore.org/en/download</a>.</p>
+<p>When you have a fully synced Bitcoin node running on your machine, you need to enable it
+to process requests from other applications, such as Liquid. To do this we need to add a
+line to the bitcoin.conf config file.</p>
+<div class="section" id="changes-to-bitcoin-conf">
+<h3>Changes to bitcoin.conf<a class="headerlink" href="#changes-to-bitcoin-conf" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p>Shutdown your Bitcoin node first before proceeding.
+<br> <br></p></li>
+<li><p>In order to edit Bitcoin’s configuration file (bitcoin.conf) you can use the process in
+the <a class="reference internal" href="quickstart.html#quickstart-configuring"><span class="std std-ref">Configuring Liquid</span></a> to locate and edit config files
+for your given operating system, <strong>remembering to replace the references to elements
+with bitcoin</strong>. Use the following paths to locate and open the bitcoin.conf file,
+depending on your operating system:</p>
+<p>Linux: <code class="docutils literal notranslate"><span class="pre">~/.bitcoin/</span></code></p>
+<p>Windows: <code class="docutils literal notranslate"><span class="pre">%homepath%AppDataRoaming/Bitcoin</span></code></p>
+<p>MacOS: <code class="docutils literal notranslate"><span class="pre">”Library/Application</span> <span class="pre">Support/Bitcoin”</span></code>
+<br> <br></p>
+</li>
+<li><p>When you have located and opened the bitcoin.conf file, add the following line to it:</p>
+<p><code class="docutils literal notranslate"><span class="pre">server=1</span></code></p>
+<p>If you use a non-default location for your Bitcoin node, you will also have to add the
+following parameter to your elements.conf file, so that Liquid knows the location of
+the cookie file created by your Bitcoin node:</p>
+<p><code class="docutils literal notranslate"><span class="pre">mainchainrpccookiefile=&lt;location_of_your_bitcoin_datadir&gt;</span></code>
+<br> <br></p>
+</li>
+<li><p>Save and close the file and restart your Bitcoin node.</p></li>
+</ol>
+</div>
+<div class="section" id="changes-to-elements-conf">
+<h3>Changes to elements.conf<a class="headerlink" href="#changes-to-elements-conf" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>Open the Liquid config file by following the steps in the <a class="reference internal" href="quickstart.html#quickstart-configuring"><span class="std std-ref">Configuring Liquid</span></a> section.
+<br> <br></p></li>
+<li><p>If your elements.conf file contains an entry of <code class="docutils literal notranslate"><span class="pre">validatepegin=0</span></code>, replace the <code class="docutils literal notranslate"><span class="pre">0</span></code>
+with a <code class="docutils literal notranslate"><span class="pre">1</span></code>, and save and close the file. If your elements.conf file contains no value
+for <code class="docutils literal notranslate"><span class="pre">validatepegin</span></code> at all, you can close the file, no changes are needed.</p></li>
+</ol>
+<p>Your Liquid node is now set up to validate peg-ins!</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="developer-guide/developer-guide-index.html" class="btn btn-neutral float-right" title="Developer Guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="quickstart.html" class="btn btn-neutral float-left" title="Liquid Node Quickstart" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Randy McMillan
+      <span class="lastupdated">
+        Last updated on Nov 02, 2020.
+      </span>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

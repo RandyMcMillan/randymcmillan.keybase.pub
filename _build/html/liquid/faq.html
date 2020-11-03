@@ -1,0 +1,341 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Liquid Network FAQs &mdash; R A N D Y M c M I L L A N</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Contributing to Blockstream Docs" href="../contributing/contributing.html" />
+    <link rel="prev" title="Support" href="support.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> 
+          
+
+          
+            
+            <img src="../_static/blks_logo_transparent.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Blockstream Green</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../green/getting-started/getting-started-index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../green/liquid/liquid-index.html">Liquid Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../green/hww.html">Hardware Wallets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../green/troubleshooting-advanced/troubleshooting-advanced-index.html">Troubleshooting and Advanced Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../green/support.html">Support</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Liquid Network</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="technical_overview.html">Technical Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Liquid Node Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="node_setup.html">Liquid Node Setup (Advanced)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developer-guide/developer-guide-index.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="app-examples/app-examples-index.html">App Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="general-developer-info/general-developer-info-index.html">General Developer Info</a></li>
+<li class="toctree-l1"><a class="reference internal" href="acquire_lbtc.html">How To Acquire L-BTC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swap_tool.html">Liquid Swap Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="additional_resources.html">Additional Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="support.html">Support</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">FAQ</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#what-is-liquid">What is Liquid?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#what-are-the-benefits-of-liquid">What are the benefits of Liquid?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#who-are-the-members-of-liquid">Who are the members of Liquid?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-do-end-users-traders-benefit-from-liquid">How do end users/traders benefit from Liquid?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-do-exchanges-use-liquid-to-help-traders-move-funds-more-quickly">How do exchanges use Liquid to help traders move funds more quickly?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-can-traders-use-liquid-to-reduce-custodial-risk">How can traders use Liquid to reduce custodial risk?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#what-are-issued-assets">What are Issued Assets?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#what-are-confidential-transactions">What are Confidential Transactions?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#why-is-liquid-a-federated-sidechain">Why is Liquid a federated sidechain?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-does-btc-become-l-btc-and-vice-versa">How does BTC become L-BTC and vice versa?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#can-i-run-a-liquid-full-node">Can I run a Liquid full node?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#what-happens-to-the-bitcoin-held-by-the-federation-if-liquid-stops-functioning">What happens to the bitcoin held by the federation if Liquid stops functioning?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#what-s-the-difference-between-lightning-and-liquid">What’s the difference between Lightning and Liquid?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#who-can-join-liquid">Who can join Liquid?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#who-controls-liquid">Who controls Liquid?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-can-i-get-more-information-to-join-the-network">How can I get more information to join the network?</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Contribute</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../contributing/contributing.html">Contributing to Blockstream Docs</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../developer-documentation.html">c-lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer-documentation.html#esplora">Esplora</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer-documentation.html#libwally">Libwally</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer-documentation.html#gdk">GDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer-documentation.html#elements">Elements</a></li>
+</ul>
+<p class="caption"><span class="caption-text">PGP</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../randymcmillan-asc.html">randymcmillan.asc</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html"></a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Liquid Network FAQs</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="liquid-network-faqs">
+<h1>Liquid Network FAQs<a class="headerlink" href="#liquid-network-faqs" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="what-is-liquid">
+<h2>What is Liquid?<a class="headerlink" href="#what-is-liquid" title="Permalink to this headline">¶</a></h2>
+<p>Liquid is an implementation of a federated sidechain - a blockchain with different features, capabilities, and benefits than the Bitcoin blockchain.</p>
+<p>The Liquid Network was built to address the particular needs of traders who use exchanges. It enables the rapid, confidential, and secure transfer of funds between participants, providing a solution to the inherent problem of delayed transaction finality on the Bitcoin network.</p>
+<p>Liquid’s sidechain is built on the Elements codebase and uses Blockstream’s Strong Federation technology to support the 1-to-1 exchange of bitcoin between chains.</p>
+</div>
+<div class="section" id="what-are-the-benefits-of-liquid">
+<h2>What are the benefits of Liquid?<a class="headerlink" href="#what-are-the-benefits-of-liquid" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Faster Trading - Near instant bitcoin transfers between exchanges allow users to take advantage of arbitrage opportunities like never before.</p></li>
+<li><p>Enhanced Efficiency - Market makers can improve their capital efficiency by reducing balances held across multiple exchanges.</p></li>
+<li><p>Better Privacy - Liquid supports Confidential Transactions for bitcoin amounts as they are transferred between users in the system, which protects users from exposure.</p></li>
+<li><p>Superb Reliability - Built using the battle-tested Bitcoin codebase, Liquid software is highly reliable. Also, since Liquid uses signed blocks instead of mining, blocks are targeted to be one minute apart instead of the more variable ten minute blocks in Bitcoin.</p></li>
+</ul>
+</div>
+<div class="section" id="who-are-the-members-of-liquid">
+<h2>Who are the members of Liquid?<a class="headerlink" href="#who-are-the-members-of-liquid" title="Permalink to this headline">¶</a></h2>
+<p>The Liquid Network is comprised of a group of exchanges, traders, and financial institutions from nine countries across four continents. Currently, Liquid members include: Altonomy, Bitbank, Bitfinex, Bitmax, BitMEX, Bitso, BTCBOX, BTCTrader/BtcTurk, BTSE, Cobo, Coinone, Coinut, Crypto Garage, DGroup, DMM Japan, FRNT Financial, Gate.io, GOPAX (operated by Streami), Huobi, L2B Global, OKCoin, OpenNode, Poolin, Prycto, Sideshift AI, The Rock Trading, SIX Digital Exchange, TaoTao, Tilde, Unocoin, Xapo, XBTO, and Zaif.</p>
+</div>
+<div class="section" id="how-do-end-users-traders-benefit-from-liquid">
+<h2>How do end users/traders benefit from Liquid?<a class="headerlink" href="#how-do-end-users-traders-benefit-from-liquid" title="Permalink to this headline">¶</a></h2>
+<p>Users and members can benefit from Liquid through the ability to send bitcoins between member exchanges, who can send Liquid Bitcoin (L-BTC: BTC pegged into the Liquid sidechain) on their behalf. End-users can also withdraw L-BTC from exchanges to wallets that support Liquid, such as Blockstream Green or withdraw from one exchange directly onto their Liquid deposit address at another Liquid member exchange. Other wallets plan to support Liquid in the future.</p>
+</div>
+<div class="section" id="how-do-exchanges-use-liquid-to-help-traders-move-funds-more-quickly">
+<h2>How do exchanges use Liquid to help traders move funds more quickly?<a class="headerlink" href="#how-do-exchanges-use-liquid-to-help-traders-move-funds-more-quickly" title="Permalink to this headline">¶</a></h2>
+<p>Exchanges may maintain a balance of L-BTC to do fast conversion from user deposits in BTC so users can immediately trade across exchanges using Liquid. For L-BTC deposits exchanges can receive deposits and credit their customers accounts within minutes, rather than waiting for unpredictable Bitcoin blocks.</p>
+</div>
+<div class="section" id="how-can-traders-use-liquid-to-reduce-custodial-risk">
+<h2>How can traders use Liquid to reduce custodial risk?<a class="headerlink" href="#how-can-traders-use-liquid-to-reduce-custodial-risk" title="Permalink to this headline">¶</a></h2>
+<p>Traders often need to leave funds on an exchange for an extended period of time to avoid missing favorable trading opportunities. Liquid allows traders to move L-BTC into their own wallet while still being able to quickly move them back to an exchange in two minutes. This allows traders to use a multi-signature trust model to hold their assets rather than relying on a single exchange.</p>
+</div>
+<div class="section" id="what-are-issued-assets">
+<h2>What are Issued Assets?<a class="headerlink" href="#what-are-issued-assets" title="Permalink to this headline">¶</a></h2>
+<p>Liquid was built using the Elements blockchain platform and therefore has multi-asset issuance capabilities built in through the Confidential Assets feature. This allows anyone to create new assets for many purposes such as stablecoins, security tokens, utility tokens, and digital collectibles.</p>
+</div>
+<div class="section" id="what-are-confidential-transactions">
+<h2>What are Confidential Transactions?<a class="headerlink" href="#what-are-confidential-transactions" title="Permalink to this headline">¶</a></h2>
+<p>Liquid is designed to be auditable and open to any network participant, as well as to facilitate confidentiality between transacting parties. Like Bitcoin, Liquid transactions are viewable by everyone in the network, though Confidential Transactions hide transaction amounts from everyone except for the parties directly involved in the transaction itself. In doing so, it minimizes front-running risks that occur through blockchain analysis.</p>
+<p>Confidential Transactions fundamentally provide privacy for any end user that requires it, regardless of reason. Use cases for this level of commercial transaction privacy will become more apparent as the cryptocurrency trading ecosystem matures, and larger market makers and financial institutions begin trading bitcoin across exchanges. They will want to move bitcoin between their accounts at different exchanges, without broadcasting the amounts to the general public, providing assurances that their trading strategies and holdings are not exploited by potential competitors.</p>
+<p>Private solvency proofs are also possible using Confidential Transactions to remove the need to show the full amount held but instead show that a threshold is met in order to prove reserves are adequate. For example: user account balances can be shown to sum to the total assets held without revealing individual amounts or even what that sum is. The number of transaction participants is even hidden.</p>
+<p>Liquid makes compliance easy, whilst providing privacy of transactions. This would be impossible without the use of Confidential Transactions.</p>
+</div>
+<div class="section" id="why-is-liquid-a-federated-sidechain">
+<h2>Why is Liquid a federated sidechain?<a class="headerlink" href="#why-is-liquid-a-federated-sidechain" title="Permalink to this headline">¶</a></h2>
+<p>The Bitcoin blockchain excels at offering the permissionless, trustless, and censorship-resistant transfer of value. However, achieving those ends comes at the expense of a deterministic transaction flow and with the expense of mining. The Liquid sidechain provides a different set of trade-offs that allow privacy and rapid finality of asset transfer at the expense of being a permissioned network relying on trust of the functionaries.</p>
+<p>Extending the Bitcoin protocol using a sidechain allows the main chain to remain secure, specialized and robust whilst its underlying properties support the smooth operation of the sidechain.</p>
+<p>Whereas Bitcoin is secured by proof of work, assets on the Liquid blockchain are secured by a Strong Federation of trusted functionaries. This allows transactions on Liquid to reach a state of finality faster and more reliably than those on the Bitcoin blockchain.</p>
+</div>
+<div class="section" id="how-does-btc-become-l-btc-and-vice-versa">
+<h2>How does BTC become L-BTC and vice versa?<a class="headerlink" href="#how-does-btc-become-l-btc-and-vice-versa" title="Permalink to this headline">¶</a></h2>
+<p>Users of Liquid are able to send bitcoins to an address controlled by the Liquid Federation; these users will be credited with L-BTC once the mainchain transaction receives 102 confirmations. This process is known as a peg-in. A high threshold of confirmations is needed to ensure that the network stays solvent in case of mainchain reorganizations. Members of Liquid should maintain a portion of their funds as L-BTC based on user demand for L-BTC and can rebalance as needed. If a user wishes to move L-BTC back to BTC, they can make a peg-out transaction in Liquid that will instruct the functionaries to pay to their mainchain address. Only members of the Liquid network are able to peg-out L-BTC.</p>
+</div>
+<div class="section" id="can-i-run-a-liquid-full-node">
+<h2>Can I run a Liquid full node?<a class="headerlink" href="#can-i-run-a-liquid-full-node" title="Permalink to this headline">¶</a></h2>
+<p>Yes. Anyone can run a full node for Liquid. Download the node software here.</p>
+</div>
+<div class="section" id="what-happens-to-the-bitcoin-held-by-the-federation-if-liquid-stops-functioning">
+<h2>What happens to the bitcoin held by the federation if Liquid stops functioning?<a class="headerlink" href="#what-happens-to-the-bitcoin-held-by-the-federation-if-liquid-stops-functioning" title="Permalink to this headline">¶</a></h2>
+<p>There are emergency keys that are able to access the bitcoin held by the network only if the network is down for an extended period of time. The keys are strictly powerless otherwise. All efforts will be made to revive the network before using these emergency keys. These keys will allow the bitcoin held by the Liquid Network to be returned to the last owner on the Liquid blockchain. Issued Assets can be migrated to another platform, or a new blockchain compatible with Liquid, depending on the preferences of the issuer of the asset.</p>
+</div>
+<div class="section" id="what-s-the-difference-between-lightning-and-liquid">
+<h2>What’s the difference between Lightning and Liquid?<a class="headerlink" href="#what-s-the-difference-between-lightning-and-liquid" title="Permalink to this headline">¶</a></h2>
+<p>Lightning requires routes between the parties of a transaction to exist before the transaction. This makes Lightning very well suited for micropayments. However, this approach present challenges for larger payments that may be made between arbitrary parties, as a route might not always be available. Liquid allows parties to send funds of any size at any time. Liquid also supports multiple assets, which can make it useful for single-transaction atomic swaps that require no setup. Blockstream is a strong believer in both Liquid and Lightning, but for different use cases.</p>
+<p>Due to being based on Bitcoin, Liquid already supports Lightning transactions with L-BTC, allowing even faster transfers and smaller-value payments. Lightning support for Issued Assets will also be coming in the future.</p>
+</div>
+<div class="section" id="who-can-join-liquid">
+<h2>Who can join Liquid?<a class="headerlink" href="#who-can-join-liquid" title="Permalink to this headline">¶</a></h2>
+<p>Liquid membership is intended for cryptocurrency exchanges, OTC desks, large traders, and financial institutions. Smaller traders and individual users will still be able to use Liquid through member exchanges, running a Liquid full node, or Liquid-enabled wallets such as Blockstream Green.</p>
+</div>
+<div class="section" id="who-controls-liquid">
+<h2>Who controls Liquid?<a class="headerlink" href="#who-controls-liquid" title="Permalink to this headline">¶</a></h2>
+<p>Liquid is operated by its members. Blockstream has no control over the network and only serves as a technology provider to the network members. Liquid can continue indefinitely even if Blockstream ceased to exist or if the members no longer wanted to receive support from Blockstream.</p>
+</div>
+<div class="section" id="how-can-i-get-more-information-to-join-the-network">
+<h2>How can I get more information to join the network?<a class="headerlink" href="#how-can-i-get-more-information-to-join-the-network" title="Permalink to this headline">¶</a></h2>
+<p>If you are interested in joining the Liquid Network as a federation member, please send an email to <a class="reference external" href="mailto:liquid&#37;&#52;&#48;blockstream&#46;com">liquid<span>&#64;</span>blockstream<span>&#46;</span>com</a>. Businesses and traders just looking to get started using Liquid should <a class="reference external" href="https://blockstream.com/green">download Blockstream Green</a> to set up a Liquid wallet, or <a class="reference external" href="https://github.com/ElementsProject/elements/releases">download Elements Core</a> to set up a Liquid full node, then <a class="reference external" href="https://docs.blockstream.com/liquid/acquire_lbtc.html">pick up some L-BTC</a>.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../contributing/contributing.html" class="btn btn-neutral float-right" title="Contributing to Blockstream Docs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="support.html" class="btn btn-neutral float-left" title="Support" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Randy McMillan
+      <span class="lastupdated">
+        Last updated on Nov 02, 2020.
+      </span>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

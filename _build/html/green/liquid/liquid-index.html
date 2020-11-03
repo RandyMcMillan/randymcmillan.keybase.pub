@@ -1,0 +1,567 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Blockstream Green Wallet on Liquid &mdash; R A N D Y M c M I L L A N</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Hardware Wallets" href="../hww.html" />
+    <link rel="prev" title="Getting Started" href="../getting-started/getting-started-index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> 
+          
+
+          
+            
+            <img src="../../_static/blks_logo_transparent.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Blockstream Green</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/getting-started-index.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Liquid Wallet</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#setting-up-a-liquid-wallet">Setting Up a Liquid Wallet</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#your-privacy-is-preserved-while-your-funds-are-2fa-secured">Your privacy is preserved, while your funds are 2FA secured</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#switch-network-to-liquid">Switch Network to Liquid</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#basic-usage">Basic Usage</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#logging-in">Logging In</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#balance-and-transaction-list">Balance and Transaction List</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#accounts-list">Accounts List</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#standard-account">Standard Account</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#liquid-securities-account">Liquid Securities Account</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#asset-list">Asset List</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#asset-details">Asset Details</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#registered-assets">Registered Assets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#raw-assets">Raw Assets</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#receiving-l-btc-and-issued-assets">Receiving L-BTC and Issued Assets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sending-transactions">Sending Transactions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#our-multisignature-model">Our Multisignature Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#redeposits">Redeposits</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../hww.html">Hardware Wallets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../troubleshooting-advanced/troubleshooting-advanced-index.html">Troubleshooting and Advanced Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Support</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Liquid Network</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../liquid/technical_overview.html">Technical Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../liquid/quickstart.html">Liquid Node Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../liquid/node_setup.html">Liquid Node Setup (Advanced)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../liquid/developer-guide/developer-guide-index.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../liquid/app-examples/app-examples-index.html">App Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../liquid/general-developer-info/general-developer-info-index.html">General Developer Info</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../liquid/acquire_lbtc.html">How To Acquire L-BTC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../liquid/swap_tool.html">Liquid Swap Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../liquid/additional_resources.html">Additional Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../liquid/support.html">Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../liquid/faq.html">FAQ</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contribute</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/contributing.html">Contributing to Blockstream Docs</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../developer-documentation.html">c-lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer-documentation.html#esplora">Esplora</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer-documentation.html#libwally">Libwally</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer-documentation.html#gdk">GDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer-documentation.html#elements">Elements</a></li>
+</ul>
+<p class="caption"><span class="caption-text">PGP</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../randymcmillan-asc.html">randymcmillan.asc</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html"></a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Blockstream Green Wallet on Liquid</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="blockstream-green-wallet-on-liquid">
+<h1>Blockstream Green Wallet on Liquid<a class="headerlink" href="#blockstream-green-wallet-on-liquid" title="Permalink to this headline">¶</a></h1>
+<p>Blockstream Green users can now store, send, and receive Liquid Bitcoin and Issued Assets
+on the Liquid sidechain.</p>
+<p>You can create your 2-of-2 multi-signature wallet with 2FA protection, just like you would
+do on Bitcoin mainnet. Hardware wallet support will also be coming soon for those looking
+for extreme digital asset security!</p>
+<div class="contents local topic" id="table-of-contents">
+<p class="topic-title">Table of Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#setting-up-a-liquid-wallet" id="id1">Setting Up a Liquid Wallet</a></p>
+<ul>
+<li><p><a class="reference internal" href="#your-privacy-is-preserved-while-your-funds-are-2fa-secured" id="id2">Your privacy is preserved, while your funds are 2FA secured</a></p></li>
+<li><p><a class="reference internal" href="#switch-network-to-liquid" id="id3">Switch Network to Liquid</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#basic-usage" id="id4">Basic Usage</a></p>
+<ul>
+<li><p><a class="reference internal" href="#logging-in" id="id5">Logging In</a></p></li>
+<li><p><a class="reference internal" href="#balance-and-transaction-list" id="id6">Balance and Transaction List</a></p></li>
+<li><p><a class="reference internal" href="#accounts-list" id="id7">Accounts List</a></p>
+<ul>
+<li><p><a class="reference internal" href="#standard-account" id="id8">Standard Account</a></p></li>
+<li><p><a class="reference internal" href="#liquid-securities-account" id="id9">Liquid Securities Account</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#asset-list" id="id10">Asset List</a></p></li>
+<li><p><a class="reference internal" href="#asset-details" id="id11">Asset Details</a></p>
+<ul>
+<li><p><a class="reference internal" href="#registered-assets" id="id12">Registered Assets</a></p></li>
+<li><p><a class="reference internal" href="#raw-assets" id="id13">Raw Assets</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#receiving-l-btc-and-issued-assets" id="id14">Receiving L-BTC and Issued Assets</a></p></li>
+<li><p><a class="reference internal" href="#sending-transactions" id="id15">Sending Transactions</a></p></li>
+<li><p><a class="reference internal" href="#our-multisignature-model" id="id16">Our Multisignature Model</a></p></li>
+<li><p><a class="reference internal" href="#redeposits" id="id17">Redeposits</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<hr class="docutils" />
+<div class="section" id="setting-up-a-liquid-wallet">
+<h2><a class="toc-backref" href="#id1">Setting Up a Liquid Wallet</a><a class="headerlink" href="#setting-up-a-liquid-wallet" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="your-privacy-is-preserved-while-your-funds-are-2fa-secured">
+<h3><a class="toc-backref" href="#id2">Your privacy is preserved, while your funds are 2FA secured</a><a class="headerlink" href="#your-privacy-is-preserved-while-your-funds-are-2fa-secured" title="Permalink to this headline">¶</a></h3>
+<p>The Green server is able to authorize and sign your transactions – upon 2FA verification –
+without knowing anything about the asset or the amount you are sending, or receiving on
+<a class="reference external" href="liquid-index.html#standard-account">standard accounts</a>.</p>
+<p>The only information available to Green servers is the list of the confidential outputs
+you own. These outputs are served to your wallet, and only the client on your device is
+able to unblind these outputs and to compute the total balances of your assets, or to
+create transactions.</p>
+<p><a class="reference external" href="liquid-index.html#liquid-securities-account">Liquid securities accounts</a> are an
+exception, as the issuer needs to be able to know whether the recipient of a Liquid
+security transaction is an authorized investor.</p>
+</div>
+<div class="section" id="switch-network-to-liquid">
+<h3><a class="toc-backref" href="#id3">Switch Network to Liquid</a><a class="headerlink" href="#switch-network-to-liquid" title="Permalink to this headline">¶</a></h3>
+<p>To create or restore a Liquid wallet, change network by tapping on the network name in the
+center of the landing page e.g. <cite>Bitcoin</cite> in the image below.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you have an existing wallet protected with PIN, tap on the back arrow on the top
+right to reach the landing page, or switch network from settings after login.</p>
+</div>
+<a class="reference internal image-reference" href="../../_images/landing1.png"><img alt="../../_images/landing1.png" class="align-center" src="../../_images/landing1.png" style="width: 250px;" /></a>
+<p>Select Liquid among the available networks and then tap on the <code class="docutils literal notranslate"><span class="pre">Save</span></code> button.</p>
+<a class="reference internal image-reference" href="../../_images/network-selector-liquid.png"><img alt="../../_images/network-selector-liquid.png" class="align-center" src="../../_images/network-selector-liquid.png" style="width: 250px;" /></a>
+<p>Then tap on <code class="docutils literal notranslate"><span class="pre">Create</span> <span class="pre">New</span> <span class="pre">Wallet</span></code> and follow the process to
+<a class="reference internal" href="../getting-started/getting-started-index.html#to-create-wallet"><span class="std std-ref">create a new wallet</span></a>, just like you would do for a standard
+bitcoin wallet, or tap on <code class="docutils literal notranslate"><span class="pre">Restore</span> <span class="pre">Green</span> <span class="pre">Wallet</span></code> and insert a <em>mnemonic for a Green
+Wallet you previously created on Liquid</em>.</p>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="basic-usage">
+<h2><a class="toc-backref" href="#id4">Basic Usage</a><a class="headerlink" href="#basic-usage" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="logging-in">
+<h3><a class="toc-backref" href="#id5">Logging In</a><a class="headerlink" href="#logging-in" title="Permalink to this headline">¶</a></h3>
+<p>When opening the app, you will be presented with a login screen prompting you to input
+your PIN for the Liquid Network (or for the last accessed network).</p>
+<a class="reference internal image-reference" href="../../_images/PIN-liquid.png"><img alt="../../_images/PIN-liquid.png" class="align-center" src="../../_images/PIN-liquid.png" style="width: 250px;" /></a>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>If you have forgotten your PIN, you will need to enter your 24-word mnemonic to access
+your wallet.</p>
+</div>
+<p>You will also need to access your wallet with your mnemonic if you or someone else has
+incorrectly entered your PIN 3 times in a row. In this scenario, your app will reset your
+PIN and require your mnemonic. This is a security feature to prevent a malicious party
+from continually guessing your PIN until they get it right.</p>
+</div>
+<div class="section" id="balance-and-transaction-list">
+<h3><a class="toc-backref" href="#id6">Balance and Transaction List</a><a class="headerlink" href="#balance-and-transaction-list" title="Permalink to this headline">¶</a></h3>
+<p>After login you’ll see your wallet’s balance.</p>
+<p>Tap on the stacked cards icon on the top right corner to
+<a class="reference external" href="liquid-index.html#accounts-list">see the accounts list</a> and add new accounts.</p>
+<p>Directly below this will be the <a class="reference external" href="liquid-index.html#sending-transactions">send</a> and
+<a class="reference external" href="liquid-index.html#receiving-l-btc-and-issued-assets">receive</a> buttons.</p>
+<a class="reference internal image-reference" href="../../_images/tx-list-liquid.png"><img alt="../../_images/tx-list-liquid.png" class="align-center" src="../../_images/tx-list-liquid.png" style="width: 250px;" /></a>
+<p>Tap on the <code class="docutils literal notranslate"><span class="pre">X</span> <span class="pre">assets</span> <span class="pre">in</span> <span class="pre">this</span> <span class="pre">account</span></code> to <a class="reference external" href="liquid-index.html#asset-list">go to the asset list</a>.</p>
+<p>You can also view from this screen all of your wallet’s incoming and outgoing
+transactions. Transactions are listed in reverse chronological order, starting with the
+most recent transactions at the top.</p>
+<p>You’ll be able to see the date, time, amount, and confirmation status of any transactions.
+Transactions involving assets other than L-BTC will display a 3/4 characters ticker next
+to the amount, depending on whether the issuer registered his asset on the
+<a class="reference internal" href="../../liquid/technical_overview.html#to-issued-assets"><span class="std std-ref">Asset Registry</span></a>.</p>
+<p>You can also select any transaction to get more information about it, such as the assets
+involved in the transaction, or the Transaction Hash, which can be used as a
+proof-of-payment.</p>
+</div>
+<div class="section" id="accounts-list">
+<h3><a class="toc-backref" href="#id7">Accounts List</a><a class="headerlink" href="#accounts-list" title="Permalink to this headline">¶</a></h3>
+<p>From the accounts list you can <code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">New</span> <span class="pre">Account</span></code> or switch between them when you have
+more than one.</p>
+<a class="reference internal image-reference" href="../../_images/account-list.png"><img alt="../../_images/account-list.png" class="align-center" src="../../_images/account-list.png" style="width: 250px;" /></a>
+<p>When you add an account you can select between Standard Accounts and Liquid Securities
+Accounts</p>
+<a class="reference internal image-reference" href="../../_images/liquid-account-types.png"><img alt="../../_images/liquid-account-types.png" class="align-center" src="../../_images/liquid-account-types.png" style="width: 250px;" /></a>
+<div class="section" id="standard-account">
+<h4><a class="toc-backref" href="#id8">Standard Account</a><a class="headerlink" href="#standard-account" title="Permalink to this headline">¶</a></h4>
+<p>Standard accounts allow you to separate your funds. It’s especially useful when you don’t
+want funds with different provenance to be mixed or used together, e.g. you don’t want
+funds from different exchanges to be summed together, or you don’t want them to be spent
+together.</p>
+<p>Each account will have its own receiving addresses, and moving funds across accounts
+requires a transaction.</p>
+</div>
+<div class="section" id="liquid-securities-account">
+<h4><a class="toc-backref" href="#id9">Liquid Securities Account</a><a class="headerlink" href="#liquid-securities-account" title="Permalink to this headline">¶</a></h4>
+<p>Liquid securities accounts are only available on Liquid wallets.</p>
+<p>Liquid Securities are special authorized assets that require you to get authorization from
+the issuer to transfer them.</p>
+<p>Go to Receive to get your Account ID, copy it to clipboard and provide it to the asset
+issuer to get authorization.</p>
+<a class="reference internal image-reference" href="../../_images/account-id.png"><img alt="../../_images/account-id.png" class="align-center" src="../../_images/account-id.png" style="width: 250px;" /></a>
+</div>
+</div>
+<div class="section" id="asset-list">
+<h3><a class="toc-backref" href="#id10">Asset List</a><a class="headerlink" href="#asset-list" title="Permalink to this headline">¶</a></h3>
+<p>From this page you can check the balance of every asset you have in the account you
+navigated from.</p>
+<a class="reference internal image-reference" href="../../_images/issued-asst-list.png"><img alt="../../_images/issued-asst-list.png" class="align-center" src="../../_images/issued-asst-list.png" style="width: 250px;" /></a>
+<p>Depending on what you possess you may see mainly 3 types of
+<a class="reference internal" href="../../liquid/technical_overview.html#to-issued-assets"><span class="std std-ref">issued assets</span></a>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>L-BTC, the Liquid Bitcoin native asset, 1 L-BTC corresponds to 1 BTC thanks to the
+<a class="reference internal" href="../../liquid/technical_overview.html#to-sidechain-basics"><span class="std std-ref">peg-in mechanism</span></a>.</p></li>
+<li><p>Labeled assets with human readable names, you can check more info by tapping on the
+asset card to see the asset details. Only assets
+submitted by their issuers to the <a class="reference internal" href="../../liquid/technical_overview.html#to-issued-assets"><span class="std std-ref">Asset Registry</span></a> have
+human readable, non-editable labeling data by default.</p></li>
+<li><p>Unlabeled assets identified by a 64 hexadecimal characters-long string, and with no
+denomination Ticker. In the next upgrade you’ll be able to customize these “raw
+assets” with labeling data of your choice by tapping on the asset card to edit the
+asset details.</p></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="asset-details">
+<h3><a class="toc-backref" href="#id11">Asset Details</a><a class="headerlink" href="#asset-details" title="Permalink to this headline">¶</a></h3>
+<p>Depending on whether the asset’s issuer registered the asset or not, you will see the non-
+editable <a class="reference external" href="liquid-index.html#registered-assets">asset data</a> or just the
+<a class="reference external" href="liquid-index.html#raw-assets">raw identifier of the asset and the customizable fields</a>
+to label the asset yourself.</p>
+<div class="section" id="registered-assets">
+<h4><a class="toc-backref" href="#id12">Registered Assets</a><a class="headerlink" href="#registered-assets" title="Permalink to this headline">¶</a></h4>
+<a class="reference internal image-reference" href="../../_images/issued-asst-details-registered.png"><img alt="../../_images/issued-asst-details-registered.png" class="align-center" src="../../_images/issued-asst-details-registered.png" style="width: 250px;" /></a>
+<p>Here you can see a series of metadata defined by the asset issuer:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>the official Name of the asset,</p></li>
+<li><p>the Asset ID, a 64 hexadecimal characters long unique identifier of the asset, used
+on the network to identify the asset,</p></li>
+<li><p>the Total Balance of the asset that you currently own in your wallet,</p></li>
+<li><p>the decimal Precision, which defines how many satoshis of an asset should be
+interpreted as a whole unit. A 2 decimals precision would imply that 199 satoshis of
+an asset should be displayed as 1.99. Your wallet already displays all the amounts of
+each asset using the precision specified under this field.</p></li>
+<li><p>the Ticker is a 3 or 4 characters shortening of the asset name, used to denominate
+all of the amounts of this asset with a recognizable abbreviation,</p></li>
+<li><p>the Issuer domain, which is used to tie together all of the above information to the
+issuing entity that also controls the domain submitted to the registry. This
+information is critical for the user to visually validate that an asset with a
+certain Name and a specific Ticker really belongs to the right issuer.</p></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="raw-assets">
+<h4><a class="toc-backref" href="#id13">Raw Assets</a><a class="headerlink" href="#raw-assets" title="Permalink to this headline">¶</a></h4>
+<a class="reference internal image-reference" href="../../_images/issued-asst-details-raw.png"><img alt="../../_images/issued-asst-details-raw.png" class="align-center" src="../../_images/issued-asst-details-raw.png" style="width: 250px;" /></a>
+<p>Issued Assets without a record on the Asset Registry will not have the same richness in
+information as registered assets.</p>
+<p>You can anyway see a very important piece of information, which is the Asset ID. This 64
+hexadecimal characters long string is the unique identifier of any asset, and you should
+always check with the asset issuer that you received an asset that matches their specified
+Asset ID. The asset issuer should always publish the ID of any asset they issue, otherwise
+anyone could cheaply create a bogus asset and defraud you by sending a worthless asset.</p>
+</div>
+</div>
+<div class="section" id="receiving-l-btc-and-issued-assets">
+<h3><a class="toc-backref" href="#id14">Receiving L-BTC and Issued Assets</a><a class="headerlink" href="#receiving-l-btc-and-issued-assets" title="Permalink to this headline">¶</a></h3>
+<p>To receive Liquid Bitcoin or any other Issued Asset, all you need to do is provide a
+receiving address to the sender.</p>
+<a class="reference internal image-reference" href="../../_images/receive-liquid.png"><img alt="../../_images/receive-liquid.png" class="align-center" src="../../_images/receive-liquid.png" style="width: 250px;" /></a>
+<p>A Liquid receiving address is a string of numbers and letters. You can create a receiving
+address by selecting “Receive” from the main screen.</p>
+<p>All addresses in Liquid are, by default, blinded using
+<a class="reference internal" href="../../liquid/developer-guide/developer-guide-index.html#to-confidential-transactions"><span class="std std-ref">Confidential Transactions</span></a>. Blinding is the process
+by which the amount and type of asset being transferred is cryptographically hidden from
+everyone except the sending and receiving parties.</p>
+<p>Your wallet will generate a new receiving address each time you prompt it for one. While
+it is possible to reuse old addresses, we strongly advise against this because it lessens
+your privacy.</p>
+<p>Once you can see what your new address is, you’ll need to communicate it to the sender.
+If you need to send over a distance, a text message or email is an effective way to do it.</p>
+<p>If you are physically beside the person who will be sending you Bitcoin, another option is
+to use the QR code, which the sender can scan to get the receiving address. This is really
+convenient if the sender is using a mobile wallet.</p>
+<p>Once someone has sent a transaction to your Blockstream Green wallet, it should appear in
+your transaction list page. At first, it will be labelled “unconfirmed”.</p>
+<p>Transactions on Liquid are <a class="reference internal" href="../../liquid/technical_overview.html#to-blocksigner"><span class="std std-ref">settled with finality after 2 blocks</span></a>,
+therefore you can consider your funds to be finally received within 2 or 3 minutes,
+under normal network conditions.</p>
+</div>
+<div class="section" id="sending-transactions">
+<h3><a class="toc-backref" href="#id15">Sending Transactions</a><a class="headerlink" href="#sending-transactions" title="Permalink to this headline">¶</a></h3>
+<p>To send a transaction, select “Send” from the main screen.</p>
+<p>You will need to get the receiving address from the recipient, and enter it (either by
+typing or pasting it in, or by scanning the receiver’s QR code).</p>
+<a class="reference internal image-reference" href="../../_images/send-recipient-liquid.png"><img alt="../../_images/send-recipient-liquid.png" class="align-center" src="../../_images/send-recipient-liquid.png" style="width: 250px;" /></a>
+<p>Then, you can select the asset you wish to send and input the amount that you want to send
+, and hit send.</p>
+<a class="reference internal image-reference" href="../../_images/send-amount-liquid.png"><img alt="../../_images/send-amount-liquid.png" class="align-center" src="../../_images/send-amount-liquid.png" style="width: 250px;" /></a>
+<p>Your wallet will also automatically calculate a fee for your transaction, which is
+necessary to have the network accept it and to avoid Denial of Service.</p>
+<p>Finally you can review your transaction and send it after confirming your Two-Factor
+Authentication.</p>
+<a class="reference internal image-reference" href="../../_images/send-review-liquid.png"><img alt="../../_images/send-review-liquid.png" class="align-center" src="../../_images/send-review-liquid.png" style="width: 250px;" /></a>
+<p>After you have sent a transaction, it will be <a class="reference internal" href="../../liquid/technical_overview.html#to-blocksigner"><span class="std std-ref">settled with finality after 2 blocks</span></a>, therefore your counterparty will receive the funds within 2 or 3
+minutes, under normal network conditions.</p>
+</div>
+<div class="section" id="our-multisignature-model">
+<h3><a class="toc-backref" href="#id16">Our Multisignature Model</a><a class="headerlink" href="#our-multisignature-model" title="Permalink to this headline">¶</a></h3>
+<p>Blockstream Green wallets use a special transaction format different from most other
+Bitcoin wallets.</p>
+<p>Most other storage services in Bitcoin are either “custodial” or “non-custodial without
+<em>Two-Factor Authentication</em> security”.</p>
+<p>Custodial services, such as exchanges, hold your Bitcoin for you. This also means that
+they can confiscate your coins at will, or if they get hacked, your coins can get stolen.
+It also usually means KYC identification, and risks of privacy loss.</p>
+<p>Other non-custodial wallets do not have those issues, but it also means that if someone
+steals your mnemonic or gain access to your wallet, they can steal all of your coins.
+The secrecy of your mnemonic is the only thing protecting your coins with these wallets.</p>
+<p>With Blockstream Green, you get the benefits of both types.</p>
+<p>This is possible because coins in Blockstream Green wallets have two different spending
+conditions.</p>
+<p>The first way to spend coins is using signatures from 2 different keys to send coins. One
+is held by the user in the form of the mnemonic, which the service  never knows. The other
+is stored on our server, and we sign your transactions with it after any <em>Two-Factor
+Authentication</em> you have enabled verifies the transaction.</p>
+<p>This means that, unlike custodial solutions, we can never steal your coins, since we don’t
+know your mnemonic. Even if we get hacked, or taken over by a government entity, or
+something else catastrophic happens, no one can steal your coins.</p>
+<p>On the user side, even if someone steals your mnemonic, they cannot spend your coins
+unless they can access your <em>Two-Factor Authentication</em>. This is the type of security that
+other wallets do not offer.</p>
+<p>The second way to spend coins becomes available after your two factor recovery period
+expires. Once this happens,  you can spend your coins without our service needing to also
+sign. This is to ensure that no matter what happens, you can always get your coins back</p>
+</div>
+<div class="section" id="redeposits">
+<h3><a class="toc-backref" href="#id17">Redeposits</a><a class="headerlink" href="#redeposits" title="Permalink to this headline">¶</a></h3>
+<p>As explained above, coins in your main Blockstream Green wallet (or a 2of2 simple account)
+require 2 signatures to be spent: one from you and one from Blockstream Green. In order to
+protect you from loss of access to your coins should Blockstream Green become unavailable,
+there is an alternative spend condition which requires only the user’s signature, provided
+that a certain period of time has passed.</p>
+<p>If the service becomes unavailable, you simply wait for the specified period (65535 blocks
+on Liquid, circa 45 days days, by default), then sign and send the transaction using our
+open source recovery <a class="reference external" href="https://github.com/greenaddress/garecovery">garecovery</a>.</p>
+<p>After the expiry period passes, any limits placed on your spending in Blockstream Green,
+such as <em>Two-Factor Authentication</em> requirements, cease to be enforceable by the service.</p>
+<p>At this point the wallet will prompt you to redeposit the coins by sending them to
+yourself (If you don’t log in to the wallet during this time, and you have email
+notifications enabled, the service will email you a reminder as the expiry date gets
+closer). The confirmation of the redeposit transaction resets the expiry period, thereby
+re-protecting the coins by once again requiring a Blockstream Green signature to spend
+them.</p>
+<p>Keep in mind that this redeposit transaction is a regular Liquid transaction, and as such
+is subject to the usual network fees.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../hww.html" class="btn btn-neutral float-right" title="Hardware Wallets" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../getting-started/getting-started-index.html" class="btn btn-neutral float-left" title="Getting Started" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Randy McMillan
+      <span class="lastupdated">
+        Last updated on Nov 02, 2020.
+      </span>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

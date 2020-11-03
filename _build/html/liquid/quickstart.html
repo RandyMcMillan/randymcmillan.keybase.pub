@@ -1,0 +1,337 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Liquid Node Quickstart &mdash; R A N D Y M c M I L L A N</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Liquid Node Setup (Advanced)" href="node_setup.html" />
+    <link rel="prev" title="Technical Overview" href="technical_overview.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> 
+          
+
+          
+            
+            <img src="../_static/blks_logo_transparent.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Blockstream Green</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../green/getting-started/getting-started-index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../green/liquid/liquid-index.html">Liquid Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../green/hww.html">Hardware Wallets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../green/troubleshooting-advanced/troubleshooting-advanced-index.html">Troubleshooting and Advanced Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../green/support.html">Support</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Liquid Network</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="technical_overview.html">Technical Overview</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Liquid Node Quickstart</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installing-and-running-liquid">Installing and running Liquid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configuring-liquid">Configuring Liquid</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#linux">Linux</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#macos">MacOS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#windows">Windows</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#running-liquid">Running Liquid</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="node_setup.html">Liquid Node Setup (Advanced)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developer-guide/developer-guide-index.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="app-examples/app-examples-index.html">App Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="general-developer-info/general-developer-info-index.html">General Developer Info</a></li>
+<li class="toctree-l1"><a class="reference internal" href="acquire_lbtc.html">How To Acquire L-BTC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swap_tool.html">Liquid Swap Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="additional_resources.html">Additional Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="support.html">Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contribute</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../contributing/contributing.html">Contributing to Blockstream Docs</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../developer-documentation.html">c-lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer-documentation.html#esplora">Esplora</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer-documentation.html#libwally">Libwally</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer-documentation.html#gdk">GDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer-documentation.html#elements">Elements</a></li>
+</ul>
+<p class="caption"><span class="caption-text">PGP</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../randymcmillan-asc.html">randymcmillan.asc</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html"></a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Liquid Node Quickstart</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="liquid-node-quickstart">
+<span id="quickstart"></span><h1>Liquid Node Quickstart<a class="headerlink" href="#liquid-node-quickstart" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>This guide will show you how to set up and run a Liquid node from scratch.</p>
+<p>Liquid is built using open-source <a class="reference external" href="https://github.com/ElementsProject/elements">Elements</a> code. This is why we’ll download the application from the Elements
+repository, execute commands against elementsd (daemon) and elements-cli (client), and edit things like the elements.conf config file.</p>
+<p>As the Elements code defaults to using the live Liquid network, we’ll be referring to installing and running Liquid, and not Elements, within this guide and throughout the
+<a class="reference external" href="https://docs.blockstream.com">docs.blockstream.info</a> site.</p>
+</div>
+<div class="section" id="installing-and-running-liquid">
+<span id="quickstart-installing"></span><h2>Installing and running Liquid<a class="headerlink" href="#installing-and-running-liquid" title="Permalink to this headline">¶</a></h2>
+<p><strong>1. Downloading Liquid</strong></p>
+<p>Download the latest application setup files from the <a class="reference external" href="https://github.com/ElementsProject/elements/releases">release page</a>.
+For example:</p>
+<p>Ubuntu: <code class="docutils literal notranslate"><span class="pre">elements-&lt;version&gt;-x86_64-linux-gnu.tar.gz</span></code></p>
+<p>MacOS: <code class="docutils literal notranslate"><span class="pre">elements-&lt;version&gt;-osx-unsigned.dmg</span></code></p>
+<p>Windows: <code class="docutils literal notranslate"><span class="pre">elements-&lt;version&gt;-win64-setup-unsigned.exe</span></code></p>
+<p>Raspberry Pi: <code class="docutils literal notranslate"><span class="pre">elements-&lt;version&gt;-arm-linux-gnueabihf.tar.gz</span></code></p>
+<p><strong>2. Installing Liquid</strong></p>
+<p>Run the file you downloaded to install Liquid on your machine.</p>
+<p>MacOS users should note: When you double click the downloaded “.dmg” file it will appear on the left hand panel in Finder as “Elements-Core”. If you select that then you will be able to drag the application into the Applications folder.</p>
+<p><strong>3. Running Liquid</strong></p>
+<p>The Liquid desktop application is named “Elements Core”.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When it first starts up Liquid will currently ask you for the data directory you want to use to store the Bitcoin blockchain data in. This is a GUI labeling error and it is actually referring to the Liquid blockchain data directory.</p>
+</div>
+<p>Click OK to accept the default data directory.</p>
+<p>The first time Liquid runs, it will create a data directory for you and, if you do not have a Bitcoin node running on your machine, notifies you that it “cannot get a valid response from the mainchain daemon” and then closes the application. This just means that it cannot connect to a local Bitcoin node.</p>
+<ul class="simple">
+<li><p><strong>If you see the error message</strong>: you can close it and move on to the <a class="reference internal" href="#quickstart-configuring"><span class="std std-ref">Configuring Liquid</span></a> section.</p></li>
+<li><p><strong>If you do not see the error message</strong>: you are already running a Bitcoin node and Liquid has located it. Your Liquid node will start its initial Liquid blockchain sync and you can skip the <a class="reference internal" href="#quickstart-configuring"><span class="std std-ref">Configuring Liquid</span></a> section, your Liquid node is now set up!</p></li>
+</ul>
+</div>
+<div class="section" id="configuring-liquid">
+<span id="quickstart-configuring"></span><h2>Configuring Liquid<a class="headerlink" href="#configuring-liquid" title="Permalink to this headline">¶</a></h2>
+<p>If you do not run a Bitcoin node on the same machine as your Liquid node, you can tell Liquid to not connect to it on startup. To do this we need to add a setting to Liquid’s configuration file. Depending on the operating system you are using.</p>
+<div class="section" id="linux">
+<h3>Linux<a class="headerlink" href="#linux" title="Permalink to this headline">¶</a></h3>
+<p>As Liquid’s data is stored in a hidden folder, the simplest way to create and edit the config file is to:</p>
+<ol class="arabic simple">
+<li><p>Open the Terminal app.</p></li>
+<li><p>Copy and paste the following into Terminal and then press enter (the “touch” command creates the file if it doesn’t already exist): <code class="docutils literal notranslate"><span class="pre">touch</span> <span class="pre">~/.elements/elements.conf</span></code></p></li>
+<li><p>Open the file for editing by copying and pasting the following line into the terminal and pressing enter: <code class="docutils literal notranslate"><span class="pre">nano</span> <span class="pre">~/.elements/elements.conf</span></code></p></li>
+<li><p>That will open the file in your default text editor. Paste the following into the empty file and then save changes before closing the file: <code class="docutils literal notranslate"><span class="pre">validatepegin=0</span></code></p></li>
+<li><p>Continue to the <a class="reference internal" href="#quickstart-running"><span class="std std-ref">Running Liquid</span></a> section.</p></li>
+</ol>
+</div>
+<div class="section" id="macos">
+<h3>MacOS<a class="headerlink" href="#macos" title="Permalink to this headline">¶</a></h3>
+<p>As Liquid’s data is stored in a hidden folder, the simplest way to create and edit the config file is to:</p>
+<ol class="arabic simple">
+<li><p>Open the Terminal app from your Applications/Utilities menu.</p></li>
+<li><p>Copy and paste the following in and then press enter (the “touch” command creates the file if it doesn’t already exist): <code class="docutils literal notranslate"><span class="pre">touch</span> <span class="pre">&quot;Library/Application</span> <span class="pre">Support/Elements/elements.conf&quot;</span></code></p></li>
+<li><p>Open the file for editing by copying and pasting the following line into the terminal and pressing enter: <code class="docutils literal notranslate"><span class="pre">open</span> <span class="pre">-t</span> <span class="pre">&quot;Library/Application</span> <span class="pre">Support/Elements/elements.conf&quot;</span></code></p></li>
+<li><p>That will open the file in your default text editor. Paste the following into the empty file and then save changes before closing the file: <code class="docutils literal notranslate"><span class="pre">validatepegin=0</span></code></p></li>
+<li><p>Continue to the <a class="reference internal" href="#quickstart-running"><span class="std std-ref">Running Liquid</span></a> section.</p></li>
+</ol>
+</div>
+<div class="section" id="windows">
+<h3>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h3>
+<p>To create and edit the Liquid config file:</p>
+<ol class="arabic simple">
+<li><p>Open File Explorer and in the location text box paste the following and press enter: <code class="docutils literal notranslate"><span class="pre">%homepath%AppDataRoaming/Elements</span></code></p></li>
+<li><p>Select the View tab in File Explorer and make sure the “File name extensions” check box is checked.</p></li>
+<li><p>If there is no file already named elements.conf, right click within the folder and select New and then Text Document and name the file <code class="docutils literal notranslate"><span class="pre">elements.conf</span></code>.</p></li>
+<li><p>Open elements.conf by double clicking on it. If asked what application should be used to edit “.conf” files, choose Notepad.</p></li>
+<li><p>Paste the following into the empty file and then save changes before closing the file: <code class="docutils literal notranslate"><span class="pre">validatepegin=0</span></code></p></li>
+<li><p>Continue to the <a class="reference internal" href="#quickstart-running"><span class="std std-ref">Running Liquid</span></a> section.</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="running-liquid">
+<span id="quickstart-running"></span><h2>Running Liquid<a class="headerlink" href="#running-liquid" title="Permalink to this headline">¶</a></h2>
+<p>Now that you have added a line to the config file telling Liquid to not try and validate peg-ins against a Bitcoin node, you can start the Liquid application again as you did before.</p>
+<p>Your Liquid node should start downloading the Liquid blockchain data from other nodes on the network.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <a class="reference internal" href="#quickstart-configuring"><span class="std std-ref">Configuring Liquid</span></a> section is for those who do not have a Bitcoin node running on their machine. Connecting to a Bitcoin node allows Liquid to validate peg-in transactions and is an important part of Liquid network security. It is recommended that once you have followed this guide and have your Liquid node up and running, you install and sync a Bitcoin node, then follow the steps in the <a class="reference internal" href="node_setup.html#quickstart-pegin"><span class="std std-ref">Enabling Peg-in Validation</span></a> section.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="node_setup.html" class="btn btn-neutral float-right" title="Liquid Node Setup (Advanced)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="technical_overview.html" class="btn btn-neutral float-left" title="Technical Overview" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Randy McMillan
+      <span class="lastupdated">
+        Last updated on Nov 02, 2020.
+      </span>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,781 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Getting Started &mdash; R A N D Y M c M I L L A N</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Blockstream Green Wallet on Liquid" href="../liquid/liquid-index.html" />
+    <link rel="prev" title="RandyMcMillan" href="../../index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> 
+          
+
+          
+            
+            <img src="../../_static/blks_logo_transparent.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Blockstream Green</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction-to-blockstream-green">Introduction to Blockstream Green</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#what-blockstream-green-is-for">What Blockstream Green is for</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#what-blockstream-green-isnt-for">What Blockstream Green isn’t for</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#platforms-supported">Platforms Supported</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#testnet-versions">Testnet Versions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#youre-in-control">You’re in Control</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#were-free-but-bitcoin-isnt">We’re Free! (But Bitcoin Isn’t)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#whats-special-about-blockstream-green">What’s Special About Blockstream Green</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#setting-up-a-wallet">Setting Up a Wallet</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#install-the-app">Install the app</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#create-a-new-wallet">Create a New Wallet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#choose-a-pin-for-this-wallet">Choose a PIN for this Wallet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#set-up-two-factor-authentication">Set up Two-Factor Authentication</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#best-practices-for-creating-a-new-wallet">Best Practices for Creating a New Wallet</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#basic-usage">Basic Usage</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#logging-in">Logging In</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#balance-and-transaction-list">Balance and Transaction List</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#receiving-transactions">Receiving Transactions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sending-transactions">Sending Transactions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#what-happens-after-a-transaction-is-sent">What Happens After a Transaction Is Sent</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#our-multisignature-model">Our Multisignature Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#redeposits">Redeposits</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../liquid/liquid-index.html">Liquid Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hww.html">Hardware Wallets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../troubleshooting-advanced/troubleshooting-advanced-index.html">Troubleshooting and Advanced Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Support</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Liquid Network</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../liquid/technical_overview.html">Technical Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../liquid/quickstart.html">Liquid Node Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../liquid/node_setup.html">Liquid Node Setup (Advanced)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../liquid/developer-guide/developer-guide-index.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../liquid/app-examples/app-examples-index.html">App Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../liquid/general-developer-info/general-developer-info-index.html">General Developer Info</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../liquid/acquire_lbtc.html">How To Acquire L-BTC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../liquid/swap_tool.html">Liquid Swap Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../liquid/additional_resources.html">Additional Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../liquid/support.html">Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../liquid/faq.html">FAQ</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contribute</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/contributing.html">Contributing to Blockstream Docs</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../developer-documentation.html">c-lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer-documentation.html#esplora">Esplora</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer-documentation.html#libwally">Libwally</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer-documentation.html#gdk">GDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer-documentation.html#elements">Elements</a></li>
+</ul>
+<p class="caption"><span class="caption-text">PGP</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../randymcmillan-asc.html">randymcmillan.asc</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html"></a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Getting Started</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="getting-started">
+<h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
+<p>This guide is intended to answer all your questions about how to use Blockstream Green,
+whether you’re brand new to Bitcoin, just looking for what makes Blockstream Green wallets
+unique, or an experienced Bitcoiner ready to use our advanced features.</p>
+<img alt="../../_images/green-graphic.png" class="align-center" src="../../_images/green-graphic.png" />
+<div class="contents local topic" id="table-of-contents">
+<p class="topic-title">Table of Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#introduction-to-blockstream-green" id="id1">Introduction to Blockstream Green</a></p>
+<ul>
+<li><p><a class="reference internal" href="#what-blockstream-green-is-for" id="id2">What Blockstream Green is for</a></p></li>
+<li><p><a class="reference internal" href="#what-blockstream-green-isnt-for" id="id3">What Blockstream Green isn’t for</a></p></li>
+<li><p><a class="reference internal" href="#platforms-supported" id="id4">Platforms Supported</a></p></li>
+<li><p><a class="reference internal" href="#testnet-versions" id="id5">Testnet Versions</a></p></li>
+<li><p><a class="reference internal" href="#youre-in-control" id="id6">You’re in Control</a></p></li>
+<li><p><a class="reference internal" href="#were-free-but-bitcoin-isnt" id="id7">We’re Free! (But Bitcoin Isn’t)</a></p></li>
+<li><p><a class="reference internal" href="#whats-special-about-blockstream-green" id="id8">What’s Special About Blockstream Green</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#setting-up-a-wallet" id="id9">Setting Up a Wallet</a></p>
+<ul>
+<li><p><a class="reference internal" href="#install-the-app" id="id10">Install the app</a></p></li>
+<li><p><a class="reference internal" href="#create-a-new-wallet" id="id11">Create a New Wallet</a></p></li>
+<li><p><a class="reference internal" href="#choose-a-pin-for-this-wallet" id="id12">Choose a PIN for this Wallet</a></p></li>
+<li><p><a class="reference internal" href="#set-up-two-factor-authentication" id="id13">Set up Two-Factor Authentication</a></p></li>
+<li><p><a class="reference internal" href="#best-practices-for-creating-a-new-wallet" id="id14">Best Practices for Creating a New Wallet</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#basic-usage" id="id15">Basic Usage</a></p>
+<ul>
+<li><p><a class="reference internal" href="#logging-in" id="id16">Logging In</a></p></li>
+<li><p><a class="reference internal" href="#balance-and-transaction-list" id="id17">Balance and Transaction List</a></p></li>
+<li><p><a class="reference internal" href="#receiving-transactions" id="id18">Receiving Transactions</a></p></li>
+<li><p><a class="reference internal" href="#sending-transactions" id="id19">Sending Transactions</a></p></li>
+<li><p><a class="reference internal" href="#what-happens-after-a-transaction-is-sent" id="id20">What Happens After a Transaction Is Sent</a></p></li>
+<li><p><a class="reference internal" href="#our-multisignature-model" id="id21">Our Multisignature Model</a></p></li>
+<li><p><a class="reference internal" href="#redeposits" id="id22">Redeposits</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<hr class="docutils" />
+<div class="section" id="introduction-to-blockstream-green">
+<h2><a class="toc-backref" href="#id1">Introduction to Blockstream Green</a><a class="headerlink" href="#introduction-to-blockstream-green" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="what-blockstream-green-is-for">
+<h3><a class="toc-backref" href="#id2">What Blockstream Green is for</a><a class="headerlink" href="#what-blockstream-green-is-for" title="Permalink to this headline">¶</a></h3>
+<p>Blockstream Green is a Bitcoin wallet - it’s a way for you to securely receive, store, and
+send Bitcoin.</p>
+<p>You can use Blockstream Green to accept incoming payments, keep your coins safe for long
+periods of time, and to make payments and send Bitcoin to others.</p>
+<p>Our wallet allows for convenient, instant access to your coins from a variety of platforms
+through mutually compatible applications.</p>
+<p>We offer a variety of advanced features, such as letting our users set their own spending
+limits, watch-only access for observers, and our unique multisig security model. All of
+these (and more) are explained in more detail below.</p>
+</div>
+<div class="section" id="what-blockstream-green-isnt-for">
+<h3><a class="toc-backref" href="#id3">What Blockstream Green isn’t for</a><a class="headerlink" href="#what-blockstream-green-isnt-for" title="Permalink to this headline">¶</a></h3>
+<p>It is just as important to understand what Blockstream Green isn’t for.</p>
+<p>Blockstream Green is not a platform for buying and selling bitcoin. If you wish to buy or
+sell bitcoin, you will need to use another method. After you have bought some Bitcoin, you
+can send it to your Blockstream Green wallet and receive it by using the wallet’s receive
+function.</p>
+<p>Blockstream Green only supports Bitcoin (which is denoted by the 3-letter ticker <code class="docutils literal notranslate"><span class="pre">BTC</span></code>).
+We do not support any national currencies like USD or EUR. We do not support any other
+cryptocurrencies, such as Peercoin or Dogecoin. Attempting to send anything other than
+Bitcoin to an address generated by a Blockstream Green wallet can result in those coins
+being permanently lost. This is completely out of our control, and we are unable to
+provide support in this scenario. Before you send any coins to or from your Blockstream
+Green wallet, be sure that both the sender and receiver are using the cryptocurrency
+denoted by the ticker <code class="docutils literal notranslate"><span class="pre">BTC</span></code>.</p>
+<p>Always be sure to check the 3-letter currency ticker before sending any coins, and only
+use <code class="docutils literal notranslate"><span class="pre">BTC</span></code> with your Blockstream Green wallet.</p>
+</div>
+<div class="section" id="platforms-supported">
+<h3><a class="toc-backref" href="#id4">Platforms Supported</a><a class="headerlink" href="#platforms-supported" title="Permalink to this headline">¶</a></h3>
+<p>Blockstream Green is available for <a class="reference external" href="https://play.google.com/store/apps/details?id=com.greenaddress.greenbits_android_wallet">Android</a>
+and <a class="reference external" href="https://itunes.apple.com/app/id1402243590">iOS</a>.</p>
+</div>
+<div class="section" id="testnet-versions">
+<h3><a class="toc-backref" href="#id5">Testnet Versions</a><a class="headerlink" href="#testnet-versions" title="Permalink to this headline">¶</a></h3>
+<p>Bitcoin has an alternative network known as ‘testnet’. This testnet network is just like
+the real Bitcoin network (which is known as ‘mainnet’), but with worthless coins, so that
+people can test features and applications without the risk of losing real coins.</p>
+<p>Our wallets can connect to testnet by selecting testnet from the list of networks in the
+settings of the login page. If you are new to Bitcoin or Blockstream Green, we urge you to
+try things out on testnet first, so that you can get comfortable with how things work
+before you start using your real coins.</p>
+<p>Wallets, addresses, and coins on the Bitcoin Testnet are completely separate from the real
+Bitcoin network. As such, you will need to create and secure a new mainnet wallet after
+you are finished with testing and wish to use the real Bitcoin network. Trying to use an
+address, or login credentials, or mnemonic from a testnet wallet or service on the Bitcoin
+mainnet will not work.</p>
+</div>
+<div class="section" id="youre-in-control">
+<h3><a class="toc-backref" href="#id6">You’re in Control</a><a class="headerlink" href="#youre-in-control" title="Permalink to this headline">¶</a></h3>
+<p>Bitcoin is an exciting new technology with many advantages, but it comes with some extra
+responsibilities on the users’ end. As a Bitcoin wallet provider, we at Blockstream Green
+do not actually grant access to your Bitcoin - you do.</p>
+<p>We are a non-custodial wallet. We provide you with the tools to manage your coins. Even if
+we disappear, you still retain access to your Bitcoin. This is contrasted with a custodial
+service, which holds coins on behalf of its users.</p>
+<p>In a custodial system, the service is solely responsible for securing users coins.
+Examples include a bank or cryptocurrency exchange that has a verification process for new
+users, and then receives, stores, and sends coins on their users’ behalf, as long as they
+can verify their identity. This kind of service can deny users access or confiscate their
+coins at their own discretion or as a result of pressure from authorities.</p>
+<p>This is not possible with Blockstream Green, as we are a non-custodial service. Each user
+exclusively controls their own Bitcoin, and it’s not possible for Blockstream Green to
+unilaterally move your coins. As long as you follow the instructions provided, you remain
+in complete control of your coins, and are solely responsible for retaining access to
+them.</p>
+<p>Because of this, there are some differences between our services and user responsibilities
+and more traditional financial tools and services. Be sure to read the Setting Up a Wallet
+section for details; pay close attention to the recommended practices outlined there.</p>
+</div>
+<div class="section" id="were-free-but-bitcoin-isnt">
+<h3><a class="toc-backref" href="#id7">We’re Free! (But Bitcoin Isn’t)</a><a class="headerlink" href="#were-free-but-bitcoin-isnt" title="Permalink to this headline">¶</a></h3>
+<p>Blockstream Green is a completely free service - we do not earn any revenue from our
+users, we neither collect, nor use any of their data.</p>
+<p>It is important to understand that all Bitcoin transactions require a fee that is built in
+as part of the Bitcoin protocol. This fee is paid to the miners who run expensive
+equipment to secure the Bitcoin network and confirm users’ transactions.</p>
+<p>There is no benefit to Blockstream Green for our users to pay high fees, and we do our
+best to provide our users with tools and strategies to keep their fees low. At certain
+times, however, factors beyond our control can lead to high fees when sending Bitcoin.</p>
+<p>We do not ever receive these fees, and so have no way to return any fees to users after a
+transaction has been confirmed. We always show the fee that a transaction will pay so you
+can verify or change it before you make your transaction.</p>
+</div>
+<div class="section" id="whats-special-about-blockstream-green">
+<h3><a class="toc-backref" href="#id8">What’s Special About Blockstream Green</a><a class="headerlink" href="#whats-special-about-blockstream-green" title="Permalink to this headline">¶</a></h3>
+<p>For those that are already familiar with how Bitcoin wallets typically work, you may know
+about some of the convenience, security, and privacy features that using Bitcoin offers.</p>
+<p>Thanks to our unique multi-signature format, we’re able to offer all the usual privacy and
+freedom of typical Bitcoin wallets, but with extra security.</p>
+<p>We use a format that requires signatures generated by 2 different keys, one of which is
+controlled by you, and one of which is controlled by our service. The service will sign
+transactions as long as Two-Factor Authentication (2FA) confirmation – a one time password
+delivered to you ideally on a separate device via Google Authenticator, email, SMS or call
+– is given. This means that even if someone gets a hold of your mnemonic, they still can’t
+steal your coins when you have 2FA enabled, unless they also compromise your 2FA method.</p>
+<p>The process also stays trust minimized - even if, for some reason, the service cannot sign
+your transaction, you can independently move your coins without the service after a chosen
+period of time has passed.</p>
+<p>This gets you the best of both worlds - the full financial sovereignty and trustlessness
+of a non-custodial Bitcoin wallet along with the extra layer of server-enforced two factor
+security.</p>
+<p>Our design enables a lot of cool features, many of which are not available in other
+wallets:</p>
+<p><strong>Convenience</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Easy access from anywhere</p></li>
+<li><p>All access controlled by a single user mnemonic</p></li>
+<li><p>A simple interface with current prices in your national currency</p></li>
+<li><p>Fast PIN login</p></li>
+<li><p>Watch-only logins for quick balance and transaction checking</p></li>
+<li><p>Easy key sweeping to import coins</p></li>
+<li><p>User supplied transaction memos</p></li>
+<li><p>Default or Custom Transaction Fees</p></li>
+<li><p>Increase fees after sending to speed up confirmation</p></li>
+<li><p>Segregated Witness support for the lowest fees possible</p></li>
+<li><p>Testnet network for functionality trials</p></li>
+</ul>
+</div></blockquote>
+<p><strong>Security</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Multiple two-factor authentication options</p></li>
+<li><p>Blockstream Green signature required to move coins</p></li>
+<li><p>User-Controlled transaction limits and restrictions</p></li>
+<li><p>Hardware wallet support (on Andorid)</p></li>
+</ul>
+</div></blockquote>
+<p><strong>Privacy</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>No KYC or identification of users necessary</p></li>
+<li><p>User secrets are never transmitted to our servers or stored unencrypted on your
+device</p></li>
+<li><p>Minimal information is stored by the service</p></li>
+<li><p>Optional PGP encryption for email privacy</p></li>
+<li><p>Accessibility via Tor</p></li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="setting-up-a-wallet">
+<h2><a class="toc-backref" href="#id9">Setting Up a Wallet</a><a class="headerlink" href="#setting-up-a-wallet" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="install-the-app">
+<h3><a class="toc-backref" href="#id10">Install the app</a><a class="headerlink" href="#install-the-app" title="Permalink to this headline">¶</a></h3>
+<p>Blockstream Green apps can be accessed through the following operating systems and apps:</p>
+<table class="colwidths-auto docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p>Operating Systems Supported</p></th>
+<th class="head"><p>Native Applications</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Android</p></td>
+<td><p><a class="reference external" href="https://blockstream.green/android">Blockstream Green Android Wallet</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>iOS</p></td>
+<td><p><a class="reference external" href="https://blockstream.green/ios">Blockstream Green iOS Wallet</a></p></td>
+</tr>
+</tbody>
+</table>
+<p>Each of our apps can also be used on Bitcoin’s testnet, which we recommend for testing new
+features or becoming accustomed with the setup process to avoid accidental loss of coins.</p>
+</div>
+<div class="section" id="create-a-new-wallet">
+<span id="to-create-wallet"></span><h3><a class="toc-backref" href="#id11">Create a New Wallet</a><a class="headerlink" href="#create-a-new-wallet" title="Permalink to this headline">¶</a></h3>
+<p>After you’ve installed the app, you’ll have the option to log in with an existing mnemonic
+, or create a new wallet. To start, click on <code class="docutils literal notranslate"><span class="pre">Create</span> <span class="pre">New</span> <span class="pre">Wallet</span></code>.</p>
+<a class="reference internal image-reference" href="../../_images/landing.png"><img alt="../../_images/landing.png" class="align-center" src="../../_images/landing.png" style="width: 250px;" /></a>
+<p>At this point, the app will generate a 24-word mnemonic to function as a backup login
+method for your wallet. (Our wallets use <a class="reference external" href="https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki">the BIP39 standard</a> for generating your
+mnemonic and <a class="reference external" href="https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki">BIP32</a> to derive private keys from that mnemonic).</p>
+<a class="reference internal image-reference" href="../../_images/menmonic-warning.png"><img alt="../../_images/menmonic-warning.png" class="align-center" src="../../_images/menmonic-warning.png" style="width: 250px;" /></a>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p><strong>Your mnemonic is the single most important piece of information associated with your
+wallet.</strong></p>
+<p><strong>You must write it down somewhere safe and secret - it’s your ultimate backup.</strong></p>
+</div>
+<p>It must be kept safe and accessible because if your app gets uninstalled, or your device
+gets lost or stolen, or you forget your PIN, or your PIN gets reset, then your mnemonic
+will let you access your coins again. Even if we at Blockstream Green get shut down or
+disappear, you can still retain control of your coins as long as you have your mnemonic.</p>
+<p>It must be kept secret because if someone else can figure out or steal your mnemonic, they
+may be able to steal your coins (although if you have <em>Two-Factor Authentication</em> set up,
+they will need to bypass that as well…but we’ll cover that in the <a class="reference external" href="../troubleshooting-advanced/troubleshooting-advanced-index.html#two-factor-authentication">Two-Factor
+Authentication section</a> ).</p>
+<p>To ensure that you safely recorded your mnemonic, you will be prompted to re-enter several
+of the words in the correct order.</p>
+<a class="reference internal image-reference" href="../../_images/mnemonic-quiz.png"><img alt="../../_images/mnemonic-quiz.png" class="align-center" src="../../_images/mnemonic-quiz.png" style="width: 250px;" /></a>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Remember:
+<strong>we don’t store your mnemonic in the Blockstream Green database, so we are not able to
+tell what it is if you lose it.</strong></p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>It is also crucial to <strong>never</strong> send your mnemonic over email or text to anyone (
+including Blockstream Green support).</p>
+<p>Doing so can expose your mnemonic to theft, and put your coins at risk. If you ever
+forget and accidentally do this, we urge you to create a brand new wallet as soon as
+possible and move your coins to that new wallet.</p>
+</div>
+</div>
+<div class="section" id="choose-a-pin-for-this-wallet">
+<h3><a class="toc-backref" href="#id12">Choose a PIN for this Wallet</a><a class="headerlink" href="#choose-a-pin-for-this-wallet" title="Permalink to this headline">¶</a></h3>
+<p>After you have recorded and confirmed your mnemonic, you will be able to choose a PIN.
+This is a 6 digit number that can be used to quickly access your wallet on that device and
+on that network.</p>
+<a class="reference internal image-reference" href="../../_images/PIN-create.png"><img alt="../../_images/PIN-create.png" class="align-center" src="../../_images/PIN-create.png" style="width: 250px;" /></a>
+<p>In addition to the PIN you may also use iOS TouchID or Android’s Authentication to ease
+access to the wallet you just created or restored. You can set this up from settings.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>It is important to keep your PIN safe and secret. If it is lost, your only option to
+re-access your wallet will be through your mnemonic.</p>
+</div>
+<p>Your <strong>PIN is specific to the device and network</strong> that it is created on. It is possible
+to access your wallet from multiple devices by using your mnemonic, but you will create a
+separate PIN for each device, so they might not be the same.</p>
+<p>As a security feature, your device will reset your PIN if you or someone else enters the
+wrong PIN 3 times in a row. This is to prevent a malicious party from continually
+guessing until they get your PIN right.</p>
+<p>If your PIN is reset, you will need to enter your mnemonic through <code class="docutils literal notranslate"><span class="pre">Restore</span> <span class="pre">Green</span>
+<span class="pre">Wallet</span></code> on the “Onboarding” screen, which will allow you to create a new PIN for that
+device.</p>
+<a class="reference internal image-reference" href="../../_images/landing.png"><img alt="../../_images/landing.png" class="align-center" src="../../_images/landing.png" style="width: 250px;" /></a>
+</div>
+<div class="section" id="set-up-two-factor-authentication">
+<h3><a class="toc-backref" href="#id13">Set up Two-Factor Authentication</a><a class="headerlink" href="#set-up-two-factor-authentication" title="Permalink to this headline">¶</a></h3>
+<p>Finally, after you have recorded and confirmed your mnemonic and set your PIN, you will be
+prompted to choose a <em>Two-Factor Authentication</em> method. A <em>Two-Factor Authentication</em>
+method is a second layer of security that a
+wallet’s owner must confirm before sending coins or making other critical changes in
+settings.</p>
+<a class="reference internal image-reference" href="../../_images/2fa-setup.png"><img alt="../../_images/2fa-setup.png" class="align-center" src="../../_images/2fa-setup.png" style="width: 250px;" /></a>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>While optional, we urge you to activate at least one <em>Two-Factor Authentication</em> method.
+Ideally, you should add at least 2 different <em>Two-Factor Authentication</em> options.</p>
+</div>
+<p>For various reasons, our users sometimes lose access to one of their <em>Two-Factor
+Authentication</em> methods, and this can be very inconvenient.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You can mitigate this risk by having at least 2 different <em>Two-Factor Authentication</em>
+methods in place.</p>
+<p>This way, if you suddenly lose access to one, you can still retain full access to your
+wallet, and then reset the lost <em>Two-Factor Authentication</em> method (for more details on
+this, see the section for <a class="reference external" href="../troubleshooting-advanced/troubleshooting-advanced-index.html#changing-your-two-factor-authentication-settings">changing a Two-Factor authentication method</a>).</p>
+</div>
+<p>Using <em>Two-Factor Authentication</em> is simple: whenever you take an action that requires
+<em>Two-Factor Authentication</em> authorization (sending a transaction, or changing your
+<em>Two-Factor Authentication</em> settings), you will confirm the action by providing a
+confirmation code that you will receive via your preferred <em>Two-Factor Authentication</em>
+method.</p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p><em>Two-Factor Authentication</em> is most secure when it is separated from the wallet device.</p>
+</div>
+</div>
+<div class="section" id="best-practices-for-creating-a-new-wallet">
+<h3><a class="toc-backref" href="#id14">Best Practices for Creating a New Wallet</a><a class="headerlink" href="#best-practices-for-creating-a-new-wallet" title="Permalink to this headline">¶</a></h3>
+<p>Creating a wallet for the first time is a straightforward process, but there are a couple
+of common mistakes that new Bitcoin users make.</p>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>Not properly recording your mnemonic at the beginning might lead you to lose your
+funds.</p>
+</div>
+<p>Though it might be inconvenient at the time, and you might be excited to use the wallet
+immediately, it is very important to take the time to properly record your mnemonic and
+safely store it.</p>
+<p>Some other wallets allow users to start transacting without recording their mnemonic.
+While this might seem OK, we believe that this is risky and irresponsible.</p>
+<p>It is very easy for users to start accepting and sending bitcoins and delay properly
+recording their mnemonic. Then, when something goes wrong in the future (their phone
+breaks, the PIN is entered incorrectly, etc), they suddenly lose access to their their
+coins.</p>
+<p>Take extra-care to safely note and store your 24-words mnemonic. Please take this process
+very seriously, and give it the time and attention that it needs.</p>
+<p>—</p>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>Using a throw-away email address for your <em>Two-Factor Authentication</em> can also result
+in loss of coins!</p>
+</div>
+<p>Unless you immediately create more permanent alternative <em>Two-Factor Authentication</em>
+methods (which we recommend anyway), or ensure you retain access to this throw-away email
+address losing access to your email can be very inconvenient.</p>
+<p>Make sure you use an email address that you will be able to access in the future.</p>
+<p>—</p>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>Creating a new wallet while there is an existing wallet on the app could prevent you
+from being able to access this new wallet, unless you safely store this new wallet
+mnemonic.</p>
+</div>
+<p>You will be allowed to create as many wallets as you like on your Blockstream Green app,
+but it can only store one PIN-protected mnemonic at a time. This means that any new
+wallets won’t be PIN-accessible on that device, and in the future must be logged into
+using the full mnemonic.</p>
+<p>If you wish to create a new wallet, and have your app store a PIN for the new one, you
+will need to first disable the PIN on the original wallet. You can do this by entering an
+incorrect PIN 3 times in a row, or from settings after you have logged in.</p>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="basic-usage">
+<h2><a class="toc-backref" href="#id15">Basic Usage</a><a class="headerlink" href="#basic-usage" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="logging-in">
+<h3><a class="toc-backref" href="#id16">Logging In</a><a class="headerlink" href="#logging-in" title="Permalink to this headline">¶</a></h3>
+<p>After you have created your wallet, you will be presented with a login screen when you
+open the app.</p>
+<a class="reference internal image-reference" href="../../_images/PIN.png"><img alt="../../_images/PIN.png" class="align-center" src="../../_images/PIN.png" style="width: 250px;" /></a>
+<p>Here, you can enter your PIN, which will grant you access to your wallet. This will work
+in the vast majority of situations.</p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>If you have forgotten your PIN, you will need to enter your 24-word mnemonic to access
+your wallet. After you have done this, you will be prompted to create a new PIN to
+easily access the wallet you just restored.</p>
+</div>
+<p>You will also need to access your wallet with your mnemonic if you or someone else has
+incorrectly entered your PIN 3 times in a row. In this scenario, your app will reset your
+PIN and require your mnemonic. This is a security feature to prevent a malicious party
+from continually guessing your PIN until they get it right.</p>
+</div>
+<div class="section" id="balance-and-transaction-list">
+<h3><a class="toc-backref" href="#id17">Balance and Transaction List</a><a class="headerlink" href="#balance-and-transaction-list" title="Permalink to this headline">¶</a></h3>
+<p>The main screen you’ll be using in Blockstream Green will display your wallet’s balance in
+Bitcoin and its approximate value in your selected fiat currency.</p>
+<p>Directly below this will be the <a class="reference external" href="getting-started-index.html#sending-transactions">send</a>
+and <a class="reference external" href="getting-started-index.html#receiving-transactions">receive</a>
+buttons.</p>
+<p>You can also view from this screen all of your wallet’s incoming and outgoing
+transactions. Transactions are listed in reverse chronological order, starting with the
+most recent transactions at the top.</p>
+<p>You’ll be able to see the date, time, amount (in Bitcoin and fiat currency), and
+confirmation status of any transactions. You can also select any transaction to get more
+information about it, such as its Transaction Hash, which can be used as a
+proof-of-payment.</p>
+</div>
+<div class="section" id="receiving-transactions">
+<h3><a class="toc-backref" href="#id18">Receiving Transactions</a><a class="headerlink" href="#receiving-transactions" title="Permalink to this headline">¶</a></h3>
+<p>To receive Bitcoin, all you need to do is provide a receiving address to the sender.</p>
+<a class="reference internal image-reference" href="../../_images/receive.png"><img alt="../../_images/receive.png" class="align-center" src="../../_images/receive.png" style="width: 250px;" /></a>
+<p>A Bitcoin receiving address is a string of numbers and letters. You can create a receiving
+address by selecting “Receive” from the main screen. Your wallet will generate a new
+receiving address each time you prompt it for one. While it is possible to reuse old
+addresses, we strongly advise against this because it lessens your privacy.</p>
+<p>Once you can see what your new address is, you’ll need to communicate it to the sender.
+If you need to send over a distance, a text message or email is an effective way to do it.</p>
+<p>If you are physically beside the person who will be sending you Bitcoin, another option is
+to use the QR code, which the sender can scan to get the receiving address. This is really
+convenient if the sender is using a mobile wallet.</p>
+<p>Once someone has sent a transaction to your Blockstream Green wallet, it should appear in
+your transaction list page. At first, it will be labelled “unconfirmed”. At this point,
+you should not consider the coins to have been received, because the transaction may still
+get overwritten or canceled. The transaction will over time accumulate “confirmations” as
+new blocks are mined in the Bitcoin network. Once your transaction reaches 6
+confirmations, your wallet will list it as “confirmed” and you can consider the coins
+received.</p>
+</div>
+<div class="section" id="sending-transactions">
+<h3><a class="toc-backref" href="#id19">Sending Transactions</a><a class="headerlink" href="#sending-transactions" title="Permalink to this headline">¶</a></h3>
+<p>To send a transaction, select “Send” from the main screen.</p>
+<p>You will need to get the receiving address from the recipient, and enter it (either by
+typing or pasting it in, or by scanning the receiver’s QR code).</p>
+<a class="reference internal image-reference" href="../../_images/send-receipient.png"><img alt="../../_images/send-receipient.png" class="align-center" src="../../_images/send-receipient.png" style="width: 250px;" /></a>
+<p>Then, you can input the amount of Bitcoin that you want to send, and hit send.</p>
+<a class="reference internal image-reference" href="../../_images/send-amount.png"><img alt="../../_images/send-amount.png" class="align-center" src="../../_images/send-amount.png" style="width: 250px;" /></a>
+<p>Your wallet will also automatically calculate a fee for your transaction, which is
+necessary to have the network accept it.</p>
+<a class="reference internal image-reference" href="../../_images/send-review.png"><img alt="../../_images/send-review.png" class="align-center" src="../../_images/send-review.png" style="width: 250px;" /></a>
+<p>After you have sent a transaction, you need to wait for the network to confirm it, which
+can take a bit of time. You can check the status of a transaction by looking into your
+transaction history on the main screen.</p>
+</div>
+<div class="section" id="what-happens-after-a-transaction-is-sent">
+<h3><a class="toc-backref" href="#id20">What Happens After a Transaction Is Sent</a><a class="headerlink" href="#what-happens-after-a-transaction-is-sent" title="Permalink to this headline">¶</a></h3>
+<p>Many new users sometimes wonder why they need to wait for Bitcoin transactions to
+complete. Why don’t they happen instantly?</p>
+<p>This is because after the transaction has been sent, the sender and receiver’s jobs are
+done, but there are still several steps that need to be completed behind the scenes.</p>
+<p>To become confirmed, a transaction needs to be included in a block. Blocks are created
+every 10 minutes on average, but this is only an average, and can vary from time to time.
+Sometimes blocks are found much more quickly (several within a minute) or much slower
+(can take over an hour).</p>
+<p>Depending on how busy the network is, and how high a fee the sender paid, the transaction
+may not be included in the next block.</p>
+<p>Once the transaction has been included in a block, it has 1 “confirmation”. Every block
+mined after that earns it another confirmation. The industry standard is to wait for 6
+confirmations before considering a transaction to be confirmed, at which point you can be
+confident that it has been received and can not be reversed or redirected. You will be
+able to see the confirmations accumulate on your wallet’s default screen.</p>
+</div>
+<div class="section" id="our-multisignature-model">
+<h3><a class="toc-backref" href="#id21">Our Multisignature Model</a><a class="headerlink" href="#our-multisignature-model" title="Permalink to this headline">¶</a></h3>
+<p>Blockstream Green wallets use a special transaction format different from most other
+Bitcoin wallets.</p>
+<p>Most other storage services in Bitcoin are either “custodial” or “non-custodial without
+<em>Two-Factor Authentication</em> security”.</p>
+<p>Custodial services, such as exchanges, hold your Bitcoin for you. This also means that
+they can confiscate your coins at will, or if they get hacked, your coins can get stolen.
+It also usually means KYC identification, and risks of privacy loss.</p>
+<p>Other non-custodial wallets do not have those issues, but it also means that if someone
+steals your mnemonic or gain access to your wallet, they can steal all of your coins.
+The secrecy of your mnemonic is the only thing protecting your coins with these wallets.</p>
+<p>With Blockstream Green, you get the benefits of both types.</p>
+<p>This is possible because coins in Blockstream Green wallets have two different spend
+conditions.</p>
+<p>The first way to spend coins is using signatures from 2 different keys to send coins. One
+is held by the user in the form of the mnemonic, which the service  never knows. The other
+is stored on our server, and we sign your transactions with it after any <em>Two-Factor
+Authentication</em> you have enabled verifies the transaction.</p>
+<p>This means that, unlike custodial solutions, we can never steal your coins, since we don’t
+know your mnemonic. Even if we get hacked, or taken over by a government entity, or
+something else catastrophic happens, no one can steal your coins.</p>
+<p>On the user side, even if someone steals your mnemonic, they cannot spend your coins
+unless they can access your <em>Two-Factor Authentication</em>. This is the type of security that
+other wallets do not offer.</p>
+<p>The second way to spend coins becomes available after your two factor recovery period
+expires. Once this happens,  you can spend your coins without our service needing to also
+sign. This is to ensure that no matter what happens, you can always get your coins back.</p>
+<p>Our signature scheme also allows us to enforce <em>Two-Factor Authentication</em> security, <em>Two-
+Factor Authentication</em> spending thresholds, and other extra options. These features do not
+exist in typical Bitcoin wallets.</p>
+</div>
+<div class="section" id="redeposits">
+<h3><a class="toc-backref" href="#id22">Redeposits</a><a class="headerlink" href="#redeposits" title="Permalink to this headline">¶</a></h3>
+<p>As explained above, coins in your main Blockstream Green wallet (or a 2of2 simple account)
+require 2 signatures to be spent: one from you and one from Blockstream Green. In order to
+protect you from loss of access to your coins should Blockstream Green become unavailable,
+there is an alternative spend condition which requires only the user’s signature, provided
+that a certain period of time has passed.</p>
+<p>If the service becomes unavailable, you simply wait for the specified period (90 days by
+default), then sign and send the transaction using our open source recovery tool
+<a class="reference external" href="https://github.com/greenaddress/garecovery">garecovery</a>.</p>
+<p>After the expiry period passes, any other limits placed on your spending in Blockstream
+Green, such as <em>Two-Factor Authentication</em> requirements, cease to be enforceable by the
+service.</p>
+<p>At this point the wallet will prompt you to redeposit the coins by sending them to
+yourself (If you don’t log in to the wallet during this time, and you have email
+notifications enabled, the service will email you a reminder as the expiry date gets
+closer). The creation of the redeposit transaction resets the expiry period, thereby
+re-protecting the coins by once again requiring a Blockstream Green signature to spend
+them.</p>
+<p>Keep in mind that this redeposit transaction is a regular Bitcoin transaction, and as such
+is subject to the usual transaction fees for the miners.</p>
+<p>You can also adjust the expiry period in your settings if you wish it to be longer or
+shorter. A shorter expiry means you need to redeposit more often to maintain your <em>Two-
+Factor Authentication</em> security but don’t have to wait as long to recover; a longer expiry
+lets you redeposit less often, but you have to wait longer if your <em>Two-Factor
+Authentication</em> becomes inaccessible.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../liquid/liquid-index.html" class="btn btn-neutral float-right" title="Blockstream Green Wallet on Liquid" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../../index.html" class="btn btn-neutral float-left" title="RandyMcMillan" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Randy McMillan
+      <span class="lastupdated">
+        Last updated on Nov 02, 2020.
+      </span>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

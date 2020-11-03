@@ -1,0 +1,310 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Multiple Wallets and Devices &mdash; R A N D Y M c M I L L A N</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> 
+          
+
+          
+            
+            <img src="../../_static/blks_logo_transparent.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Blockstream Green</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/getting-started-index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../liquid/liquid-index.html">Liquid Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hww.html">Hardware Wallets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting-advanced-index.html">Troubleshooting and Advanced Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Support</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Liquid Network</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../liquid/technical_overview.html">Technical Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../liquid/quickstart.html">Liquid Node Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../liquid/node_setup.html">Liquid Node Setup (Advanced)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../liquid/developer-guide/developer-guide-index.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../liquid/app-examples/app-examples-index.html">App Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../liquid/general-developer-info/general-developer-info-index.html">General Developer Info</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../liquid/acquire_lbtc.html">How To Acquire L-BTC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../liquid/swap_tool.html">Liquid Swap Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../liquid/additional_resources.html">Additional Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../liquid/support.html">Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../liquid/faq.html">FAQ</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contribute</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/contributing.html">Contributing to Blockstream Docs</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../developer-documentation.html">c-lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer-documentation.html#esplora">Esplora</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer-documentation.html#libwally">Libwally</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer-documentation.html#gdk">GDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer-documentation.html#elements">Elements</a></li>
+</ul>
+<p class="caption"><span class="caption-text">PGP</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../randymcmillan-asc.html">randymcmillan.asc</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html"></a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Multiple Wallets and Devices</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="multiple-wallets-and-devices">
+<h1>Multiple Wallets and Devices<a class="headerlink" href="#multiple-wallets-and-devices" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="managing-a-single-wallet-across-multiple-devices">
+<h2>Managing a Single Wallet Across Multiple Devices<a class="headerlink" href="#managing-a-single-wallet-across-multiple-devices" title="Permalink to this headline">¶</a></h2>
+<p>One of the many advantages of using Blockstream Green is that you get multi-platform
+support - you can access your wallet from different devices on different operating systems
+.</p>
+<p>To do this, you need to first have a wallet created (on any one of our apps), and have the
+mnemonic carefully recorded.</p>
+<p>Now, install any version of our app on the secondary device that you wish to use. Once it
+is installed, do not create a new wallet. Instead, tap on <cite>Restore Green Wallet</cite> and enter
+your 24-word mnemonic from your original wallet.</p>
+<a class="reference internal image-reference" href="../../_images/landing2.png"><img alt="../../_images/landing2.png" class="align-center" src="../../_images/landing2.png" style="width: 250px;" /></a>
+<p>After this, the app will ask you to create a PIN (if there is no other PIN-protected
+mnemonic on your device).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It is important to understand that this is not the same PIN that you use to
+enter your wallet in the original device. Each device can be set up with its own PIN.
+The mnemonic is common to all devices accessing the same wallet and coins, but each PIN
+is specific to the device it was created on.</p>
+</div>
+<p>Once you have done this, you can freely access your coins from either device, and make
+changes as you please. Also, any coins sent or received on one device will be reflected in
+all other devices connecting to that same wallet.</p>
+</div>
+<div class="section" id="managing-multiple-wallets-on-a-single-device">
+<h2>Managing Multiple Wallets on a Single Device<a class="headerlink" href="#managing-multiple-wallets-on-a-single-device" title="Permalink to this headline">¶</a></h2>
+<p>It is also possible to use a single device and app to access different wallets created by
+the app’s user.</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Keep in mind, that managing multiple wallets on a single device will mean
+carefully managing a separate 24-word mnemonic for each wallet. It is already
+imperative that you keep any mnemonic safely and secretly recorded, but managing
+multiple wallets will make very clear as to why!</p>
+</div>
+<a class="reference internal image-reference" href="../../_images/landing2.png"><img alt="../../_images/landing2.png" class="align-center" src="../../_images/landing2.png" style="width: 250px;" /></a>
+<p>Imagine that you have created your first wallet (A) and you access it via PIN.</p>
+<p>Now, you want to create a separate wallet (B). You do this by clicking on <code class="docutils literal notranslate"><span class="pre">Create</span> <span class="pre">New</span>
+<span class="pre">Wallet</span></code> on the bottom of the <em>Onboarding</em> page.</p>
+<p>When you do this, you will be warned that <strong>you can only have one PIN-protected mnemonic
+at one time on a network</strong>. If you continue, your mnemonic is the only means you have to
+recover your wallet as you will not be able to set a PIN.</p>
+<a class="reference internal image-reference" href="../../_images/PIN-warning.png"><img alt="../../_images/PIN-warning.png" class="align-center" src="../../_images/PIN-warning.png" style="width: 250px;" /></a>
+<ul>
+<li><p>If you press <code class="docutils literal notranslate"><span class="pre">OK</span></code> you will be guided through the new wallet setup process, but you
+<strong>will not be able to set a PIN</strong> for this wallet, and you will be able to access it by
+typing the 24-words mnemonic from the <code class="docutils literal notranslate"><span class="pre">Restore</span> <span class="pre">Green</span> <span class="pre">Wallet</span></code> in the “Onboarding”
+screen every time.</p></li>
+<li><p>If you want to access this new wallet (B) via PIN, you first need to erase the existing
+PIN for wallet (A). This entails being able to access wallet (A) only by typing its
+24-words mnemonic via  the <code class="docutils literal notranslate"><span class="pre">Restore</span> <span class="pre">Green</span> <span class="pre">Wallet</span></code> in the <em>Onboarding</em> screen.</p>
+<blockquote>
+<div><ol class="arabic">
+<li><p>Delete the PIN for wallet (A):</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>either by accessing wallet (A) via PIN, and erasing PIN from settings,</p></li>
+<li><p>or by inputting a wrong PIN 3 times.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Go back to the <em>Onboarding</em> screen, and create or restore wallet (B).</p></li>
+</ol>
+</div></blockquote>
+</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Now, some of you may note that this isn’t all that convenient, having to re-enter
+your mnemonic each time you switch wallets.</p>
+<p>That is correct; it’s not a function that we generally recommend our users to use.
+Instead, if you wish to keep several different accounts for different groups of coins,
+we recommend that you use our simple account feature.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Randy McMillan
+      <span class="lastupdated">
+        Last updated on Nov 02, 2020.
+      </span>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

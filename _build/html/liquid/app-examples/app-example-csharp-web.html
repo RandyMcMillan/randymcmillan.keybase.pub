@@ -1,0 +1,368 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>C# .NET Core (MVC) &mdash; R A N D Y M c M I L L A N</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> 
+          
+
+          
+            
+            <img src="../../_static/blks_logo_transparent.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Blockstream Green</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../green/getting-started/getting-started-index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../green/liquid/liquid-index.html">Liquid Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../green/hww.html">Hardware Wallets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../green/troubleshooting-advanced/troubleshooting-advanced-index.html">Troubleshooting and Advanced Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../green/support.html">Support</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Liquid Network</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../technical_overview.html">Technical Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Liquid Node Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../node_setup.html">Liquid Node Setup (Advanced)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer-guide/developer-guide-index.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="app-examples-index.html">App Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general-developer-info/general-developer-info-index.html">General Developer Info</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acquire_lbtc.html">How To Acquire L-BTC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../swap_tool.html">Liquid Swap Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../additional_resources.html">Additional Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">FAQ</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contribute</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/contributing.html">Contributing to Blockstream Docs</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../developer-documentation.html">c-lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer-documentation.html#esplora">Esplora</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer-documentation.html#libwally">Libwally</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer-documentation.html#gdk">GDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer-documentation.html#elements">Elements</a></li>
+</ul>
+<p class="caption"><span class="caption-text">PGP</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../randymcmillan-asc.html">randymcmillan.asc</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html"></a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>C# .NET Core (MVC)</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="c-net-core-mvc">
+<h1>C# .NET Core (MVC)<a class="headerlink" href="#c-net-core-mvc" title="Permalink to this headline">¶</a></h1>
+<p>The .NET Core framework runs on Linux, Windows and Mac OS. We will use C#, the most popular .NET language, within an MVC web application to make a Remote Procedure Call (RPC) to the Liquid daemon, which you will need to start using the config file settings <a class="reference internal" href="app-examples-index.html#config"><span class="std std-ref">outlined above</span></a>.</p>
+<p>Our aim is simply to make a call to Liquid using RPC by executing some basic C# code.</p>
+<p><strong>Installing the .NET Core SDK</strong></p>
+<p>Before starting, check that you have installed the required <a class="reference internal" href="app-examples-index.html#csharp-reqs"><span class="std std-ref">prerequisites</span></a> from the previous example.</p>
+<p><strong>Creating the application</strong></p>
+<p>We will be using the Model, View, Controller (MVC) pattern for our app. We will also be using an existing class to handle the calls to Liquid daemon and simplify our code. We will amend the default Home controller to call this class and pass the data it returns back to the relevant View using a new Model that we’ll also create.</p>
+<p>To get started, create a directory for our MVC app and move into it:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir LiquidMVC
+<span class="nb">cd</span> LiquidMVC
+</pre></div>
+</div>
+<p>Use the dotnet tool to create a new template mvc site. This will set up the required folder structure, files, and configuration needed to serve the web app:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dotnet new mvc
+</pre></div>
+</div>
+<p>Check it is set up correctly by running the app:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dotnet run
+</pre></div>
+</div>
+<p>When it says the application has started, browse to <a class="reference external" href="https://localhost:5001">https://localhost:5001</a></p>
+<p>You should see the template site running, all we have to do is add our own code to what’s already there.</p>
+<p>Shut the app down using Ctrl+C.</p>
+<p>Now we will start adding our own code so that we can query our Liquid node and display the results on the app’s home page.</p>
+<p>Create a new file named “dotnetcoreDynamicJSON-RPC.cs” in the LiquidMVC directory and paste in the <a class="reference external" href="https://raw.githubusercontent.com/wintercooled/dotnetcoreDynamicJSON-RPC/master/dotnetcoreDynamicJSON-RPC.cs">raw code</a> of the “Dynamic JSON RPC class” and save it. Alternatively, clone the <a class="reference external" href="https://github.com/wintercooled/dotnetcoreDynamicJSON-RPC">GitHub repository</a> into a different directory and copy the dotnetcoreDynamicJSON-RPC.cs file into your LiquidMVC directory.</p>
+<p>This class is a C# wrapper class intended to enable simple dynamic JSON RPC calls to Bitcoin, Liquid, Elements, and other RPC enabled daemons. The project, along with examples of how to use it, can be found in the <a class="reference external" href="https://github.com/wintercooled/dotnetcoreDynamicJSON-RPC">repository</a>. All we need for now though is to copy the code from the raw link</p>
+<p>That class enables us to easily query our node. We’ll add the code to call it soon, first we need a way to pass the data that we get back from our node to the web page for display. For that we need a Model. We’ll create a simple one that you can add to later.</p>
+<p>Create a new file named “ExampleNodeInfo.cs” in LiquidMVC/Models and paste the following into it:</p>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+
+<span class="k">namespace</span> <span class="nn">LiquidMVC.Models</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">class</span> <span class="nc">ExampleNodeInfo</span>
+    <span class="p">{</span>
+        <span class="k">public</span> <span class="kt">string</span> <span class="n">Balance</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+
+        <span class="k">public</span> <span class="kt">string</span> <span class="n">Message</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+        <span class="c1">//Add whatever other properties you want here</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Now we have a way to get data from our node and a Model that lets us pass the data to the View for display.</p>
+<p>Open the HomeController.cs file in LiquidMVC/Controllers. We will be adding code to call the Dynamic JSON RPC class to get data from our Liquid node, populate our Model with the results and hand the Model to the landing page’s View for display.</p>
+<p>To the top of the HomeController.cs file, add the following:</p>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">using</span> <span class="nn">DotnetcoreDynamicJSONRPC</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Then replace the Index method so it looks like the following. Note that some of the lines below wrap when viewed in a browser.</p>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="n">IActionResult</span> <span class="nf">Index</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">// We will be using a Liquid node in this example.</span>
+    <span class="c1">// It is easy to switch to use a Bitcoin, Liquid or Elements node.</span>
+    <span class="c1">// You need to change these to make sure you can authenticate against the daemon you are running:</span>
+    <span class="kt">string</span> <span class="n">rpcUrl</span> <span class="p">=</span> <span class="s">&quot;http://localhost&quot;</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="n">rpcPort</span> <span class="p">=</span> <span class="s">&quot;18884&quot;</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="n">rpcUsername</span> <span class="p">=</span> <span class="s">&quot;user1&quot;</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="n">rpcPassword</span> <span class="p">=</span> <span class="s">&quot;password1&quot;</span><span class="p">;</span>
+
+    <span class="c1">// For examples and notes on how to use the dotnetcoreDynamicJSON-RPC tool and its JSON helper methods please see:</span>
+    <span class="c1">// https://github.com/wintercooled/dotnetcoreDynamicJSON-RPC</span>
+
+    <span class="c1">// Initialise an instance of the dynamic dotnetcoreDynamicJSON_RPC class.</span>
+    <span class="kt">dynamic</span> <span class="n">dynamicRPC</span> <span class="p">=</span> <span class="k">new</span> <span class="n">DynamicRPC</span><span class="p">(</span><span class="n">rpcUrl</span><span class="p">,</span> <span class="n">rpcPort</span><span class="p">,</span> <span class="n">rpcUsername</span><span class="p">,</span> <span class="n">rpcPassword</span><span class="p">);</span>
+
+    <span class="c1">// Initialise our model that will be passed to the view</span>
+    <span class="kt">var</span> <span class="n">nodeInfo</span> <span class="p">=</span> <span class="k">new</span> <span class="n">ExampleNodeInfo</span><span class="p">();</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">dynamicRPC</span><span class="p">.</span><span class="n">DaemonIsRunning</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="k">try</span>
+        <span class="p">{</span>
+            <span class="c1">// Get the JSON result of the &#39;getwalletinfo&#39; RPC on the Liquid node.</span>
+            <span class="kt">string</span> <span class="n">balance</span> <span class="p">=</span> <span class="n">dynamicRPC</span><span class="p">.</span><span class="n">getwalletinfo</span><span class="p">();</span>
+
+            <span class="c1">// Use the DotnetcoreDynamicJSONRPC &#39;GetProperty&#39; string helper to return the property value we want.</span>
+            <span class="n">balance</span> <span class="p">=</span> <span class="n">balance</span><span class="p">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s">&quot;result.balance.bitcoin&quot;</span><span class="p">);</span>
+
+            <span class="c1">// Populate the model</span>
+            <span class="n">nodeInfo</span><span class="p">.</span><span class="n">Balance</span> <span class="p">=</span> <span class="n">balance</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">catch</span> <span class="p">(</span><span class="n">Exception</span> <span class="n">e</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">nodeInfo</span><span class="p">.</span><span class="n">Message</span> <span class="p">=</span> <span class="n">e</span><span class="p">.</span><span class="n">Message</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">else</span>
+    <span class="p">{</span>
+        <span class="n">nodeInfo</span><span class="p">.</span><span class="n">Message</span> <span class="p">=</span> <span class="s">&quot;Could not communicate with daemon&quot;</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Return the view and the associated model we have populated</span>
+    <span class="k">return</span> <span class="nf">View</span><span class="p">(</span><span class="n">nodeInfo</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Next, edit the Index.cshtml file in LiquidMVC/Views/Home and replace all the existing content with the following code. The code takes our Model and displays the data in it on the default web page.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>@model LiquidMVC.Models.ExampleNodeInfo
+
+@{
+    ViewData[&quot;Title&quot;] = &quot;Index&quot;;
+}
+
+&lt;h2&gt;Example Node Info&lt;/h2&gt;
+
+@{
+    if (Model.Message != &quot;&quot;)
+    {
+        &lt;h3&gt;@Model.Message&lt;/h3&gt;
+    }
+}
+
+&lt;div&gt;
+    &lt;h4&gt;Basic Wallet Info&lt;/h4&gt;
+    &lt;hr /&gt;
+    &lt;dl class=&quot;dl-horizontal&quot;&gt;
+        &lt;dt&gt;
+            @Html.DisplayNameFor(model =&gt; model.Balance)
+        &lt;/dt&gt;
+        &lt;dd&gt;
+            @Html.DisplayFor(model =&gt; model.Balance)
+        &lt;/dd&gt;
+    &lt;/dl&gt;
+&lt;/div&gt;
+</pre></div>
+</div>
+<p><strong>Running the application</strong></p>
+<p>Before you try running the code, make sure the Liquid daemon is running. Make sure your terminal is at the LiquidMVC directory level and run the following:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dotnet run
+</pre></div>
+</div>
+<p>When it says the application has started, browse to <a class="reference external" href="https://localhost:5001">https://localhost:5001</a></p>
+<p>The balance of the Liquid node’s wallet is displayed on the page.</p>
+<p>That should have got you up and running and in order to extend your application, you can look at the examples on the Dynamic JSON RPC class GitHub <a class="reference external" href="https://github.com/wintercooled/dotnetcoreDynamicJSON-RPC">site</a>.</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Randy McMillan
+      <span class="lastupdated">
+        Last updated on Nov 02, 2020.
+      </span>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

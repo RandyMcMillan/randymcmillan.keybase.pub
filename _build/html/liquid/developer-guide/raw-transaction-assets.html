@@ -1,0 +1,283 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Creating Raw Transactions &mdash; R A N D Y M c M I L L A N</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> 
+          
+
+          
+            
+            <img src="../../_static/blks_logo_transparent.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Blockstream Green</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../green/getting-started/getting-started-index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../green/liquid/liquid-index.html">Liquid Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../green/hww.html">Hardware Wallets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../green/troubleshooting-advanced/troubleshooting-advanced-index.html">Troubleshooting and Advanced Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../green/support.html">Support</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Liquid Network</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../technical_overview.html">Technical Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Liquid Node Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../node_setup.html">Liquid Node Setup (Advanced)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developer-guide-index.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../app-examples/app-examples-index.html">App Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general-developer-info/general-developer-info-index.html">General Developer Info</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acquire_lbtc.html">How To Acquire L-BTC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../swap_tool.html">Liquid Swap Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../additional_resources.html">Additional Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">FAQ</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contribute</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/contributing.html">Contributing to Blockstream Docs</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../developer-documentation.html">c-lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer-documentation.html#esplora">Esplora</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer-documentation.html#libwally">Libwally</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer-documentation.html#gdk">GDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer-documentation.html#elements">Elements</a></li>
+</ul>
+<p class="caption"><span class="caption-text">PGP</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../randymcmillan-asc.html">randymcmillan.asc</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html"></a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Creating Raw Transactions</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="creating-raw-transactions">
+<h1>Creating Raw Transactions<a class="headerlink" href="#creating-raw-transactions" title="Permalink to this headline">¶</a></h1>
+<p>In this example we will create a raw transaction sending some of an issued asset.</p>
+<p>Issue an asset and get the asset hex so we can send some:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Alice:~$ <span class="nv">ISSUE</span><span class="o">=</span><span class="k">$(</span>elements-cli issueasset <span class="m">100</span> <span class="m">1</span><span class="k">)</span>
+Alice:~$ <span class="nv">ASSET</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> <span class="nv">$ISSUE</span> <span class="p">|</span> jq <span class="s1">&#39;.asset&#39;</span> <span class="p">|</span> tr -d <span class="s1">&#39;&quot;&#39;</span><span class="k">)</span>
+</pre></div>
+</div>
+<p>Check the asset shows up in our wallet:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Alice:~$ elements-cli getwalletinfo
+</pre></div>
+</div>
+<p>Get a list of unspent we can use as inputs, referenced via transaction id, vout and amount:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Alice:~$ <span class="nv">UTXO</span><span class="o">=</span><span class="k">$(</span>elements-cli listunspent <span class="m">0</span> <span class="m">0</span> <span class="o">[]</span> <span class="nb">true</span> <span class="s1">&#39;&#39;&#39;{&quot;&#39;&#39;asset&#39;&#39;&quot;:&quot;&#39;&#39;&#39;</span><span class="nv">$ASSET</span><span class="s1">&#39;&#39;&#39;&quot;}&#39;&#39;&#39;</span><span class="k">)</span>
+Alice:~$ <span class="nv">TXID</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> <span class="nv">$UTXO</span> <span class="p">|</span> jq <span class="s1">&#39;.[0].txid&#39;</span> <span class="p">|</span> tr -d <span class="s1">&#39;&quot;&#39;</span> <span class="k">)</span>
+Alice:~$ <span class="nv">VOUT</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> <span class="nv">$UTXO</span> <span class="p">|</span> jq <span class="s1">&#39;.[0].vout&#39;</span> <span class="p">|</span> tr -d <span class="s1">&#39;&quot;&#39;</span> <span class="k">)</span>
+Alice:~$ <span class="nv">AMOUNT</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> <span class="nv">$UTXO</span> <span class="p">|</span> jq <span class="s1">&#39;.[0].amount&#39;</span> <span class="p">|</span> tr -d <span class="s1">&#39;&quot;&#39;</span> <span class="k">)</span>
+</pre></div>
+</div>
+<p>Get an address to send the asset to, we’ll use an unconfidential address:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Alice:~$ <span class="nv">ADDR</span><span class="o">=</span><span class="k">$(</span>elements-cli getnewaddress<span class="k">)</span>
+Alice:~$ <span class="nv">VALIDATEADDR</span><span class="o">=</span><span class="k">$(</span>elements-cli validateaddress <span class="nv">$ADDR</span><span class="k">)</span>
+Alice:~$ <span class="nv">UNCONADDR</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> <span class="nv">$VALIDATEADDR</span> <span class="p">|</span> jq <span class="s1">&#39;.unconfidential&#39;</span> <span class="p">|</span> tr -d <span class="s1">&#39;&quot;&#39;</span><span class="k">)</span>
+</pre></div>
+</div>
+<p>Build the raw transaction, sending an amount of 3 of the asset:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Alice:~$ <span class="nv">SENDAMOUNT</span><span class="o">=</span><span class="s2">&quot;3.00&quot;</span>
+Alice:~$ <span class="nv">RAWTX</span><span class="o">=</span><span class="k">$(</span>elements-cli createrawtransaction <span class="s1">&#39;&#39;&#39;[{&quot;&#39;&#39;txid&#39;&#39;&quot;:&quot;&#39;&#39;&#39;</span><span class="nv">$TXID</span><span class="s1">&#39;&#39;&#39;&quot;, &quot;&#39;&#39;vout&#39;&#39;&quot;:&#39;</span><span class="nv">$VOUT</span><span class="s1">&#39;, &quot;&#39;&#39;asset&#39;&#39;&quot;:&quot;&#39;&#39;&#39;</span><span class="nv">$ASSET</span><span class="s1">&#39;&#39;&#39;&quot;}]&#39;&#39;&#39;</span> <span class="s1">&#39;&#39;&#39;{&quot;&#39;&#39;&#39;</span><span class="nv">$UNCONADDR</span><span class="s1">&#39;&#39;&#39;&quot;:&#39;</span><span class="nv">$SENDAMOUNT</span><span class="s1">&#39;}&#39;&#39;&#39;</span> <span class="m">0</span> <span class="nb">false</span> <span class="s1">&#39;&#39;&#39;{&quot;&#39;&#39;&#39;</span><span class="nv">$UNCONADDR</span><span class="s1">&#39;&#39;&#39;&quot;:&quot;&#39;&#39;&#39;</span><span class="nv">$ASSET</span><span class="s1">&#39;&#39;&#39;&quot;}&#39;&#39;&#39;</span><span class="k">)</span>
+</pre></div>
+</div>
+<p>Fund the transaction:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Alice:~$ <span class="nv">FRT</span><span class="o">=</span><span class="k">$(</span>elements-cli fundrawtransaction <span class="nv">$RAWTX</span><span class="k">)</span>
+</pre></div>
+</div>
+<p>Blind and sign the transaction:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Alice:~$ <span class="nv">HEXFRT</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> <span class="nv">$FRT</span> <span class="p">|</span> jq <span class="s1">&#39;.hex&#39;</span> <span class="p">|</span> tr -d <span class="s1">&#39;&quot;&#39;</span><span class="k">)</span>
+Alice:~$ <span class="nv">BRT</span><span class="o">=</span><span class="k">$(</span>elements-cli blindrawtransaction <span class="nv">$HEXFRT</span><span class="k">)</span>
+Alice:~$ <span class="nv">SRT</span><span class="o">=</span><span class="k">$(</span>elements-cli signrawtransactionwithwallet <span class="nv">$BRT</span><span class="k">)</span>
+Alice:~$ <span class="nv">HEXSRT</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> <span class="nv">$SRT</span> <span class="p">|</span> jq <span class="s1">&#39;.hex&#39;</span> <span class="p">|</span> tr -d <span class="s1">&#39;&quot;&#39;</span><span class="k">)</span>
+</pre></div>
+</div>
+<p>Send the raw transaction:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Alice:~$ <span class="nv">TX</span><span class="o">=</span><span class="k">$(</span>elements-cli sendrawtransaction <span class="nv">$HEXSRT</span><span class="k">)</span>
+</pre></div>
+</div>
+<p>After the transaction has confirmed, decode the raw transaction so we can see the amount of the asset sent and the address it went to:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Alice:~$ <span class="nv">GRT</span><span class="o">=</span><span class="k">$(</span>elements-cli getrawtransaction <span class="nv">$TX</span><span class="k">)</span>
+Alice:~$ <span class="nv">DRT</span><span class="o">=</span><span class="k">$(</span>elements-cli decoderawtransaction <span class="nv">$GRT</span><span class="k">)</span>
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Randy McMillan
+      <span class="lastupdated">
+        Last updated on Nov 02, 2020.
+      </span>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

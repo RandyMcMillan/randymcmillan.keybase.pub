@@ -1,0 +1,273 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>c-lightning &mdash; R A N D Y M c M I L L A N</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.png"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="PGP Public Key" href="randymcmillan-asc.html" />
+    <link rel="prev" title="Contributing to Blockstream Docs" href="contributing/contributing.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> 
+          
+
+          
+            
+            <img src="_static/blks_logo_transparent.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Blockstream Green</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="green/getting-started/getting-started-index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="green/liquid/liquid-index.html">Liquid Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="green/hww.html">Hardware Wallets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="green/troubleshooting-advanced/troubleshooting-advanced-index.html">Troubleshooting and Advanced Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="green/support.html">Support</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Liquid Network</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="liquid/technical_overview.html">Technical Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="liquid/quickstart.html">Liquid Node Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="liquid/node_setup.html">Liquid Node Setup (Advanced)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="liquid/developer-guide/developer-guide-index.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="liquid/app-examples/app-examples-index.html">App Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="liquid/general-developer-info/general-developer-info-index.html">General Developer Info</a></li>
+<li class="toctree-l1"><a class="reference internal" href="liquid/acquire_lbtc.html">How To Acquire L-BTC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="liquid/swap_tool.html">Liquid Swap Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="liquid/additional_resources.html">Additional Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="liquid/support.html">Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="liquid/faq.html">FAQ</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contribute</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="contributing/contributing.html">Contributing to Blockstream Docs</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">c-lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#esplora">Esplora</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#libwally">Libwally</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#gdk">GDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#elements">Elements</a></li>
+</ul>
+<p class="caption"><span class="caption-text">PGP</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="randymcmillan-asc.html">randymcmillan.asc</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html"></a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>c-lightning</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="c-lightning">
+<h1>c-lightning<a class="headerlink" href="#c-lightning" title="Permalink to this headline">¶</a></h1>
+<p>c-lightning is a standard compliant implementation of the Lightning Network protocol.</p>
+<p>Read all the available documentation at <a class="reference external" href="https://lightning.readthedocs.io/">https://lightning.readthedocs.io/</a>.</p>
+</div>
+<div class="section" id="esplora">
+<h1>Esplora<a class="headerlink" href="#esplora" title="Permalink to this headline">¶</a></h1>
+<p>Esplora is a block explorer web interface based on the esplora-electrs HTTP API. It’s written as a single-page app in a reactive and functional style using rxjs and cycle.js.</p>
+<p>See live at <a class="reference external" href="https://blockstream.info/">blockstream.info</a>.</p>
+<p>The API documentation is available <a class="reference external" href="https://github.com/Blockstream/esplora/blob/master/API.md">here</a>.</p>
+</div>
+<div class="section" id="libwally">
+<h1>Libwally<a class="headerlink" href="#libwally" title="Permalink to this headline">¶</a></h1>
+<p>Wally is a cross-platform, cross-language collection of useful primitives for cryptocurrency wallets.</p>
+<p>Read the API documentation at <a class="reference external" href="https://wally.readthedocs.io">https://wally.readthedocs.io</a>.</p>
+</div>
+<div class="section" id="gdk">
+<h1>GDK<a class="headerlink" href="#gdk" title="Permalink to this headline">¶</a></h1>
+<p>GDK is a cross-platform, cross-language library for Blockstream Green wallets.</p>
+<p>You can read the API documentation at <a class="reference external" href="https://gdk.readthedocs.io/en/latest/">https://gdk.readthedocs.io/en/latest/</a>.</p>
+</div>
+<div class="section" id="elements">
+<h1>Elements<a class="headerlink" href="#elements" title="Permalink to this headline">¶</a></h1>
+<p>Elements is an open source, sidechain-capable blockchain platform.</p>
+<p>Built upon and extending Bitcoin’s codebase, it lets developers quickly and cost-effectively create working blockchains and test proof-of-concept projects. It also enables Elements to function as a testbed for changes to the Bitcoin protocol itself. Blockstream’s own production sidechain, <a class="reference external" href="https://blockstream.com/liquid/">Liquid</a>, is built using Elements.</p>
+<p>The Elements community <a class="reference external" href="https://elementsproject.org/">website</a> contains:</p>
+<p>A walk-through <a class="reference external" href="https://elementsproject.org/elements-code-tutorial/overview">tutorial</a>.</p>
+<p><a class="reference external" href="https://elementsproject.org/elements-code-tutorial/easy-run-code">Basic</a> and <a class="reference external" href="https://elementsproject.org/elements-code-tutorial/advanced-examples">advanced</a> code samples.</p>
+<p>Application development <a class="reference external" href="https://elementsproject.org/elements-code-tutorial/application-development">guides</a>.</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="randymcmillan-asc.html" class="btn btn-neutral float-right" title="PGP Public Key" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="contributing/contributing.html" class="btn btn-neutral float-left" title="Contributing to Blockstream Docs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Randy McMillan
+      <span class="lastupdated">
+        Last updated on Nov 02, 2020.
+      </span>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

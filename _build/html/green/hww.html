@@ -1,0 +1,446 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Hardware Wallets &mdash; R A N D Y M c M I L L A N</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Troubleshooting and Advanced Features" href="troubleshooting-advanced/troubleshooting-advanced-index.html" />
+    <link rel="prev" title="Blockstream Green Wallet on Liquid" href="liquid/liquid-index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> 
+          
+
+          
+            
+            <img src="../_static/blks_logo_transparent.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Blockstream Green</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="getting-started/getting-started-index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="liquid/liquid-index.html">Liquid Wallet</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Hardware Wallets</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#supported-hardware-wallets">Supported Hardware Wallets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#hardware-wallet-setup">Hardware Wallet Setup</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#video-guide">Video Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#step-by-step-guide">Step-by-step Guide</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#part-1-new-wallet-setup-and-login">Part 1: New Wallet Setup and Login</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#part-2-using-blockstream-green-with-a-hardware-wallet">Part 2: Using Blockstream Green with a Hardware Wallet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#part-3-restore-a-blockstream-green-wallet-created-with-hardware-wallet">Part 3: Restore a Blockstream Green Wallet Created with Hardware Wallet</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting-advanced/troubleshooting-advanced-index.html">Troubleshooting and Advanced Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="support.html">Support</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Liquid Network</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../liquid/technical_overview.html">Technical Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../liquid/quickstart.html">Liquid Node Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../liquid/node_setup.html">Liquid Node Setup (Advanced)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../liquid/developer-guide/developer-guide-index.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../liquid/app-examples/app-examples-index.html">App Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../liquid/general-developer-info/general-developer-info-index.html">General Developer Info</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../liquid/acquire_lbtc.html">How To Acquire L-BTC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../liquid/swap_tool.html">Liquid Swap Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../liquid/additional_resources.html">Additional Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../liquid/support.html">Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../liquid/faq.html">FAQ</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contribute</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../contributing/contributing.html">Contributing to Blockstream Docs</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../developer-documentation.html">c-lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer-documentation.html#esplora">Esplora</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer-documentation.html#libwally">Libwally</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer-documentation.html#gdk">GDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer-documentation.html#elements">Elements</a></li>
+</ul>
+<p class="caption"><span class="caption-text">PGP</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../randymcmillan-asc.html">randymcmillan.asc</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html"></a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Hardware Wallets</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="hardware-wallets">
+<h1>Hardware Wallets<a class="headerlink" href="#hardware-wallets" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="table-of-contents">
+<p class="topic-title">Table of Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#overview" id="id1">Overview</a></p></li>
+<li><p><a class="reference internal" href="#supported-hardware-wallets" id="id2">Supported Hardware Wallets</a></p></li>
+<li><p><a class="reference internal" href="#hardware-wallet-setup" id="id3">Hardware Wallet Setup</a></p>
+<ul>
+<li><p><a class="reference internal" href="#video-guide" id="id4">Video Guide</a></p></li>
+<li><p><a class="reference internal" href="#step-by-step-guide" id="id5">Step-by-step Guide</a></p>
+<ul>
+<li><p><a class="reference internal" href="#part-1-new-wallet-setup-and-login" id="id6">Part 1: New Wallet Setup and Login</a></p></li>
+<li><p><a class="reference internal" href="#part-2-using-blockstream-green-with-a-hardware-wallet" id="id7">Part 2: Using Blockstream Green with a Hardware Wallet</a></p></li>
+<li><p><a class="reference internal" href="#part-3-restore-a-blockstream-green-wallet-created-with-hardware-wallet" id="id8">Part 3: Restore a Blockstream Green Wallet Created with Hardware Wallet</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="overview">
+<h2><a class="toc-backref" href="#id1">Overview</a><a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>Blockstream Green multisig wallets can be used with hardware wallets. This gives you the
+best of both worlds by combining Blockstream Green’s multisig security with the private
+key cold storage provided by a hardware wallet.</p>
+<p>A Blockstream Green wallet associated with a hardware wallet creates a 2-of-2 multisig
+wallet where one key is held on your hardware wallet, and the second key is held by the
+Blockstream Green service. The second key serves to authorize transactions through
+Two-Factor Authentication.</p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>When you create a new Bitcoin wallet with your hardware wallet on Blockstream Green, it
+will be different from:</p>
+<ul class="simple">
+<li><p>Any wallet previously created on the hardware wallet</p></li>
+<li><p>Any wallet previously created in Blockstream Green</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="supported-hardware-wallets">
+<h2><a class="toc-backref" href="#id2">Supported Hardware Wallets</a><a class="headerlink" href="#supported-hardware-wallets" title="Permalink to this headline">¶</a></h2>
+<p>We’re constantly working to add support for more hardware wallets in Blockstream Green.
+For the latest support status updates, follow the
+<a class="reference external" href="https://twitter.com/blockstream">Blockstream Twitter</a> or regularly check the table below.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To share feedback or support requests, join the Blockstream Green
+<a class="reference external" href="https://t.me/blockstream_green">community channel</a> or
+<a class="reference external" href="https://docs.blockstream.com/green/support.html">contact support</a>.</p>
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Supported Devices</p></th>
+<th class="head" colspan="6"><p>Support Type *</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td></td>
+<td colspan="2"><p><strong>Android (USB)</strong></p></td>
+<td colspan="2"><p><strong>Android (Bluetooth)</strong></p></td>
+<td colspan="2"><p><strong>iOS (Bluetooth)</strong></p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p><em>Bitcoin Mainnet</em></p></td>
+<td><p><em>Liquid Mainnet</em></p></td>
+<td><p><em>Bitcoin Mainnet</em></p></td>
+<td><p><em>Liquid Mainnet</em></p></td>
+<td><p><em>Bitcoin Mainnet</em></p></td>
+<td><p><em>Liquid Mainnet</em></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Trezor One</em></p></td>
+<td><p>✓</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Trezor T</em></p></td>
+<td><p>✓</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Ledger Nano S</em></p></td>
+<td><p>✓</p></td>
+<td><p>✓ **</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Ledger Nano X</em></p></td>
+<td><p>✓</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td><p>✓</p></td>
+<td><p>x</p></td>
+</tr>
+<tr class="row-even"><td colspan="7"><p>* Support only includes 2-of-2 multisig wallets. Singlesig 1-of-1 wallets are not currently supported.</p>
+<p>**Only available with developer mode turned on in Ledger Live.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="hardware-wallet-setup">
+<h2><a class="toc-backref" href="#id3">Hardware Wallet Setup</a><a class="headerlink" href="#hardware-wallet-setup" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="video-guide">
+<h3><a class="toc-backref" href="#id4">Video Guide</a><a class="headerlink" href="#video-guide" title="Permalink to this headline">¶</a></h3>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/nkQ_LXEuSVg"
+frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope;
+picture-in-picture" allowfullscreen></iframe></div>
+<div class="section" id="step-by-step-guide">
+<h3><a class="toc-backref" href="#id5">Step-by-step Guide</a><a class="headerlink" href="#step-by-step-guide" title="Permalink to this headline">¶</a></h3>
+<p>Here are detailed instructions for using each type of hardware wallet that supports Blockstream Green.</p>
+<div class="section" id="part-1-new-wallet-setup-and-login">
+<h4><a class="toc-backref" href="#id6">Part 1: New Wallet Setup and Login</a><a class="headerlink" href="#part-1-new-wallet-setup-and-login" title="Permalink to this headline">¶</a></h4>
+<p><strong>Step 1</strong>: To use a hardware wallet with Blocsktream Green, first initialize the hardware
+device according to the manufacturer’s instructions.</p>
+<p><strong>Step 2</strong>: Safely record and store the hardware device’s mnemonic and PIN that were
+created in the previous step.</p>
+<p><strong>Step 3</strong>: Connect your hardware wallet to Green.</p>
+<ul class="simple">
+<li><p>For USB hardware wallets: Plug in the hardware wallet into the Android device that has a
+Blockstream Green wallet installed and open Blockstream Green.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The Blockstream Green app can be opened before or after plugging in the hardware device.</p>
+</div>
+<ul class="simple">
+<li><p>For Bluetooth hardware wallets: Turn your hardware wallet on, open Green and tap on
+<strong>Connect hardware wallet</strong> via the top right menu on the login page (see below), then
+follow the instructions on Green to pair your hardware wallet.</p></li>
+</ul>
+<a class="reference internal image-reference" href="../_images/connect-hww.jpg"><img alt="../_images/connect-hww.jpg" class="align-center" src="../_images/connect-hww.jpg" style="width: 250px;" /></a>
+<p><strong>Step 4</strong>: Enter the hardware wallet’s PIN.</p>
+<ul class="simple">
+<li><p>For Trezor One, enter the PIN through the smartphone with the hardware wallet’s onscreen
+keyboard guide.</p></li>
+<li><p>For Ledger Nano S, enter the PIN and open the Bitcoin application to login.</p></li>
+</ul>
+<p>Congratulations, you are now logged into your 2-of-2 Blockstream Green wallet.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you didn’t have an existing Blockstream Green wallet associated with this hardware
+wallet device, a new 2-of-2 wallet will be created. If you had already logged into a
+Blockstream Green wallet with your hardware wallet, you will be automatically logged
+back into it.</p>
+</div>
+</div>
+<div class="section" id="part-2-using-blockstream-green-with-a-hardware-wallet">
+<h4><a class="toc-backref" href="#id7">Part 2: Using Blockstream Green with a Hardware Wallet</a><a class="headerlink" href="#part-2-using-blockstream-green-with-a-hardware-wallet" title="Permalink to this headline">¶</a></h4>
+<p>Log into your Blockstream Green wallet by completing the setup and login instructions in
+the preceding section.</p>
+<p>When sending transactions, the hardware wallet will ask to confirm the transactions.</p>
+<p>After confirming transactions with the hardware wallet, a Two-Factor Authentication code
+(which we strongly advise you to set up) will be required.</p>
+</div>
+<div class="section" id="part-3-restore-a-blockstream-green-wallet-created-with-hardware-wallet">
+<h4><a class="toc-backref" href="#id8">Part 3: Restore a Blockstream Green Wallet Created with Hardware Wallet</a><a class="headerlink" href="#part-3-restore-a-blockstream-green-wallet-created-with-hardware-wallet" title="Permalink to this headline">¶</a></h4>
+<p>In the event that a hardware wallet used to log into a Blockstream Green wallet is lost or
+broken, there are two options for restoring the Blockstream Green wallet.</p>
+<p><strong>Option 1</strong>: Restore the Blockstream Green wallet on a new hardware wallet using the
+backup mnemonic (“recovery seed”, “recovery phrase”) created when the old hardware wallet
+was setup. Follow the hardware wallet manufacturer’s instructions to restore the backup
+mnemonic. Then run Blockstream Green starting with <strong>Step 3</strong> from the preceding
+<strong>New Wallet Setup and Login</strong> section.</p>
+<p><strong>Option 2</strong>: Restore the Blockstream Green wallet by entering the backup mnemonic created
+when the old hardware device was setup via the <strong>Restore Green Wallet</strong> button on the
+Blockstream Green onboarding screen.</p>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="troubleshooting-advanced/troubleshooting-advanced-index.html" class="btn btn-neutral float-right" title="Troubleshooting and Advanced Features" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="liquid/liquid-index.html" class="btn btn-neutral float-left" title="Blockstream Green Wallet on Liquid" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Randy McMillan
+      <span class="lastupdated">
+        Last updated on Nov 02, 2020.
+      </span>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,884 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Building Applications on Liquid &mdash; R A N D Y M c M I L L A N</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="General Developer Information" href="../general-developer-info/general-developer-info-index.html" />
+    <link rel="prev" title="Developer Guide" href="../developer-guide/developer-guide-index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> 
+          
+
+          
+            
+            <img src="../../_static/blks_logo_transparent.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Blockstream Green</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../green/getting-started/getting-started-index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../green/liquid/liquid-index.html">Liquid Wallet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../green/hww.html">Hardware Wallets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../green/troubleshooting-advanced/troubleshooting-advanced-index.html">Troubleshooting and Advanced Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../green/support.html">Support</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Liquid Network</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../technical_overview.html">Technical Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Liquid Node Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../node_setup.html">Liquid Node Setup (Advanced)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer-guide/developer-guide-index.html">Developer Guide</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">App Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#liquid-application-overview">Liquid Application Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#python">Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#python-web-flask">Python Web (Flask)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#c-net-core">C# .NET Core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#c-net-core-mvc">C# .NET Core (MVC)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#go">Go</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ruby">Ruby</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#java">Java</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#perl">Perl</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../general-developer-info/general-developer-info-index.html">General Developer Info</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acquire_lbtc.html">How To Acquire L-BTC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../swap_tool.html">Liquid Swap Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../additional_resources.html">Additional Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">FAQ</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contribute</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/contributing.html">Contributing to Blockstream Docs</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../developer-documentation.html">c-lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer-documentation.html#esplora">Esplora</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer-documentation.html#libwally">Libwally</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer-documentation.html#gdk">GDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer-documentation.html#elements">Elements</a></li>
+</ul>
+<p class="caption"><span class="caption-text">PGP</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../randymcmillan-asc.html">randymcmillan.asc</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html"></a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Building Applications on Liquid</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="building-applications-on-liquid">
+<span id="liquid-app-examples"></span><h1>Building Applications on Liquid<a class="headerlink" href="#building-applications-on-liquid" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="table-of-contents">
+<p class="topic-title">Table of Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#liquid-application-overview" id="id4">Liquid Application Overview</a></p></li>
+<li><p><a class="reference internal" href="#python" id="id5">Python</a></p></li>
+<li><p><a class="reference internal" href="#python-web-flask" id="id6">Python Web (Flask)</a></p></li>
+<li><p><a class="reference internal" href="#c-net-core" id="id7">C# .NET Core</a></p></li>
+<li><p><a class="reference internal" href="#c-net-core-mvc" id="id8">C# .NET Core (MVC)</a></p></li>
+<li><p><a class="reference internal" href="#go" id="id9">Go</a></p></li>
+<li><p><a class="reference internal" href="#ruby" id="id10">Ruby</a></p></li>
+<li><p><a class="reference internal" href="#java" id="id11">Java</a></p></li>
+<li><p><a class="reference internal" href="#perl" id="id12">Perl</a></p></li>
+</ul>
+</div>
+<hr class="docutils" />
+<div class="section" id="liquid-application-overview">
+<span id="config"></span><h2><a class="toc-backref" href="#id4">Liquid Application Overview</a><a class="headerlink" href="#liquid-application-overview" title="Permalink to this headline">¶</a></h2>
+<p>Applications can make use of Liquid’s Remote Procedure Call (RPC) interface to develop applications on Linux, Windows and Mac OS in any language capable of handling RPC request-response messaging over HTTP.</p>
+<p>Examples are provided in Python, C#, Ruby, Go, Perl, and Java. The Python and C# examples are expanded to cover web applications using Flask and the .NET Core MVC frameworks.</p>
+<p>In the <a class="reference internal" href="../developer-guide/developer-guide-index.html#developer-guide"><span class="std std-ref">Developer Guide</span></a> section, the terminal is used to send commands to the Liquid client (elements-cli), which in turn issues RPC commands to the Liquid daemon (elementsd) or the Liquid Core GUI (elements-qt). This configuration will be familiar to those who develop for Bitcoin.</p>
+<p>The communication between daemon and client is possible because, when started in server or daemon mode, elementsd initiates an HTTP server and listens for requests being made to it on a port specified in the elements.conf file.</p>
+<p>Requests to the daemon are made by posting JSON formatted data to the HTTP server port that elementsd or elements-qt are listening on. The request is processed and the results are returned as JSON formatted data.</p>
+<p>Verification details of the credentials needed to make these calls are stored in the elements.config file so the client making the RPC requests can satisfy the authentication checks of the daemon.</p>
+<p>Take a look in the elements.conf file and notice the rpc related settings. If there are none then you will have to add some. The “chain” setting tells Liquid to run on the live Liquid network (liquidv1) or another network, such as regtest (elementsregtest). The following settings tell Liquid to start in regtest mode and that it can be accessed over RPC using the username “user1” and the password “password1”. You should change the values used to a secure username and password.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span># Start as a background process and accept RPC
+daemon=1
+
+# Set RPC details for client authentication
+rpcuser=user1
+rpcpassword=password1
+
+# Regest settings
+chain=elementsregtest
+elementsregtest.rpcport=18884
+elementsregtest.port=18886
+# To connect to other local liduidd instances:
+elementsregtest.connect=localhost:18887
+
+
+# Live network settings:
+# chain=liquidv1
+# rpcport=18884
+
+# To validate peg-ins
+validatepegin=1
+
+# RPC details (as set in bitcoin.conf)
+mainchainrpcport=18888
+mainchainrpcuser=userOfBitcoinRPCHere
+mainchainrpcpassword=passwordOfBitcoinRPCHere
+
+# Other config settings you want to use can go here:
+</pre></div>
+</div>
+<p>In our examples, we will be connecting to elementsd in regtest mode, using the regtest authentication details and port number above to send requests to the Liquid daemon. You should change the example code to match what you have set in your own elements.conf.</p>
+<p>Please note that the examples listed below are intended to get you to the point where you have a functioning setup which you can use as a building block for further development.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="python">
+<h2><a class="toc-backref" href="#id5">Python</a><a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h2>
+<p id="python-app">In this example we will be using Python to make a Remote Procedure Call (RPC) to the Liquid daemon, which you will need to start using the config file settings <a class="reference internal" href="#config"><span class="std std-ref">outlined above</span></a>.</p>
+<p>Our aim is simply to make a call to Liquid using RPC by executing some basic Python code. We will be using the popular <a class="reference external" href="https://github.com/jgarzik/python-bitcoinrpc">AuthServiceProxy</a> Python JSON-RPC interface to handle the connection, authentication and data typing for us as we communicate with our node. We’ll also use <a class="reference external" href="https://virtualenv.pypa.io/">virtualenv</a> to create an isolated environment to run our code in.</p>
+<p>You can check if Python is installed on your system by following the steps <a class="reference external" href="https://wiki.python.org/moin/BeginnersGuide/Download">here</a>. We’ll assume you already have Python3 installed.</p>
+<p id="python-reqs">First we will need to install a few prerequisites. From the terminal run the following commands one after another:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt-get install python3-pip
+sudo pip3 install virtualenv
+</pre></div>
+</div>
+<p>Create a directory named “liquidpython” and move into it:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span>
+mkdir liquidpython
+<span class="nb">cd</span> liquidpython
+</pre></div>
+</div>
+<p>Set up and activate virtualenv in that directory:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>virtualenv venv
+<span class="nb">source</span> venv/bin/activate
+</pre></div>
+</div>
+<p>Use pip to install python-bitcoinrpc within the environment:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip3 install python-bitcoinrpc
+</pre></div>
+</div>
+<p>That will have set up all we need for our Python example code.</p>
+<p>Create a new file named <strong>liquidpython.py</strong> in the “liquidpython” directory and paste the code below into it.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
+<span class="kn">from</span> <span class="nn">bitcoinrpc.authproxy</span> <span class="kn">import</span> <span class="n">AuthServiceProxy</span><span class="p">,</span> <span class="n">JSONRPCException</span>
+
+<span class="n">rpc_port</span> <span class="o">=</span> <span class="mi">18884</span>
+<span class="n">rpc_user</span> <span class="o">=</span> <span class="s1">&#39;user1&#39;</span>
+<span class="n">rpc_password</span> <span class="o">=</span> <span class="s1">&#39;password1&#39;</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">rpc_connection</span> <span class="o">=</span> <span class="n">AuthServiceProxy</span><span class="p">(</span><span class="s2">&quot;http://</span><span class="si">%s</span><span class="s2">:</span><span class="si">%s</span><span class="s2">@127.0.0.1:</span><span class="si">%s</span><span class="s2">&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">rpc_user</span><span class="p">,</span> <span class="n">rpc_password</span><span class="p">,</span> <span class="n">rpc_port</span><span class="p">))</span>
+
+    <span class="n">result</span> <span class="o">=</span> <span class="n">rpc_connection</span><span class="o">.</span><span class="n">getwalletinfo</span><span class="p">()</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="s2">&quot;balance&quot;</span><span class="p">][</span><span class="s2">&quot;bitcoin&quot;</span><span class="p">])</span>
+<span class="k">except</span> <span class="n">JSONRPCException</span> <span class="k">as</span> <span class="n">json_exception</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A JSON RPC Exception occured: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">json_exception</span><span class="p">))</span>
+<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">general_exception</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;An Exception occured: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">general_exception</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>The code defines the details needed to connect to Liquid using RPC commands, sets up the method we want to execute and the parameter we want to pass in, executes the call and prints out the “balance” value from the results.</p>
+<p>Before we try running the code make sure the Liquid daemon (elementsd) or Liquid QT (elements-qt) are running.</p>
+<p>To run our Python code execute the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3 liquidpython.py
+</pre></div>
+</div>
+<p>The result of which should be the balance is written to the terminal.</p>
+<p>When you have finished, deactivate virtualenv:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>deactivate
+</pre></div>
+</div>
+<p>When you want to run your code again, activate the environment from within the “liquidpython” directory, run the code and then deactivate when finished:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span> venv/bin/activate
+python3 liquidrpcpython.py
+deactivate
+</pre></div>
+</div>
+<p>Obviously that’s a very basic example but you now have a functioning setup which you can use as a building block for further development. The next section takes the code above and implements it within a Python web application using Flask.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="python-web-flask">
+<h2><a class="toc-backref" href="#id6">Python Web (Flask)</a><a class="headerlink" href="#python-web-flask" title="Permalink to this headline">¶</a></h2>
+<p>In this example we will be using Python (running within the <a class="reference external" href="http://flask.pocoo.org/">Flask</a> web framework) to make a Remote Procedure Call (RPC) to the Liquid daemon, which you will need to start using the config file settings <a class="reference internal" href="#config"><span class="std std-ref">outlined above</span></a>.</p>
+<p>Our aim is simply to make a call to Liquid using RPC by executing some basic Python code. We will be using the popular <a class="reference external" href="https://github.com/jgarzik/python-bitcoinrpc">AuthServiceProxy</a> Python JSON-RPC interface to handle the connection, authentication and data typing for us as we communicate with our node. We’ll also use <a class="reference external" href="https://virtualenv.pypa.io/">virtualenv</a> to create an isolated environment to run our code in.</p>
+<p>You can check if Python is installed on your system by following the steps <a class="reference external" href="https://wiki.python.org/moin/BeginnersGuide/Download">here</a>. We’ll assume you already have Python3 installed.</p>
+<p>We will use the Python code from the previous <a class="reference internal" href="#python-app"><span class="std std-ref">Python example</span></a> and have it run from Flask so that we can write the output to a web page.</p>
+<p>Assuming you have already installed the <a class="reference internal" href="#python-reqs"><span class="std std-ref">prerequisites</span></a> from the previous example (i.e. python3-pip, virtualenv), we just need to set up the environment and install Flask:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span>
+mkdir liquidpythonflask
+<span class="nb">cd</span> liquidpythonflask
+virtualenv venv
+<span class="nb">source</span> venv/bin/activate
+pip3 install python-bitcoinrpc
+pip3 install Flask
+</pre></div>
+</div>
+<p>Before we try running any code make sure the Liquid daemon is running.</p>
+<p>Create a file named liquidpythonflask.py, into which you should paste the following code. We are using AuthServiceProxy to handle the connection, authentication and data typing for us as we communicate with our Liquid node.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Python requires that lines are indented correctly. Make sure the code below is copied correctly and is using 4 spaces for indenting lines. Also note that some of the lines below wrap when viewed in a browser.</p>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
+<span class="kn">from</span> <span class="nn">bitcoinrpc.authproxy</span> <span class="kn">import</span> <span class="n">AuthServiceProxy</span><span class="p">,</span> <span class="n">JSONRPCException</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">liquid</span><span class="p">():</span>
+    <span class="n">rpc_port</span> <span class="o">=</span> <span class="mi">18884</span>
+    <span class="n">rpc_user</span> <span class="o">=</span> <span class="s1">&#39;user1&#39;</span>
+    <span class="n">rpc_password</span> <span class="o">=</span> <span class="s1">&#39;password1&#39;</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">rpc_connection</span> <span class="o">=</span> <span class="n">AuthServiceProxy</span><span class="p">(</span><span class="s2">&quot;http://</span><span class="si">%s</span><span class="s2">:</span><span class="si">%s</span><span class="s2">@127.0.0.1:</span><span class="si">%s</span><span class="s2">&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">rpc_user</span><span class="p">,</span> <span class="n">rpc_password</span><span class="p">,</span> <span class="n">rpc_port</span><span class="p">))</span>
+
+        <span class="n">result</span> <span class="o">=</span> <span class="n">rpc_connection</span><span class="o">.</span><span class="n">getwalletinfo</span><span class="p">()</span>
+
+    <span class="k">except</span> <span class="n">JSONRPCException</span> <span class="k">as</span> <span class="n">json_exception</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;A JSON RPC Exception occured: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">json_exception</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">general_exception</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;An Exception occured: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">general_exception</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;balance&#39;</span><span class="p">][</span><span class="s1">&#39;bitcoin&#39;</span><span class="p">])</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Start the web server and execute our code:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">FLASK_APP</span><span class="o">=</span>liquidtutorial.py flask run
+</pre></div>
+</div>
+<p>You should see the web server startup. Now all you have to do is open a browser and go to:</p>
+<p><a class="reference external" href="http://127.0.0.1:5000">http://127.0.0.1:5000</a></p>
+<p>Which simply writes the result of the “balance” call to the page.</p>
+<p>The example is intended to get you up and running. You now have a functioning setup which you can use as a building block for further development using Flask.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="c-net-core">
+<h2><a class="toc-backref" href="#id7">C# .NET Core</a><a class="headerlink" href="#c-net-core" title="Permalink to this headline">¶</a></h2>
+<p>The .NET Core framework runs on Linux, Windows and Mac OS. We will use C#, the most popular .NET language, to make a Remote Procedure Call (RPC) to the Liquid daemon, which you will need to start using the config file settings <a class="reference internal" href="#config"><span class="std std-ref">outlined above</span></a>.</p>
+<p>Our aim is simply to make a call to Liquid using RPC by executing some basic C# code.</p>
+<p id="csharp-reqs"><strong>Installing the .NET Core SDK</strong></p>
+<p>You can skip this step if you already have the .NET Core SDK installed. The installation instructions are based upon Linux and will vary depending on which OS you are using.</p>
+<p>Before installing the .NET Core SDK, you’ll need to register the Microsoft key used to validate the required repository, register the product repository itself, and then install the required dependencies.</p>
+<p>Open a command prompt and run the following two commands.</p>
+<p>Note that the command you run after “wget” is dependant on the which distribution of Linux you are running. Please check the .NET SDK <a class="reference external" href="https://dotnet.microsoft.com/download/linux-package-manager/rhel/sdk-current">download page</a> to get the right one. There are only two lines below so note the text wrap. The first starts with “wget”, the second with “sudo”.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget -q packages-microsoft-prod.deb https://packages.microsoft.com/config/ubuntu/16.04/packages-microsoft-prod.deb
+sudo dpkg -i packages-microsoft-prod.deb
+</pre></div>
+</div>
+<p>Now we can install the .NET Core SDK:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt-get install apt-transport-https
+sudo apt-get update
+sudo apt-get install dotnet-sdk-2.1.4
+</pre></div>
+</div>
+<p><strong>Creating the application</strong></p>
+<p>Create a simple template console app:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dotnet new console -o liquiddotnet
+<span class="nb">cd</span> liquiddotnet
+dotnet run
+</pre></div>
+</div>
+<p>That will create a file in $HOME/liquiddotnet called Program.cs, execute the code within and output the following:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Hello World!
+</pre></div>
+</div>
+<p>Edit the Program.cs file in $HOME/liquiddotnet using a text editor, change the contents to the following and then save the file: (note that some of the lines below wrap when viewed in a browser)</p>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Net.Http</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Threading.Tasks</span><span class="p">;</span>
+
+<span class="k">namespace</span> <span class="nn">liquiddotnet</span>
+<span class="p">{</span>
+    <span class="k">class</span> <span class="nc">Program</span>
+    <span class="p">{</span>
+        <span class="k">private</span> <span class="k">static</span> <span class="n">HttpClient</span> <span class="n">client</span> <span class="p">=</span> <span class="k">new</span> <span class="n">HttpClient</span><span class="p">();</span>
+
+        <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">MainAsync</span><span class="p">().</span><span class="n">GetAwaiter</span><span class="p">().</span><span class="n">GetResult</span><span class="p">();</span>
+        <span class="p">}</span>
+
+        <span class="k">private</span> <span class="k">static</span> <span class="k">async</span> <span class="n">Task</span> <span class="nf">MainAsync</span><span class="p">()</span>
+        <span class="p">{</span>
+            <span class="kt">string</span> <span class="n">url</span> <span class="p">=</span> <span class="s">&quot;http://user1:password1@localhost:18884&quot;</span><span class="p">;</span>
+
+            <span class="kt">var</span> <span class="n">contentData</span> <span class="p">=</span> <span class="k">new</span> <span class="n">StringContent</span><span class="p">(</span><span class="s">@&quot;{&quot;&quot;method&quot;&quot;: &quot;&quot;getwalletinfo&quot;&quot;, &quot;&quot;jsonrpc&quot;&quot;: &quot;&quot;2.0&quot;&quot;}&quot;</span><span class="p">,</span> <span class="n">System</span><span class="p">.</span><span class="n">Text</span><span class="p">.</span><span class="n">Encoding</span><span class="p">.</span><span class="n">UTF8</span><span class="p">,</span> <span class="s">&quot;application/json&quot;</span><span class="p">);</span>
+            <span class="k">using</span> <span class="p">(</span><span class="n">HttpResponseMessage</span> <span class="n">response</span> <span class="p">=</span> <span class="k">await</span> <span class="n">client</span><span class="p">.</span><span class="n">PostAsync</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">contentData</span><span class="p">))</span>
+            <span class="k">using</span> <span class="p">(</span><span class="n">HttpContent</span> <span class="n">content</span> <span class="p">=</span> <span class="n">response</span><span class="p">.</span><span class="n">Content</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="kt">string</span> <span class="n">data</span> <span class="p">=</span> <span class="k">await</span> <span class="n">content</span><span class="p">.</span><span class="n">ReadAsStringAsync</span><span class="p">();</span>
+
+                <span class="k">if</span> <span class="p">(</span><span class="k">null</span> <span class="p">!=</span> <span class="n">data</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Running the application</strong></p>
+<p>Before you try running any code, make sure the required daemon is running.</p>
+<p>Move to the the directory with the file in, compile and run the application:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span>
+<span class="nb">cd</span> liquiddotnet
+dotnet run
+</pre></div>
+</div>
+<p>Which outputs the results of the getwalletinfo command.</p>
+<p>As an application would be making multiple calls to the Liquid daemon via RPC you will probably want to move the code that actually does the request and response work into its own function. An example of how to do this is the <a class="reference external" href="https://github.com/wintercooled/dotnetcoreDynamicJSON-RPC">dynamic JSON RPC class</a>, a C# wrapper class intended to enable simple dynamic JSON RPC calls to Bitcoin, Liquid, Elements and other RPC enabled daemons.</p>
+<p>The code above is a starting point to get you up and running and you now have a functioning setup which you can use as a building block for further Liquid development.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="c-net-core-mvc">
+<h2><a class="toc-backref" href="#id8">C# .NET Core (MVC)</a><a class="headerlink" href="#c-net-core-mvc" title="Permalink to this headline">¶</a></h2>
+<p>The .NET Core framework runs on Linux, Windows and Mac OS. We will use C#, the most popular .NET language, within an MVC web application to make a Remote Procedure Call (RPC) to the Liquid daemon, which you will need to start using the config file settings <a class="reference internal" href="#config"><span class="std std-ref">outlined above</span></a>.</p>
+<p>Our aim is simply to make a call to Liquid using RPC by executing some basic C# code.</p>
+<p><strong>Installing the .NET Core SDK</strong></p>
+<p>Before starting, check that you have installed the required <a class="reference internal" href="#csharp-reqs"><span class="std std-ref">prerequisites</span></a> from the previous example.</p>
+<p><strong>Creating the application</strong></p>
+<p>We will be using the Model, View, Controller (MVC) pattern for our app. We will also be using an existing class to handle the calls to Liquid daemon and simplify our code. We will amend the default Home controller to call this class and pass the data it returns back to the relevant View using a new Model that we’ll also create.</p>
+<p>To get started, create a directory for our MVC app and move into it:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir LiquidMVC
+<span class="nb">cd</span> LiquidMVC
+</pre></div>
+</div>
+<p>Use the dotnet tool to create a new template mvc site. This will set up the required folder structure, files, and configuration needed to serve the web app:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dotnet new mvc
+</pre></div>
+</div>
+<p>Check it is set up correctly by running the app:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dotnet run
+</pre></div>
+</div>
+<p>When it says the application has started, browse to <a class="reference external" href="https://localhost:5001">https://localhost:5001</a></p>
+<p>You should see the template site running, all we have to do is add our own code to what’s already there.</p>
+<p>Shut the app down using Ctrl+C.</p>
+<p>Now we will start adding our own code so that we can query our Liquid node and display the results on the app’s home page.</p>
+<p>Create a new file named “dotnetcoreDynamicJSON-RPC.cs” in the LiquidMVC directory and paste in the <a class="reference external" href="https://raw.githubusercontent.com/wintercooled/dotnetcoreDynamicJSON-RPC/master/dotnetcoreDynamicJSON-RPC.cs">raw code</a> of the “Dynamic JSON RPC class” and save it. Alternatively, clone the <a class="reference external" href="https://github.com/wintercooled/dotnetcoreDynamicJSON-RPC">GitHub repository</a> into a different directory and copy the dotnetcoreDynamicJSON-RPC.cs file into your LiquidMVC directory.</p>
+<p>This class is a C# wrapper class intended to enable simple dynamic JSON RPC calls to Bitcoin, Liquid, Elements, and other RPC enabled daemons. The project, along with examples of how to use it, can be found in the <a class="reference external" href="https://github.com/wintercooled/dotnetcoreDynamicJSON-RPC">repository</a>. All we need for now though is to copy the code from the raw link</p>
+<p>That class enables us to easily query our node. We’ll add the code to call it soon, first we need a way to pass the data that we get back from our node to the web page for display. For that we need a Model. We’ll create a simple one that you can add to later.</p>
+<p>Create a new file named “ExampleNodeInfo.cs” in LiquidMVC/Models and paste the following into it:</p>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+
+<span class="k">namespace</span> <span class="nn">LiquidMVC.Models</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">class</span> <span class="nc">ExampleNodeInfo</span>
+    <span class="p">{</span>
+        <span class="k">public</span> <span class="kt">string</span> <span class="n">Balance</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+
+        <span class="k">public</span> <span class="kt">string</span> <span class="n">Message</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+        <span class="c1">//Add whatever other properties you want here</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Now we have a way to get data from our node and a Model that lets us pass the data to the View for display.</p>
+<p>Open the HomeController.cs file in LiquidMVC/Controllers. We will be adding code to call the Dynamic JSON RPC class to get data from our Liquid node, populate our Model with the results and hand the Model to the landing page’s View for display.</p>
+<p>To the top of the HomeController.cs file, add the following:</p>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">using</span> <span class="nn">DotnetcoreDynamicJSONRPC</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Then replace the Index method so it looks like the following. Note that some of the lines below wrap when viewed in a browser.</p>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="n">IActionResult</span> <span class="nf">Index</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">// We will be using a Liquid node in this example.</span>
+    <span class="c1">// It is easy to switch to use a Bitcoin, Liquid or Elements node.</span>
+    <span class="c1">// You need to change these to make sure you can authenticate against the daemon you are running:</span>
+    <span class="kt">string</span> <span class="n">rpcUrl</span> <span class="p">=</span> <span class="s">&quot;http://localhost&quot;</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="n">rpcPort</span> <span class="p">=</span> <span class="s">&quot;18884&quot;</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="n">rpcUsername</span> <span class="p">=</span> <span class="s">&quot;user1&quot;</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="n">rpcPassword</span> <span class="p">=</span> <span class="s">&quot;password1&quot;</span><span class="p">;</span>
+
+    <span class="c1">// For examples and notes on how to use the dotnetcoreDynamicJSON-RPC tool and its JSON helper methods please see:</span>
+    <span class="c1">// https://github.com/wintercooled/dotnetcoreDynamicJSON-RPC</span>
+
+    <span class="c1">// Initialise an instance of the dynamic dotnetcoreDynamicJSON_RPC class.</span>
+    <span class="kt">dynamic</span> <span class="n">dynamicRPC</span> <span class="p">=</span> <span class="k">new</span> <span class="n">DynamicRPC</span><span class="p">(</span><span class="n">rpcUrl</span><span class="p">,</span> <span class="n">rpcPort</span><span class="p">,</span> <span class="n">rpcUsername</span><span class="p">,</span> <span class="n">rpcPassword</span><span class="p">);</span>
+
+    <span class="c1">// Initialise our model that will be passed to the view</span>
+    <span class="kt">var</span> <span class="n">nodeInfo</span> <span class="p">=</span> <span class="k">new</span> <span class="n">ExampleNodeInfo</span><span class="p">();</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">dynamicRPC</span><span class="p">.</span><span class="n">DaemonIsRunning</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="k">try</span>
+        <span class="p">{</span>
+            <span class="c1">// Get the JSON result of the &#39;getwalletinfo&#39; RPC on the Liquid node.</span>
+            <span class="kt">string</span> <span class="n">balance</span> <span class="p">=</span> <span class="n">dynamicRPC</span><span class="p">.</span><span class="n">getwalletinfo</span><span class="p">();</span>
+
+            <span class="c1">// Use the DotnetcoreDynamicJSONRPC &#39;GetProperty&#39; string helper to return the property value we want.</span>
+            <span class="n">balance</span> <span class="p">=</span> <span class="n">balance</span><span class="p">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s">&quot;result.balance.bitcoin&quot;</span><span class="p">);</span>
+
+            <span class="c1">// Populate the model</span>
+            <span class="n">nodeInfo</span><span class="p">.</span><span class="n">Balance</span> <span class="p">=</span> <span class="n">balance</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">catch</span> <span class="p">(</span><span class="n">Exception</span> <span class="n">e</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">nodeInfo</span><span class="p">.</span><span class="n">Message</span> <span class="p">=</span> <span class="n">e</span><span class="p">.</span><span class="n">Message</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">else</span>
+    <span class="p">{</span>
+        <span class="n">nodeInfo</span><span class="p">.</span><span class="n">Message</span> <span class="p">=</span> <span class="s">&quot;Could not communicate with daemon&quot;</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Return the view and the associated model we have populated</span>
+    <span class="k">return</span> <span class="nf">View</span><span class="p">(</span><span class="n">nodeInfo</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Next, edit the Index.cshtml file in LiquidMVC/Views/Home and replace all the existing content with the following code. The code takes our Model and displays the data in it on the default web page.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>@model LiquidMVC.Models.ExampleNodeInfo
+
+@{
+    ViewData[&quot;Title&quot;] = &quot;Index&quot;;
+}
+
+&lt;h2&gt;Example Node Info&lt;/h2&gt;
+
+@{
+    if (Model.Message != &quot;&quot;)
+    {
+        &lt;h3&gt;@Model.Message&lt;/h3&gt;
+    }
+}
+
+&lt;div&gt;
+    &lt;h4&gt;Basic Wallet Info&lt;/h4&gt;
+    &lt;hr /&gt;
+    &lt;dl class=&quot;dl-horizontal&quot;&gt;
+        &lt;dt&gt;
+            @Html.DisplayNameFor(model =&gt; model.Balance)
+        &lt;/dt&gt;
+        &lt;dd&gt;
+            @Html.DisplayFor(model =&gt; model.Balance)
+        &lt;/dd&gt;
+    &lt;/dl&gt;
+&lt;/div&gt;
+</pre></div>
+</div>
+<p><strong>Running the application</strong></p>
+<p>Before you try running the code, make sure the Liquid daemon is running. Make sure your terminal is at the LiquidMVC directory level and run the following:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dotnet run
+</pre></div>
+</div>
+<p>When it says the application has started, browse to <a class="reference external" href="https://localhost:5001">https://localhost:5001</a></p>
+<p>The balance of the Liquid node’s wallet is displayed on the page.</p>
+<p>That should have got you up and running and in order to extend your application, you can look at the examples on the Dynamic JSON RPC class GitHub <a class="reference external" href="https://github.com/wintercooled/dotnetcoreDynamicJSON-RPC">site</a>.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="go">
+<h2><a class="toc-backref" href="#id9">Go</a><a class="headerlink" href="#go" title="Permalink to this headline">¶</a></h2>
+<p>In this example we will be using Go to make a Remote Procedure Call (RPC) to the Liquid daemon, which you will need to start using the config file settings <a class="reference internal" href="#config"><span class="std std-ref">outlined above</span></a>.</p>
+<p>Our aim is simply to make a call to Liquid using RPC by executing some basic Go code.</p>
+<p>To install Go: <a class="reference external" href="https://golang.org">https://golang.org</a>. Note the importance of setting the PATH environment variable.</p>
+<p>Create a directory src/liquid inside your Go workspace directory (probably %HOME/go) so that the full path is: $HOME/go/src/liquid</p>
+<p>With that directory create a file named “liquidrpcgo.go” and past the following into it:</p>
+<div class="highlight-Go notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nx">main</span>
+
+<span class="kn">import</span> <span class="p">(</span>
+    <span class="s">&quot;log&quot;</span>
+    <span class="s">&quot;bytes&quot;</span>
+    <span class="s">&quot;net/http&quot;</span>
+    <span class="s">&quot;io/ioutil&quot;</span>
+    <span class="s">&quot;encoding/json&quot;</span>
+<span class="p">)</span>
+
+<span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">url</span> <span class="o">:=</span> <span class="s">&quot;http://user1:password1@localhost:18884&quot;</span>
+
+    <span class="kd">var</span> <span class="nx">jsonStr</span> <span class="p">=</span> <span class="p">[]</span><span class="nb">byte</span><span class="p">(</span><span class="s">`{&quot;jsonrpc&quot;:&quot;1.0&quot;,&quot;method&quot;:&quot;getblockcount&quot;,&quot;params&quot;:[]}`</span><span class="p">)</span>
+
+    <span class="nx">request</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">http</span><span class="p">.</span><span class="nx">NewRequest</span><span class="p">(</span><span class="s">&quot;POST&quot;</span><span class="p">,</span> <span class="nx">url</span><span class="p">,</span> <span class="nx">bytes</span><span class="p">.</span><span class="nx">NewBuffer</span><span class="p">(</span><span class="nx">jsonStr</span><span class="p">))</span>
+
+    <span class="nx">request</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nx">Set</span><span class="p">(</span><span class="s">&quot;Content-Type&quot;</span><span class="p">,</span> <span class="s">&quot;application/json&quot;</span><span class="p">)</span>
+
+    <span class="nx">client</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="nx">http</span><span class="p">.</span><span class="nx">Client</span><span class="p">{}</span>
+
+    <span class="nx">response</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">client</span><span class="p">.</span><span class="nx">Do</span><span class="p">(</span><span class="nx">request</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+        <span class="nb">panic</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="k">defer</span> <span class="nx">response</span><span class="p">.</span><span class="nx">Body</span><span class="p">.</span><span class="nx">Close</span><span class="p">()</span>
+
+    <span class="nx">body</span><span class="p">,</span> <span class="nx">_</span> <span class="o">:=</span> <span class="nx">ioutil</span><span class="p">.</span><span class="nx">ReadAll</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">Body</span><span class="p">)</span>
+
+    <span class="nx">log</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nb">string</span><span class="p">(</span><span class="nx">body</span><span class="p">))</span>
+
+    <span class="c1">//Use as JSON...</span>
+    <span class="kd">var</span> <span class="nx">dat</span> <span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kd">interface</span><span class="p">{}</span>
+
+    <span class="k">if</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">json</span><span class="p">.</span><span class="nx">Unmarshal</span><span class="p">(</span><span class="nx">body</span><span class="p">,</span> <span class="o">&amp;</span><span class="nx">dat</span><span class="p">);</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+        <span class="nb">panic</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="nx">blocks</span> <span class="o">:=</span> <span class="nx">dat</span><span class="p">[</span><span class="s">&quot;result&quot;</span><span class="p">].(</span><span class="kt">float64</span><span class="p">)</span>
+    <span class="nx">log</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">blocks</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Compile and run the code:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>go build
+./liquid
+</pre></div>
+</div>
+<p>The code prints out the current block count.</p>
+<p>You now have a functioning setup which you can use as a building block for further development.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="ruby">
+<h2><a class="toc-backref" href="#id10">Ruby</a><a class="headerlink" href="#ruby" title="Permalink to this headline">¶</a></h2>
+<p>In this example we will be using Ruby to make a Remote Procedure Call (RPC) to the Liquid daemon, which you will need to start using the config file settings <a class="reference internal" href="#config"><span class="std std-ref">outlined above</span></a>.</p>
+<p>Our aim is simply to make a call to Liquid using RPC by executing some basic Ruby code.</p>
+<p>You can check if Ruby is installed on your operating system, and install it if not, by following the steps on the <a class="reference external" href="https://www.ruby-lang.org/en/documentation/installation/">Ruby language website</a>.</p>
+<p>Create a new file named “liquidrpcruby.rb” and paste the code below into it:</p>
+<div class="highlight-Ruby notranslate"><div class="highlight"><pre><span></span><span class="nb">require</span> <span class="s1">&#39;net/http&#39;</span>
+<span class="nb">require</span> <span class="s1">&#39;uri&#39;</span>
+<span class="nb">require</span> <span class="s1">&#39;json&#39;</span>
+
+<span class="k">class</span> <span class="nc">LiquidRPC</span>
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">service_url</span><span class="p">)</span>
+    <span class="vi">@uri</span> <span class="o">=</span> <span class="no">URI</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">service_url</span><span class="p">)</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">method_missing</span><span class="p">(</span><span class="nb">name</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">)</span>
+    <span class="n">post_body</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">&#39;method&#39;</span> <span class="o">=&gt;</span> <span class="nb">name</span><span class="p">,</span> <span class="s1">&#39;params&#39;</span> <span class="o">=&gt;</span> <span class="n">args</span><span class="p">,</span> <span class="s1">&#39;id&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;jsonrpc&#39;</span> <span class="p">}</span><span class="o">.</span><span class="n">to_json</span>
+    <span class="n">resp</span> <span class="o">=</span> <span class="no">JSON</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span> <span class="n">http_post_request</span><span class="p">(</span><span class="n">post_body</span><span class="p">)</span> <span class="p">)</span>
+    <span class="k">raise</span> <span class="no">JSONRPCError</span><span class="p">,</span> <span class="n">resp</span><span class="o">[</span><span class="s1">&#39;error&#39;</span><span class="o">]</span> <span class="k">if</span> <span class="n">resp</span><span class="o">[</span><span class="s1">&#39;error&#39;</span><span class="o">]</span>
+    <span class="n">resp</span><span class="o">[</span><span class="s1">&#39;result&#39;</span><span class="o">]</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">http_post_request</span><span class="p">(</span><span class="n">post_body</span><span class="p">)</span>
+    <span class="n">http</span>    <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="vi">@uri</span><span class="o">.</span><span class="n">host</span><span class="p">,</span> <span class="vi">@uri</span><span class="o">.</span><span class="n">port</span><span class="p">)</span>
+    <span class="n">request</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Post</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="vi">@uri</span><span class="o">.</span><span class="n">request_uri</span><span class="p">)</span>
+    <span class="n">request</span><span class="o">.</span><span class="n">basic_auth</span> <span class="vi">@uri</span><span class="o">.</span><span class="n">user</span><span class="p">,</span> <span class="vi">@uri</span><span class="o">.</span><span class="n">password</span>
+    <span class="n">request</span><span class="o">.</span><span class="n">content_type</span> <span class="o">=</span> <span class="s1">&#39;application/json&#39;</span>
+    <span class="n">request</span><span class="o">.</span><span class="n">body</span> <span class="o">=</span> <span class="n">post_body</span>
+    <span class="n">http</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span><span class="o">.</span><span class="n">body</span>
+  <span class="k">end</span>
+
+  <span class="k">class</span> <span class="nc">JSONRPCError</span> <span class="o">&lt;</span> <span class="no">RuntimeError</span><span class="p">;</span> <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">if</span> <span class="vg">$0</span> <span class="o">==</span> <span class="bp">__FILE__</span>
+  <span class="n">liquid</span> <span class="o">=</span> <span class="no">LiquidRPC</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s1">&#39;http://user1:password1@127.0.0.1:18884&#39;</span><span class="p">)</span>
+
+  <span class="nb">p</span> <span class="n">liquid</span><span class="o">.</span><span class="n">getblockcount</span>
+<span class="k">end</span>
+</pre></div>
+</div>
+<p>Execute the code from the command line:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ruby liquidrpcruby.rb
+</pre></div>
+</div>
+<p>The output will show the current block count.</p>
+<p>You now have a functioning setup which you can use as a building block for further development.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="java">
+<h2><a class="toc-backref" href="#id11">Java</a><a class="headerlink" href="#java" title="Permalink to this headline">¶</a></h2>
+<p>In this example we will be using Java to make a Remote Procedure Call (RPC) to the Liquid daemon, which you will need to start using the config file settings <a class="reference internal" href="#config"><span class="std std-ref">outlined above</span></a>.</p>
+<p>Our aim is simply to make a call to Liquid using RPC by executing some basic Java code.</p>
+<p>The example code doesn’t require any external dependencies, but you do need the Java compiler (javac) as well as the Java runtime environment itself. These can be installed on Ubuntu using the command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt install default-jdk
+</pre></div>
+</div>
+<p>Create a new file named “liquidrpcjava.java” and paste the code below into it:</p>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">java.io.BufferedReader</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.io.InputStreamReader</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.io.OutputStream</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.net.HttpURLConnection</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.net.URL</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.net.Authenticator</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.net.PasswordAuthentication</span><span class="p">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">liquidrpcjava</span> <span class="p">{</span>
+
+        <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span> <span class="p">(</span><span class="n">String</span> <span class="o">[]</span><span class="n">args</span><span class="p">)</span> <span class="kd">throws</span> <span class="n">IOException</span><span class="p">{</span>
+                <span class="n">URL</span> <span class="n">url</span> <span class="o">=</span> <span class="k">new</span> <span class="n">URL</span> <span class="p">(</span><span class="s">&quot;http://127.0.0.1:18884&quot;</span><span class="p">);</span>
+                <span class="n">String</span> <span class="n">rpcuser</span> <span class="o">=</span><span class="s">&quot;user1&quot;</span><span class="p">;</span>
+                <span class="n">String</span> <span class="n">rpcpassword</span> <span class="o">=</span><span class="s">&quot;password1&quot;</span><span class="p">;</span>
+
+                <span class="n">Authenticator</span><span class="p">.</span><span class="na">setDefault</span><span class="p">(</span><span class="k">new</span> <span class="n">Authenticator</span><span class="p">()</span> <span class="p">{</span>
+            <span class="kd">protected</span> <span class="n">PasswordAuthentication</span> <span class="nf">getPasswordAuthentication</span><span class="p">()</span> <span class="p">{</span>
+                <span class="k">return</span> <span class="k">new</span> <span class="n">PasswordAuthentication</span> <span class="p">(</span><span class="n">rpcuser</span><span class="p">,</span> <span class="n">rpcpassword</span><span class="p">.</span><span class="na">toCharArray</span><span class="p">());</span>
+            <span class="p">}</span>
+        <span class="p">});</span>
+
+                <span class="n">HttpURLConnection</span> <span class="n">conn</span> <span class="o">=</span> <span class="p">(</span><span class="n">HttpURLConnection</span><span class="p">)</span><span class="n">url</span><span class="p">.</span><span class="na">openConnection</span><span class="p">();</span>
+                <span class="n">conn</span><span class="p">.</span><span class="na">setRequestMethod</span><span class="p">(</span><span class="s">&quot;POST&quot;</span><span class="p">);</span>
+                <span class="n">conn</span><span class="p">.</span><span class="na">setRequestProperty</span><span class="p">(</span><span class="s">&quot;Content-Type&quot;</span><span class="p">,</span> <span class="s">&quot;application/json; utf-8&quot;</span><span class="p">);</span>
+                <span class="n">conn</span><span class="p">.</span><span class="na">setRequestProperty</span><span class="p">(</span><span class="s">&quot;Accept&quot;</span><span class="p">,</span> <span class="s">&quot;application/json&quot;</span><span class="p">);</span>
+                <span class="n">conn</span><span class="p">.</span><span class="na">setDoOutput</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+
+                <span class="n">String</span> <span class="n">json</span> <span class="o">=</span> <span class="s">&quot;{\&quot;method\&quot;: \&quot;getwalletinfo\&quot;, \&quot;jsonrpc\&quot;: \&quot;2.0\&quot;}&quot;</span><span class="p">;</span>
+
+                <span class="k">try</span><span class="p">(</span><span class="n">OutputStream</span> <span class="n">os</span> <span class="o">=</span> <span class="n">conn</span><span class="p">.</span><span class="na">getOutputStream</span><span class="p">()){</span>
+                        <span class="kt">byte</span><span class="o">[]</span> <span class="n">input</span> <span class="o">=</span> <span class="n">json</span><span class="p">.</span><span class="na">getBytes</span><span class="p">(</span><span class="s">&quot;utf-8&quot;</span><span class="p">);</span>
+                        <span class="n">os</span><span class="p">.</span><span class="na">write</span><span class="p">(</span><span class="n">input</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">input</span><span class="p">.</span><span class="na">length</span><span class="p">);</span>
+                <span class="p">}</span>
+
+                <span class="k">try</span><span class="p">(</span><span class="n">BufferedReader</span> <span class="n">br</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BufferedReader</span><span class="p">(</span><span class="k">new</span> <span class="n">InputStreamReader</span><span class="p">(</span><span class="n">conn</span><span class="p">.</span><span class="na">getInputStream</span><span class="p">(),</span> <span class="s">&quot;utf-8&quot;</span><span class="p">))){</span>
+                        <span class="n">StringBuilder</span> <span class="n">sb</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringBuilder</span><span class="p">();</span>
+                        <span class="n">String</span> <span class="n">line</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+
+                        <span class="k">while</span> <span class="p">((</span><span class="n">line</span> <span class="o">=</span> <span class="n">br</span><span class="p">.</span><span class="na">readLine</span><span class="p">())</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+                                <span class="n">sb</span><span class="p">.</span><span class="na">append</span><span class="p">(</span><span class="n">line</span><span class="p">.</span><span class="na">trim</span><span class="p">());</span>
+                        <span class="p">}</span>
+
+                        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">sb</span><span class="p">.</span><span class="na">toString</span><span class="p">());</span>
+                <span class="p">}</span>
+        <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Compile and run the code from the command line:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>javac liquidrpcjava.java
+java liquidrpcjava
+</pre></div>
+</div>
+<p>The output will show wallet information.</p>
+<p>You now have a functioning setup which you can use as a building block for further development.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="perl">
+<h2><a class="toc-backref" href="#id12">Perl</a><a class="headerlink" href="#perl" title="Permalink to this headline">¶</a></h2>
+<p>In this example we will be using Perl to make a Remote Procedure Call (RPC) to the Liquid daemon, which you will need to start using the config file settings <a class="reference internal" href="#config"><span class="std std-ref">outlined above</span></a>.</p>
+<p>Our aim is simply to make a call to Liquid using RPC by executing some basic Perl code.</p>
+<p>Perl can be installed from <a class="reference external" href="https://www.perl.org">https://www.perl.org</a> and comes pre-installed on Ubuntu.</p>
+<p>We will be using the <a class="reference external" href="https://metacpan.org/pod/release/MAKAMAKA/JSON-RPC-0.95/lib/JSON/RPC/Client.pm">JSON::RPC::Client</a> Perl implementation of a JSON-RPC client which will make the rpc calls and results handling simpler.</p>
+<p>To install JSON::RPC::Client open the CPAN tool from the terminal:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>perl -MCPAN -e shell
+</pre></div>
+</div>
+<p>And from within the cpan console, install the RPC Client:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>install JSON::RPC::Client
+</pre></div>
+</div>
+<p>And then exit the cpan tool:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>quit
+</pre></div>
+</div>
+<p>You must close the terminal window so that when we run the code below it will pick up the new environment variables written.</p>
+<p>Create a new file named “liquidrpcperl.pl” and paste the code below into it:</p>
+<div class="highlight-Perl notranslate"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nn">JSON::RPC::Client</span><span class="p">;</span>
+<span class="k">use</span> <span class="nn">Data::Dumper</span><span class="p">;</span>
+
+<span class="k">my</span> <span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nn">JSON::RPC::</span><span class="n">Client</span><span class="p">;</span>
+
+<span class="nv">$client</span><span class="o">-&gt;</span><span class="nn">ua</span><span class="o">-&gt;</span><span class="n">credentials</span><span class="p">(</span>
+    <span class="s">&#39;localhost:18884&#39;</span><span class="p">,</span> <span class="s">&#39;jsonrpc&#39;</span><span class="p">,</span> <span class="s">&#39;user1&#39;</span> <span class="o">=&gt;</span> <span class="s">&#39;password1&#39;</span>
+    <span class="p">);</span>
+
+<span class="k">my</span> <span class="nv">$uri</span> <span class="o">=</span> <span class="s">&#39;http://localhost:18884/&#39;</span><span class="p">;</span>
+<span class="k">my</span> <span class="nv">$obj</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">method</span>  <span class="o">=&gt;</span> <span class="s">&#39;getwalletinfo&#39;</span><span class="p">,</span>
+    <span class="n">params</span>  <span class="o">=&gt;</span> <span class="o">[]</span><span class="p">,</span>
+<span class="p">};</span>
+
+<span class="k">my</span> <span class="nv">$res</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="n">call</span><span class="p">(</span> <span class="nv">$uri</span><span class="p">,</span> <span class="nv">$obj</span> <span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nv">$res</span><span class="p">){</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nv">$res</span><span class="o">-&gt;</span><span class="n">is_error</span><span class="p">)</span> <span class="p">{</span> <span class="k">print</span> <span class="s">&quot;Error : &quot;</span><span class="p">,</span> <span class="nv">$res</span><span class="o">-&gt;</span><span class="n">error_message</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">else</span> <span class="p">{</span> <span class="k">print</span> <span class="n">Dumper</span><span class="p">(</span><span class="nv">$res</span><span class="o">-&gt;</span><span class="n">result</span><span class="p">);</span> <span class="p">}</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="k">print</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="n">status_line</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Run the code from the command line (remember that this must be a new terminal window from the one we used before to install the RPC Client):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>perl liquidrpcperl.pl
+</pre></div>
+</div>
+<p>The output will show wallet information.</p>
+<p>You now have a functioning setup which you can use as a building block for further development.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../general-developer-info/general-developer-info-index.html" class="btn btn-neutral float-right" title="General Developer Information" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../developer-guide/developer-guide-index.html" class="btn btn-neutral float-left" title="Developer Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Randy McMillan
+      <span class="lastupdated">
+        Last updated on Nov 02, 2020.
+      </span>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
