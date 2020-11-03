@@ -82,21 +82,21 @@ singlehtml:
 	@echo
 	@echo "Build finished. The HTML page is in $(BUILDDIR)/singlehtml."
 
-.PHONY: keybase-public
+.PHONY: html keybase-public
 keybase-public:
 	$(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) /keybase/public/$(KB_USER)
 	@echo
 	@echo "Build finished. The HTML page is in /keybase/public/$(KB_USER)"
-	bash -c "keybase sign -i ./keybase/public/randymcmillan/index.html -o /keybase/public/$(KB_USER)/index.sig"
+	bash -c "keybase sign -i /keybase/public/randymcmillan/index.html -o /keybase/public/$(KB_USER)/index.sig"
 
-#.PHONY: keybase-private
+#.PHONY: html keybase-private
 #keybase-private:
 #	$(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) /keybase/private/$(KB_USER)
 #	@echo
 #	@echo "Build finished. The HTML page is in /keybase/private/$(KB_USER)"
 #	bash -c "keybase sign -i /keybase/private/randymcmillan/index.html -o /keybase/private/$(KB_USER)/index.sig"
 
-.PHONY: gh-pages
+.PHONY: html gh-pages
 gh-pages:
 	$(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) ~/$(GH_USER).github.io
 	@echo
