@@ -1,6 +1,22 @@
 # Makefile for Sphinx documentation
 #
 
+ifeq ($(kbuser),)
+# My default change to your keybase user name
+KB_USER := randymcmillan
+else
+KB_USER = $(kbuser)
+endif
+ifeq ($(ghuser),)
+# My default change to your keybase user name
+GH_USER := RandyMcMillan
+else
+GH_USER = $(ghuser)
+endif
+export KB_USER
+export GH_USER
+
+
 # You can set these variables from the command line.
 SPHINXOPTS    =
 SPHINXBUILD   = sphinx-build
@@ -68,24 +84,24 @@ singlehtml:
 
 .PHONY: keybase-public
 keybase-public:
-	$(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) /keybase/public/randymcmillan
+	$(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) /keybase/public/$(KB_USER)
 	@echo
-	@echo "Build finished. The HTML page is in /keybase/public/randymcmillan"
-	bash -c "keybase sign -i ./keybase/public/randymcmillan/index.html -o /keybase/public/randymcmillan/index.sig"
+	@echo "Build finished. The HTML page is in /keybase/public/$(KB_USER)"
+	bash -c "keybase sign -i ./keybase/public/randymcmillan/index.html -o /keybase/public/$(KB_USER)/index.sig"
 
 .PHONY: keybase-private
 keybase-private:
-	$(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) /keybase/private/randymcmillan
+	$(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) /keybase/private/$(KB_USER)
 	@echo
-	@echo "Build finished. The HTML page is in /keybase/private/randymcmillan"
-	bash -c "keybase sign -i /keybase/private/randymcmillan/index.html -o /keybase/private/randymcmillan/index.sig"
+	@echo "Build finished. The HTML page is in /keybase/private/$(KB_USER)"
+	bash -c "keybase sign -i /keybase/private/randymcmillan/index.html -o /keybase/private/$(KB_USER)/index.sig"
 
 .PHONY: gh-pages
 gh-pages:
-	$(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) ~/randymcmillan.github.io
+	$(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) ~/$(GH_USER).github.io
 	@echo
-	@echo "Build finished. The HTML page is in ~/randymcmillan.github.io"
-	bash -c "keybase sign -i ~/randymcmillan.github.io/index.html -o ~/randymcmillan.github.io/index.html.sig"
+	@echo "Build finished. The HTML page is in ~/$(GH_USER).github.io"
+	bash -c "keybase sign -i ~/$(GH_USER).github.io/index.html -o ~/$(GH_USER).github.io/index.html.sig"
 
 .PHONY: pickle
 pickle:
