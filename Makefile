@@ -78,7 +78,14 @@ keybase-private:
 	$(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) /keybase/private/randymcmillan
 	@echo
 	@echo "Build finished. The HTML page is in /keybase/private/randymcmillan"
-	bash -c "keybase sign -i ./keybase/private/randymcmillan/index.html -o /keybase/private/randymcmillan/index.sig"
+	bash -c "keybase sign -i /keybase/private/randymcmillan/index.html -o /keybase/private/randymcmillan/index.sig"
+
+.PHONY: gh-pages
+gh-pages:
+	$(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) ~/randymcmillan.github.io
+	@echo
+	@echo "Build finished. The HTML page is in ~/randymcmillan.github.io"
+	bash -c "keybase sign -i ~/randymcmillan.github.io/index.html -o ~/randymcmillan.github.io/index.html.sig"
 
 .PHONY: pickle
 pickle:
