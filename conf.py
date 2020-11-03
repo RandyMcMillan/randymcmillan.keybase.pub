@@ -84,7 +84,7 @@ language = None
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This patterns also effect to html_static_path and html_extra_path
-exclude_patterns = ['README.md', 'README', '_build', 'Thumbs.db', '.DS_Store', 'issued_assets.rst', 'atomic_swaps.rst', 'venv', 'green/getting-started/setup.rst', 'liquid/developer-guide/confidential-transactions.rst']
+exclude_patterns = ['README', '_build', 'Thumbs.db', '.DS_Store', 'issued_assets.rst', 'atomic_swaps.rst', 'venv', 'green/getting-started/setup.rst', 'liquid/developer-guide/confidential-transactions.rst']
 
 # The reST default role (used for this markup: `text`) to use for all
 # documents.

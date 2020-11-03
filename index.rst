@@ -45,3 +45,9 @@ RandyMcMillan
    :caption: PGP
 
    randymcmillan.asc <./randymcmillan-asc.md>
+
+.. toctree::
+   :maxdepth: 1
+   :caption: README.md
+
+   README.md <./README.md>
