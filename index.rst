@@ -4,12 +4,6 @@ Blockstream Docs
 
 .. toctree::
    :maxdepth: 2
-   :caption: PGP Public Key
-
-   PGP Public Key <./randymcmillan-asc.md>
-
-.. toctree::
-   :maxdepth: 2
    :caption: Blockstream Green
 
    Getting Started <./green/getting-started/getting-started-index>
@@ -46,3 +40,8 @@ Blockstream Docs
 
    All Repositories <./developer-documentation>
 
+.. toctree::
+   :maxdepth: 1
+   :caption: PGP
+
+   randymcmillan.asc <./randymcmillan-asc.md>
