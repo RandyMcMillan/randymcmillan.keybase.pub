@@ -48,6 +48,8 @@ source_suffix = ['.rst', '.md', '.asc']
 
 # The master toctree document.
 master_doc = 'index'
+html_title = 'R A N D Y M c M I L L A N'
+
 
 # General information about the project.
 project = u''
