@@ -38,19 +38,10 @@ After any changes are made, run the following from your `~/<keybase-user>.keybas
 
 ``cd ~/randymcmillan.keybase.pub``
 
-local build
------------
+``make``
 
-``make clean && make html``
+``make keybase gh-pages``
 
-``make keybase-public``
-
-OR
---
-
-``make clean && make html``
-
-``make gh-pages``
 
 To view the generated html files, navigate to ``_build/html/`` and open ``index.html`` in your browser.
 
