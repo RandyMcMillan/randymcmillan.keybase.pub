@@ -3,6 +3,12 @@ RandyMcMillan
 ################
 
 .. toctree::
+   :maxdepth: 1
+   :caption: PGP
+
+   randymcmillan.asc <./randymcmillan-asc.md>
+
+.. toctree::
    :maxdepth: 2
    :caption: Blockstream Green
 

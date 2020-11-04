@@ -106,7 +106,7 @@ singlehtml:
 	@echo
 	@echo "Build finished. The HTML page is in $(BUILDDIR)/singlehtml."
 
-.PHONY: keybase
+.PHONY: html keybase
 .ONESHELL:
 keybase-public:
 	$(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) /keybase/$(KB_PUBLIC)/$(KB_USER)
