@@ -20,30 +20,45 @@ export GH_USER
 # export KB_PRIVATE=private && make keybase-private
 ifeq ($(KB_PRIVATE),)
 KB_PRIVATE := false# change from false to private
-export KB_PRIVATE
+else
+	@echo "export KB_PRIVATE=private && make keybase-private"
 endif
+export KB_PRIVATE
+
 # export KB_PUBLIC=public && make keybase-public
 ifeq ($(KB_PUBLIC),)
 KB_PUBLIC  := false# change from false to public
-export KB_PUBLIC
+else
+	@echo "export KB_PUBLIC=public && make keybase-public"
 endif
+export KB_PUBLIC
 
 # You can set these variables from the command line.
 SPHINXOPTS    =
 SPHINXBUILD   = sphinx-build
 PAPER         =
 BUILDDIR      = _build
+PRIVATE_BUILDDIR      = _private_build
 
 # Internal variables.
 PAPEROPT_a4     = -D latex_paper_size=a4
 PAPEROPT_letter = -D latex_paper_size=letter
 ALLSPHINXOPTS   = -d $(BUILDDIR)/doctrees $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) .
+PRIVATE_ALLSPHINXOPTS   = -d $(PRIVATE_BUILDDIR)/doctrees $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) .
 # the i18n builder cannot share the environment and doctrees with the others
 I18NSPHINXOPTS  = $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) .
 
 .PHONY: help
 help:
+	@echo ""
 	@echo "Please use \`make <target>' where <target> is one of"
+	@echo ""
+	@echo "Keybase usage:"
+	@echo ""
+	@echo "  export KB_PRIVATE=private && make keybase-private"
+	@echo ""
+	@echo "  export KB_PUBLIC=public && make keybase-public"
+	@echo ""
 	@echo "  html       to make standalone HTML files"
 	@echo "  dirhtml    to make HTML files named index.html in directories"
 	@echo "  singlehtml to make a single large HTML file"
@@ -102,7 +117,7 @@ keybase-public:
 
 .PHONY: html keybase-private
 keybase-private:
-	$(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) /keybase/$(KB_PRIVATE)/$(KB_USER)
+	$(SPHINXBUILD) -b singlehtml $(PRIVATE_ALLSPHINXOPTS) /keybase/$(KB_PRIVATE)/$(KB_USER)
 	@echo
 	@echo "Build finished. The HTML page is in /keybase/$(KB_PRIVATE)/$(KB_USER)"
 	bash -c "keybase sign -i /keybase/$(KB_PRIVATE)/$(KB_USER)/index.html -o /keybase/$(KB_PRIVATE)/$(KB_USER)/index.sig"
