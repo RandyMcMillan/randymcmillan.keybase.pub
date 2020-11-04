@@ -17,12 +17,12 @@ Install sphinx and the sphinx_rtd_theme:
 Adding, editing and viewing changes locally
 -------------------------------------------
 
-github
-------
+git clone
+---------
+
+``git clone https://github.com/RandyMcMillan/randymcmillan.github.io.git``
 
 ``git clone https://github.com/RandyMcMillan/randymcmillan.keybase.pub.git``
-
-``cd ~/randymcmillan.keybase.pub``
 
 keybase
 -------
@@ -31,23 +31,26 @@ keybase
 
 ``git push keybase``
 
+local build
+-----------
 
+After any changes are made, run the following from your `~/<keybase-user>.keybase.pub` directory in order to clear the contents of the output directory and rebuild the html files:
+
+``cd ~/randymcmillan.keybase.pub``
 
 local build
 -----------
 
-After any changes are made, run the following from your `~/keybase-user.keybase.pub` directory in order to clear the contents of the output directory and rebuild the html files:
-
 ``make clean && make html``
 
-``make clean && make keybase-public``
+``make keybase-public``
 
 OR
 --
 
 ``make clean && make html``
 
-``make clean && make gh-pages``
+``make gh-pages``
 
 To view the generated html files, navigate to ``_build/html/`` and open ``index.html`` in your browser.
 
