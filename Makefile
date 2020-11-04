@@ -108,7 +108,7 @@ singlehtml:
 
 .PHONY: html keybase
 .ONESHELL:
-keybase-public:
+keybase:
 	$(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) /keybase/$(KB_PUBLIC)/$(KB_USER)
 	@echo
 	@echo "Build finished. The HTML page is in /keybase/$(KB_PUBLIC)/$(KB_USER)"
