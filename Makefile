@@ -10,7 +10,7 @@ export KB_USER
 
 ifeq ($(ghuser),)
 # My default change to your keybase user name
-GH_USER := RandyMcMillan
+GH_USER := randymcmillan
 else
 GH_USER = $(ghuser)
 endif
@@ -24,7 +24,6 @@ else
 	@echo "export KB_PRIVATE=private && make keybase-private"
 endif
 export KB_PRIVATE
-
 # export KB_PUBLIC=public && make keybase-public
 ifeq ($(KB_PUBLIC),)
 KB_PUBLIC  := false# change from false to public
@@ -32,7 +31,6 @@ else
 	@echo "export KB_PUBLIC=public && make keybase-public"
 endif
 export KB_PUBLIC
-
 # You can set these variables from the command line.
 SPHINXOPTS    =
 SPHINXBUILD   = sphinx-build
@@ -108,26 +106,26 @@ singlehtml:
 	@echo
 	@echo "Build finished. The HTML page is in $(BUILDDIR)/singlehtml."
 
-.PHONY: html keybase-public
+.PHONY: keybase
+.ONESHELL:
 keybase-public:
 	$(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) /keybase/$(KB_PUBLIC)/$(KB_USER)
 	@echo
 	@echo "Build finished. The HTML page is in /keybase/$(KB_PUBLIC)/$(KB_USER)"
 	bash -c "keybase sign -i /keybase/$(KB_PUBLIC)/$(KB_USER)/index.html -o /keybase/$(KB_PUBLIC)/$(KB_USER)/index.sig"
-
-.PHONY: html keybase-private
-keybase-private:
-	$(SPHINXBUILD) -b singlehtml $(PRIVATE_ALLSPHINXOPTS) /keybase/$(KB_PRIVATE)/$(KB_USER)
-	@echo
-	@echo "Build finished. The HTML page is in /keybase/$(KB_PRIVATE)/$(KB_USER)"
-	bash -c "keybase sign -i /keybase/$(KB_PRIVATE)/$(KB_USER)/index.html -o /keybase/$(KB_PRIVATE)/$(KB_USER)/index.sig"
+#	$(SPHINXBUILD) -b singlehtml $(PRIVATE_ALLSPHINXOPTS) /keybase/$(KB_PRIVATE)/$(KB_USER)
+#	@echo
+#	@echo "Build finished. The HTML page is in /keybase/$(KB_PRIVATE)/$(KB_USER)"
+#	bash -c "keybase sign -i /keybase/$(KB_PRIVATE)/$(KB_USER)/index.html -o /keybase/$(KB_PRIVATE)/$(KB_USER)/index.sig"
 
 .PHONY: html gh-pages
+.ONESHELL:
 gh-pages:
 	$(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) ~/$(GH_USER).github.io
 	@echo
 	@echo "Build finished. The HTML page is in ~/$(GH_USER).github.io"
 	bash -c "keybase sign -i ~/$(GH_USER).github.io/index.html -o ~/$(GH_USER).github.io/index.html.sig"
+	bash -c "cd ~/$(GH_USER).github.io && git add . && git commit -am 'update from $(PWD)' && git push -f origin +master:master"
 
 .PHONY: pickle
 pickle:
