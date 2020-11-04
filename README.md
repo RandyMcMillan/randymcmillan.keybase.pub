@@ -20,9 +20,9 @@ Adding, editing and viewing changes locally
 git clone
 ---------
 
-``git clone https://github.com/RandyMcMillan/randymcmillan.github.io.git``
+``git clone https://github.com/RandyMcMillan/randymcmillan.github.io.git ~``
 
-``git clone https://github.com/RandyMcMillan/randymcmillan.keybase.pub.git``
+``git clone https://github.com/RandyMcMillan/randymcmillan.keybase.pub.git ~``
 
 keybase
 -------
