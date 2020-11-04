@@ -1,5 +1,4 @@
-# Makefile for Sphinx documentation
-#
+# Makefile for randymcmillan.keybase.pub
 
 ifeq ($(kbuser),)
 # My default change to your keybase user name
@@ -7,15 +6,27 @@ KB_USER := randymcmillan
 else
 KB_USER = $(kbuser)
 endif
+export KB_USER
+
 ifeq ($(ghuser),)
 # My default change to your keybase user name
 GH_USER := RandyMcMillan
 else
 GH_USER = $(ghuser)
 endif
-export KB_USER
 export GH_USER
 
+# Force the user to explicitly select public or private
+# export KB_PRIVATE=private && make keybase-private
+ifeq ($(KB_PRIVATE),)
+KB_PRIVATE := false# change from false to private
+export KB_PRIVATE
+endif
+# export KB_PUBLIC=public && make keybase-public
+ifeq ($(KB_PUBLIC),)
+KB_PUBLIC  := false# change from false to public
+export KB_PUBLIC
+endif
 
 # You can set these variables from the command line.
 SPHINXOPTS    =
@@ -84,17 +95,17 @@ singlehtml:
 
 .PHONY: html keybase-public
 keybase-public:
-	$(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) /keybase/public/$(KB_USER)
+	$(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) /keybase/$(KB_PUBLIC)/$(KB_USER)
 	@echo
-	@echo "Build finished. The HTML page is in /keybase/public/$(KB_USER)"
-	bash -c "keybase sign -i /keybase/public/$(KB_USER)/index.html -o /keybase/public/$(KB_USER)/index.sig"
+	@echo "Build finished. The HTML page is in /keybase/$(KB_PUBLIC)/$(KB_USER)"
+	bash -c "keybase sign -i /keybase/$(KB_PUBLIC)/$(KB_USER)/index.html -o /keybase/$(KB_PUBLIC)/$(KB_USER)/index.sig"
 
-#.PHONY: html keybase-private
-#keybase-private:
-#	$(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) /keybase/private/$(KB_USER)
-#	@echo
-#	@echo "Build finished. The HTML page is in /keybase/private/$(KB_USER)"
-#	bash -c "keybase sign -i /keybase/private/randymcmillan/index.html -o /keybase/private/$(KB_USER)/index.sig"
+.PHONY: html keybase-private
+keybase-private:
+	$(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) /keybase/$(KB_PRIVATE)/$(KB_USER)
+	@echo
+	@echo "Build finished. The HTML page is in /keybase/$(KB_PRIVATE)/$(KB_USER)"
+	bash -c "keybase sign -i /keybase/$(KB_PRIVATE)/$(KB_USER)/index.html -o /keybase/$(KB_PRIVATE)/$(KB_USER)/index.sig"
 
 .PHONY: html gh-pages
 gh-pages:
