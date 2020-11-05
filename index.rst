@@ -9,6 +9,12 @@ RandyMcMillan
    github.com/randymcmillan <./github.com/randymcmillan>
 
 .. toctree::
+   :maxdepth: 1
+   :caption: Twitter
+
+   twitter.com/randymcmillan <./twitter.com/randymcmillan>
+
+.. toctree::
    :maxdepth: 2
    :caption: Blockstream Green
 
