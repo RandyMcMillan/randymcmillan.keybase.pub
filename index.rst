@@ -2,23 +2,23 @@
 RandyMcMillan
 ################
 
-.. toctree::
-   :maxdepth: 1
-   :caption: Github
+.. include:: ./github.com/randymcmillan.rst
 
-   github.com/randymcmillan <./github.com/randymcmillan>
+.. include:: ./twitter.con/randymcmillan.rst
 
-.. toctree::
-   :maxdepth: 1
-   :caption: Twitter
-
-   twitter.com/randymcmillan <./twitter.com/randymcmillan>
+.. include:: ./keybase.io/randymcmillan.rst
 
 .. toctree::
-   :maxdepth: 1
-   :caption: Keybase
+   :maxdepth: 2
+   :caption: github.com
 
-   keybase.io/randymcmillan <./keybase.io/randymcmillan>
+   /randymcmillan <./github.com/randymcmillan.rst>
+
+.. toctree::
+   :maxdepth: 2
+   :caption: twitter.com
+
+   /randymcmillan <./twitter.com/randymcmillan.rst>
 
 .. toctree::
    :maxdepth: 2

@@ -47,7 +47,7 @@ PRIVATE_ALLSPHINXOPTS   = -d $(PRIVATE_BUILDDIR)/doctrees $(PAPEROPT_$(PAPER)) $
 I18NSPHINXOPTS  = $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) .
 
 .PHONY: make-kb-gh
-make-kb-gh: help keybase gh-pages
+make-kb-gh: help keybase gh-pages html
 
 .PHONY: help
 help:

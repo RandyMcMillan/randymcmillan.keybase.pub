@@ -30,8 +30,8 @@ keybase
 
 ``git push keybase``
 
-local build
------------
+build and deploy
+----------------
 
 After any changes are made, run the following from your `~/<keybase-user>.keybase.pub` directory in order to clear the contents of the output directory and rebuild the html files:
 
@@ -39,7 +39,12 @@ After any changes are made, run the following from your `~/<keybase-user>.keybas
 
 ``make``
 
-``make keybase gh-pages``
+OR
+--
+
+``make keybase``
+
+``make gh-pages``
 
 
 To view the generated html files, navigate to ``_build/html/`` and open ``index.html`` in your browser.

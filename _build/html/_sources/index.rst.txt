@@ -2,6 +2,24 @@
 RandyMcMillan
 ################
 
+.. include:: ./github.com/randymcmillan.rst
+
+.. include:: ./twitter.con/randymcmillan.rst
+
+.. include:: ./keybase.io/randymcmillan.rst
+
+.. toctree::
+   :maxdepth: 2
+   :caption: github.com
+
+   /randymcmillan <./github.com/randymcmillan.rst>
+
+.. toctree::
+   :maxdepth: 2
+   :caption: twitter.com
+
+   /randymcmillan <./twitter.com/randymcmillan.rst>
+
 .. toctree::
    :maxdepth: 2
    :caption: Blockstream Green
