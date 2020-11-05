@@ -1,8 +1,10 @@
-################
-RandyMcMillan
-################
+#########################
+R A N D Y M c M I L L A N
+#########################
 
 .. include:: ./github.com/randymcmillan.rst
+
+.. include:: ./github.com/bitcoincore-dev.rst
 
 .. include:: ./twitter.con/randymcmillan.rst
 
@@ -13,6 +15,7 @@ RandyMcMillan
    :caption: github.com
 
    /randymcmillan <./github.com/randymcmillan.rst>
+   /bitcoincore-dev <./github.com/bitcoincore-dev.rst>
 
 .. toctree::
    :maxdepth: 2
