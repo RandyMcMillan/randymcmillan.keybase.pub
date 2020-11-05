@@ -121,8 +121,15 @@ keybase:
 	$(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) $(BUILDDIR)/$(KB_USER).keybase.pub
 	$(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) /keybase/$(KB_PUBLIC)/$(KB_USER)
 	@echo
-	bash -c "keybase sign -i $(BUILDDIR)/$(KB_USER).keybase.pub/index.html -o  $(BUILDDIR)/$(KB_USER).keybase.pub/index.sig"
-	bash -c "keybase sign -i /keybase/$(KB_PUBLIC)/$(KB_USER)/index.html -o /keybase/$(KB_PUBLIC)/$(KB_USER)/index.sig"
+	bash -c "install -v $(PWD)/keybase.txt /keybase/public/$(KB_USER)/keybase.txt"
+	bash -c "keybase sign -i /keybase/public/$(KB_USER)/keybase.txt -o /keybase/public/$(KB_USER)/keybase.txt.sig"
+	
+	bash -c "install -v $(PWD)/keybase.txt $(BUILDDIR)/$(KB_USER).keybase.pub/keybase.txt"
+	bash -c "keybase sign -i $(BUILDDIR)/$(KB_USER).keybase.pub/keybase.txt -o $(BUILDDIR)/$(KB_USER).keybase.pub/keybase.txt.sig"
+	
+	bash -c "keybase sign -i $(BUILDDIR)/$(KB_USER).keybase.pub/index.html -o  $(BUILDDIR)/$(KB_USER).keybase.pub/index.html.sig"
+	
+	bash -c "keybase sign -i /keybase/$(KB_PUBLIC)/$(KB_USER)/index.html -o /keybase/$(KB_PUBLIC)/$(KB_USER)/index.html.sig"
 	@echo "Build finished. The HTML page is in /keybase/$(KB_PUBLIC)/$(KB_USER)"
 
 .PHONY: html keybase-private
