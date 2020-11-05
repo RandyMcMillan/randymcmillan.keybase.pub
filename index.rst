@@ -15,6 +15,12 @@ RandyMcMillan
    twitter.com/randymcmillan <./twitter.com/randymcmillan>
 
 .. toctree::
+   :maxdepth: 1
+   :caption: Keybase
+
+   keybase.io/randymcmillan <./keybase.io/randymcmillan>
+
+.. toctree::
    :maxdepth: 2
    :caption: Blockstream Green
 
