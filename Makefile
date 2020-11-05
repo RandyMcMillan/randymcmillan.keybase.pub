@@ -89,6 +89,11 @@ help:
 clean:
 	rm -rf $(BUILDDIR)/*
 
+.PHONY: html keybase gh-pages server
+serve:
+	bash -c "python3 -m http.server 8000 -d _build/$(KB_USER).keybase.pub &"
+	bash -c "python3 -m http.server 8001 -d _build/$(GH_USER).github.io &"
+
 .PHONY: html
 html:
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
@@ -105,8 +110,8 @@ dirhtml:
 singlehtml:
 	$(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) $(BUILDDIR)/singlehtml
 	@echo
-	@echo "Build finished. The HTML page is in $(PWD)/$(BUILDDIR)/singlehtml"
 	bash -c "keybase sign -i $(PWD)/$(BUILDDIR)/singlehtml/index.html -o $(PWD)/$(BUILDDIR)/singlehtml/index.sig"
+	@echo "Build finished. The HTML page is in $(PWD)/$(BUILDDIR)/singlehtml"
 
 .PHONY: html keybase
 .ONESHELL:
@@ -114,17 +119,17 @@ keybase:
 	$(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) $(BUILDDIR)/$(KB_USER).keybase.pub
 	$(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) /keybase/$(KB_PUBLIC)/$(KB_USER)
 	@echo
-	@echo "Build finished. The HTML page is in /keybase/$(KB_PUBLIC)/$(KB_USER)"
 	bash -c "keybase sign -i $(BUILDDIR)/$(KB_USER).keybase.pub/index.html -o  $(BUILDDIR)/$(KB_USER).keybase.pub/index.sig"
 	bash -c "keybase sign -i /keybase/$(KB_PUBLIC)/$(KB_USER)/index.html -o /keybase/$(KB_PUBLIC)/$(KB_USER)/index.sig"
+	@echo "Build finished. The HTML page is in /keybase/$(KB_PUBLIC)/$(KB_USER)"
 
 .PHONY: html keybase-private
 .ONESHELL:
 keybase-private:
 	$(SPHINXBUILD) -b singlehtml $(PRIVATE_ALLSPHINXOPTS) /keybase/$(KB_PRIVATE)/$(KB_USER)
 	@echo
-	@echo "Build finished. The HTML page is in /keybase/$(KB_PRIVATE)/$(KB_USER)"
 	bash -c "keybase sign -i /keybase/$(KB_PRIVATE)/$(KB_USER)/index.html -o /keybase/$(KB_PRIVATE)/$(KB_USER)/index.sig"
+	@echo "Build finished. The HTML page is in /keybase/$(KB_PRIVATE)/$(KB_USER)"
 
 .PHONY: html gh-pages
 .ONESHELL:
@@ -132,10 +137,10 @@ gh-pages:
 	$(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) $(BUILDDIR)/$(GH_USER).github.io
 	$(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) ~/$(GH_USER).github.io
 	@echo
-	@echo "Build finished. The HTML page is in ~/$(GH_USER).github.io"
 	bash -c "keybase sign -i ~/$(GH_USER).github.io/index.html -o ~/$(GH_USER).github.io/index.html.sig"
 	bash -c "keybase sign -i $(BUILDDIR)/$(GH_USER).github.io/index.html -o  $(BUILDDIR)/$(GH_USER).github.io/index.sig"
 	bash -c "cd ~/$(GH_USER).github.io && git add . && git commit -am 'update from $(PWD)' && git push -f origin +master:master"
+	@echo "Build finished. The HTML page is in ~/$(GH_USER).github.io"
 
 .PHONY: pickle
 pickle:
