@@ -3,6 +3,12 @@ RandyMcMillan
 ################
 
 .. toctree::
+   :maxdepth: 1
+   :caption: Github
+
+   github.com/randymcmillan <./github.com/randymcmillan>
+
+.. toctree::
    :maxdepth: 2
    :caption: Blockstream Green
 
