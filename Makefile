@@ -26,7 +26,7 @@ endif
 export KB_PRIVATE
 # export KB_PUBLIC=public && make keybase-public
 ifeq ($(KB_PUBLIC),)
-KB_PUBLIC  := false# change from false to public
+KB_PUBLIC  := public# change from false to public
 else
 	@echo "export KB_PUBLIC=public && make keybase-public"
 endif
@@ -92,7 +92,9 @@ clean:
 .PHONY: html keybase gh-pages server
 serve:
 	bash -c "python3 -m http.server 8000 -d _build/$(KB_USER).keybase.pub &"
-	bash -c "python3 -m http.server 8001 -d _build/$(GH_USER).github.io &"
+#	bash -c "python3 -m http.server 8001 -d _build/$(GH_USER).github.io &"
+#	bash -c "python3 -m http.server 8002 -d _build/html &"
+#	bash -c "python3 -m http.server 8003 -d _build/singlehtml &"
 
 .PHONY: html
 html:
