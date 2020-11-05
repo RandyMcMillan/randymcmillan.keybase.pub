@@ -60,7 +60,7 @@ RandyMcMillan
 
 .. toctree::
    :maxdepth: 1
-   :caption: PGP
+   :caption: PROOFS
 
    randymcmillan.asc <./randymcmillan-asc.md>
 
