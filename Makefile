@@ -88,6 +88,7 @@ help:
 .PHONY: clean
 clean:
 	rm -rf $(BUILDDIR)/*
+	make make-kb-gh
 
 .PHONY: html keybase gh-pages server
 serve:
