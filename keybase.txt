@@ -74,3 +74,80 @@ View my publicly-auditable identity here: https://keybase.io/randymcmillan
 
 ==================================================================
 
+==================================================================
+https://keybase.io/randymcmillan
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://randymcmillan.keybase.pub
+  * I am randymcmillan (https://keybase.io/randymcmillan) on keybase.
+  * I have a public key with fingerprint EE29 B7B0 17F1 9DDA 7C56  5A55 AB20 17A2 CA7F D790
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0120a81b87e440caf38fcdb2e12e7cae9019d2c6a7ae47da6e44fc6bef3851d6ab3d0a",
+      "fingerprint": "ee29b7b017f19dda7c565a55ab2017a2ca7fd790",
+      "host": "keybase.io",
+      "key_id": "ab2017a2ca7fd790",
+      "kid": "01014cf4e2b22d75f93bb36ffa18a309f9afc13920003cef8c5e744eeed4b5c8f7f30a",
+      "uid": "3ca82e62429b14f2fab970bd38e7a119",
+      "username": "randymcmillan"
+    },
+    "service": {
+      "hostname": "randymcmillan.keybase.pub",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1604547830,
+  "expire_in": 157680000,
+  "prev": "613e456d68e246f45f164954976fef51e513d908e177ce912d46cf2e521b0b96",
+  "seqno": 190,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.1.13
+Comment: https://keybase.io/crypto
+
+yMN0AnicbZJ7UFRVHMeXAiTiJUFYojW3GRgnovt+bMGIS4Ilk4ox0UDrufees3th
+2d32JcsjBkLHcawIJ+IxKbsgIejYNBqSDogbBKzpKJM0DEaSY9DDJIYGLZvuZeI/
+/7pzz/l8P+f7O3O+jn5UFxnS+2ySf7xmsiEkONTr1hk7XH9VYqJN9mL6SqwUrnyg
+RYZOl7FUkTE9hhMkDnhC5DlI07gEEMUjSRZJSJCQkwAUcEKQSYkFHIA0JwNWxZDE
+ilAFGUJmgUjJOMDSMKRYTdBhdyhWl6qFkBRETsQJDql5GXASwzKAYYBIqmuAlACH
+ZE7A1aDZ5tQSajkROGG6YlPX1B/jSr2H8Ku9cYKWEA1JkSRljkECJYoUixAgeEDh
+AhIAkghKIHEcpySIeImBHE1DCGVaZCQecYha6e1e0VES4EnIkrRam6ARiYAocLgo
+UzzkAEEIGuiEDisogyrtAFbZWyaVKRYLsGLVaZi65VEkqN2uNs7DsPTVAe1uUbXZ
+HTaXTbJZVMzsctmdek3j8tq13F4oGv83GkXFKqs3qyY80OFUbFZMT6ik5FK0IwgW
+pxma4yk8DYPldsUBjYpGMBzLq4Pj2jnQoypZgoI0w8osD0maRTSDCJYWGFrgWAQR
+Q0CGoGQB5yHBcRIUCFKmWQmRkCEJERcFFtNmfMdqU92CanUBkyp1KiYrcLkdEKu+
+OFQUqguJ1IWHPaK9OV3kY3GrL7FtNPZB4nho6Qt7zRN9P/TNtTGz7TNdBV1VX7y1
+EFJQZPm94s8bM1N9X/mT7Yb+zJSeq8T95OKW7xMusE8QXS+1HNxsqOjZE2+IuPjk
+ZGHCH8HGnoHUkf79KbH6dU3tAffkmZ9OeJ5KCtJTi0MjN6cfP5NR2zZes2nt6Qu1
+uy2LpQOvvhbjHwj1Rffo8pfO74ji2+qyCtHWABX32VB9WujWt00VI3nxo0uNU9lC
+60xdiW8KD1zqKHn64+cyul8/OVY4HXM9fjgyR95Z/suxy8HmF9+b/VaKjj1y/Nbh
+WK7ldFJi1JXcY6NoLCe8eOHDCQ5eap6/f+jQYF112NpfN370ZVVK9lztgSb//N1d
+OctHTMHuVyRvxJqQ+Npr/VuOdi8qWUWLCx/o+7aDhsDnz0+sP5zSuqe5ifNtKNsy
+uqF4ZJBOvOZ7/05nfWagNT1gjtnmCas0n6j6Jm99MDDUXn77bG5HRfnmn+f2Te8y
+Lds2XZ6ZroxJ6Pjnx8y7eTXDsb7mTn2uPmLwuzvvnvfferO3KjXz5vGNifNx7grc
+Pu7NyrjeVbDE+5du30tcNuQevWccrmsK94gRlHd096eCwd1QPGs49299wYGzfxfW
+fLJmLDuqYd524OpC1kDjyWB59LYbB+l1D7JLOsOzak6l6qL322EKejmfrabN5ivn
+dj4zZdz+2xs+W76y49RS8r7/AFj0zYI=
+=8Gjl
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/randymcmillan
+
+==================================================================
+
+
