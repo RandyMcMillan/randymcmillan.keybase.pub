@@ -46,6 +46,9 @@ PRIVATE_ALLSPHINXOPTS   = -d $(PRIVATE_BUILDDIR)/doctrees $(PAPEROPT_$(PAPER)) $
 # the i18n builder cannot share the environment and doctrees with the others
 I18NSPHINXOPTS  = $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) .
 
+.PHONY: make-kb-gh
+make-kb-gh: help keybase gh-pages
+
 .PHONY: help
 help:
 	@echo ""
@@ -53,9 +56,7 @@ help:
 	@echo ""
 	@echo "Keybase usage:"
 	@echo ""
-	@echo "  export KB_PRIVATE=private && make keybase-private"
-	@echo ""
-	@echo "  export KB_PUBLIC=public && make keybase-public"
+	@echo "  make make-kb-gh-pages"
 	@echo ""
 	@echo "  html       to make standalone HTML files"
 	@echo "  dirhtml    to make HTML files named index.html in directories"
