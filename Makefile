@@ -93,19 +93,19 @@ clean:
 html:
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
 	@echo
-	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
+	@echo "Build finished. The HTML pages are in $(PWD)/$(BUILDDIR)/html"
 
 .PHONY: dirhtml
 dirhtml:
 	$(SPHINXBUILD) -b dirhtml $(ALLSPHINXOPTS) $(BUILDDIR)/dirhtml
 	@echo
-	@echo "Build finished. The HTML pages are in $(BUILDDIR)/dirhtml."
+	@echo "Build finished. The HTML pages are in $(PWD)/$(BUILDDIR)/dirhtml"
 
 .PHONY: singlehtml
 singlehtml:
 	$(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) $(BUILDDIR)/singlehtml
 	@echo
-	@echo "Build finished. The HTML page is in $(BUILDDIR)/singlehtml."
+	@echo "Build finished. The HTML page is in $(PWD)/$(BUILDDIR)/singlehtml"
 
 .PHONY: html keybase
 .ONESHELL:
