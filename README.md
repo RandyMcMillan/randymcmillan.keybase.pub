@@ -2,7 +2,6 @@
 README
 #############
 
-
 Sphinx installation instructions
 ================================
 
