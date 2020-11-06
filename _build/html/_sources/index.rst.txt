@@ -2,26 +2,24 @@
 R A N D Y M c M I L L A N
 #########################
 
-.. include:: ./github.com/randymcmillan.rst
-
-.. include:: ./github.com/bitcoincore-dev.rst
-
-.. include:: ./twitter.con/randymcmillan.rst
-
-.. include:: ./keybase.io/randymcmillan.rst
-
 .. toctree::
    :maxdepth: 2
    :caption: github.com
 
-   /randymcmillan <./github.com/randymcmillan.rst>
+   /randymcmillan <https://github.com/sponsors/RandyMcMillan>
    /bitcoincore-dev <./github.com/bitcoincore-dev.rst>
 
 .. toctree::
    :maxdepth: 2
    :caption: twitter.com
 
-   /randymcmillan <./twitter.com/randymcmillan.rst>
+   /randymcmillan <https://twitter.com/randymcmillan>
+
+.. toctree::
+   :maxdepth: 2
+   :caption: keybase.io
+
+   /randymcmillan <https://keybase.io/randymcmillan>
 
 .. toctree::
    :maxdepth: 2
