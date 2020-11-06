@@ -85,10 +85,15 @@ help:
 	@echo "  coverage   to run coverage check of the documentation (if enabled)"
 	@echo "  dummy      to check syntax errors of document sources"
 
+
+.PHONY: rebuild
+rebuild:
+	rm -rf $(BUILDDIR)/*
+	make make-kb-gh
+
 .PHONY: clean
 clean:
 	rm -rf $(BUILDDIR)/*
-	make make-kb-gh
 
 .PHONY: html keybase gh-pages server
 serve:
