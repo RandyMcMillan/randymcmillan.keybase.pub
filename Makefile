@@ -86,6 +86,10 @@ help:
 	@echo "  dummy      to check syntax errors of document sources"
 
 
+.PHONY: depends
+depends:
+	pip3 install sphinx
+
 .PHONY: rebuild
 rebuild:
 	rm -rf $(BUILDDIR)/*
