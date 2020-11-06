@@ -7,7 +7,7 @@ R A N D Y M c M I L L A N
    :caption: github.com
 
    /randymcmillan <https://github.com/sponsors/RandyMcMillan>
-   /bitcoincore-dev <./github.com/bitcoincore-dev.rst>
+   /bitcoincore-dev <https://github.com/bitcoincore-dev>
 
 .. toctree::
    :maxdepth: 2
@@ -20,6 +20,8 @@ R A N D Y M c M I L L A N
    :caption: keybase.io
 
    /randymcmillan <https://keybase.io/randymcmillan>
+   /bitcoincore <https://keybase.io/team/bitcoincore>
+   /bitcoinAnd <https://keybase.io/team/bitcoinand>
 
 .. toctree::
    :maxdepth: 2

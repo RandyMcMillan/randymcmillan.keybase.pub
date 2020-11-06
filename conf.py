@@ -143,7 +143,7 @@ html_theme_path = ["_themes" ]
 
 # A shorter title for the navigation bar.  Default is the same as html_title.
 #
-html_short_title = "RandyM"
+html_short_title = ">>"
 
 # The name of an image file (relative to this directory) to place at the top
 # of the sidebar.
