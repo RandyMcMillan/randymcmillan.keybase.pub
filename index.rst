@@ -2,6 +2,10 @@
 R A N D Y M c M I L L A N
 #########################
 
+.. header:: This space for rent.
+   /randymcmillan <https://github.com/sponsors/RandyMcMillan>
+   /bitcoincore-dev <https://github.com/bitcoincore-dev>
+
 .. toctree::
    :maxdepth: 2
    :caption: github.com
@@ -17,6 +21,29 @@ R A N D Y M c M I L L A N
    .org/randymcmillan <https://travis-ci.org/github/RandyMcMillan>
    .org/bitcoin-core/gui <https://travis-ci.org/github/bitcoin-core/gui/pull_requests>
    .org/bitcoin/bitcoin <https://travis-ci.org/github/bitcoin/bitcoin/pull_requests>
+
+.. table::
+   :class: header-table
+   :align: left
+   :widths: 20 80
+
+   +--------------------------------------+-----------------------------------------------------------------------------------------+
+   | .. image:: _static/gui.svg           | .. toctree::                                                                            |
+   |                                      |    :maxdepth: 2                                                                         |
+   |                                      |                                                                                         |
+   |                                      |    .org/bitcoin-core/gui <https://travis-ci.org/github/bitcoin-core/gui/builds>         |
+   +--------------------------------------+-----------------------------------------------------------------------------------------+
+   | .. image:: _static/bitcoin.svg       | .. toctree::                                                                            |
+   |                                      |    :maxdepth: 2                                                                         |
+   |                                      |                                                                                         |
+   |                                      |    .org/bitcoin/bitcoin <https://travis-ci.org/github/bitcoin/bitcoin/builds>           |
+   +--------------------------------------+-----------------------------------------------------------------------------------------+
+
+
+
+
+
+
 .. toctree::
    :maxdepth: 2
    :caption: twitter.com
@@ -48,3 +75,7 @@ R A N D Y M c M I L L A N
    :caption: README
 
    README <./README.md>
+
+
+.. footer:: This space for rent.
+
