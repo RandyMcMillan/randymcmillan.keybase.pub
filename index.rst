@@ -11,12 +11,12 @@ R A N D Y M c M I L L A N
 
 .. toctree::
    :maxdepth: 2
-   :caption: travis-ci.org
+   :caption: travis-ci
 
-   /randymcmillan <https://travis-ci.org/github/RandyMcMillan>
-   /randymcmillan <https://travis-ci.com/github/RandyMcMillan>
-   /bitcoin-core/gui <https://travis-ci.org/github/bitcoin-core/gui/pull_requests>
-   /bitcoin/bitcoin <https://travis-ci.org/github/bitcoin/bitcoin/requests>
+   .com/randymcmillan <https://travis-ci.com/github/RandyMcMillan>
+   .org/randymcmillan <https://travis-ci.org/github/RandyMcMillan>
+   .org/bitcoin-core/gui <https://travis-ci.org/github/bitcoin-core/gui/pull_requests>
+   .org/bitcoin/bitcoin <https://travis-ci.org/github/bitcoin/bitcoin/pull_requests>
 .. toctree::
    :maxdepth: 2
    :caption: twitter.com
