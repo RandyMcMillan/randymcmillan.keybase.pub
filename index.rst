@@ -11,6 +11,14 @@ R A N D Y M c M I L L A N
 
 .. toctree::
    :maxdepth: 2
+   :caption: travis-ci.org
+
+   /randymcmillan <https://travis-ci.org/github/RandyMcMillan>
+   /randymcmillan <https://travis-ci.com/github/RandyMcMillan>
+   /bitcoin-core/gui <https://travis-ci.org/github/bitcoin-core/gui/pull_requests>
+   /bitcoin/bitcoin <https://travis-ci.org/github/bitcoin/bitcoin/requests>
+.. toctree::
+   :maxdepth: 2
    :caption: twitter.com
 
    /randymcmillan <https://twitter.com/randymcmillan>
