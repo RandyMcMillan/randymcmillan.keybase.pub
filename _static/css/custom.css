@@ -418,7 +418,6 @@ h1, h2, .rst-content .toctree-wrapper p.caption, h3, h4, h5, h6, legend {
 
 .rst-content table.docutils {
     border: 1px solid #CDD5E2;
-    min-width: 100%;
 }
 
 .rst-content table.docutils:not(.field-list) tr:nth-child(2n-1) td {

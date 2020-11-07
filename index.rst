@@ -2,49 +2,6 @@
 R A N D Y M c M I L L A N
 #########################
 
-.. header:: This space for rent.
-   /randymcmillan <https://github.com/sponsors/RandyMcMillan>
-   /bitcoincore-dev <https://github.com/bitcoincore-dev>
-
-
-.. table::
-   :class: header-table
-   :align: left
-   :widths: 20 80
-
-   +--------------------------------------+-----------------------------------------------------------------------------------------+
-   | .. image:: _static/gui.svg           | .. toctree::                                                                            |
-   |                                      |    :maxdepth: 1                                                                         |
-   |                                      |                                                                                         |
-   |                                      |    .org/bitcoin-core/gui <https://travis-ci.org/github/bitcoin-core/gui/builds>         |
-   +--------------------------------------+-----------------------------------------------------------------------------------------+
-   |                                      |                                                                                         |
-   |                                      |                                                                                         |
-   |                                      |                                                                                         |
-   | TEST                                 |                                                                                         |
-   |                                      |                                                                                         |
-   |                                      |                                                                                         |
-   |                                      |                                                                                         |
-   +--------------------------------------+-----------------------------------------------------------------------------------------+
-   | .. image:: _static/bitcoin.svg       | .. toctree::                                                                            |
-   |                                      |    :maxdepth: 1                                                                         |
-   |                                      |                                                                                         |
-   |                                      |    .org/bitcoin/bitcoin <https://travis-ci.org/github/bitcoin/bitcoin/builds>           |
-   +--------------------------------------+-----------------------------------------------------------------------------------------+
-   |                                      |                                                                                         |
-   |                                      |                                                                                         |
-   |                                      |                                                                                         |
-   | TEST                                 |                                                                                         |
-   |                                      |                                                                                         |
-   |                                      |                                                                                         |
-   |                                      |                                                                                         |
-   +--------------------------------------+-----------------------------------------------------------------------------------------+
-   | .. image:: _static/bitcoin.svg       | .. toctree::                                                                            |
-   |                                      |    :maxdepth: 1                                                                         |
-   |                                      |                                                                                         |
-   |                                      |    .org/bitcoin/bitcoin <https://travis-ci.org/github/bitcoin/bitcoin/builds>           |
-   +--------------------------------------+-----------------------------------------------------------------------------------------+
-
 
 .. toctree::
    :maxdepth: 2
@@ -57,10 +14,7 @@ R A N D Y M c M I L L A N
    :maxdepth: 2
    :caption: travis-ci
 
-   .com/randymcmillan <https://travis-ci.com/github/RandyMcMillan>
-   .org/randymcmillan <https://travis-ci.org/github/RandyMcMillan>
-   .org/bitcoin-core/gui <https://travis-ci.org/github/bitcoin-core/gui/pull_requests>
-   .org/bitcoin/bitcoin <https://travis-ci.org/github/bitcoin/bitcoin/pull_requests>
+   TRAVIS-CI <./travis-ci.rst>
 
 .. toctree::
    :maxdepth: 2
@@ -77,12 +31,6 @@ R A N D Y M c M I L L A N
    /bitcoinAnd <https://keybase.io/team/bitcoinand>
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Developer Documentation
-
-   All Repositories <./developer-documentation>
-
-.. toctree::
    :maxdepth: 1
    :caption: PROOFS
 
@@ -94,6 +42,9 @@ R A N D Y M c M I L L A N
 
    README <./README.md>
 
+.. include:: ./randymcmillan-asc.md
+
+.. include:: ./travis-ci.rst
 
 .. footer:: This space for rent.
 
