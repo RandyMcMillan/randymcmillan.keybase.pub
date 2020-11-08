@@ -1,6 +1,7 @@
-##############
+======
+
 PGP Pub Key
-##############
+-----------
 
 Fingerprint:	
 
@@ -9,13 +10,14 @@ Fingerprint:
 https://randymcmillan.keybase.pub/randymcmillan.asc
 
 import randymcmillan's keys
------------------------------------------------
+---------------------------
 
 ``curl https://randymcmillan.keybase.pub/randymcmillan.asc | gpg --import``
 
-#################
+==========
+
 KB Pub Key
-#################
+----------
 
 Fingerprint:	
  

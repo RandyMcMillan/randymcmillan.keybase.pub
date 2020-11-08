@@ -2,6 +2,7 @@
 R A N D Y M c M I L L A N
 #########################
 
+.. include:: _static/hr.md
 
 .. toctree::
    :maxdepth: 2
@@ -10,11 +11,7 @@ R A N D Y M c M I L L A N
    /randymcmillan <https://github.com/sponsors/RandyMcMillan>
    /bitcoincore-dev <https://github.com/bitcoincore-dev>
 
-.. toctree::
-   :maxdepth: 2
-   :caption: travis-ci
-
-   TRAVIS-CI <./travis-ci.rst>
+.. include:: _static/travis-ci.rst
 
 .. toctree::
    :maxdepth: 2
@@ -36,15 +33,6 @@ R A N D Y M c M I L L A N
 
    randymcmillan.asc <./randymcmillan-asc.md>
 
-.. toctree::
-   :maxdepth: 1
-   :caption: README
 
-   README <./README.md>
-
-.. include:: ./randymcmillan-asc.md
-
-.. include:: ./travis-ci.rst
-
-.. footer:: This space for rent.
+.. include:: ./proofs.md
 
