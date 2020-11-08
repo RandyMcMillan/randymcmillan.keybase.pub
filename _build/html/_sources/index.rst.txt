@@ -27,11 +27,6 @@ R A N D Y M c M I L L A N
    /bitcoincore <https://keybase.io/team/bitcoincore>
    /bitcoinAnd <https://keybase.io/team/bitcoinand>
 
-.. toctree::
-   :maxdepth: 1
-   :caption: PROOFS
-
-   randymcmillan.asc <./randymcmillan-asc.md>
 
 
 .. include:: ./proofs.md
