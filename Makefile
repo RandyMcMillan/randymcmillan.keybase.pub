@@ -90,7 +90,7 @@ help:
 
 .PHONY: depends
 depends:
-	pip3 install sphinx sphinx-reload
+	pip3 install sphinx sphinx-reload --user blockcypher
 
 .PHONY: reload
 reload:

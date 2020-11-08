@@ -19,7 +19,11 @@
 # import os
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
+import time
+millis = int(round(time.time() * 1000))
 
+import blockcypher
+block_time = blockcypher.get_latest_block_height(coin_symbol='btc')
 # -- General configuration ------------------------------------------------
 
 # If your documentation needs a minimal Sphinx version, state it here.
@@ -61,7 +65,7 @@ author = u'@RandyMcMillan'
 # built documents.
 #
 # The short X.Y version.
-version = u''
+version = str(millis)
 # The full version, including alpha/beta/rc tags.
 release = u''
 
@@ -84,7 +88,7 @@ language = None
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This patterns also effect to html_static_path and html_extra_path
-exclude_patterns = ['README', '_build', 'Thumbs.db', '.DS_Store', 'issued_assets.rst', 'atomic_swaps.rst', 'venv', 'green/getting-started/setup.rst', 'liquid/developer-guide/confidential-transactions.rst']
+exclude_patterns = ['README.md', '_build', 'Thumbs.db', '.DS_Store', 'issued_assets.rst', 'atomic_swaps.rst', 'venv', 'green/getting-started/setup.rst', 'liquid/developer-guide/confidential-transactions.rst']
 
 # The reST default role (used for this markup: `text`) to use for all
 # documents.
@@ -103,7 +107,7 @@ exclude_patterns = ['README', '_build', 'Thumbs.db', '.DS_Store', 'issued_assets
 # If true, sectionauthor and moduleauthor directives will be shown in the
 # output. They are ignored by default.
 #
-# show_authors = False
+show_authors = True
 
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = 'sphinx'
@@ -148,13 +152,13 @@ html_short_title = ">>"
 # The name of an image file (relative to this directory) to place at the top
 # of the sidebar.
 #
-html_logo = '_static/BeeICON-128.png'
+html_logo = '_static/icons/BeeICON-128.png'
 
 # The name of an image file (relative to this directory) to use as a favicon of
 # the docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32
 # pixels large.
 #
-html_favicon = '_static/favicon.png'
+html_favicon = '_static/icons/favicon.png'
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -171,7 +175,7 @@ html_static_path = ['_static']
 # bottom, using the given strftime format.
 # The empty string is equivalent to '%b %d, %Y'.
 #
-html_last_updated_fmt = ''
+html_last_updated_fmt = '%d%b%Y'
 
 # If true, SmartyPants will be used to convert quotes and dashes to
 # typographically correct entities.

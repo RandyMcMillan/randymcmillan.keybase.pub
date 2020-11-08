@@ -2,7 +2,7 @@
 R A N D Y M c M I L L A N
 #########################
 
-.. include:: _static/hr.md
+.. include:: ./_static/md/header.md
 
 .. toctree::
    :maxdepth: 2
@@ -10,6 +10,7 @@ R A N D Y M c M I L L A N
 
    /randymcmillan <https://github.com/sponsors/RandyMcMillan>
    /bitcoincore-dev <https://github.com/bitcoincore-dev>
+   /bitcoinacks.com <https://bitcoinacks.com/?flt0_label_contains=&search=RandyMcMillan>
 
 .. include:: _static/travis-ci.rst
 
@@ -29,5 +30,7 @@ R A N D Y M c M I L L A N
 
 
 
-.. include:: ./proofs.md
+.. include:: ./_static/md/proofs.md
+
+.. include:: ./_static/md/footer.md
 
