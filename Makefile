@@ -90,7 +90,11 @@ help:
 
 .PHONY: depends
 depends:
-	pip3 install sphinx
+	pip3 install sphinx sphinx-reload
+
+.PHONY: reload
+reload:
+	sphinx-reload .
 
 .PHONY: rebuild
 rebuild:
