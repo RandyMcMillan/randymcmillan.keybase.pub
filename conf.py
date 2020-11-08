@@ -23,7 +23,11 @@ import time
 millis = int(round(time.time() * 1000))
 
 import blockcypher
-block_time = blockcypher.get_latest_block_height(coin_symbol='btc')
+
+try:
+    block_time = blockcypher.get_latest_block_height(coin_symbol='btc')
+except:
+    pass
 # -- General configuration ------------------------------------------------
 
 # If your documentation needs a minimal Sphinx version, state it here.

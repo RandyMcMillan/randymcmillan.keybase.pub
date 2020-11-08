@@ -1,6 +1,6 @@
-#########
-TRAVIS-CI
-#########
+######
+GITHUB
+######
 
 .. table::
    :align: left

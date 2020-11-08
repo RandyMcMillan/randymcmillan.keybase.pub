@@ -5,14 +5,18 @@ R A N D Y M c M I L L A N
 .. include:: ./_static/md/header.md
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: github.com
 
    /randymcmillan <https://github.com/sponsors/RandyMcMillan>
    /bitcoincore-dev <https://github.com/bitcoincore-dev>
    /bitcoinacks.com <https://bitcoinacks.com/?flt0_label_contains=&search=RandyMcMillan>
 
-.. include:: _static/travis-ci.rst
+.. include:: _static/github.com/github.rst
+
+.. include:: _static/github.com/randymcmillan.rst
+
+.. include:: _static/travis-ci/travis-ci.rst
 
 .. toctree::
    :maxdepth: 2
