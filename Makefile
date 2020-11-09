@@ -1,6 +1,7 @@
 # Makefile for randymcmillan.keybase.pub
 
 TIME := $(date +%s%N)
+export TIME
 
 ifeq ($(kbuser),)
 # My default change to your keybase user name
