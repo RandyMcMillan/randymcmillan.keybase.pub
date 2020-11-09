@@ -8,7 +8,7 @@ Fingerprint:
 
 ``E616 FA72 21A1 613E 5B99  2062 9796 6C06 BB06 757B``
 
-![randymcmillan.asc](https://randymcmillan.keybase.pub/randymcmillan.asc)
+[randymcmillan.asc](https://randymcmillan.keybase.pub/randymcmillan.asc)
 
 ``curl https://randymcmillan.keybase.pub/randymcmillan.asc | gpg --import``
 
