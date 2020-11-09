@@ -174,7 +174,7 @@ gh-pages: html
 .PHONY: push-all
 push-all: make-kb-gh
 	bash -c "                             git add . && git commit -am 'update from $(PWD)' && git push -f origin +master:master"
-	bash -c "cd ~/$(GH_USER).github.io && git add . && git commit -am 'update from $(PWD)' && git push -f origin +master:master"
+	bash -c "cd ~/$(GH_USER).github.io && git add . && git commit -am 'update from $(PWD) on $(date +%s%N)' && git push -f origin +master:master"
 
 .PHONY: all
 all: push-all
