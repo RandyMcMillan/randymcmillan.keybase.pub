@@ -1,8 +1,8 @@
-.. include:: _static/md/header.md
+.. include:: md/header.md
 
-.. include:: _static/github.com/randymcmillan.rst
+.. include:: github.com/randymcmillan.rst
 
-.. include:: _static/travis-ci/travis-ci.rst
+.. include:: travis-ci/travis-ci.rst
 
 .. toctree::
    :hidden:
@@ -22,7 +22,7 @@
 
 
 
-.. include:: ./_static/md/proofs.md
+.. include:: md/proofs.md
 
-.. include:: ./_static/md/footer.md
+.. include:: md/footer.md
 
