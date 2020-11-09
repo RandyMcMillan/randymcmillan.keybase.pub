@@ -82,8 +82,8 @@ author = u'@RandyMcMillan'
 # built documents.
 #
 # The short X.Y version.
-#version = str(block_time)+str('.')+str(millis)
-version = str(block_time)+str('.')+str(seconds)
+#btcunix = str(block_time)+str('.')+str(millis)
+btcunix = str(block_time)+str('.')+str(seconds)
 # The full version, including alpha/beta/rc tags.
 release = u''
 
@@ -193,7 +193,7 @@ html_static_path = ['_static']
 # bottom, using the given strftime format.
 # The empty string is equivalent to '%b %d, %Y'.
 #
-html_last_updated_fmt = '%d%b%Y'+str(' (')+str(version)+str(')')
+html_last_updated_fmt = '%d%b%Y'+str(' (BTC.UNIX')+str(btcunix)+str(')')
 
 # If true, SmartyPants will be used to convert quotes and dashes to
 # typographically correct entities.
