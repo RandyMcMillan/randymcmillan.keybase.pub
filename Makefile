@@ -3,6 +3,9 @@
 TIME := $(shell date +%s)
 export TIME
 
+BASENAME := $(shell basename -s .git `git config --get remote.origin.url`)
+export BASENAME
+
 ifeq ($(kbuser),)
 # My default change to your keybase user name
 KB_USER := randymcmillan
@@ -174,13 +177,13 @@ gh-pages: html
 	bash -c "keybase sign -i $(PWD)/keybase.txt -o $(BUILDDIR)/$(GH_USER).github.io/keybase.txt.sig"
 	bash -c "install -v $(PWD)/keybase.txt $(BUILDDIR)/$(GH_USER).github.io/keybase.txt"
 	bash -c "keybase sign -i $(BUILDDIR)/$(GH_USER).github.io/index.html -o  $(BUILDDIR)/$(GH_USER).github.io/index.sig"
-	bash -c "cd ~/$(GH_USER).github.io && git add . && git commit -am 'update from $(PWD) on $(TIME)' && git push -f origin +master:master"
+	bash -c "cd ~/$(GH_USER).github.io && git add . && git commit -am 'update from $(BASENAME) on $(TIME)' && git push -f origin +master:master"
 	@echo "Build finished. The HTML page is in ~/$(GH_USER).github.io"
 
 .PHONY: push-all
 push-all: make-kb-gh
-	bash -c "                             git add . && git commit -am 'update from $(PWD) on $(TIME)' && git push -f origin +master:master"
-	bash -c "cd ~/$(GH_USER).github.io && git add . && git commit -am 'update from $(PWD) on $(TIME)' && git push -f origin +master:master"
+	bash -c "                             git add . && git commit -am 'update from $(BASENAME) on $(TIME)' && git push -f origin +master:master"
+	bash -c "cd ~/$(GH_USER).github.io && git add . && git commit -am 'update from $(BASENAME) on $(TIME)' && git push -f origin +master:master"
 
 .PHONY: pickle
 pickle:
