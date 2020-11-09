@@ -1,6 +1,6 @@
 .. include:: md/header.md
 
-.. include:: github.com/randymcmillan.rst
+.. include:: github/randymcmillan.rst
 
 .. include:: travis-ci/travis-ci.rst
 
