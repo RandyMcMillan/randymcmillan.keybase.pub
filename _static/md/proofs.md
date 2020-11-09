@@ -34,7 +34,6 @@ Fingerprint:
 -----------------------
 
 https://keybase.io/randymcmillan/pgp_keys.asc
-
 ---------------------------------------------
 
 ``curl https://keybase.io/randymcmillan/pgp_keys.asc | gpg --import``
