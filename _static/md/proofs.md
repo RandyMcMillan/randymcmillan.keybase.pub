@@ -12,7 +12,6 @@ Fingerprint:
 ------------------------------------------------------
 
 https://randymcmillan.keybase.pub/randymcmillan.asc
-
 ---------------------------------------------------
 
 ``curl https://randymcmillan.keybase.pub/randymcmillan.asc | gpg --import``
