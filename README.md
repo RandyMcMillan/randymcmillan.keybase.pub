@@ -37,7 +37,9 @@ After any changes are made, run the following from your `~/<keybase-user>.keybas
 
 ``cd ~/randymcmillan.keybase.pub``
 
-``make``
+``make all``
+
+``make push-all``
 
 OR
 --
@@ -46,6 +48,7 @@ OR
 
 ``make gh-pages``
 
+``make push-all``
 
 To view the generated html files, navigate to ``_build/html/`` and open ``index.html`` in your browser.
 
