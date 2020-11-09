@@ -99,7 +99,7 @@ depends:
 
 .PHONY: all
 .ONESHELL:
-all: make-kb-gh
+all: make-kb-gh push-all
 
 .PHONY: push-all
 .ONESHELL:
@@ -109,18 +109,18 @@ push-all: make-kb-gh
 
 .PHONY: make-kb-gh
 .ONESHELL:
-make-kb-gh: keybase gh-pages
+make-kb-gh: keybase gh-pages push-all
 	curl https://api.travis-ci.org/bitcoin-core/gui.svg?branch=master --output _static/gui.svg
 	curl https://api.travis-ci.org/bitcoin/bitcoin.svg?branch=master  --output _static/bitcoin.svg
 
 .PHONY: reload
 .ONESHELL:
-reload: keybase gh-pages
+reload: keybase gh-pages push-all
 	sphinx-reload .
 
 .PHONY: rebuild
 .ONESHELL:
-rebuild: keybase gh-pages
+rebuild: keybase gh-pages push-all
 	rm -rf $(BUILDDIR)/*
 	make make-kb-gh
 
@@ -131,12 +131,12 @@ clean:
 
 .PHONY: serve
 .ONESHELL:
-serve: keybase gh-pages
+serve: keybase gh-pages push-all
 	bash -c "python3 -m http.server 8000 -d _build/$(KB_USER).keybase.pub &"
 
 .PHONY: html
 .ONESHELL:
-html:
+html: push-all
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
 	@echo
 	bash -c "git add _build/* _static . && git commit -m 'update from $(BASENAME) on $(TIME)' && git push -f origin +master:master"
@@ -152,7 +152,7 @@ dirhtml:
 
 .PHONY: singlehtml
 .ONESHELL:
-singlehtml: html
+singlehtml: html push-all
 	$(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) $(BUILDDIR)/singlehtml
 	@echo
 	bash -c "keybase sign -i $(PWD)/$(BUILDDIR)/singlehtml/index.html -o $(PWD)/$(BUILDDIR)/singlehtml/index.sig"
@@ -161,7 +161,7 @@ singlehtml: html
 
 .PHONY: keybase
 .ONESHELL:
-keybase: html
+keybase: html push-all
 	$(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) $(BUILDDIR)/$(KB_USER).keybase.pub
 	$(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) /keybase/$(KB_PUBLIC)/$(KB_USER)
 	@echo
@@ -179,7 +179,7 @@ keybase: html
 
 .PHONY: keybase-private
 .ONESHELL:
-keybase-private: html
+keybase-private: html push-all
 	$(SPHINXBUILD) -b singlehtml $(PRIVATE_ALLSPHINXOPTS) /keybase/$(KB_PRIVATE)/$(KB_USER)
 	@echo
 	bash -c "keybase sign -i /keybase/$(KB_PRIVATE)/$(KB_USER)/index.html -o /keybase/$(KB_PRIVATE)/$(KB_USER)/index.sig"
@@ -188,7 +188,7 @@ keybase-private: html
 
 .PHONY: gh-pages
 .ONESHELL:
-gh-pages: html
+gh-pages: html push-all
 	$(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) $(BUILDDIR)/$(GH_USER).github.io
 	$(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) ~/$(GH_USER).github.io
 	@echo
