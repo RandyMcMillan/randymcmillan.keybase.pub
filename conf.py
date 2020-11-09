@@ -81,7 +81,7 @@ author = u'@RandyMcMillan'
 # built documents.
 #
 # The short X.Y version.
-version = str(millis)+str(block_time)
+version = str(millis)+str('.')+str(block_time)
 # The full version, including alpha/beta/rc tags.
 release = u''
 
