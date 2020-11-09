@@ -176,6 +176,9 @@ push-all: make-kb-gh
 	bash -c "                             git add . && git commit -am 'update from $(PWD)' && git push -f origin +master:master"
 	bash -c "cd ~/$(GH_USER).github.io && git add . && git commit -am 'update from $(PWD)' && git push -f origin +master:master"
 
+.PHONY: all
+all: push-all
+
 .PHONY: pickle
 pickle:
 	$(SPHINXBUILD) -b pickle $(ALLSPHINXOPTS) $(BUILDDIR)/pickle
