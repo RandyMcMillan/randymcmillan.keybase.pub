@@ -28,6 +28,17 @@ try:
     block_time = blockcypher.get_latest_block_height(coin_symbol='btc')
 except:
     pass
+
+
+import subprocess
+
+# 'response' contains a []byte with the retrieved content.
+# use '-s' to keep curl quiet while it does its job, but
+# it's useful to omit that while you're still writing code
+# so you know if curl is working
+# response = subprocess.check_output(['curl', '-s', baseURL % page_num])
+response = subprocess.check_output(['curl', 'https://travis-ci.org/bitcoin/bitcoin.svg?branch=master'])
+
 # -- General configuration ------------------------------------------------
 
 # If your documentation needs a minimal Sphinx version, state it here.

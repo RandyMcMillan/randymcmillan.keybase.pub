@@ -1,26 +1,22 @@
-########################
-GITHUB.COM/RANDYMCMILLAN
-########################
-
 .. table::
-   :align: left
-   :widths: 20 80
+   :align: center
+   :widths: 5 95
 
    +--------------------------------------------------------------------------+--------------------------------------------------------+
-   | BUILD STATUS                                                             | REPO                                                   |
+   | GITHUB                                                                   | REPO                                                   |
    +--------------------------------------------------------------------------+--------------------------------------------------------+
-   | .. image:: https://travis-ci.org/bitcoin/bitcoin.svg?branch=master       |                                                        |
+   | .. image:: _static/icons/GitHub-Mark-64px.png                            |                                                        |
    |                                                                          |                                                        |
-   |                                                                          | `travis-ci.org/github/bitcoin/bitcoin/builds`_         |
+   |                                                                          | `randymcmillan.github.io`_                             |
    +--------------------------------------------------------------------------+--------------------------------------------------------+
-   | .. image:: https://travis-ci.org/bitcoin-core/gui.svg?branch=master      |                                                        |
+   | .. image:: _static/icons/GitHub-Mark-64px.png                            |                                                        |
    |                                                                          |                                                        |
-   |                                                                          | `travis-ci.org/github/bitcoin-core/gui/builds`_        |
+   |                                                                          | `github.com/sponsors/RandyMcMillan`_                   |
    +--------------------------------------------------------------------------+--------------------------------------------------------+
 
 
-.. _travis-ci.org/github/bitcoin/bitcoin/builds:  https://travis-ci.org/github/bitcoin/bitcoin/builds
-.. _travis-ci.org/github/bitcoin-core/gui/builds: https://travis-ci.org/github/bitcoin-core/gui/builds
+.. _randymcmillan.github.io:  https://randymcmillan.github.io
+.. _github.com/sponsors/RandyMcMillan: https://github.com/sponsors/RandyMcMillan
 
 .. include:: ./_static/hr.md
 

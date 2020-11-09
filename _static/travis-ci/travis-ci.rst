@@ -9,18 +9,18 @@ TRAVIS-CI
    +--------------------------------------------------------------------------+--------------------------------------------------------+
    | BUILD STATUS                                                             | REPO                                                   |
    +--------------------------------------------------------------------------+--------------------------------------------------------+
-   | .. image:: https://travis-ci.org/bitcoin/bitcoin.svg?branch=master       |                                                        |
+   | .. image:: https://travis-ci.org/randymcmillan/bitcoin.svg?branch=master |                                                        |
    |                                                                          |                                                        |
-   |                                                                          | `travis-ci.org/github/bitcoin/bitcoin/builds`_         |
+   |                                                                          | `travis-ci.org/github/randymcmillan/bitcoin/builds`_   |
    +--------------------------------------------------------------------------+--------------------------------------------------------+
-   | .. image:: https://travis-ci.org/bitcoin-core/gui.svg?branch=master      |                                                        |
+   | .. image:: https://travis-ci.org/randymcmillan/gui.svg?branch=master     |                                                        |
    |                                                                          |                                                        |
-   |                                                                          | `travis-ci.org/github/bitcoin-core/gui/builds`_        |
+   |                                                                          | `travis-ci.org/github/randymcmillan/gui/builds`_       |
    +--------------------------------------------------------------------------+--------------------------------------------------------+
 
 
-.. _travis-ci.org/github/bitcoin/bitcoin/builds:  https://travis-ci.org/github/bitcoin/bitcoin/builds
-.. _travis-ci.org/github/bitcoin-core/gui/builds: https://travis-ci.org/github/bitcoin-core/gui/builds
+.. _travis-ci.org/github/randymcmillan/bitcoin/builds:  https://travis-ci.org/github/randymcmillan/bitcoin/builds
+.. _travis-ci.org/github/randymcmillan/gui/builds: https://travis-ci.org/github/randymcmillan/gui/builds
 
 .. include:: ./_static/hr.md
 

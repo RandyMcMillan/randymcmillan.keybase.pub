@@ -93,11 +93,11 @@ depends:
 	pip3 install sphinx sphinx-reload --user blockcypher
 
 .PHONY: reload
-reload:
+reload: html gh-pages keybase
 	sphinx-reload .
 
 .PHONY: rebuild
-rebuild:
+rebuild: html gh-pages keybase
 	rm -rf $(BUILDDIR)/*
 	make make-kb-gh
 
@@ -105,8 +105,8 @@ rebuild:
 clean:
 	rm -rf $(BUILDDIR)/*
 
-.PHONY: html keybase gh-pages server
-serve:
+.PHONY: serve
+serve: html gh-pages keybase
 	bash -c "python3 -m http.server 8000 -d _build/$(KB_USER).keybase.pub &"
 #	bash -c "python3 -m http.server 8001 -d _build/$(GH_USER).github.io &"
 #	bash -c "python3 -m http.server 8002 -d _build/html &"
@@ -125,15 +125,15 @@ dirhtml:
 	@echo "Build finished. The HTML pages are in $(PWD)/$(BUILDDIR)/dirhtml"
 
 .PHONY: singlehtml
-singlehtml:
+singlehtml: html
 	$(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) $(BUILDDIR)/singlehtml
 	@echo
 	bash -c "keybase sign -i $(PWD)/$(BUILDDIR)/singlehtml/index.html -o $(PWD)/$(BUILDDIR)/singlehtml/index.sig"
 	@echo "Build finished. The HTML page is in $(PWD)/$(BUILDDIR)/singlehtml"
 
-.PHONY: html keybase
+.PHONY: keybase
 .ONESHELL:
-keybase:
+keybase: html
 	$(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) $(BUILDDIR)/$(KB_USER).keybase.pub
 	$(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) /keybase/$(KB_PUBLIC)/$(KB_USER)
 	@echo
@@ -148,17 +148,17 @@ keybase:
 	bash -c "keybase sign -i /keybase/$(KB_PUBLIC)/$(KB_USER)/index.html -o /keybase/$(KB_PUBLIC)/$(KB_USER)/index.html.sig"
 	@echo "Build finished. The HTML page is in /keybase/$(KB_PUBLIC)/$(KB_USER)"
 
-.PHONY: html keybase-private
+.PHONY: keybase-private
 .ONESHELL:
-keybase-private:
+keybase-private: html
 	$(SPHINXBUILD) -b singlehtml $(PRIVATE_ALLSPHINXOPTS) /keybase/$(KB_PRIVATE)/$(KB_USER)
 	@echo
 	bash -c "keybase sign -i /keybase/$(KB_PRIVATE)/$(KB_USER)/index.html -o /keybase/$(KB_PRIVATE)/$(KB_USER)/index.sig"
 	@echo "Build finished. The HTML page is in /keybase/$(KB_PRIVATE)/$(KB_USER)"
 
-.PHONY: html gh-pages
+.PHONY: gh-pages
 .ONESHELL:
-gh-pages:
+gh-pages: html
 	$(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) $(BUILDDIR)/$(GH_USER).github.io
 	$(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) ~/$(GH_USER).github.io
 	@echo
