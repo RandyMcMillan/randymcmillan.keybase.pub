@@ -27,6 +27,7 @@ import blockcypher
 try:
     block_time = blockcypher.get_latest_block_height(coin_symbol='btc')
 except:
+    block_time = 0
     pass
 
 
@@ -37,7 +38,7 @@ import subprocess
 # it's useful to omit that while you're still writing code
 # so you know if curl is working
 # response = subprocess.check_output(['curl', '-s', baseURL % page_num])
-response = subprocess.check_output(['curl', 'https://travis-ci.org/bitcoin/bitcoin.svg?branch=master'])
+# response = subprocess.check_output(['curl', 'https://travis-ci.org/bitcoin/bitcoin.svg?branch=master'])
 
 # -- General configuration ------------------------------------------------
 
@@ -80,7 +81,7 @@ author = u'@RandyMcMillan'
 # built documents.
 #
 # The short X.Y version.
-version = str(millis)
+version = str(millis)+str(block_time)
 # The full version, including alpha/beta/rc tags.
 release = u''
 
