@@ -1,8 +1,9 @@
-Proofs
+PROOFS
 ======
 ------
 
 PGP PubKey
+----------
 ----------
 
 Fingerprint:	
@@ -18,8 +19,9 @@ https://randymcmillan.keybase.pub/randymcmillan.asc
 
 ---------------------------------------------------------------------------
 
-KB pubKey
-----------
+KB PubKey
+---------
+---------
 
 Fingerprint:	
  
