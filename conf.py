@@ -82,6 +82,7 @@ author = u'@RandyMcMillan'
 # built documents.
 #
 # The short X.Y version.
+version = str('@RandyMcMillan')
 #btcunix = str(block_time)+str('.')+str(millis)
 btcunix = str(block_time)+str('.')+str(seconds)
 # The full version, including alpha/beta/rc tags.
