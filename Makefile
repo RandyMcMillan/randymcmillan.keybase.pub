@@ -109,7 +109,7 @@ push-all: make-kb-gh
 
 .PHONY: make-kb-gh
 .ONESHELL:
-make-kb-gh: keybase gh-pages push-all
+make-kb-gh: keybase gh-pages
 	curl https://api.travis-ci.org/bitcoin-core/gui.svg?branch=master --output _static/gui.svg
 	curl https://api.travis-ci.org/bitcoin/bitcoin.svg?branch=master  --output _static/bitcoin.svg
 
