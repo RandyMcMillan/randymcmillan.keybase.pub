@@ -104,7 +104,7 @@ all: make-kb-gh
 .PHONY: push-all
 .ONESHELL:
 push-all: make-kb-gh
-	bash -c "                             git add _build _static . && git commit -m 'update from $(BASENAME) on $(TIME)' && git push -f origin +master:master"
+	bash -c "git add _build _static . && git commit -m 'update from $(BASENAME) on $(TIME)' && git push -f origin +master:master"
 	bash -c "cd ~/$(GH_USER).github.io && git add _build _static . && git commit -m 'update from $(BASENAME) on $(TIME)' && git push -f origin +master:master"
 
 .PHONY: make-kb-gh
@@ -133,16 +133,13 @@ clean:
 .ONESHELL:
 serve: keybase gh-pages
 	bash -c "python3 -m http.server 8000 -d _build/$(KB_USER).keybase.pub &"
-#	bash -c "python3 -m http.server 8001 -d _build/$(GH_USER).github.io &"
-#	bash -c "python3 -m http.server 8002 -d _build/html &"
-#	bash -c "python3 -m http.server 8003 -d _build/singlehtml &"
 
 .PHONY: html
 .ONESHELL:
 html:
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
 	@echo
-	bash -c "git add _build _static . && git commit -m 'update from $(BASENAME) on $(TIME)' && git push -f origin +master:master"
+	bash -c "git add _build _build/html _static . && git commit -m 'update from $(BASENAME) on $(TIME)' && git push -f origin +master:master"
 	@echo "Build finished. The HTML pages are in $(PWD)/$(BUILDDIR)/html"
 
 .PHONY: dirhtml
