@@ -49,6 +49,9 @@ PRIVATE_ALLSPHINXOPTS   = -d $(PRIVATE_BUILDDIR)/doctrees $(PAPEROPT_$(PAPER)) $
 # the i18n builder cannot share the environment and doctrees with the others
 I18NSPHINXOPTS  = $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) .
 
+.PHONY: all
+all: push-all
+
 .PHONY: make-kb-gh
 make-kb-gh: help keybase gh-pages html
 	curl https://api.travis-ci.org/bitcoin-core/gui.svg?branch=master --output _static/gui.svg
@@ -178,9 +181,6 @@ gh-pages: html
 push-all: make-kb-gh
 	bash -c "                             git add . && git commit -am 'update from $(PWD) on $(TIME)' && git push -f origin +master:master"
 	bash -c "cd ~/$(GH_USER).github.io && git add . && git commit -am 'update from $(PWD) on $(TIME)' && git push -f origin +master:master"
-
-.PHONY: all
-all: push-all
 
 .PHONY: pickle
 pickle:
