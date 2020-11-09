@@ -9,9 +9,9 @@ TRAVIS-CI
    +--------------------------------------------------------------------------+--------------------------------------------------------+
    | BUILD STATUS                                                             | REPO                                                   |
    +--------------------------------------------------------------------------+--------------------------------------------------------+
-   | .. image:: https://travis-ci.org/randymcmillan/bitcoin.svg?branch=master |                                                        |
+   | .. image:: https://travis-ci.com/randymcmillan/bitcoin.svg?branch=master |                                                        |
    |                                                                          |                                                        |
-   |                                                                          | `travis-ci.org/github/randymcmillan/bitcoin/builds`_   |
+   |                                                                          | `travis-ci.com/github/randymcmillan/bitcoin/builds`_   |
    +--------------------------------------------------------------------------+--------------------------------------------------------+
    | .. image:: https://travis-ci.org/randymcmillan/gui.svg?branch=master     |                                                        |
    |                                                                          |                                                        |
@@ -19,7 +19,7 @@ TRAVIS-CI
    +--------------------------------------------------------------------------+--------------------------------------------------------+
 
 
-.. _travis-ci.org/github/randymcmillan/bitcoin/builds:  https://travis-ci.org/github/randymcmillan/bitcoin/builds
+.. _travis-ci.com/github/randymcmillan/bitcoin/builds:  https://travis-ci.com/github/randymcmillan/bitcoin/builds
 .. _travis-ci.org/github/randymcmillan/gui/builds: https://travis-ci.org/github/randymcmillan/gui/builds
 
 .. include:: ./_static/hr.md
