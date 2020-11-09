@@ -99,7 +99,7 @@ depends:
 
 .PHONY: all
 .ONESHELL:
-all: make-kb-gh push-all
+all: make-kb-gh
 
 .PHONY: push-all
 .ONESHELL:
