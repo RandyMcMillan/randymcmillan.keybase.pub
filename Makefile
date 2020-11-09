@@ -101,7 +101,7 @@ push-all: make-kb-gh
 	bash -c "cd ~/$(GH_USER).github.io && git add . && git commit -am 'update from $(BASENAME) on $(TIME)' && git push -f origin +master:master"
 
 .PHONY: make-kb-gh
-make-kb-gh: help keybase gh-pages html
+make-kb-gh: keybase gh-pages html
 	curl https://api.travis-ci.org/bitcoin-core/gui.svg?branch=master --output _static/gui.svg
 	curl https://api.travis-ci.org/bitcoin/bitcoin.svg?branch=master  --output _static/bitcoin.svg
 
