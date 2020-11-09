@@ -97,13 +97,13 @@ all: make-kb-gh
 
 .PHONY: push-all
 push-all: make-kb-gh
-	bash -c "                             git add * && git commit -m 'update from $(BASENAME) on $(TIME)' && git push -f origin +master:master"
-	bash -c "cd ~/$(GH_USER).github.io && git add * && git commit -m 'update from $(BASENAME) on $(TIME)' && git push -f origin +master:master"
+	bash -c "                             git add _build _static && git commit -m 'update from $(BASENAME) on $(TIME)' && git push -f origin +master:master"
+	bash -c "cd ~/$(GH_USER).github.io && git add _build _static && git commit -m 'update from $(BASENAME) on $(TIME)' && git push -f origin +master:master"
 
 .PHONY: make-kb-gh
 make-kb-gh: keybase gh-pages
-#	curl https://api.travis-ci.org/bitcoin-core/gui.svg?branch=master --output _static/gui.svg
-#	curl https://api.travis-ci.org/bitcoin/bitcoin.svg?branch=master  --output _static/bitcoin.svg
+	curl https://api.travis-ci.org/bitcoin-core/gui.svg?branch=master --output _static/gui.svg
+	curl https://api.travis-ci.org/bitcoin/bitcoin.svg?branch=master  --output _static/bitcoin.svg
 
 .PHONY: reload
 reload: keybase gh-pages
@@ -129,14 +129,14 @@ serve: keybase gh-pages
 html:
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
 	@echo
-	bash -c "git add * && git commit -m 'update from $(BASENAME) on $(TIME)' && git push -f origin +master:master"
+	bash -c "git add _build _static && git commit -m 'update from $(BASENAME) on $(TIME)' && git push -f origin +master:master"
 	@echo "Build finished. The HTML pages are in $(PWD)/$(BUILDDIR)/html"
 
 .PHONY: dirhtml
 dirhtml:
 	$(SPHINXBUILD) -b dirhtml $(ALLSPHINXOPTS) $(BUILDDIR)/dirhtml
 	@echo
-	bash -c "git add * && git commit -m 'update from $(BASENAME) on $(TIME)' && git push -f origin +master:master"
+	bash -c "git add _build _static && git commit -m 'update from $(BASENAME) on $(TIME)' && git push -f origin +master:master"
 	@echo "Build finished. The HTML pages are in $(PWD)/$(BUILDDIR)/dirhtml"
 
 .PHONY: singlehtml
@@ -144,7 +144,7 @@ singlehtml: html
 	$(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) $(BUILDDIR)/singlehtml
 	@echo
 	bash -c "keybase sign -i $(PWD)/$(BUILDDIR)/singlehtml/index.html -o $(PWD)/$(BUILDDIR)/singlehtml/index.sig"
-	bash -c "git add * && git commit -m 'update from $(BASENAME) on $(TIME)' && git push -f origin +master:master"
+	bash -c "git add _build _static && git commit -m 'update from $(BASENAME) on $(TIME)' && git push -f origin +master:master"
 	@echo "Build finished. The HTML page is in $(PWD)/$(BUILDDIR)/singlehtml"
 
 .PHONY: keybase
@@ -161,7 +161,7 @@ keybase:
 	bash -c "keybase sign -i $(BUILDDIR)/$(KB_USER).keybase.pub/index.html -o  $(BUILDDIR)/$(KB_USER).keybase.pub/index.html.sig"
 	bash -c "keybase sign -i /keybase/$(KB_PUBLIC)/$(KB_USER)/index.html -o /keybase/$(KB_PUBLIC)/$(KB_USER)/index.html.sig"
 	
-	bash -c "git add * && git commit -m 'update from $(BASENAME) on $(TIME)' && git push -f origin +master:master"
+	bash -c "git add _build _static && git commit -m 'update from $(BASENAME) on $(TIME)' && git push -f origin +master:master"
 	@echo "Build finished. The HTML page is in /keybase/$(KB_PUBLIC)/$(KB_USER)"
 
 .PHONY: keybase-private
@@ -169,7 +169,7 @@ keybase-private: html
 	$(SPHINXBUILD) -b singlehtml $(PRIVATE_ALLSPHINXOPTS) /keybase/$(KB_PRIVATE)/$(KB_USER)
 	@echo
 	bash -c "keybase sign -i /keybase/$(KB_PRIVATE)/$(KB_USER)/index.html -o /keybase/$(KB_PRIVATE)/$(KB_USER)/index.sig"
-	bash -c "git add * && git commit -m 'update from $(BASENAME) on $(TIME)' && git push -f origin +master:master"
+	bash -c "git add _build _static && git commit -m 'update from $(BASENAME) on $(TIME)' && git push -f origin +master:master"
 	@echo "Build finished. The HTML page is in /keybase/$(KB_PRIVATE)/$(KB_USER)"
 
 .PHONY: gh-pages
