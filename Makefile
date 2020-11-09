@@ -171,6 +171,11 @@ gh-pages: html
 	bash -c "cd ~/$(GH_USER).github.io && git add . && git commit -am 'update from $(PWD)' && git push -f origin +master:master"
 	@echo "Build finished. The HTML page is in ~/$(GH_USER).github.io"
 
+.PHONY: push-all
+push-all: make-kb-gh
+	bash -c "                             git add . && git commit -am 'update from $(PWD)' && git push -f origin +master:master"
+	bash -c "cd ~/$(GH_USER).github.io && git add . && git commit -am 'update from $(PWD)' && git push -f origin +master:master"
+
 .PHONY: pickle
 pickle:
 	$(SPHINXBUILD) -b pickle $(ALLSPHINXOPTS) $(BUILDDIR)/pickle
