@@ -115,12 +115,12 @@ make-kb-gh: keybase gh-pages
 
 .PHONY: reload
 .ONESHELL:
-reload: keybase gh-pages push-all
+reload: keybase gh-pages
 	sphinx-reload .
 
 .PHONY: rebuild
 .ONESHELL:
-rebuild: keybase gh-pages push-all
+rebuild: keybase gh-pages
 	rm -rf $(BUILDDIR)/*
 	make make-kb-gh
 
@@ -131,12 +131,12 @@ clean:
 
 .PHONY: serve
 .ONESHELL:
-serve: keybase gh-pages push-all
+serve: keybase gh-pages
 	bash -c "python3 -m http.server 8000 -d _build/$(KB_USER).keybase.pub &"
 
 .PHONY: html
 .ONESHELL:
-html: push-all
+html:
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
 	@echo
 	bash -c "git add _build/* _static . && git commit -m 'update from $(BASENAME) on $(TIME)' && git push -f origin +master:master"
@@ -152,7 +152,7 @@ dirhtml:
 
 .PHONY: singlehtml
 .ONESHELL:
-singlehtml: html push-all
+singlehtml: html
 	$(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) $(BUILDDIR)/singlehtml
 	@echo
 	bash -c "keybase sign -i $(PWD)/$(BUILDDIR)/singlehtml/index.html -o $(PWD)/$(BUILDDIR)/singlehtml/index.sig"
@@ -161,7 +161,7 @@ singlehtml: html push-all
 
 .PHONY: keybase
 .ONESHELL:
-keybase: html push-all
+keybase: html
 	$(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) $(BUILDDIR)/$(KB_USER).keybase.pub
 	$(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) /keybase/$(KB_PUBLIC)/$(KB_USER)
 	@echo
@@ -179,7 +179,7 @@ keybase: html push-all
 
 .PHONY: keybase-private
 .ONESHELL:
-keybase-private: html push-all
+keybase-private: html
 	$(SPHINXBUILD) -b singlehtml $(PRIVATE_ALLSPHINXOPTS) /keybase/$(KB_PRIVATE)/$(KB_USER)
 	@echo
 	bash -c "keybase sign -i /keybase/$(KB_PRIVATE)/$(KB_USER)/index.html -o /keybase/$(KB_PRIVATE)/$(KB_USER)/index.sig"
