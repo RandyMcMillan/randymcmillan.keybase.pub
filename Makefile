@@ -52,14 +52,6 @@ PRIVATE_ALLSPHINXOPTS   = -d $(PRIVATE_BUILDDIR)/doctrees $(PAPEROPT_$(PAPER)) $
 # the i18n builder cannot share the environment and doctrees with the others
 I18NSPHINXOPTS  = $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) .
 
-.PHONY: all
-all: push-all
-
-.PHONY: make-kb-gh
-make-kb-gh: help keybase gh-pages html
-	curl https://api.travis-ci.org/bitcoin-core/gui.svg?branch=master --output _static/gui.svg
-	curl https://api.travis-ci.org/bitcoin/bitcoin.svg?branch=master  --output _static/bitcoin.svg
-
 .PHONY: help
 help:
 	@echo ""
@@ -96,10 +88,22 @@ help:
 	@echo "  coverage   to run coverage check of the documentation (if enabled)"
 	@echo "  dummy      to check syntax errors of document sources"
 
-
 .PHONY: depends
 depends:
-	pip3 install sphinx sphinx-reload --user blockcypher
+	pip3 install sphinx sphinx_rtd_theme glpi sphinx-reload --user blockcypher
+
+.PHONY: all
+all: push-all
+
+.PHONY: push-all
+push-all: make-kb-gh
+	bash -c "                             git add . && git commit -am 'update from $(BASENAME) on $(TIME)' && git push -f origin +master:master"
+	bash -c "cd ~/$(GH_USER).github.io && git add . && git commit -am 'update from $(BASENAME) on $(TIME)' && git push -f origin +master:master"
+
+.PHONY: make-kb-gh
+make-kb-gh: help keybase gh-pages html
+	curl https://api.travis-ci.org/bitcoin-core/gui.svg?branch=master --output _static/gui.svg
+	curl https://api.travis-ci.org/bitcoin/bitcoin.svg?branch=master  --output _static/bitcoin.svg
 
 .PHONY: reload
 reload: html gh-pages keybase
@@ -179,11 +183,6 @@ gh-pages: html
 	bash -c "keybase sign -i $(BUILDDIR)/$(GH_USER).github.io/index.html -o  $(BUILDDIR)/$(GH_USER).github.io/index.sig"
 	bash -c "cd ~/$(GH_USER).github.io && git add . && git commit -am 'update from $(BASENAME) on $(TIME)' && git push -f origin +master:master"
 	@echo "Build finished. The HTML page is in ~/$(GH_USER).github.io"
-
-.PHONY: push-all
-push-all: make-kb-gh
-	bash -c "                             git add . && git commit -am 'update from $(BASENAME) on $(TIME)' && git push -f origin +master:master"
-	bash -c "cd ~/$(GH_USER).github.io && git add . && git commit -am 'update from $(BASENAME) on $(TIME)' && git push -f origin +master:master"
 
 .PHONY: pickle
 pickle:
