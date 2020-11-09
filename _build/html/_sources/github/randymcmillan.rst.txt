@@ -20,6 +20,7 @@ GITHUB
    |                                                                          | `github.com/randymcmillan/randymcmillan.keybase.pub`_  |
    +--------------------------------------------------------------------------+--------------------------------------------------------+
    | .. image:: _static/icons/GitHub-Mark-64px.png                            |                                                        |
+   |                                                                          | Sponsor research for Bitcoin Accessibility             |
    |                                                                          |                                                        |
    |                                                                          | `github.com/sponsors/RandyMcMillan`_                   |
    +--------------------------------------------------------------------------+--------------------------------------------------------+
