@@ -188,7 +188,7 @@ keybase-private: html push-all
 
 .PHONY: gh-pages
 .ONESHELL:
-gh-pages: html push-all
+gh-pages: html
 	$(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) $(BUILDDIR)/$(GH_USER).github.io
 	$(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) ~/$(GH_USER).github.io
 	@echo
