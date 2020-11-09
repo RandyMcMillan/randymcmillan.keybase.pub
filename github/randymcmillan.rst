@@ -13,7 +13,11 @@ GITHUB
    |                                                                          |                                                        |
    |                                                                          | `randymcmillan.github.io`_                             |
    |                                                                          |                                                        |
+   |                                                                          | `randymcmillan.keybase.pub`_                           |
+   |                                                                          |                                                        |
    |                                                                          | `github.com/randymcmillan/randymcmillan.github.io`_    |
+   |                                                                          |                                                        |
+   |                                                                          | `github.com/randymcmillan/randymcmillan.keybase.pub`_  |
    +--------------------------------------------------------------------------+--------------------------------------------------------+
    | .. image:: _static/icons/GitHub-Mark-64px.png                            |                                                        |
    |                                                                          |                                                        |
@@ -22,7 +26,9 @@ GITHUB
 
 
 .. _randymcmillan.github.io:  https://randymcmillan.github.io
+.. _randymcmillan.keybase.pub:  https://randymcmillan.keybase.pub
 .. _github.com/randymcmillan/randymcmillan.github.io:  https://github.com/randymcmillan/randymcmillan.github.io
+.. _github.com/randymcmillan/randymcmillan.keybase.pub:  https://github.com/randymcmillan/randymcmillan.keybase.pub
 .. _github.com/sponsors/RandyMcMillan: https://github.com/sponsors/RandyMcMillan
 
 .. include:: ./_static/hr.md
