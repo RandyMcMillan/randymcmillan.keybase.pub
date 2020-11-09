@@ -105,7 +105,7 @@ all: make-kb-gh push-all
 .ONESHELL:
 push-all: make-kb-gh
 	bash -c "git add _build _static . && git commit -m 'update from $(BASENAME) on $(TIME)' && git push -f origin +master:master"
-	bash -c "cd ~/$(GH_USER).github.io && git add _build _static . && git commit -m 'update from $(BASENAME) on $(TIME)' && git push -f origin +master:master"
+	bash -c "cd ~/$(GH_USER).github.io && git add . && git commit -m 'update from $(BASENAME) on $(TIME)' && git push -f origin +master:master"
 
 .PHONY: make-kb-gh
 .ONESHELL:
