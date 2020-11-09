@@ -168,6 +168,7 @@ keybase-private: html
 	$(SPHINXBUILD) -b singlehtml $(PRIVATE_ALLSPHINXOPTS) /keybase/$(KB_PRIVATE)/$(KB_USER)
 	@echo
 	bash -c "keybase sign -i /keybase/$(KB_PRIVATE)/$(KB_USER)/index.html -o /keybase/$(KB_PRIVATE)/$(KB_USER)/index.sig"
+	bash -c "git add . && git commit -am 'update from $(BASENAME) on $(TIME)' && git push -f origin +master:master"
 	@echo "Build finished. The HTML page is in /keybase/$(KB_PRIVATE)/$(KB_USER)"
 
 .PHONY: gh-pages
