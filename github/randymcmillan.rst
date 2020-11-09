@@ -12,7 +12,7 @@ GITHUB
    | .. image:: _static/icons/GitHub-Mark-64px.png                            |                                                        |
    |                                                                          |                                                        |
    |                                                                          | `randymcmillan.github.io`_                             |
-   |                                                                          | `randymcmillan.github.io`_                             |
+   |                                                                          | `github.com/randymcmillan/randymcmillan.github.io`_    |
    +--------------------------------------------------------------------------+--------------------------------------------------------+
    | .. image:: _static/icons/GitHub-Mark-64px.png                            |                                                        |
    |                                                                          |                                                        |
