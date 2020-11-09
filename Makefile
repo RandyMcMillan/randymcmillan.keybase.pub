@@ -98,32 +98,39 @@ depends:
 	pip3 install sphinx sphinx_rtd_theme glpi sphinx-reload --user blockcypher
 
 .PHONY: all
+.ONESHELL:
 all: make-kb-gh
 
 .PHONY: push-all
+.ONESHELL:
 push-all: make-kb-gh
 	bash -c "                             git add _build _static . && git commit -m 'update from $(BASENAME) on $(TIME)' && git push -f origin +master:master"
 	bash -c "cd ~/$(GH_USER).github.io && git add _build _static . && git commit -m 'update from $(BASENAME) on $(TIME)' && git push -f origin +master:master"
 
 .PHONY: make-kb-gh
+.ONESHELL:
 make-kb-gh: keybase gh-pages
 	curl https://api.travis-ci.org/bitcoin-core/gui.svg?branch=master --output _static/gui.svg
 	curl https://api.travis-ci.org/bitcoin/bitcoin.svg?branch=master  --output _static/bitcoin.svg
 
 .PHONY: reload
+.ONESHELL:
 reload: keybase gh-pages
 	sphinx-reload .
 
 .PHONY: rebuild
+.ONESHELL:
 rebuild: keybase gh-pages
 	rm -rf $(BUILDDIR)/*
 	make make-kb-gh
 
 .PHONY: clean
+.ONESHELL:
 clean:
 	rm -rf $(BUILDDIR)/*
 
 .PHONY: serve
+.ONESHELL:
 serve: keybase gh-pages
 	bash -c "python3 -m http.server 8000 -d _build/$(KB_USER).keybase.pub &"
 #	bash -c "python3 -m http.server 8001 -d _build/$(GH_USER).github.io &"
@@ -131,6 +138,7 @@ serve: keybase gh-pages
 #	bash -c "python3 -m http.server 8003 -d _build/singlehtml &"
 
 .PHONY: html
+.ONESHELL:
 html:
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
 	@echo
@@ -138,6 +146,7 @@ html:
 	@echo "Build finished. The HTML pages are in $(PWD)/$(BUILDDIR)/html"
 
 .PHONY: dirhtml
+.ONESHELL:
 dirhtml:
 	$(SPHINXBUILD) -b dirhtml $(ALLSPHINXOPTS) $(BUILDDIR)/dirhtml
 	@echo
@@ -145,6 +154,7 @@ dirhtml:
 	@echo "Build finished. The HTML pages are in $(PWD)/$(BUILDDIR)/dirhtml"
 
 .PHONY: singlehtml
+.ONESHELL:
 singlehtml: html
 	$(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) $(BUILDDIR)/singlehtml
 	@echo
@@ -153,6 +163,7 @@ singlehtml: html
 	@echo "Build finished. The HTML page is in $(PWD)/$(BUILDDIR)/singlehtml"
 
 .PHONY: keybase
+.ONESHELL:
 keybase: html
 	$(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) $(BUILDDIR)/$(KB_USER).keybase.pub
 	$(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) /keybase/$(KB_PUBLIC)/$(KB_USER)
@@ -170,6 +181,7 @@ keybase: html
 	@echo "Build finished. The HTML page is in /keybase/$(KB_PUBLIC)/$(KB_USER)"
 
 .PHONY: keybase-private
+.ONESHELL:
 keybase-private: html
 	$(SPHINXBUILD) -b singlehtml $(PRIVATE_ALLSPHINXOPTS) /keybase/$(KB_PRIVATE)/$(KB_USER)
 	@echo
@@ -178,6 +190,7 @@ keybase-private: html
 	@echo "Build finished. The HTML page is in /keybase/$(KB_PRIVATE)/$(KB_USER)"
 
 .PHONY: gh-pages
+.ONESHELL:
 gh-pages: html
 	$(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) $(BUILDDIR)/$(GH_USER).github.io
 	$(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) ~/$(GH_USER).github.io
@@ -196,18 +209,21 @@ gh-pages: html
 	@echo "Build finished. The HTML page is in ~/$(GH_USER).github.io"
 
 .PHONY: pickle
+.ONESHELL:
 pickle:
 	$(SPHINXBUILD) -b pickle $(ALLSPHINXOPTS) $(BUILDDIR)/pickle
 	@echo
 	@echo "Build finished; now you can process the pickle files."
 
 .PHONY: json
+.ONESHELL:
 json:
 	$(SPHINXBUILD) -b json $(ALLSPHINXOPTS) $(BUILDDIR)/json
 	@echo
 	@echo "Build finished; now you can process the JSON files."
 
 .PHONY: htmlhelp
+.ONESHELL:
 htmlhelp:
 	$(SPHINXBUILD) -b htmlhelp $(ALLSPHINXOPTS) $(BUILDDIR)/htmlhelp
 	@echo
@@ -215,6 +231,7 @@ htmlhelp:
 	      ".hhp project file in $(BUILDDIR)/htmlhelp."
 
 .PHONY: qthelp
+.ONESHELL:
 qthelp:
 	$(SPHINXBUILD) -b qthelp $(ALLSPHINXOPTS) $(BUILDDIR)/qthelp
 	@echo
@@ -225,6 +242,7 @@ qthelp:
 	@echo "# assistant -collectionFile $(BUILDDIR)/qthelp/LiquidNetwork.qhc"
 
 .PHONY: applehelp
+.ONESHELL:
 applehelp:
 	$(SPHINXBUILD) -b applehelp $(ALLSPHINXOPTS) $(BUILDDIR)/applehelp
 	@echo
@@ -234,6 +252,7 @@ applehelp:
 	      "bundle."
 
 .PHONY: devhelp
+.ONESHELL:
 devhelp:
 	$(SPHINXBUILD) -b devhelp $(ALLSPHINXOPTS) $(BUILDDIR)/devhelp
 	@echo
@@ -244,18 +263,21 @@ devhelp:
 	@echo "# devhelp"
 
 .PHONY: epub
+.ONESHELL:
 epub:
 	$(SPHINXBUILD) -b epub $(ALLSPHINXOPTS) $(BUILDDIR)/epub
 	@echo
 	@echo "Build finished. The epub file is in $(BUILDDIR)/epub."
 
 .PHONY: epub3
+.ONESHELL:
 epub3:
 	$(SPHINXBUILD) -b epub3 $(ALLSPHINXOPTS) $(BUILDDIR)/epub3
 	@echo
 	@echo "Build finished. The epub3 file is in $(BUILDDIR)/epub3."
 
 .PHONY: latex
+.ONESHELL:
 latex:
 	$(SPHINXBUILD) -b latex $(ALLSPHINXOPTS) $(BUILDDIR)/latex
 	@echo
@@ -264,6 +286,7 @@ latex:
 	      "(use \`make latexpdf' here to do that automatically)."
 
 .PHONY: latexpdf
+.ONESHELL:
 latexpdf:
 	$(SPHINXBUILD) -b latex $(ALLSPHINXOPTS) $(BUILDDIR)/latex
 	@echo "Running LaTeX files through pdflatex..."
@@ -271,6 +294,7 @@ latexpdf:
 	@echo "pdflatex finished; the PDF files are in $(BUILDDIR)/latex."
 
 .PHONY: latexpdfja
+.ONESHELL:
 latexpdfja:
 	$(SPHINXBUILD) -b latex $(ALLSPHINXOPTS) $(BUILDDIR)/latex
 	@echo "Running LaTeX files through platex and dvipdfmx..."
@@ -278,18 +302,21 @@ latexpdfja:
 	@echo "pdflatex finished; the PDF files are in $(BUILDDIR)/latex."
 
 .PHONY: text
+.ONESHELL:
 text:
 	$(SPHINXBUILD) -b text $(ALLSPHINXOPTS) $(BUILDDIR)/text
 	@echo
 	@echo "Build finished. The text files are in $(BUILDDIR)/text."
 
 .PHONY: man
+.ONESHELL:
 man:
 	$(SPHINXBUILD) -b man $(ALLSPHINXOPTS) $(BUILDDIR)/man
 	@echo
 	@echo "Build finished. The manual pages are in $(BUILDDIR)/man."
 
 .PHONY: texinfo
+.ONESHELL:
 texinfo:
 	$(SPHINXBUILD) -b texinfo $(ALLSPHINXOPTS) $(BUILDDIR)/texinfo
 	@echo
@@ -298,6 +325,7 @@ texinfo:
 	      "(use \`make info' here to do that automatically)."
 
 .PHONY: info
+.ONESHELL:
 info:
 	$(SPHINXBUILD) -b texinfo $(ALLSPHINXOPTS) $(BUILDDIR)/texinfo
 	@echo "Running Texinfo files through makeinfo..."
@@ -305,18 +333,21 @@ info:
 	@echo "makeinfo finished; the Info files are in $(BUILDDIR)/texinfo."
 
 .PHONY: gettext
+.ONESHELL:
 gettext:
 	$(SPHINXBUILD) -b gettext $(I18NSPHINXOPTS) $(BUILDDIR)/locale
 	@echo
 	@echo "Build finished. The message catalogs are in $(BUILDDIR)/locale."
 
 .PHONY: changes
+.ONESHELL:
 changes:
 	$(SPHINXBUILD) -b changes $(ALLSPHINXOPTS) $(BUILDDIR)/changes
 	@echo
 	@echo "The overview file is in $(BUILDDIR)/changes."
 
 .PHONY: linkcheck
+.ONESHELL:
 linkcheck:
 	$(SPHINXBUILD) -b linkcheck $(ALLSPHINXOPTS) $(BUILDDIR)/linkcheck
 	@echo
@@ -324,31 +355,37 @@ linkcheck:
 	      "or in $(BUILDDIR)/linkcheck/output.txt."
 
 .PHONY: doctest
+.ONESHELL:
 doctest:
 	$(SPHINXBUILD) -b doctest $(ALLSPHINXOPTS) $(BUILDDIR)/doctest
 	@echo "Testing of doctests in the sources finished, look at the " \
 	      "results in $(BUILDDIR)/doctest/output.txt."
 
 .PHONY: coverage
+.ONESHELL:
 coverage:
 	$(SPHINXBUILD) -b coverage $(ALLSPHINXOPTS) $(BUILDDIR)/coverage
 	@echo "Testing of coverage in the sources finished, look at the " \
 	      "results in $(BUILDDIR)/coverage/python.txt."
 
 .PHONY: xml
+.ONESHELL:
 xml:
 	$(SPHINXBUILD) -b xml $(ALLSPHINXOPTS) $(BUILDDIR)/xml
 	@echo
 	@echo "Build finished. The XML files are in $(BUILDDIR)/xml."
 
 .PHONY: pseudoxml
+.ONESHELL:
 pseudoxml:
 	$(SPHINXBUILD) -b pseudoxml $(ALLSPHINXOPTS) $(BUILDDIR)/pseudoxml
 	@echo
 	@echo "Build finished. The pseudo-XML files are in $(BUILDDIR)/pseudoxml."
 
 .PHONY: dummy
+.ONESHELL:
 dummy:
 	$(SPHINXBUILD) -b dummy $(ALLSPHINXOPTS) $(BUILDDIR)/dummy
 	@echo
 	@echo "Build finished. Dummy builder generates no files."
+
