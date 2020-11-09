@@ -93,7 +93,7 @@ depends:
 	pip3 install sphinx sphinx_rtd_theme glpi sphinx-reload --user blockcypher
 
 .PHONY: all
-all: push-all
+all: make-kb-gh
 
 .PHONY: push-all
 push-all: make-kb-gh
@@ -101,16 +101,16 @@ push-all: make-kb-gh
 	bash -c "cd ~/$(GH_USER).github.io && git add . && git commit -am 'update from $(BASENAME) on $(TIME)' && git push -f origin +master:master"
 
 .PHONY: make-kb-gh
-make-kb-gh: keybase gh-pages html
+make-kb-gh: keybase gh-pages
 	curl https://api.travis-ci.org/bitcoin-core/gui.svg?branch=master --output _static/gui.svg
 	curl https://api.travis-ci.org/bitcoin/bitcoin.svg?branch=master  --output _static/bitcoin.svg
 
 .PHONY: reload
-reload: html gh-pages keybase
+reload: keybase gh-pages
 	sphinx-reload .
 
 .PHONY: rebuild
-rebuild: html gh-pages keybase
+rebuild: keybase gh-pages
 	rm -rf $(BUILDDIR)/*
 	make make-kb-gh
 
@@ -119,7 +119,7 @@ clean:
 	rm -rf $(BUILDDIR)/*
 
 .PHONY: serve
-serve: html gh-pages keybase
+serve: keybase gh-pages
 	bash -c "python3 -m http.server 8000 -d _build/$(KB_USER).keybase.pub &"
 #	bash -c "python3 -m http.server 8001 -d _build/$(GH_USER).github.io &"
 #	bash -c "python3 -m http.server 8002 -d _build/html &"
@@ -146,7 +146,7 @@ singlehtml: html
 
 .PHONY: keybase
 .ONESHELL:
-keybase: html
+keybase:
 	$(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) $(BUILDDIR)/$(KB_USER).keybase.pub
 	$(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) /keybase/$(KB_PUBLIC)/$(KB_USER)
 	@echo
