@@ -159,6 +159,7 @@ keybase:
 	bash -c "keybase sign -i $(BUILDDIR)/$(KB_USER).keybase.pub/index.html -o  $(BUILDDIR)/$(KB_USER).keybase.pub/index.html.sig"
 	
 	bash -c "keybase sign -i /keybase/$(KB_PUBLIC)/$(KB_USER)/index.html -o /keybase/$(KB_PUBLIC)/$(KB_USER)/index.html.sig"
+	bash -c "git add . && git commit -am 'update from $(BASENAME) on $(TIME)' && git push -f origin +master:master"
 	@echo "Build finished. The HTML page is in /keybase/$(KB_PUBLIC)/$(KB_USER)"
 
 .PHONY: keybase-private
@@ -177,10 +178,13 @@ gh-pages: html
 	@echo
 	bash -c "install -v $(PWD)/keybase.txt ~/$(GH_USER).github.io/keybase.txt"
 	bash -c "keybase sign -i ~/$(GH_USER).github.io/keybase.txt -o ~/$(GH_USER).github.io/keybase.txt.sig"
+	
 	bash -c "keybase sign -i ~/$(GH_USER).github.io/index.html -o ~/$(GH_USER).github.io/index.html.sig"
+	
 	bash -c "keybase sign -i $(PWD)/keybase.txt -o $(BUILDDIR)/$(GH_USER).github.io/keybase.txt.sig"
 	bash -c "install -v $(PWD)/keybase.txt $(BUILDDIR)/$(GH_USER).github.io/keybase.txt"
-	bash -c "keybase sign -i $(BUILDDIR)/$(GH_USER).github.io/index.html -o  $(BUILDDIR)/$(GH_USER).github.io/index.sig"
+	
+	bash -c "keybase sign -i $(BUILDDIR)/$(GH_USER).github.io/index.html -o  $(BUILDDIR)/$(GH_USER).github.io/index.html.sig"
 	bash -c "cd ~/$(GH_USER).github.io && git add . && git commit -am 'update from $(BASENAME) on $(TIME)' && git push -f origin +master:master"
 	@echo "Build finished. The HTML page is in ~/$(GH_USER).github.io"
 
