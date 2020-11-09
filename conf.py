@@ -21,6 +21,7 @@
 # sys.path.insert(0, os.path.abspath('.'))
 import time
 millis = int(round(time.time() * 1000))
+seconds = int(round(time.time()))
 
 import blockcypher
 
@@ -81,7 +82,8 @@ author = u'@RandyMcMillan'
 # built documents.
 #
 # The short X.Y version.
-version = str(block_time)+str('.')+str(millis)
+#version = str(block_time)+str('.')+str(millis)
+version = str(block_time)+str('.')+str(seconds)
 # The full version, including alpha/beta/rc tags.
 release = u''
 
