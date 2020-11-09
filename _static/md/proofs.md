@@ -16,7 +16,6 @@ https://randymcmillan.keybase.pub/randymcmillan.asc
 ---------------------------------------------------
 
 ``curl https://randymcmillan.keybase.pub/randymcmillan.asc | gpg --import``
-
 ---------------------------------------------------------------------------
 
 KB PubKey
@@ -40,4 +39,4 @@ https://keybase.io/randymcmillan/pgp_keys.asc
 ---------------------------------------------
 
 ``curl https://keybase.io/randymcmillan/pgp_keys.asc | gpg --import``
-
+---------------------------------------------------------------------
