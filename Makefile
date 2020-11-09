@@ -1,6 +1,6 @@
 # Makefile for randymcmillan.keybase.pub
 
-TIME := $(date +%s%N)
+TIME := $(shell date +%s)
 export TIME
 
 ifeq ($(kbuser),)
