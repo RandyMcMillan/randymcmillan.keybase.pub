@@ -5,6 +5,13 @@
 .. toctree::
    :hidden:
    :maxdepth: 2
+   :caption: github.com
+
+   /randymcmillan <https://github.com/randymcmillan>
+
+.. toctree::
+   :hidden:
+   :maxdepth: 2
    :caption: twitter.com
 
    /randymcmillan <https://twitter.com/randymcmillan>
