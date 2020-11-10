@@ -21,7 +21,6 @@ Fingerprint:
 ``EE29 B7B0 17F1 9DDA 7C56 5A55 AB20 17A2 CA7F D790``
 
 64-bit:	
--------
 
 ``AB20 17A2 CA7F D790``
 
