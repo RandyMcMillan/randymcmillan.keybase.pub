@@ -1,8 +1,6 @@
 .. include:: md/header.md
 
-.. include:: github/randymcmillan.rst
-
-.. include:: travis-ci/travis-ci.rst
+.. include:: github/sponsor.rst
 
 .. toctree::
    :hidden:
