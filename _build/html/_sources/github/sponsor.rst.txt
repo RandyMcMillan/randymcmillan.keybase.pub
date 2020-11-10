@@ -1,7 +1,3 @@
-#######
-SPONSOR
-#######
-
 .. table::
    :align: center
    :widths: 5 95
