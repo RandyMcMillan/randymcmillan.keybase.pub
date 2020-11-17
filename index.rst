@@ -8,6 +8,8 @@
    :caption: github.com
 
    /randymcmillan <https://github.com/randymcmillan>
+   /randymcmillan <https://randymcmillan.github.io>
+   /bitcoinAnd <https://bitcoinAnd.github.io>
 
 .. toctree::
    :hidden:
@@ -22,6 +24,7 @@
    :caption: keybase.io
 
    /randymcmillan <https://keybase.io/randymcmillan>
+   /randymcmillan <https://randymcmillan.keybase.pub>
    /bitcoincore <https://keybase.io/team/bitcoincore>
    /bitcoinAnd <https://keybase.io/team/bitcoinand>
 
