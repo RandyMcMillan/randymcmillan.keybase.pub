@@ -9,7 +9,7 @@
 
    /randymcmillan <https://github.com/randymcmillan>
    /randymcmillan <https://randymcmillan.github.io>
-   /bitcoinAnd <https://bitcoinAnd.github.io>
+   /bitcoinAnd    <https://bitcoinAnd.github.io>
 
 .. toctree::
    :hidden:
@@ -24,16 +24,22 @@
    :caption: keybase.io
 
    /randymcmillan <https://keybase.io/randymcmillan>
+   /bitcoincore   <https://keybase.io/team/bitcoincore>
+   /bitcoinAnd    <https://keybase.io/team/bitcoinand>
+
+.. toctree::
+   :hidden:
+   :maxdepth: 2
+   :caption: keybase.pub
+
    /randymcmillan <https://randymcmillan.keybase.pub>
-   /bitcoincore <https://keybase.io/team/bitcoincore>
-   /bitcoinAnd <https://keybase.io/team/bitcoinand>
 
 .. toctree::
    :hidden:
    :maxdepth: 2
    :caption: bitcoincore
 
-   org. <http://org.bitcoincore.dev>
+   org.    <http://org.bitcoincore.dev>
    builds. <https://builds.bitcoincore.dev>
 
 .. include:: md/proofs.md
