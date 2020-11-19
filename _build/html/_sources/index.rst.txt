@@ -28,7 +28,13 @@
    /bitcoincore <https://keybase.io/team/bitcoincore>
    /bitcoinAnd <https://keybase.io/team/bitcoinand>
 
+.. toctree::
+   :hidden:
+   :maxdepth: 2
+   :caption: bitcoin
 
+   /org <https://org.bitcoincore.dev>
+   /builds <https://builds.bitcoincore.dev>
 
 .. include:: md/proofs.md
 
