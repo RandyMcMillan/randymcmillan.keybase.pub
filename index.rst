@@ -33,7 +33,7 @@
    :maxdepth: 2
    :caption: bitcoin
 
-   /org <https://org.bitcoincore.dev>
+   /org <http://org.bitcoincore.dev>
    /builds <https://builds.bitcoincore.dev>
 
 .. include:: md/proofs.md
