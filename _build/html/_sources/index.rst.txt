@@ -41,6 +41,7 @@
 
    org.    <http://org.bitcoincore.dev>
    rss.    <https://org.bitcoincore.dev/en/rss>
+   rss.releases    <https://org.bitcoincore.dev/en/releasesrss.xml>
    builds. <http://builds.bitcoincore.dev>
 
 .. include:: md/proofs.md
