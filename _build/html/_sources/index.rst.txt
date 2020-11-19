@@ -31,10 +31,10 @@
 .. toctree::
    :hidden:
    :maxdepth: 2
-   :caption: bitcoin
+   :caption: bitcoincore
 
-   /org <http://org.bitcoincore.dev>
-   /builds <https://builds.bitcoincore.dev>
+   org. <http://org.bitcoincore.dev>
+   builds. <https://builds.bitcoincore.dev>
 
 .. include:: md/proofs.md
 
