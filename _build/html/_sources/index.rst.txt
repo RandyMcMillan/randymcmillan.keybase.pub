@@ -40,7 +40,7 @@
    :caption: bitcoincore
 
    org.    <http://org.bitcoincore.dev>
-   rss.    <http://rss.bitcoincore.dev>
+   rss.    <https://org.bitcoincore.dev/en/rss>
    builds. <http://builds.bitcoincore.dev>
 
 .. include:: md/proofs.md
