@@ -166,21 +166,22 @@ singlehtml:
 .PHONY: keybase
 .ONESHELL:
 keybase:
-	sudo $(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) $(BUILDDIR)/$(KB_USER).keybase.pub
-	sudo $(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) /keybase/$(KB_PUBLIC)/$(KB_USER)
+	$(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) $(BUILDDIR)/$(KB_USER).keybase.pub
+	#$(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) /keybase/$(KB_PUBLIC)/$(KB_USER)
 	@echo
-	bash -c "sudo mkdir -p /keybase/public/$(KB_USER)"
-	bash -c "sudo install -v keybase.txt /keybase/public/$(KB_USER)/keybase.txt"
+	#bash -c "sudo mkdir -p /keybase/public/$(KB_USER)"
+	#bash -c "sudo install -v keybase.txt /keybase/public/$(KB_USER)/keybase.txt"
 	#bash -c "keybase sign -i /keybase/public/$(KB_USER)/keybase.txt -o /keybase/public/$(KB_USER)/keybase.txt.sig"
 	
-	bash -c "sudo install -v keybase.txt $(BUILDDIR)/$(KB_USER).keybase.pub/keybase.txt"
 	bash -c "keybase sign -i keybase.txt -o keybase.txt.sig"
+	bash -c "install -v keybase.txt $(BUILDDIR)/$(KB_USER).keybase.pub/keybase.txt"
+	bash -c "install -v keybase.txt.sig $(BUILDDIR)/$(KB_USER).keybase.pub/keybase.txt.sig"
 	
 	#bash -c "keybase sign -i $(BUILDDIR)/$(KB_USER).keybase.pub/index.html -o  $(BUILDDIR)/$(KB_USER).keybase.pub/index.html.sig"
 	#bash -c "keybase sign -i /keybase/$(KB_PUBLIC)/$(KB_USER)/index.html -o /keybase/$(KB_PUBLIC)/$(KB_USER)/index.html.sig"
 	
 	bash -c "git add _build _static . && git commit -m 'update from $(BASENAME) on $(TIME)' && git push -f origin +master:master"
-	@echo "Build finished. The HTML page is in /keybase/$(KB_PUBLIC)/$(KB_USER)"
+	@echo "Build finished. The HTML page is in $(BUILDDIR)/$(KB_USER).keybase.pub"
 
 #.PHONY: keybase-private
 #.ONESHELL:
