@@ -165,10 +165,10 @@ keybase: html
 	$(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) $(BUILDDIR)/$(KB_USER).keybase.pub
 	$(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) /keybase/$(KB_PUBLIC)/$(KB_USER)
 	@echo
-	bash -c "install -v $(PWD)/keybase.txt /keybase/public/$(KB_USER)/keybase.txt"
+	bash -c "install -v keybase.txt /keybase/public/$(KB_USER)/keybase.txt"
 	bash -c "keybase sign -i /keybase/public/$(KB_USER)/keybase.txt -o /keybase/public/$(KB_USER)/keybase.txt.sig"
 	
-	bash -c "install -v $(PWD)/keybase.txt $(BUILDDIR)/$(KB_USER).keybase.pub/keybase.txt"
+	bash -c "install -v keybase.txt $(BUILDDIR)/$(KB_USER).keybase.pub/keybase.txt"
 	bash -c "keybase sign -i $(BUILDDIR)/$(KB_USER).keybase.pub/keybase.txt -o $(BUILDDIR)/$(KB_USER).keybase.pub/keybase.txt.sig"
 	
 	bash -c "keybase sign -i $(BUILDDIR)/$(KB_USER).keybase.pub/index.html -o  $(BUILDDIR)/$(KB_USER).keybase.pub/index.html.sig"
@@ -192,7 +192,7 @@ gh-pages: html
 	$(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) $(BUILDDIR)/$(GH_USER).github.io
 	$(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) ~/$(GH_USER).github.io
 	@echo
-	bash -c "install -v $(PWD)/keybase.txt ~/$(GH_USER).github.io/keybase.txt"
+	bash -c "install -v keybase.txt ~/$(GH_USER).github.io/keybase.txt"
 	bash -c "keybase sign -i ~/$(GH_USER).github.io/keybase.txt -o ~/$(GH_USER).github.io/keybase.txt.sig"
 	
 	bash -c "keybase sign -i ~/$(GH_USER).github.io/index.html -o ~/$(GH_USER).github.io/index.html.sig"
