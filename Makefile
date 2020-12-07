@@ -96,7 +96,7 @@ help:
 .PHONY: depends
 depends:
 	pip3 install sphinx sphinx_rtd_theme glpi sphinx-reload --user blockcypher
-	git clone https://github.com/randymcmillan/randymcmillan.github.io ~/randymcmillan.github.io
+	git clone git@github.com:RandyMcMillan/randymcmillan.github.io.git ~/randymcmillan.github.io
 
 .PHONY: all
 .ONESHELL:
