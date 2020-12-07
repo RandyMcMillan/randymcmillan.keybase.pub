@@ -96,6 +96,7 @@ help:
 .PHONY: depends
 depends:
 	pip3 install sphinx sphinx_rtd_theme glpi sphinx-reload --user blockcypher
+	git clone https://github.com/randymcmillan/randymcmillan.github.io ~/randymcmillan.github.io
 
 .PHONY: all
 .ONESHELL:
@@ -132,6 +133,7 @@ clean:
 .PHONY: serve
 .ONESHELL:
 serve: keybase gh-pages
+	bash -c "mkdir -p /keybase/public/$(KB_USER)"
 	bash -c "python3 -m http.server 8000 -d _build/$(KB_USER).keybase.pub &"
 
 #.PHONY: html
@@ -162,17 +164,18 @@ singlehtml:
 .PHONY: keybase
 .ONESHELL:
 keybase:
-	$(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) $(BUILDDIR)/$(KB_USER).keybase.pub
-	$(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) /keybase/$(KB_PUBLIC)/$(KB_USER)
+	sudo $(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) $(BUILDDIR)/$(KB_USER).keybase.pub
+	sudo $(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) /keybase/$(KB_PUBLIC)/$(KB_USER)
 	@echo
-	bash -c "install -v keybase.txt /keybase/public/$(KB_USER)/keybase.txt"
-	bash -c "keybase sign -i /keybase/public/$(KB_USER)/keybase.txt -o /keybase/public/$(KB_USER)/keybase.txt.sig"
+	bash -c "sudo mkdir -p /keybase/public/$(KB_USER)"
+	bash -c "sudo install -v keybase.txt /keybase/public/$(KB_USER)/keybase.txt"
+	#bash -c "keybase sign -i /keybase/public/$(KB_USER)/keybase.txt -o /keybase/public/$(KB_USER)/keybase.txt.sig"
 	
-	bash -c "install -v keybase.txt $(BUILDDIR)/$(KB_USER).keybase.pub/keybase.txt"
+	bash -c "sudo install -v keybase.txt $(BUILDDIR)/$(KB_USER).keybase.pub/keybase.txt"
 	bash -c "keybase sign -i $(BUILDDIR)/$(KB_USER).keybase.pub/keybase.txt -o $(BUILDDIR)/$(KB_USER).keybase.pub/keybase.txt.sig"
 	
 	bash -c "keybase sign -i $(BUILDDIR)/$(KB_USER).keybase.pub/index.html -o  $(BUILDDIR)/$(KB_USER).keybase.pub/index.html.sig"
-	bash -c "keybase sign -i /keybase/$(KB_PUBLIC)/$(KB_USER)/index.html -o /keybase/$(KB_PUBLIC)/$(KB_USER)/index.html.sig"
+	#bash -c "keybase sign -i /keybase/$(KB_PUBLIC)/$(KB_USER)/index.html -o /keybase/$(KB_PUBLIC)/$(KB_USER)/index.html.sig"
 	
 	bash -c "git add _build _static . && git commit -m 'update from $(BASENAME) on $(TIME)' && git push -f origin +master:master"
 	@echo "Build finished. The HTML page is in /keybase/$(KB_PUBLIC)/$(KB_USER)"
@@ -182,7 +185,7 @@ keybase:
 keybase-private: html
 	$(SPHINXBUILD) -b singlehtml $(PRIVATE_ALLSPHINXOPTS) /keybase/$(KB_PRIVATE)/$(KB_USER)
 	@echo
-	bash -c "keybase sign -i /keybase/$(KB_PRIVATE)/$(KB_USER)/index.html -o /keybase/$(KB_PRIVATE)/$(KB_USER)/index.sig"
+	#bash -c "keybase sign -i /keybase/$(KB_PRIVATE)/$(KB_USER)/index.html -o /keybase/$(KB_PRIVATE)/$(KB_USER)/index.sig"
 	bash -c "git add _build _static . && git commit -m 'update from $(BASENAME) on $(TIME)' && git push -f origin +master:master"
 	@echo "Build finished. The HTML page is in /keybase/$(KB_PRIVATE)/$(KB_USER)"
 
