@@ -205,98 +205,98 @@ gh-pages:
 	bash -c "cd ~/$(GH_USER).github.io && git add . && git commit -m 'update from $(BASENAME) on $(TIME)' && git push -f origin +master:master"
 	@echo "Build finished. The HTML page is in ~/$(GH_USER).github.io"
 
-.PHONY: pickle
-.ONESHELL:
-pickle:
-	$(SPHINXBUILD) -b pickle $(ALLSPHINXOPTS) $(BUILDDIR)/pickle
-	@echo
-	@echo "Build finished; now you can process the pickle files."
+#.PHONY: pickle
+#.ONESHELL:
+#pickle:
+#	$(SPHINXBUILD) -b pickle $(ALLSPHINXOPTS) $(BUILDDIR)/pickle
+#	@echo
+#	@echo "Build finished; now you can process the pickle files."
 
-.PHONY: json
-.ONESHELL:
-json:
-	$(SPHINXBUILD) -b json $(ALLSPHINXOPTS) $(BUILDDIR)/json
-	@echo
-	@echo "Build finished; now you can process the JSON files."
+#.PHONY: json
+#.ONESHELL:
+#json:
+#	$(SPHINXBUILD) -b json $(ALLSPHINXOPTS) $(BUILDDIR)/json
+#	@echo
+#	@echo "Build finished; now you can process the JSON files."
 
-.PHONY: htmlhelp
-.ONESHELL:
-htmlhelp:
-	$(SPHINXBUILD) -b htmlhelp $(ALLSPHINXOPTS) $(BUILDDIR)/htmlhelp
-	@echo
-	@echo "Build finished; now you can run HTML Help Workshop with the" \
-	      ".hhp project file in $(BUILDDIR)/htmlhelp."
+#.PHONY: htmlhelp
+#.ONESHELL:
+#htmlhelp:
+#	$(SPHINXBUILD) -b htmlhelp $(ALLSPHINXOPTS) $(BUILDDIR)/htmlhelp
+#	@echo
+#	@echo "Build finished; now you can run HTML Help Workshop with the" \
+#	      ".hhp project file in $(BUILDDIR)/htmlhelp."
 
-.PHONY: qthelp
-.ONESHELL:
-qthelp:
-	$(SPHINXBUILD) -b qthelp $(ALLSPHINXOPTS) $(BUILDDIR)/qthelp
-	@echo
-	@echo "Build finished; now you can run "qcollectiongenerator" with the" \
-	      ".qhcp project file in $(BUILDDIR)/qthelp, like this:"
-	@echo "# qcollectiongenerator $(BUILDDIR)/qthelp/LiquidNetwork.qhcp"
-	@echo "To view the help file:"
-	@echo "# assistant -collectionFile $(BUILDDIR)/qthelp/LiquidNetwork.qhc"
+#.PHONY: qthelp
+#.ONESHELL:
+#qthelp:
+#	$(SPHINXBUILD) -b qthelp $(ALLSPHINXOPTS) $(BUILDDIR)/qthelp
+#	@echo
+#	@echo "Build finished; now you can run "qcollectiongenerator" with the" \
+#	      ".qhcp project file in $(BUILDDIR)/qthelp, like this:"
+#	@echo "# qcollectiongenerator $(BUILDDIR)/qthelp/LiquidNetwork.qhcp"
+#	@echo "To view the help file:"
+#	@echo "# assistant -collectionFile $(BUILDDIR)/qthelp/LiquidNetwork.qhc"
 
-.PHONY: applehelp
-.ONESHELL:
-applehelp:
-	$(SPHINXBUILD) -b applehelp $(ALLSPHINXOPTS) $(BUILDDIR)/applehelp
-	@echo
-	@echo "Build finished. The help book is in $(BUILDDIR)/applehelp."
-	@echo "N.B. You won't be able to view it unless you put it in" \
-	      "~/Library/Documentation/Help or install it in your application" \
-	      "bundle."
+#.PHONY: applehelp
+#.ONESHELL:
+#applehelp:
+#	$(SPHINXBUILD) -b applehelp $(ALLSPHINXOPTS) $(BUILDDIR)/applehelp
+#	@echo
+#	@echo "Build finished. The help book is in $(BUILDDIR)/applehelp."
+#	@echo "N.B. You won't be able to view it unless you put it in" \
+#	      "~/Library/Documentation/Help or install it in your application" \
+#	      "bundle."
 
-.PHONY: devhelp
-.ONESHELL:
-devhelp:
-	$(SPHINXBUILD) -b devhelp $(ALLSPHINXOPTS) $(BUILDDIR)/devhelp
-	@echo
-	@echo "Build finished."
-	@echo "To view the help file:"
-	@echo "# mkdir -p $$HOME/.local/share/devhelp/LiquidNetwork"
-	@echo "# ln -s $(BUILDDIR)/devhelp $$HOME/.local/share/devhelp/LiquidNetwork"
-	@echo "# devhelp"
+#.PHONY: devhelp
+#.ONESHELL:
+#devhelp:
+#	$(SPHINXBUILD) -b devhelp $(ALLSPHINXOPTS) $(BUILDDIR)/devhelp
+#	@echo
+#	@echo "Build finished."
+#	@echo "To view the help file:"
+#	@echo "# mkdir -p $$HOME/.local/share/devhelp/LiquidNetwork"
+#	@echo "# ln -s $(BUILDDIR)/devhelp $$HOME/.local/share/devhelp/LiquidNetwork"
+#	@echo "# devhelp"
 
-.PHONY: epub
-.ONESHELL:
-epub:
-	$(SPHINXBUILD) -b epub $(ALLSPHINXOPTS) $(BUILDDIR)/epub
-	@echo
-	@echo "Build finished. The epub file is in $(BUILDDIR)/epub."
-
-.PHONY: epub3
-.ONESHELL:
-epub3:
-	$(SPHINXBUILD) -b epub3 $(ALLSPHINXOPTS) $(BUILDDIR)/epub3
-	@echo
-	@echo "Build finished. The epub3 file is in $(BUILDDIR)/epub3."
-
-.PHONY: latex
-.ONESHELL:
-latex:
-	$(SPHINXBUILD) -b latex $(ALLSPHINXOPTS) $(BUILDDIR)/latex
-	@echo
-	@echo "Build finished; the LaTeX files are in $(BUILDDIR)/latex."
-	@echo "Run \`make' in that directory to run these through (pdf)latex" \
-	      "(use \`make latexpdf' here to do that automatically)."
-
-.PHONY: latexpdf
-.ONESHELL:
-latexpdf:
-	$(SPHINXBUILD) -b latex $(ALLSPHINXOPTS) $(BUILDDIR)/latex
-	@echo "Running LaTeX files through pdflatex..."
-	$(MAKE) -C $(BUILDDIR)/latex all-pdf
-	@echo "pdflatex finished; the PDF files are in $(BUILDDIR)/latex."
-
-.PHONY: latexpdfja
-.ONESHELL:
-latexpdfja:
-	$(SPHINXBUILD) -b latex $(ALLSPHINXOPTS) $(BUILDDIR)/latex
-	@echo "Running LaTeX files through platex and dvipdfmx..."
-	$(MAKE) -C $(BUILDDIR)/latex all-pdf-ja
-	@echo "pdflatex finished; the PDF files are in $(BUILDDIR)/latex."
+#.PHONY: epub
+#.ONESHELL:
+#epub:
+#	$(SPHINXBUILD) -b epub $(ALLSPHINXOPTS) $(BUILDDIR)/epub
+#	@echo
+#	@echo "Build finished. The epub file is in $(BUILDDIR)/epub."
+#
+#.PHONY: epub3
+#.ONESHELL:
+#epub3:
+#	$(SPHINXBUILD) -b epub3 $(ALLSPHINXOPTS) $(BUILDDIR)/epub3
+#	@echo
+#	@echo "Build finished. The epub3 file is in $(BUILDDIR)/epub3."
+#
+#.PHONY: latex
+#.ONESHELL:
+#latex:
+#	$(SPHINXBUILD) -b latex $(ALLSPHINXOPTS) $(BUILDDIR)/latex
+#	@echo
+#	@echo "Build finished; the LaTeX files are in $(BUILDDIR)/latex."
+#	@echo "Run \`make' in that directory to run these through (pdf)latex" \
+#	      "(use \`make latexpdf' here to do that automatically)."
+#
+#.PHONY: latexpdf
+#.ONESHELL:
+#latexpdf:
+#	$(SPHINXBUILD) -b latex $(ALLSPHINXOPTS) $(BUILDDIR)/latex
+#	@echo "Running LaTeX files through pdflatex..."
+#	$(MAKE) -C $(BUILDDIR)/latex all-pdf
+#	@echo "pdflatex finished; the PDF files are in $(BUILDDIR)/latex."
+#
+#.PHONY: latexpdfja
+#.ONESHELL:
+#latexpdfja:
+#	$(SPHINXBUILD) -b latex $(ALLSPHINXOPTS) $(BUILDDIR)/latex
+#	@echo "Running LaTeX files through platex and dvipdfmx..."
+#	$(MAKE) -C $(BUILDDIR)/latex all-pdf-ja
+#	@echo "pdflatex finished; the PDF files are in $(BUILDDIR)/latex."
 
 .PHONY: text
 .ONESHELL:
