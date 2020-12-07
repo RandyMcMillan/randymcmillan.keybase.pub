@@ -129,7 +129,7 @@ rebuild: keybase gh-pages
 .PHONY: clean
 .ONESHELL:
 clean:
-	rm -rf $(BUILDDIR)/*
+	bash -c "rm -rf $(BUILDDIR)"
 
 .PHONY: serve
 .ONESHELL:
@@ -158,7 +158,7 @@ serve: keybase gh-pages
 singlehtml:
 	$(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) $(BUILDDIR)/singlehtml
 	@echo
-	bash -c "keybase sign -i $(PWD)/$(BUILDDIR)/singlehtml/index.html -o $(PWD)/$(BUILDDIR)/singlehtml/index.sig"
+	#bash -c "keybase sign -i $(PWD)/$(BUILDDIR)/singlehtml/index.html -o $(PWD)/$(BUILDDIR)/singlehtml/index.sig"
 	bash -c "git add _build _static . && git commit -m 'update from $(BASENAME) on $(TIME)' && git push -f origin +master:master"
 	@echo "Build finished. The HTML page is in $(PWD)/$(BUILDDIR)/singlehtml"
 
@@ -173,22 +173,22 @@ keybase:
 	#bash -c "keybase sign -i /keybase/public/$(KB_USER)/keybase.txt -o /keybase/public/$(KB_USER)/keybase.txt.sig"
 	
 	bash -c "sudo install -v keybase.txt $(BUILDDIR)/$(KB_USER).keybase.pub/keybase.txt"
-	bash -c "keybase sign -i $(BUILDDIR)/$(KB_USER).keybase.pub/keybase.txt -o $(BUILDDIR)/$(KB_USER).keybase.pub/keybase.txt.sig"
+	bash -c "keybase sign -i keybase.txt -o keybase.txt.sig"
 	
-	bash -c "keybase sign -i $(BUILDDIR)/$(KB_USER).keybase.pub/index.html -o  $(BUILDDIR)/$(KB_USER).keybase.pub/index.html.sig"
+	#bash -c "keybase sign -i $(BUILDDIR)/$(KB_USER).keybase.pub/index.html -o  $(BUILDDIR)/$(KB_USER).keybase.pub/index.html.sig"
 	#bash -c "keybase sign -i /keybase/$(KB_PUBLIC)/$(KB_USER)/index.html -o /keybase/$(KB_PUBLIC)/$(KB_USER)/index.html.sig"
 	
 	bash -c "git add _build _static . && git commit -m 'update from $(BASENAME) on $(TIME)' && git push -f origin +master:master"
 	@echo "Build finished. The HTML page is in /keybase/$(KB_PUBLIC)/$(KB_USER)"
 
-.PHONY: keybase-private
-.ONESHELL:
-keybase-private: html
-	$(SPHINXBUILD) -b singlehtml $(PRIVATE_ALLSPHINXOPTS) /keybase/$(KB_PRIVATE)/$(KB_USER)
-	@echo
-	#bash -c "keybase sign -i /keybase/$(KB_PRIVATE)/$(KB_USER)/index.html -o /keybase/$(KB_PRIVATE)/$(KB_USER)/index.sig"
-	bash -c "git add _build _static . && git commit -m 'update from $(BASENAME) on $(TIME)' && git push -f origin +master:master"
-	@echo "Build finished. The HTML page is in /keybase/$(KB_PRIVATE)/$(KB_USER)"
+#.PHONY: keybase-private
+#.ONESHELL:
+#keybase-private: html
+#	$(SPHINXBUILD) -b singlehtml $(PRIVATE_ALLSPHINXOPTS) /keybase/$(KB_PRIVATE)/$(KB_USER)
+#	@echo
+#	#bash -c "keybase sign -i /keybase/$(KB_PRIVATE)/$(KB_USER)/index.html -o /keybase/$(KB_PRIVATE)/$(KB_USER)/index.sig"
+#	bash -c "git add _build _static . && git commit -m 'update from $(BASENAME) on $(TIME)' && git push -f origin +master:master"
+#	@echo "Build finished. The HTML page is in /keybase/$(KB_PRIVATE)/$(KB_USER)"
 
 .PHONY: gh-pages
 .ONESHELL:
@@ -199,12 +199,12 @@ gh-pages:
 	bash -c "install -v keybase.txt ~/$(GH_USER).github.io/keybase.txt"
 	bash -c "keybase sign -i ~/$(GH_USER).github.io/keybase.txt -o ~/$(GH_USER).github.io/keybase.txt.sig"
 	
-	bash -c "keybase sign -i ~/$(GH_USER).github.io/index.html -o ~/$(GH_USER).github.io/index.html.sig"
+	#bash -c "keybase sign -i ~/$(GH_USER).github.io/index.html -o ~/$(GH_USER).github.io/index.html.sig"
 	
 	bash -c "keybase sign -i $(PWD)/keybase.txt -o $(BUILDDIR)/$(GH_USER).github.io/keybase.txt.sig"
 	bash -c "install -v $(PWD)/keybase.txt $(BUILDDIR)/$(GH_USER).github.io/keybase.txt"
 	
-	bash -c "keybase sign -i $(BUILDDIR)/$(GH_USER).github.io/index.html -o  $(BUILDDIR)/$(GH_USER).github.io/index.html.sig"
+	#bash -c "keybase sign -i $(BUILDDIR)/$(GH_USER).github.io/index.html -o  $(BUILDDIR)/$(GH_USER).github.io/index.html.sig"
 	
 	bash -c "cd ~/$(GH_USER).github.io && git add . && git commit -m 'update from $(BASENAME) on $(TIME)' && git push -f origin +master:master"
 	@echo "Build finished. The HTML page is in ~/$(GH_USER).github.io"
