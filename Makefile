@@ -134,25 +134,25 @@ clean:
 serve: keybase gh-pages
 	bash -c "python3 -m http.server 8000 -d _build/$(KB_USER).keybase.pub &"
 
-.PHONY: html
-.ONESHELL:
-html:
-	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
-	@echo
-	bash -c "git add _build _static . && git commit -m 'update from $(BASENAME) on $(TIME)' && git push -f origin +master:master"
-	@echo "Build finished. The HTML pages are in $(PWD)/$(BUILDDIR)/html"
+#.PHONY: html
+#.ONESHELL:
+#html:
+#	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
+#	@echo
+#	bash -c "git add _build _static . && git commit -m 'update from $(BASENAME) on $(TIME)' && git push -f origin +master:master"
+#	@echo "Build finished. The HTML pages are in $(PWD)/$(BUILDDIR)/html"
 
-.PHONY: dirhtml
-.ONESHELL:
-dirhtml:
-	$(SPHINXBUILD) -b dirhtml $(ALLSPHINXOPTS) $(BUILDDIR)/dirhtml
-	@echo
-	bash -c "git add _build _static . && git commit -m 'update from $(BASENAME) on $(TIME)' && git push -f origin +master:master"
-	@echo "Build finished. The HTML pages are in $(PWD)/$(BUILDDIR)/dirhtml"
+#.PHONY: dirhtml
+#.ONESHELL:
+#dirhtml:
+#	$(SPHINXBUILD) -b dirhtml $(ALLSPHINXOPTS) $(BUILDDIR)/dirhtml
+#	@echo
+#	bash -c "git add _build _static . && git commit -m 'update from $(BASENAME) on $(TIME)' && git push -f origin +master:master"
+#	@echo "Build finished. The HTML pages are in $(PWD)/$(BUILDDIR)/dirhtml"
 
 .PHONY: singlehtml
 .ONESHELL:
-singlehtml: html
+singlehtml:
 	$(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) $(BUILDDIR)/singlehtml
 	@echo
 	bash -c "keybase sign -i $(PWD)/$(BUILDDIR)/singlehtml/index.html -o $(PWD)/$(BUILDDIR)/singlehtml/index.sig"
@@ -161,7 +161,7 @@ singlehtml: html
 
 .PHONY: keybase
 .ONESHELL:
-keybase: html
+keybase:
 	$(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) $(BUILDDIR)/$(KB_USER).keybase.pub
 	$(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) /keybase/$(KB_PUBLIC)/$(KB_USER)
 	@echo
@@ -305,84 +305,84 @@ text:
 	@echo
 	@echo "Build finished. The text files are in $(BUILDDIR)/text."
 
-.PHONY: man
-.ONESHELL:
-man:
-	$(SPHINXBUILD) -b man $(ALLSPHINXOPTS) $(BUILDDIR)/man
-	@echo
-	@echo "Build finished. The manual pages are in $(BUILDDIR)/man."
+#.PHONY: man
+#.ONESHELL:
+#man:
+#	$(SPHINXBUILD) -b man $(ALLSPHINXOPTS) $(BUILDDIR)/man
+#	@echo
+#	@echo "Build finished. The manual pages are in $(BUILDDIR)/man."
 
-.PHONY: texinfo
-.ONESHELL:
-texinfo:
-	$(SPHINXBUILD) -b texinfo $(ALLSPHINXOPTS) $(BUILDDIR)/texinfo
-	@echo
-	@echo "Build finished. The Texinfo files are in $(BUILDDIR)/texinfo."
-	@echo "Run \`make' in that directory to run these through makeinfo" \
-	      "(use \`make info' here to do that automatically)."
+#.PHONY: texinfo
+#.ONESHELL:
+#texinfo:
+#	$(SPHINXBUILD) -b texinfo $(ALLSPHINXOPTS) $(BUILDDIR)/texinfo
+#	@echo
+#	@echo "Build finished. The Texinfo files are in $(BUILDDIR)/texinfo."
+#	@echo "Run \`make' in that directory to run these through makeinfo" \
+#	      "(use \`make info' here to do that automatically)."
 
-.PHONY: info
-.ONESHELL:
-info:
-	$(SPHINXBUILD) -b texinfo $(ALLSPHINXOPTS) $(BUILDDIR)/texinfo
-	@echo "Running Texinfo files through makeinfo..."
-	make -C $(BUILDDIR)/texinfo info
-	@echo "makeinfo finished; the Info files are in $(BUILDDIR)/texinfo."
+#.PHONY: info
+#.ONESHELL:
+#info:
+#	$(SPHINXBUILD) -b texinfo $(ALLSPHINXOPTS) $(BUILDDIR)/texinfo
+#	@echo "Running Texinfo files through makeinfo..."
+#	make -C $(BUILDDIR)/texinfo info
+#	@echo "makeinfo finished; the Info files are in $(BUILDDIR)/texinfo."
 
-.PHONY: gettext
-.ONESHELL:
-gettext:
-	$(SPHINXBUILD) -b gettext $(I18NSPHINXOPTS) $(BUILDDIR)/locale
-	@echo
-	@echo "Build finished. The message catalogs are in $(BUILDDIR)/locale."
-
-.PHONY: changes
-.ONESHELL:
-changes:
-	$(SPHINXBUILD) -b changes $(ALLSPHINXOPTS) $(BUILDDIR)/changes
-	@echo
-	@echo "The overview file is in $(BUILDDIR)/changes."
-
-.PHONY: linkcheck
-.ONESHELL:
-linkcheck:
-	$(SPHINXBUILD) -b linkcheck $(ALLSPHINXOPTS) $(BUILDDIR)/linkcheck
-	@echo
-	@echo "Link check complete; look for any errors in the above output " \
-	      "or in $(BUILDDIR)/linkcheck/output.txt."
-
-.PHONY: doctest
-.ONESHELL:
-doctest:
-	$(SPHINXBUILD) -b doctest $(ALLSPHINXOPTS) $(BUILDDIR)/doctest
-	@echo "Testing of doctests in the sources finished, look at the " \
-	      "results in $(BUILDDIR)/doctest/output.txt."
-
-.PHONY: coverage
-.ONESHELL:
-coverage:
-	$(SPHINXBUILD) -b coverage $(ALLSPHINXOPTS) $(BUILDDIR)/coverage
-	@echo "Testing of coverage in the sources finished, look at the " \
-	      "results in $(BUILDDIR)/coverage/python.txt."
-
-.PHONY: xml
-.ONESHELL:
-xml:
-	$(SPHINXBUILD) -b xml $(ALLSPHINXOPTS) $(BUILDDIR)/xml
-	@echo
-	@echo "Build finished. The XML files are in $(BUILDDIR)/xml."
-
-.PHONY: pseudoxml
-.ONESHELL:
-pseudoxml:
-	$(SPHINXBUILD) -b pseudoxml $(ALLSPHINXOPTS) $(BUILDDIR)/pseudoxml
-	@echo
-	@echo "Build finished. The pseudo-XML files are in $(BUILDDIR)/pseudoxml."
-
-.PHONY: dummy
-.ONESHELL:
-dummy:
-	$(SPHINXBUILD) -b dummy $(ALLSPHINXOPTS) $(BUILDDIR)/dummy
-	@echo
-	@echo "Build finished. Dummy builder generates no files."
-
+#.PHONY: gettext
+#.ONESHELL:
+#gettext:
+#	$(SPHINXBUILD) -b gettext $(I18NSPHINXOPTS) $(BUILDDIR)/locale
+#	@echo
+#	@echo "Build finished. The message catalogs are in $(BUILDDIR)/locale."
+#
+#.PHONY: changes
+#.ONESHELL:
+#changes:
+#	$(SPHINXBUILD) -b changes $(ALLSPHINXOPTS) $(BUILDDIR)/changes
+#	@echo
+#	@echo "The overview file is in $(BUILDDIR)/changes."
+#
+#.PHONY: linkcheck
+#.ONESHELL:
+#linkcheck:
+#	$(SPHINXBUILD) -b linkcheck $(ALLSPHINXOPTS) $(BUILDDIR)/linkcheck
+#	@echo
+#	@echo "Link check complete; look for any errors in the above output " \
+#	      "or in $(BUILDDIR)/linkcheck/output.txt."
+#
+#.PHONY: doctest
+#.ONESHELL:
+#doctest:
+#	$(SPHINXBUILD) -b doctest $(ALLSPHINXOPTS) $(BUILDDIR)/doctest
+#	@echo "Testing of doctests in the sources finished, look at the " \
+#	      "results in $(BUILDDIR)/doctest/output.txt."
+#
+#.PHONY: coverage
+#.ONESHELL:
+#coverage:
+#	$(SPHINXBUILD) -b coverage $(ALLSPHINXOPTS) $(BUILDDIR)/coverage
+#	@echo "Testing of coverage in the sources finished, look at the " \
+#	      "results in $(BUILDDIR)/coverage/python.txt."
+#
+#.PHONY: xml
+#.ONESHELL:
+#xml:
+#	$(SPHINXBUILD) -b xml $(ALLSPHINXOPTS) $(BUILDDIR)/xml
+#	@echo
+#	@echo "Build finished. The XML files are in $(BUILDDIR)/xml."
+#
+#.PHONY: pseudoxml
+#.ONESHELL:
+#pseudoxml:
+#	$(SPHINXBUILD) -b pseudoxml $(ALLSPHINXOPTS) $(BUILDDIR)/pseudoxml
+#	@echo
+#	@echo "Build finished. The pseudo-XML files are in $(BUILDDIR)/pseudoxml."
+#
+#.PHONY: dummy
+#.ONESHELL:
+#dummy:
+#	$(SPHINXBUILD) -b dummy $(ALLSPHINXOPTS) $(BUILDDIR)/dummy
+#	@echo
+#	@echo "Build finished. Dummy builder generates no files."
+#
