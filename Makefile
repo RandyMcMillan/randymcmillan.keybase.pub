@@ -96,8 +96,8 @@ help:
 .PHONY: depends
 depends:
 	pip3 install sphinx sphinx_rtd_theme glpi sphinx-reload --user blockcypher
-	git clone git@github.com:$(GH_USER)/$(GH_USER).github.io.git ~/$(GH_USER).github.io
 	git remote add keybase keybase://private/$(KB_USER)/$(KB_USER).keybase.pub
+	git clone git@github.com:$(GH_USER)/$(GH_USER).github.io.git ~/$(GH_USER).github.io
 
 .PHONY: all
 .ONESHELL:
