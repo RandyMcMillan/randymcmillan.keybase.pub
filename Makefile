@@ -22,19 +22,12 @@ GH_USER = $(ghuser)
 endif
 export GH_USER
 
-# Force the user to explicitly select public or private
-# export KB_PRIVATE=private && make keybase-private
-ifeq ($(KB_PRIVATE),)
-KB_PRIVATE := false# change from false to private
-else
-	@echo "export KB_PRIVATE=private && make keybase-private"
-endif
-export KB_PRIVATE
+# Force the user to explicitly select public - public=true
 # export KB_PUBLIC=public && make keybase-public
-ifeq ($(KB_PUBLIC),)
-KB_PUBLIC  := public# change from false to public
+ifeq ($(public),true)
+KB_PUBLIC  := public
 else
-	@echo "export KB_PUBLIC=public && make keybase-public"
+KB_PUBLIC  := private
 endif
 export KB_PUBLIC
 # You can set these variables from the command line.
@@ -135,7 +128,7 @@ clean:
 .PHONY: serve
 .ONESHELL:
 serve: keybase gh-pages
-	bash -c "mkdir -p /keybase/public/$(KB_USER)"
+	bash -c "mkdir -p /keybase/$(KB_PUBLIC)/$(KB_USER)"
 	bash -c "python3 -m http.server 8000 -d _build/$(KB_USER).keybase.pub &"
 
 #.PHONY: html
@@ -167,18 +160,18 @@ singlehtml:
 .ONESHELL:
 keybase:
 	$(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) $(BUILDDIR)/$(KB_USER).keybase.pub
-	#$(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) /keybase/$(KB_PUBLIC)/$(KB_USER)
+	$(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) /keybase/$(KB_PUBLIC)/$(KB_USER)
 	@echo
-	#bash -c "sudo mkdir -p /keybase/public/$(KB_USER)"
-	#bash -c "sudo install -v keybase.txt /keybase/public/$(KB_USER)/keybase.txt"
-	#bash -c "keybase sign -i /keybase/public/$(KB_USER)/keybase.txt -o /keybase/public/$(KB_USER)/keybase.txt.sig"
+	#bash -c "sudo mkdir -p               /keybase/$(KB_PUBLIC)/$(KB_USER)"
+	#bash -c "sudo install -v keybase.txt /keybase/$(KB_PUBLIC)/$(KB_USER)/keybase.txt"
+	bash -c "keybase sign -i             /keybase/$(KB_PUBLIC)/$(KB_USER)/keybase.txt -o /keybase/$(KB_PUBLIC)/$(KB_USER)/keybase.txt.sig"
 	
 	bash -c "keybase sign -i keybase.txt -o keybase.txt.sig"
 	bash -c "install -v keybase.txt $(BUILDDIR)/$(KB_USER).keybase.pub/keybase.txt"
 	bash -c "install -v keybase.txt.sig $(BUILDDIR)/$(KB_USER).keybase.pub/keybase.txt.sig"
 	
-	#bash -c "keybase sign -i $(BUILDDIR)/$(KB_USER).keybase.pub/index.html -o  $(BUILDDIR)/$(KB_USER).keybase.pub/index.html.sig"
-	#bash -c "keybase sign -i /keybase/$(KB_PUBLIC)/$(KB_USER)/index.html -o /keybase/$(KB_PUBLIC)/$(KB_USER)/index.html.sig"
+	bash -c "keybase sign -i $(BUILDDIR)/$(KB_USER).keybase.pub/index.html -o  $(BUILDDIR)/$(KB_USER).keybase.pub/index.html.sig"
+	bash -c "keybase sign -i /keybase/$(KB_PUBLIC)/$(KB_USER)/index.html -o /keybase/$(KB_PUBLIC)/$(KB_USER)/index.html.sig"
 	
 	bash -c "git add _build _static . && git commit -m 'update from $(BASENAME) on $(TIME)' && git push -f origin +master:master"
 	@echo "Build finished. The HTML page is in $(BUILDDIR)/$(KB_USER).keybase.pub"
@@ -201,12 +194,12 @@ gh-pages:
 	bash -c "install -v keybase.txt ~/$(GH_USER).github.io/keybase.txt"
 	bash -c "keybase sign -i ~/$(GH_USER).github.io/keybase.txt -o ~/$(GH_USER).github.io/keybase.txt.sig"
 	
-	#bash -c "keybase sign -i ~/$(GH_USER).github.io/index.html -o ~/$(GH_USER).github.io/index.html.sig"
+	bash -c "keybase sign -i ~/$(GH_USER).github.io/index.html -o ~/$(GH_USER).github.io/index.html.sig"
 	
 	bash -c "keybase sign -i $(PWD)/keybase.txt -o $(BUILDDIR)/$(GH_USER).github.io/keybase.txt.sig"
 	bash -c "install -v $(PWD)/keybase.txt $(BUILDDIR)/$(GH_USER).github.io/keybase.txt"
 	
-	#bash -c "keybase sign -i $(BUILDDIR)/$(GH_USER).github.io/index.html -o  $(BUILDDIR)/$(GH_USER).github.io/index.html.sig"
+	bash -c "keybase sign -i $(BUILDDIR)/$(GH_USER).github.io/index.html -o  $(BUILDDIR)/$(GH_USER).github.io/index.html.sig"
 	
 	bash -c "cd ~/$(GH_USER).github.io && git add . && git commit -m 'update from $(BASENAME) on $(TIME)' && git push -f origin +master:master"
 	@echo "Build finished. The HTML page is in ~/$(GH_USER).github.io"
