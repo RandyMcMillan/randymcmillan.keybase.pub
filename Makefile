@@ -107,10 +107,10 @@ make-kb-gh: keybase gh-pages
 .PHONY: push-all
 .ONESHELL:
 push-all: make-kb-gh
-	bash -c "git add _build _static . && git commit -m 'update from $(BASENAME) on $(TIME)' && git push -f origin +master:master && git push -f keybase +master:master"
-	git push -f origin +master:master"
-	git push -f keybase +master:master"
-	git push -f github +master:master"
+	bash -c "git add _build _static . && git commit -m 'update from $(BASENAME) on $(TIME)'"
+	git push -f origin	+master:master
+	git push -f keybase	+master:master
+	git push -f github	+master:master
 	#bash -c "pushd ~/$(GH_USER).github.io && git add * && git pull -f https://github.com/randymcmillan/randymcmillan.keybase.io && git push -f origin +master:master"
 	#bash -c "pushd ~/$(GH_USER).github.io && git add * && git commit -m 'update from $(BASENAME) on $(TIME)' && git push -f origin +master:master"
 
