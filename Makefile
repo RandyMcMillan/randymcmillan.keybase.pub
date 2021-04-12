@@ -91,8 +91,8 @@ depends:
 	pip3 install sphinx sphinx_rtd_theme glpi sphinx-reload --user blockcypher
 	git remote add keybase keybase://$(KB_PUBLIC)/$(KB_USER)/$(KB_USER).keybase.pub
 	bash -c rm -rf ~/$(GH_USER)/$(GH_USER).github.io
-	git remote add github git@github.com:$(GH_USER)/$(GH_USER).github.io.git
-	#git clone git@github.com:$(GH_USER)/$(GH_USER).github.io.git ~/$(GH_USER).github.io
+	#git remote add github git@github.com:$(GH_USER)/$(GH_USER).github.io.git
+	git clone git@github.com:$(GH_USER)/$(GH_USER).github.io.git ~/$(GH_USER).github.io
 
 .PHONY: all
 .ONESHELL:
@@ -112,7 +112,7 @@ push-all: make-kb-gh
 	git push -f keybase	+master:master
 	git push -f github	+master:master
 	#bash -c "pushd ~/$(GH_USER).github.io && git add * && git pull -f https://github.com/randymcmillan/randymcmillan.keybase.io && git push -f origin +master:master"
-	#bash -c "pushd ~/$(GH_USER).github.io && git add * && git commit -m 'update from $(BASENAME) on $(TIME)' && git push -f origin +master:master"
+	bash -c "pushd ~/$(GH_USER).github.io && git add * && git commit -m 'update from $(BASENAME) on $(TIME)' && git push -f origin +master:master"
 
 .PHONY: reload
 .ONESHELL:
