@@ -89,9 +89,9 @@ help:
 .PHONY: depends
 depends:
 	pip3 install sphinx sphinx_rtd_theme glpi sphinx-reload --user blockcypher
-	git remote add keybase keybase://private/$(KB_USER)/$(KB_USER).keybase.pub
+	git remote add keybase keybase://$(KB_PUBLIC)/$(KB_USER)/$(KB_USER).keybase.pub
 	bash -c rm -rf ~/$(GH_USER)/$(GH_USER).github.io
-	git remote add github git clone git@github.com:$(GH_USER)/$(GH_USER).github.io.git
+	git remote add github git@github.com:$(GH_USER)/$(GH_USER).github.io.git
 	#git clone git@github.com:$(GH_USER)/$(GH_USER).github.io.git ~/$(GH_USER).github.io
 
 .PHONY: all
