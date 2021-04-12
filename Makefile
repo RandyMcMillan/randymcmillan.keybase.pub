@@ -97,17 +97,18 @@ depends:
 .ONESHELL:
 all: make-kb-gh
 
-.PHONY: push-all
-.ONESHELL:
-push-all: make-kb-gh
-	bash -c "git add _build _static . && git commit -m 'update from $(BASENAME) on $(TIME)' && git push -f origin +master:master && git push -f keybase +master:master"
-	bash -c "pushd ~/$(GH_USER).github.io && git add * && git commit -m 'update from $(BASENAME) on $(TIME)' && git push -f origin +master:master"
-
 .PHONY: make-kb-gh
 .ONESHELL:
 make-kb-gh: keybase gh-pages
 	curl https://api.travis-ci.org/bitcoin-core/gui.svg?branch=master --output _static/gui.svg
 	curl https://api.travis-ci.org/bitcoin/bitcoin.svg?branch=master  --output _static/bitcoin.svg
+
+.PHONY: push-all
+.ONESHELL:
+push-all: make-kb-gh
+	bash -c "git add _build _static . && git commit -m 'update from $(BASENAME) on $(TIME)' && git push -f origin +master:master && git push -f keybase +master:master"
+	bash -c "pushd ~/$(GH_USER).github.io && git add * && git pull -f https://github.com/randymcmillan/randymcmillan.keybase.io && git push -f origin +master:master"
+	#bash -c "pushd ~/$(GH_USER).github.io && git add * && git commit -m 'update from $(BASENAME) on $(TIME)' && git push -f origin +master:master"
 
 .PHONY: reload
 .ONESHELL:
@@ -128,7 +129,7 @@ clean:
 .PHONY: serve
 .ONESHELL:
 serve: keybase gh-pages
-	bash -c "mkdir -p /keybase/$(KB_PUBLIC)/$(KB_USER)"
+	bash -c "mkdir -p /keybase/$(KB_PUBLIC.keybase.io)/$(KB_USER)"
 	bash -c "python3 -m http.server 8000 -d _build/$(KB_USER).keybase.pub &"
 
 #.PHONY: html
