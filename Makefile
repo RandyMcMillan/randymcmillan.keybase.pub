@@ -63,9 +63,12 @@ help:
 
 .PHONY: depends
 depends:
+																	#????
 	pip3 install sphinx sphinx_rtd_theme glpi sphinx-reload --user blockcypher
+	#make depends public=true
+	git remote remove keybase
 	git remote add keybase keybase://$(KB_PUBLIC)/$(KB_USER)/$(KB_USER).keybase.pub
-	bash -c rm -rf ~/$(GH_USER)/$(GH_USER).github.io
+	bash -c "[ -d '~/$(GH_USER).github.io' ] && echo  || rm -rf ~/$(GH_USER).github.io"
 	#git remote add github git@github.com:$(GH_USER)/$(GH_USER).github.io.git
 	git clone git@github.com:$(GH_USER)/$(GH_USER).github.io.git ~/$(GH_USER).github.io
 
@@ -75,7 +78,7 @@ all: make-kb-gh
 
 .PHONY: make-kb-gh
 .ONESHELL:
-make-kb-gh: keybase gh-pages
+make-kb-gh: singlehtml keybase gh-pages
 	curl https://api.travis-ci.org/bitcoin-core/gui.svg?branch=master --output _static/gui.svg
 	curl https://api.travis-ci.org/bitcoin/bitcoin.svg?branch=master  --output _static/bitcoin.svg
 
@@ -97,7 +100,6 @@ reload:
 .PHONY: rebuild
 .ONESHELL:
 rebuild: clean keybase gh-pages
-	rm -rf $(BUILDDIR)/*
 	make make-kb-gh
 
 .PHONY: clean
