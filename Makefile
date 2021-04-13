@@ -110,7 +110,6 @@ clean:
 .PHONY: serve
 .ONESHELL:
 serve: keybase gh-pages
-	bash -c "mkdir -p /keybase/$(KB_PUBLIC.keybase.io)/$(KB_USER)"
 	bash -c "python3 -m http.server 8000 -d _build/$(KB_USER).keybase.pub &"
 
 .PHONY: singlehtml
