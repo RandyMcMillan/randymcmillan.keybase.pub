@@ -107,21 +107,21 @@ make-kb-gh: keybase gh-pages
 .PHONY: push-all
 .ONESHELL:
 push-all: make-kb-gh
-	bash -c "git add _build _static . && git commit -m 'update from $(BASENAME) on $(TIME)'"
+	bash -c "git add _build _static * && \
+		git commit -m 'update from $(BASENAME) on $(TIME)'"
 	git push -f origin	+master:master
 	git push -f keybase	+master:master
-	git push -f github	+master:master
 	#bash -c "pushd ~/$(GH_USER).github.io && git add * && git pull -f https://github.com/randymcmillan/randymcmillan.keybase.io && git push -f origin +master:master"
 	bash -c "pushd ~/$(GH_USER).github.io && git add * && git commit -m 'update from $(BASENAME) on $(TIME)' && git push -f origin +master:master"
 
 .PHONY: reload
 .ONESHELL:
-reload: keybase gh-pages
+reload:
 	sphinx-reload .
 
 .PHONY: rebuild
 .ONESHELL:
-rebuild: keybase gh-pages
+rebuild: clean keybase gh-pages
 	rm -rf $(BUILDDIR)/*
 	make make-kb-gh
 
@@ -135,22 +135,6 @@ clean:
 serve: keybase gh-pages
 	bash -c "mkdir -p /keybase/$(KB_PUBLIC.keybase.io)/$(KB_USER)"
 	bash -c "python3 -m http.server 8000 -d _build/$(KB_USER).keybase.pub &"
-
-#.PHONY: html
-#.ONESHELL:
-#html:
-#	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
-#	@echo
-#	bash -c "git add _build _static . && git commit -m 'update from $(BASENAME) on $(TIME)' && git push -f origin +master:master"
-#	@echo "Build finished. The HTML pages are in $(PWD)/$(BUILDDIR)/html"
-
-#.PHONY: dirhtml
-#.ONESHELL:
-#dirhtml:
-#	$(SPHINXBUILD) -b dirhtml $(ALLSPHINXOPTS) $(BUILDDIR)/dirhtml
-#	@echo
-#	bash -c "git add _build _static . && git commit -m 'update from $(BASENAME) on $(TIME)' && git push -f origin +master:master"
-#	@echo "Build finished. The HTML pages are in $(PWD)/$(BUILDDIR)/dirhtml"
 
 .PHONY: singlehtml
 .ONESHELL:
