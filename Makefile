@@ -150,6 +150,7 @@ keybase: singlehtml
 		git push -f keybase +master:master"
 	@echo "Build finished. The HTML page is in $(BUILDDIR)/$(KB_USER).keybase.pub"
 	@echo "Build finished. The HTML page is in /keybase/$(KB_PUBLIC)/$(KB_USER).keybase.pub"
+	@echo "make keybase public=true #will push to the your /keybase/public/$(KB_USER).keybase.pub"
 
 .PHONY: gh-pages
 .ONESHELL:
