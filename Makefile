@@ -46,8 +46,6 @@ I18NSPHINXOPTS  = $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) .
 .PHONY: help
 help:
 	@echo ""
-	@echo "Please use \`make <target>' where <target> is one of"
-	@echo ""
 	@echo "Keybase usage:"
 	@echo ""
 	@echo "  make depends"
@@ -57,9 +55,13 @@ help:
 	@echo "  make rebuild"
 	@echo "  make serve"
 	@echo ""
-	@echo "  singlehtml to make a single large HTML file"
-	@echo "  latex      to make LaTeX files, you can set PAPER=a4 or PAPER=letter"
-	@echo "  latexpdf   to make LaTeX files and run them through pdflatex"
+	@echo "  make singlehtml"
+	@echo ""
+	@echo "Example:"
+	@echo ""
+	@echo "make push-all public=true"
+	@echo ""
+	@echo ""
 
 .PHONY: depends
 depends:
