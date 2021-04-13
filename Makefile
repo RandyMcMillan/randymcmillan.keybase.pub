@@ -155,6 +155,7 @@ gh-pages:
 	bash -c "keybase sign -i ~/$(GH_USER).github.io/keybase.txt -o ~/$(GH_USER).github.io/keybase.txt.sig"
 	bash -c "keybase sign -i ~/$(GH_USER).github.io/index.html -o ~/$(GH_USER).github.io/index.html.sig"
 	bash -c "keybase sign -i $(BUILDDIR)/$(GH_USER).github.io/index.html -o  $(BUILDDIR)/$(GH_USER).github.io/index.html.sig"
+	bash -c "git add -f _build/randymcmillan.github.io/index.html.sig"
 	bash -c "cd ~/$(GH_USER).github.io && \
 		touch $(TIME) && \
 		git status && \
