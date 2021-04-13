@@ -3,3 +3,5 @@ venv
 _private_build
 _build/randymcmillan.github.io
 .buildinfo
+_build/.DS_Store
+_build/randymcmillan.keybase.pub/.DS_Store
