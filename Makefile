@@ -1,5 +1,3 @@
-# Makefile for randymcmillan.keybase.pub
-
 TIME := $(shell date +%s)
 export TIME
 
@@ -30,7 +28,7 @@ else
 KB_PUBLIC  := private
 endif
 export KB_PUBLIC
-# You can set these variables from the command line.
+
 SPHINXOPTS            =
 SPHINXBUILD           = sphinx-build
 PAPER                 =
@@ -59,32 +57,9 @@ help:
 	@echo "  make rebuild"
 	@echo "  make serve"
 	@echo ""
-	@echo "  html       to make standalone HTML files"
-	@echo "  dirhtml    to make HTML files named index.html in directories"
 	@echo "  singlehtml to make a single large HTML file"
-	@echo "  pickle     to make pickle files"
-	@echo "  json       to make JSON files"
-	@echo "  htmlhelp   to make HTML files and a HTML help project"
-	@echo "  qthelp     to make HTML files and a qthelp project"
-	@echo "  applehelp  to make an Apple Help Book"
-	@echo "  devhelp    to make HTML files and a Devhelp project"
-	@echo "  epub       to make an epub"
-	@echo "  epub3      to make an epub3"
 	@echo "  latex      to make LaTeX files, you can set PAPER=a4 or PAPER=letter"
 	@echo "  latexpdf   to make LaTeX files and run them through pdflatex"
-	@echo "  latexpdfja to make LaTeX files and run them through platex/dvipdfmx"
-	@echo "  text       to make text files"
-	@echo "  man        to make manual pages"
-	@echo "  texinfo    to make Texinfo files"
-	@echo "  info       to make Texinfo files and run them through makeinfo"
-	@echo "  gettext    to make PO message catalogs"
-	@echo "  changes    to make an overview of all changed/added/deprecated items"
-	@echo "  xml        to make Docutils-native XML files"
-	@echo "  pseudoxml  to make pseudoxml-XML files for display purposes"
-	@echo "  linkcheck  to check all external links for integrity"
-	@echo "  doctest    to run all doctests embedded in the documentation (if enabled)"
-	@echo "  coverage   to run coverage check of the documentation (if enabled)"
-	@echo "  dummy      to check syntax errors of document sources"
 
 .PHONY: depends
 depends:
@@ -153,8 +128,12 @@ singlehtml:
 .ONESHELL:
 keybase:
 	@echo keybase
+	#bash -c "install -v					keybase.txt                                   /keybase/$(KB_PUBLIC)/keybase.txt"
+	#bash -c "install -v					$(BUILDDIR)/$(KB_USER).keybase.pub/index.html /keybase/$(KB_PUBLIC)/index.html"
+	
 	bash -c "keybase sign -i			/keybase/$(KB_PUBLIC)/$(KB_USER)/keybase.txt -o /keybase/$(KB_PUBLIC)/$(KB_USER)/keybase.txt.sig"
 	bash -c "keybase sign -i			/keybase/$(KB_PUBLIC)/$(KB_USER)/index.html  -o /keybase/$(KB_PUBLIC)/$(KB_USER)/index.html.sig"
+	
 	bash -c "keybase sign -i			keybase.txt -o keybase.txt.sig"
 	bash -c "install -v					keybase.txt     $(BUILDDIR)/$(KB_USER).keybase.pub/keybase.txt"
 	bash -c "install -v					keybase.txt.sig $(BUILDDIR)/$(KB_USER).keybase.pub/keybase.txt.sig"
