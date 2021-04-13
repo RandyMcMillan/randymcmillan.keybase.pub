@@ -2,3 +2,4 @@
 venv
 _private_build
 _build/randymcmillan.github.io
+.buildinfo
