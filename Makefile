@@ -176,7 +176,10 @@ keybase: singlehtml
 	bash -c "install -v					keybase.txt.sig $(BUILDDIR)/$(KB_USER).keybase.pub/keybase.txt.sig"
 	bash -c "keybase sign -i			$(BUILDDIR)/$(KB_USER).keybase.pub/index.html -o  $(BUILDDIR)/$(KB_USER).keybase.pub/index.html.sig"
 	bash -c "keybase sign -i			/keybase/$(KB_PUBLIC)/$(KB_USER)/index.html   -o /keybase/$(KB_PUBLIC)/$(KB_USER)/index.html.sig"
-	bash -c "git add -f _build _static *&& git commit -m 'update from $(BASENAME) on $(TIME)' && git push -f origin +master:master"
+	bash -c "touch $(TIME)"
+	bash -c "git add -f _build _static * && \
+		git commit -m 'update from $(BASENAME) on $(TIME)' && \
+		git push -f origin +master:master"
 	@echo "Build finished. The HTML page is in $(BUILDDIR)/$(KB_USER).keybase.pub"
 
 .PHONY: gh-pages
