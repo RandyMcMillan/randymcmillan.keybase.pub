@@ -146,7 +146,7 @@ keybase: singlehtml
 	bash -c "git status"
 	bash -c "git add -f $(BUILDDIR) _static * && \
 		git commit -m 'update from $(BASENAME) on $(TIME)' && \
-		git push -f origin +master:master"
+		git push -f origin +master:master && \
 		git push -f keybase +master:master"
 	@echo "Build finished. The HTML page is in $(BUILDDIR)/$(KB_USER).keybase.pub"
 
