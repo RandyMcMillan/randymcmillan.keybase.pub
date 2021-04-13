@@ -128,13 +128,11 @@ singlehtml:
 .ONESHELL:
 keybase:
 	@echo keybase
-	#bash -c "install -v					keybase.txt                                   /keybase/$(KB_PUBLIC)/keybase.txt"
-	#bash -c "install -v					$(BUILDDIR)/$(KB_USER).keybase.pub/index.html /keybase/$(KB_PUBLIC)/index.html"
-	
+	@echo if error ensure these files exist...
 	bash -c "keybase sign -i			/keybase/$(KB_PUBLIC)/$(KB_USER)/keybase.txt -o /keybase/$(KB_PUBLIC)/$(KB_USER)/keybase.txt.sig"
 	bash -c "keybase sign -i			/keybase/$(KB_PUBLIC)/$(KB_USER)/index.html  -o /keybase/$(KB_PUBLIC)/$(KB_USER)/index.html.sig"
-	
 	bash -c "keybase sign -i			keybase.txt -o keybase.txt.sig"
+
 	bash -c "install -v					keybase.txt     $(BUILDDIR)/$(KB_USER).keybase.pub/keybase.txt"
 	bash -c "install -v					keybase.txt.sig $(BUILDDIR)/$(KB_USER).keybase.pub/keybase.txt.sig"
 	bash -c "keybase sign -i			$(BUILDDIR)/$(KB_USER).keybase.pub/index.html -o  $(BUILDDIR)/$(KB_USER).keybase.pub/index.html.sig"
