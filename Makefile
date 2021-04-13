@@ -144,33 +144,43 @@ keybase: singlehtml
 	bash -c "touch $(TIME)"
 	@echo	
 	bash -c "git status"
-	bash -c "git add -f $(BUILDDIR) _static * && \
-		git commit -m 'update from $(BASENAME) on $(TIME)' && \
-		git push -f origin +master:master && \
-		git push -f keybase +master:master"
+	make push-keybase
 	@echo "Build finished. The HTML page is in $(BUILDDIR)/$(KB_USER).keybase.pub"
 	@echo "Build finished. The HTML page is in /keybase/$(KB_PUBLIC)/$(KB_USER).keybase.pub"
 ifneq ($(public),true)
 	@echo "make keybase public=true #will push to the your /keybase/public/$(KB_USER).keybase.pub"
 endif
 
+.PHONY: push-keybase
+.ONESHELL:
+push-keybase:
+	bash -c "git add -f $(BUILDDIR) _static * && \
+		git commit -m 'update from $(BASENAME) on $(TIME)' && \
+		git push -f origin +master:master && \
+		git push -f keybase +master:master"
+
 .PHONY: gh-pages
 .ONESHELL:
 gh-pages: singlehtml
 	@echo gh-pages
-	bash -c "install -v keybase.txt ~/$(GH_USER).github.io/keybase.txt"
-	bash -c "keybase sign -i ~/$(GH_USER).github.io/keybase.txt -o ~/$(GH_USER).github.io/keybase.txt.sig"
-	bash -c "keybase sign -i ~/$(GH_USER).github.io/index.html -o ~/$(GH_USER).github.io/index.html.sig"
-	bash -c "keybase sign -i $(BUILDDIR)/$(GH_USER).github.io/index.html -o  $(BUILDDIR)/$(GH_USER).github.io/index.html.sig"
-	bash -c "git add -f _build/randymcmillan.github.io/index.html.sig"
-	bash -c "git add -f _build/randymcmillan.github.io/index.html.sig"
+	bash -c "install -v $(BUILDDIR)/$(KB_USER).keybase.pub/*.html ~/$(GH_USER).github.io/"
+	bash -c "install -v $(BUILDDIR)/$(KB_USER).keybase.pub/keybase.txt ~/$(GH_USER).github.io/"
+	bash -c "install -v $(BUILDDIR)/$(KB_USER).keybase.pub/*.sig ~/$(GH_USER).github.io/"
+	bash -c "install -d $(BUILDDIR)/$(KB_USER).keybase.pub/_* ~/$(GH_USER).github.io/_*"
+	make push-gh-pages
+	make push-keybase
+	@echo "Build finished. The HTML page is in ~/$(GH_USER).github.io"
+
+.PHONY: push-gh-pages
+.ONESHELL:
+push-gh-pages:
 	bash -c "cd ~/$(GH_USER).github.io && \
 		touch $(TIME) && \
 		git status && \
 		git add -f * && \
 		git commit -m 'update from $(BASENAME) on $(TIME)' && \
 		git push -f origin +master:master"
-	@echo "Build finished. The HTML page is in ~/$(GH_USER).github.io"
+
 
 #.PHONY: latex
 #.ONESHELL:
