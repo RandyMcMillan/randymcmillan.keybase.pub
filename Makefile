@@ -134,6 +134,7 @@ keybase:
 	@echo if error ensure these files exist...
 	bash -c "keybase sign -i			/keybase/$(KB_PUBLIC)/$(KB_USER)/keybase.txt -o /keybase/$(KB_PUBLIC)/$(KB_USER)/keybase.txt.sig"
 	bash -c "keybase sign -i			/keybase/$(KB_PUBLIC)/$(KB_USER)/index.html  -o /keybase/$(KB_PUBLIC)/$(KB_USER)/index.html.sig"
+	bash -c "git add -f _build/randymcmillan.github.io/index.html.sig"
 	bash -c "keybase sign -i			keybase.txt -o keybase.txt.sig"
 	
 	bash -c "install -v					keybase.txt     $(BUILDDIR)/$(KB_USER).keybase.pub/keybase.txt"
