@@ -167,7 +167,7 @@ singlehtml:
 
 .PHONY: keybase
 .ONESHELL:
-keybase: singlehtml
+keybase:
 	@echo
 	bash -c "keybase sign -i			/keybase/$(KB_PUBLIC)/$(KB_USER)/keybase.txt -o /keybase/$(KB_PUBLIC)/$(KB_USER)/keybase.txt.sig"
 	bash -c "keybase sign -i			/keybase/$(KB_PUBLIC)/$(KB_USER)/index.html  -o /keybase/$(KB_PUBLIC)/$(KB_USER)/index.html.sig"
@@ -184,7 +184,7 @@ keybase: singlehtml
 
 .PHONY: gh-pages
 .ONESHELL:
-gh-pages: singlehtml
+gh-pages:
 	@echo
 	bash -c "install -v keybase.txt ~/$(GH_USER).github.io/keybase.txt"
 	bash -c "keybase sign -i ~/$(GH_USER).github.io/keybase.txt -o ~/$(GH_USER).github.io/keybase.txt.sig"
@@ -192,7 +192,8 @@ gh-pages: singlehtml
 	bash -c "keybase sign -i $(BUILDDIR)/$(GH_USER).github.io/index.html -o  $(BUILDDIR)/$(GH_USER).github.io/index.html.sig"
 	bash -c "cd ~/$(GH_USER).github.io && \
 		touch $(TIME) && \
-		git add -f * && git commit -m 'update from $(BASENAME) on $(TIME)' && git push -f origin +master:master"
+		git add -f * && git commit -m 'update from $(BASENAME) on $(TIME)' && \
+		git push -f origin +master:master"
 	@echo "Build finished. The HTML page is in ~/$(GH_USER).github.io"
 
 #.PHONY: latex
