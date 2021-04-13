@@ -137,12 +137,14 @@ keybase: singlehtml
 	bash -c "install -v					keybase.txt     $(BUILDDIR)/$(KB_USER).keybase.pub/keybase.txt"
 	bash -c "install -v					keybase.txt.sig $(BUILDDIR)/$(KB_USER).keybase.pub/keybase.txt.sig"
 	bash -c "keybase sign -i			$(BUILDDIR)/$(KB_USER).keybase.pub/index.html -o  $(BUILDDIR)/$(KB_USER).keybase.pub/index.html.sig"
-	@echo	
-	bash -c "keybase sign -i			/keybase/$(KB_PUBLIC)/$(KB_USER)/keybase.txt  -o /keybase/$(KB_PUBLIC)/$(KB_USER)/keybase.txt.sig"
-	bash -c "keybase sign -i			/keybase/$(KB_PUBLIC)/$(KB_USER)/index.html   -o /keybase/$(KB_PUBLIC)/$(KB_USER)/index.html.sig"
+	bash -c "install -v					$(BUILDDIR)/$(KB_USER).keybase.pub/index.html      /keybase/$(KB_PUBLIC)/$(KB_USER)/index.html"
+	bash -c "install -v					$(BUILDDIR)/$(KB_USER).keybase.pub/index.html.sig  /keybase/$(KB_PUBLIC)/$(KB_USER)/index.html.sig"
+	bash -c "install -v					$(BUILDDIR)/$(KB_USER).keybase.pub/keybase.txt     /keybase/$(KB_PUBLIC)/$(KB_USER)/keybase.txt"
+	bash -c "install -v					$(BUILDDIR)/$(KB_USER).keybase.pub/keybase.txt.sig /keybase/$(KB_PUBLIC)/$(KB_USER)/keybase.txt.sig"
 	bash -c "touch $(TIME)"
+	@echo	
 	bash -c "git status"
-	bash -c "git add -f _build _static * && \
+	bash -c "git add -f $(BUILDDIR) _static * && \
 		git commit -m 'update from $(BASENAME) on $(TIME)' && \
 		git push -f origin +master:master"
 	@echo "Build finished. The HTML page is in $(BUILDDIR)/$(KB_USER).keybase.pub"
