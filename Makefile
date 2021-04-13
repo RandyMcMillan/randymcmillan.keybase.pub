@@ -176,7 +176,7 @@ keybase: singlehtml
 	bash -c "install -v					keybase.txt.sig $(BUILDDIR)/$(KB_USER).keybase.pub/keybase.txt.sig"
 	bash -c "keybase sign -i			$(BUILDDIR)/$(KB_USER).keybase.pub/index.html -o  $(BUILDDIR)/$(KB_USER).keybase.pub/index.html.sig"
 	bash -c "keybase sign -i			/keybase/$(KB_PUBLIC)/$(KB_USER)/index.html   -o /keybase/$(KB_PUBLIC)/$(KB_USER)/index.html.sig"
-	bash -c "git add -f _build _static * .buildinfo && git commit -m 'update from $(BASENAME) on $(TIME)' && git push -f origin +master:master"
+	bash -c "git add -f _build _static *&& git commit -m 'update from $(BASENAME) on $(TIME)' && git push -f origin +master:master"
 	@echo "Build finished. The HTML page is in $(BUILDDIR)/$(KB_USER).keybase.pub"
 
 .PHONY: gh-pages
@@ -187,7 +187,8 @@ gh-pages: singlehtml
 	bash -c "keybase sign -i ~/$(GH_USER).github.io/keybase.txt -o ~/$(GH_USER).github.io/keybase.txt.sig"
 	bash -c "keybase sign -i ~/$(GH_USER).github.io/index.html -o ~/$(GH_USER).github.io/index.html.sig"
 	bash -c "keybase sign -i $(BUILDDIR)/$(GH_USER).github.io/index.html -o  $(BUILDDIR)/$(GH_USER).github.io/index.html.sig"
-	bash -c "cd ~/$(GH_USER).github.io && git add -f * .buildinfo && git commit -m 'update from $(BASENAME) on $(TIME)' && git push -f origin +master:master"
+	bash -c "cd ~/$(GH_USER).github.io && \
+		git add -f * && git commit -m 'update from $(BASENAME) on $(TIME)' && git push -f origin +master:master"
 	@echo "Build finished. The HTML page is in ~/$(GH_USER).github.io"
 
 #.PHONY: latex
