@@ -168,7 +168,7 @@ singlehtml:
 .PHONY: keybase
 .ONESHELL:
 keybase:
-	@echo
+	@echo keybase
 	bash -c "keybase sign -i			/keybase/$(KB_PUBLIC)/$(KB_USER)/keybase.txt -o /keybase/$(KB_PUBLIC)/$(KB_USER)/keybase.txt.sig"
 	bash -c "keybase sign -i			/keybase/$(KB_PUBLIC)/$(KB_USER)/index.html  -o /keybase/$(KB_PUBLIC)/$(KB_USER)/index.html.sig"
 	bash -c "keybase sign -i			keybase.txt -o keybase.txt.sig"
@@ -177,6 +177,7 @@ keybase:
 	bash -c "keybase sign -i			$(BUILDDIR)/$(KB_USER).keybase.pub/index.html -o  $(BUILDDIR)/$(KB_USER).keybase.pub/index.html.sig"
 	bash -c "keybase sign -i			/keybase/$(KB_PUBLIC)/$(KB_USER)/index.html   -o /keybase/$(KB_PUBLIC)/$(KB_USER)/index.html.sig"
 	bash -c "touch $(TIME)"
+	bash -c "git status"
 	bash -c "git add -f _build _static * && \
 		git commit -m 'update from $(BASENAME) on $(TIME)' && \
 		git push -f origin +master:master"
@@ -185,7 +186,7 @@ keybase:
 .PHONY: gh-pages
 .ONESHELL:
 gh-pages:
-	@echo
+	@echo gh-pages
 	bash -c "install -v keybase.txt ~/$(GH_USER).github.io/keybase.txt"
 	bash -c "keybase sign -i ~/$(GH_USER).github.io/keybase.txt -o ~/$(GH_USER).github.io/keybase.txt.sig"
 	bash -c "keybase sign -i ~/$(GH_USER).github.io/index.html -o ~/$(GH_USER).github.io/index.html.sig"
