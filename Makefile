@@ -192,6 +192,7 @@ gh-pages:
 	bash -c "keybase sign -i $(BUILDDIR)/$(GH_USER).github.io/index.html -o  $(BUILDDIR)/$(GH_USER).github.io/index.html.sig"
 	bash -c "cd ~/$(GH_USER).github.io && \
 		touch $(TIME) && \
+		git status && \
 		git add -f * && git commit -m 'update from $(BASENAME) on $(TIME)' && \
 		git push -f origin +master:master"
 	@echo "Build finished. The HTML page is in ~/$(GH_USER).github.io"
