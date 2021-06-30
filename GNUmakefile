@@ -69,7 +69,9 @@ depends:
 	pip3 install sphinx sphinx_rtd_theme glpi sphinx-reload --user blockcypher
 	#make depends public=true
 	git remote remove keybase
-	git remote add keybase keybase://$(KB_PUBLIC)/$(KB_USER)/$(KB_USER).keybase.pub
+	#keybase://private/randymcmillan/randymcmillan.keybase.pub
+	#git remote add keybase keybase://$(KB_PUBLIC)/$(KB_USER)/$(KB_USER).keybase.pub
+	git remote add keybase keybase://private/$(KB_USER)/$(KB_USER).keybase.pub
 	bash -c "[ -d '~/$(GH_USER).github.io' ] && echo  || rm -rf ~/$(GH_USER).github.io"
 	#git remote add github git@github.com:$(GH_USER)/$(GH_USER).github.io.git
 	git clone git@github.com:$(GH_USER)/$(GH_USER).github.io.git ~/$(GH_USER).github.io
