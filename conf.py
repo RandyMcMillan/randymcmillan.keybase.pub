@@ -365,5 +365,5 @@ texinfo_documents = [
 #
 # texinfo_no_detailmenu = False
 
-def setup(app):
-    app.add_stylesheet('css/custom.css')
+#def setup(app):
+#    app.add_stylesheet('css/custom.css')
