@@ -27,7 +27,7 @@ import blockcypher
 
 try:
     block_time = blockcypher.get_latest_block_height(coin_symbol='btc')
-    f = open("BLOCK_TIME", "a")
+    f = open("BLOCK_TIME", "w")
     f.write('$block_time')
     f.close()
 except:
